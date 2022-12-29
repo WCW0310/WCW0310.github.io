@@ -1,0 +1,661 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#222" media="(prefers-color-scheme: dark)"><meta name="generator" content="Hexo 6.3.0">
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+  <meta name="google-site-verification" content="1RLUKP6tlSUzYUSF29puYUhLlAIcz9H8s7DDqgKrGdY">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha256-Z1K5uhUaJXA7Ll0XrZ/0JhX4lAtZFpT6jkKrEDT0drU=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.css" integrity="sha256-Vzbj7sDDS/woiFS3uNKo8eIuni59rjyNGtXfstRzStA=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pace/1.2.4/themes/blue/pace-theme-minimal.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pace/1.2.4/pace.min.js" integrity="sha256-gqd7YTjg/BtfqWSwsJOvndl0Bxc8gFImLEkXQT8+qj0=" crossorigin="anonymous"></script>
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"wcw0310.github.io","root":"/","images":"/images","scheme":"Gemini","darkmode":true,"version":"8.14.0","exturl":true,"sidebar":{"position":"right","display":"post","padding":18,"offset":12},"copycode":{"enable":true,"style":"flat"},"bookmark":{"enable":false,"color":"#222","save":"manual"},"mediumzoom":false,"lazyload":true,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":true,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜尋...","empty":"我們無法找到任何有關 ${query} 的搜索結果","hits_time":"${hits} 找到 ${time} 個結果","hits":"找到 ${hits} 個結果"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
+
+    <meta name="description" content="被 IDE 寵壞後，默寫時連迴圈都寫不出來了，趕快來複習一下。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Java Note 01：常忘 Java 語法">
+<meta property="og:url" content="https://wcw0310.github.io/Java/Note/76cc3fdb/">
+<meta property="og:site_name" content="Hi I&#39;m WCW!">
+<meta property="og:description" content="被 IDE 寵壞後，默寫時連迴圈都寫不出來了，趕快來複習一下。">
+<meta property="og:locale" content="zh_TW">
+<meta property="article:published_time" content="2022-12-06T08:33:11.000Z">
+<meta property="article:modified_time" content="2022-12-29T15:16:11.272Z">
+<meta property="article:author" content="WCW">
+<meta property="article:tag" content="Java">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="canonical" href="https://wcw0310.github.io/Java/Note/76cc3fdb/">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-TW","comments":true,"permalink":"https://wcw0310.github.io/Java/Note/76cc3fdb/","path":"Java/Note/76cc3fdb/","title":"Java Note 01：常忘 Java 語法"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>Java Note 01：常忘 Java 語法 | Hi I'm WCW!</title>
+  
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-NGNFG3T6E5"></script>
+  <script class="next-config" data-name="google_analytics" type="application/json">{"tracking_id":"G-NGNFG3T6E5","only_pageview":false}</script>
+  <script src="/js/third-party/analytics/google-analytics.js"></script>
+
+
+
+
+
+
+  <script async defer data-website-id="" src=""></script>
+
+  <script defer data-domain="" src=""></script>
+
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5074749359677811"
+     crossorigin="anonymous"></script><link rel="stylesheet" type="text/css" href="/css/injector/main.css" /><link rel="preload" as="style" href="/css/injector/light.css" /><link rel="preload" as="style" href="/css/injector/dark.css" />
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <div class="column">
+      <header class="header" itemscope itemtype="http://schema.org/WPHeader"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切換導航欄" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">Hi I'm WCW!</p>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description">WCW's blog</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger" aria-label="搜尋" role="button">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首頁</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>關於</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>標籤<span class="badge">26</span></a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分類<span class="badge">13</span></a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>歸檔<span class="badge">37</span></a></li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜尋
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup"><div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off" maxlength="80"
+           placeholder="搜尋..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close" role="button">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div class="search-result-container no-result">
+  <div class="search-result-icon">
+    <i class="fa fa-spinner fa-pulse fa-5x"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</header>
+        
+  
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目錄
+        </li>
+        <li class="sidebar-nav-overview">
+          本站概要
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#for-loop"><span class="nav-number">1.</span> <span class="nav-text">for loop</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#String"><span class="nav-number">2.</span> <span class="nav-text">String</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%BF%94%E5%9B%9E%E5%AD%97%E4%B8%B2%E9%95%B7%E5%BA%A6%EF%BC%9A"><span class="nav-number">2.1.</span> <span class="nav-text">返回字串長度：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%88%A4%E6%96%B7%E5%AD%97%E4%B8%B2%E5%80%BC%E6%98%AF%E5%90%A6%E7%9B%B8%E5%90%8C"><span class="nav-number">2.2.</span> <span class="nav-text">判斷字串值是否相同</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%BF%94%E5%9B%9E%E6%8C%87%E5%AE%9A%E7%B4%A2%E5%BC%95%E7%9A%84-char%EF%BC%9A"><span class="nav-number">2.3.</span> <span class="nav-text">返回指定索引的 char：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%BF%94%E5%9B%9E%E5%AD%97%E4%B8%B2%E8%BD%89%E6%8F%9B%E6%88%90%E7%9A%84-char-%EF%BC%9A"><span class="nav-number">2.4.</span> <span class="nav-text">返回字串轉換成的 char[]：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%BF%94%E5%9B%9E%E5%AD%90%E5%AD%97%E4%B8%B2%EF%BC%88%E6%8C%87%E5%AE%9A%E9%A0%AD%E5%B0%BE%EF%BC%89%EF%BC%9A"><span class="nav-number">2.5.</span> <span class="nav-text">返回子字串（指定頭尾）：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%BF%94%E5%9B%9E%E5%AD%90%E5%AD%97%E4%B8%B2%EF%BC%88%E6%8C%87%E5%AE%9A%E9%A0%AD%EF%BC%89%EF%BC%9A"><span class="nav-number">2.6.</span> <span class="nav-text">返回子字串（指定頭）：</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Array"><span class="nav-number">3.</span> <span class="nav-text">Array</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Arrays"><span class="nav-number">4.</span> <span class="nav-text">Arrays</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%8E%92%E5%BA%8F%E5%82%B3%E5%85%A5%E7%9A%84-array%EF%BC%9A"><span class="nav-number">4.1.</span> <span class="nav-text">排序傳入的 array：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%AF%94%E8%BC%83%E5%85%A9-arrays-%E5%80%BC%E6%98%AF%E5%90%A6%E7%9B%B8%E5%90%8C%EF%BC%9A"><span class="nav-number">4.2.</span> <span class="nav-text">比較兩 arrays 值是否相同：</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#HashMap"><span class="nav-number">5.</span> <span class="nav-text">HashMap</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%8D%B2%E5%8F%96%E6%8C%87%E5%AE%9A-key-%E5%B0%8D%E6%87%89%E7%9A%84-value%EF%BC%9A"><span class="nav-number">5.1.</span> <span class="nav-text">獲取指定 key 對應的 value：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%8D%B2%E5%8F%96%E6%8C%87%E5%AE%9A-key-%E5%B0%8D%E6%87%89%E7%9A%84-value%EF%BC%8C%E8%8B%A5%E6%89%BE%E4%B8%8D%E5%88%B0-key-%E5%B0%B1%E8%BF%94%E5%9B%9E-default%EF%BC%9A"><span class="nav-number">5.2.</span> <span class="nav-text">獲取指定 key 對應的 value，若找不到 key 就返回 default：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%B7%BB%E5%8A%A0%E9%8D%B5%E5%80%BC%E5%B0%8D%EF%BC%9A"><span class="nav-number">5.3.</span> <span class="nav-text">添加鍵值對：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%AA%A2%E6%9F%A5%E6%98%AF%E5%90%A6%E5%AD%98%E5%9C%A8%E6%8C%87%E5%AE%9A-key-%E5%B0%8D%E6%87%89%E7%9A%84%E6%98%A0%E5%B0%84%E9%97%9C%E4%BF%82%EF%BC%9A"><span class="nav-number">5.4.</span> <span class="nav-text">檢查是否存在指定 key 對應的映射關係：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%AA%A2%E6%9F%A5%E6%98%AF%E5%90%A6%E5%AD%98%E5%9C%A8%E6%8C%87%E5%AE%9A-value-%E5%B0%8D%E6%87%89%E7%9A%84%E6%98%A0%E5%B0%84%E9%97%9C%E4%BF%82%EF%BC%9A"><span class="nav-number">5.5.</span> <span class="nav-text">檢查是否存在指定 value 對應的映射關係：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%88%AA%E9%99%A4-key-%E5%B0%8D%E6%87%89%E7%9A%84%E9%8D%B5%E5%80%BC%E5%B0%8D%EF%BC%9A"><span class="nav-number">5.6.</span> <span class="nav-text">刪除 key 對應的鍵值對：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%BF%94%E5%9B%9E-hashmap-%E4%B8%AD%E6%89%80%E6%9C%89-key-%E7%B5%84%E6%88%90%E7%9A%84-set%EF%BC%9A"><span class="nav-number">5.7.</span> <span class="nav-text">返回 hashmap 中所有 key 組成的 set：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%BF%94%E5%9B%9E-hashmap-%E4%B8%AD%E6%89%80%E6%9C%89-value-%E7%B5%84%E6%88%90%E7%9A%84-set%EF%BC%9A"><span class="nav-number">5.8.</span> <span class="nav-text">返回 hashmap 中所有 value 組成的 set：</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#HashSet"><span class="nav-number">6.</span> <span class="nav-text">HashSet</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%B7%BB%E5%8A%A0%E5%85%83%E7%B4%A0%EF%BC%9A"><span class="nav-number">6.1.</span> <span class="nav-text">添加元素：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%88%A4%E6%96%B7%E5%85%83%E7%B4%A0%E6%98%AF%E5%90%A6%E5%AD%98%E5%9C%A8%EF%BC%9A"><span class="nav-number">6.2.</span> <span class="nav-text">判斷元素是否存在：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%88%AA%E9%99%A4%E5%85%83%E7%B4%A0%EF%BC%9A"><span class="nav-number">6.3.</span> <span class="nav-text">刪除元素：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%8D%B2%E5%8F%96-hashset-%E5%A4%A7%E5%B0%8F%EF%BC%9A"><span class="nav-number">6.4.</span> <span class="nav-text">獲取 hashset 大小：</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9F%BA%E7%A4%8E%E5%9E%8B%E5%88%A5%E7%9A%84%E9%A0%90%E8%A8%AD%E5%80%BC"><span class="nav-number">7.</span> <span class="nav-text">基礎型別的預設值</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#int"><span class="nav-number">7.1.</span> <span class="nav-text">int</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%89%E5%85%83%E9%81%8B%E7%AE%97%E5%AD%90"><span class="nav-number">8.</span> <span class="nav-text">三元運算子</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%B5%90%E8%AA%9E"><span class="nav-number">9.</span> <span class="nav-text">結語</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8F%83%E8%80%83%E8%B3%87%E6%96%99"><span class="nav-number">10.</span> <span class="nav-text">參考資料</span></a></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">WCW</p>
+  <div class="site-description" itemprop="description">How I waste my time.</div>
+</div>
+<div class="site-state-wrap animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">37</span>
+          <span class="site-state-item-name">文章</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+          <a href="/categories/">
+        <span class="site-state-item-count">13</span>
+        <span class="site-state-item-name">分類</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+          <a href="/tags/">
+        <span class="site-state-item-count">26</span>
+        <span class="site-state-item-name">標籤</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="cc-license animated" itemprop="license">
+    <span class="exturl cc-opacity" data-url="aHR0cHM6Ly9jcmVhdGl2ZWNvbW1vbnMub3JnL2xpY2Vuc2VzL2J5LW5jLXNhLzQuMC9kZWVkLnpo"><img src="https://cdnjs.cloudflare.com/ajax/libs/creativecommons-vocabulary/2020.11.3/assets/license_badges/small/by_nc_sa.svg" alt="Creative Commons"></span>
+  </div>
+
+
+  <script type="text/javascript" charset="utf-8" src="/js/tagcloud.js"></script>
+  <script type="text/javascript" charset="utf-8" src="/js/tagcanvas.js"></script>
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div id="myCanvasContainer" class="widget tagcloud">
+      <canvas width="250" height="250" id="resCanvas" style="width:100%">
+        <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Arrays-and-Hashing/" rel="tag">Arrays and Hashing</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Binary-Search/" rel="tag">Binary Search</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Chatra/" rel="tag">Chatra</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Disqus/" rel="tag">Disqus</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Firebase/" rel="tag">Firebase</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/GitHub-Pages/" rel="tag">GitHub Pages</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Google-Adsense/" rel="tag">Google Adsense</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Google-Analytics/" rel="tag">Google Analytics</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Google-Search-Console/" rel="tag">Google Search Console</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Greedy/" rel="tag">Greedy</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Hashmap/" rel="tag">Hashmap</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Hexo/" rel="tag">Hexo</a><span class="tag-list-count">13</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Java/" rel="tag">Java</a><span class="tag-list-count">23</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Jira/" rel="tag">Jira</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/LeetCode/" rel="tag">LeetCode</a><span class="tag-list-count">22</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Linked-List/" rel="tag">Linked List</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Markdown/" rel="tag">Markdown</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Microsoft-Bing/" rel="tag">Microsoft Bing</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/NexT/" rel="tag">NexT</a><span class="tag-list-count">6</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Prefix-Sum/" rel="tag">Prefix Sum</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/SEO/" rel="tag">SEO</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Sliding-Window/" rel="tag">Sliding Window</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/String/" rel="tag">String</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Two-Pointer/" rel="tag">Two Pointer</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Webmaster-Tools/" rel="tag">Webmaster Tools</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/xml/" rel="tag">xml</a><span class="tag-list-count">1</span></li></ul>
+      </canvas>
+    </div>
+  </div>
+
+
+
+
+<div class="links-of-blogroll motion-element links-of-blogroll-block">
+<br>
+<div class="links-of-blogroll-title">
+    <!-- 設定你要的fa fa icon-->
+    <i class="fa fa-history fa-" aria-hidden="true"></i>
+    近期文章
+</div>
+<ul class="links-of-blogroll-list">
+    <!---->
+    
+    
+    <li class='pull-left' style="white-space:normal; text-align:left" >
+      <time title="創建時間" itemprop="dateCreated datePublished" datetime="2022-12-29T17:26:48+08:00">
+        12/29
+      </time>
+      <a href="/Hexo/Blog/f48e7c63/" title="Hexo Note 04：NexT 主題菜單 (menu) 進階設置">Hexo Note 04：NexT 主題菜單 (menu) 進階設置</a>
+      <br>
+      <br>
+    </li>
+    
+    <li class='pull-left' style="white-space:normal; text-align:left" >
+      <time title="創建時間" itemprop="dateCreated datePublished" datetime="2022-12-29T11:36:52+08:00">
+        12/29
+      </time>
+      <a href="/LeetCode/Note/Java/Medium/2ce9d3d1/" title="LeetCode Note Java 00438：Find All Anagrams in a String">LeetCode Note Java 00438：Find All Anagrams in a String</a>
+      <br>
+      <br>
+    </li>
+    
+    <li class='pull-left' style="white-space:normal; text-align:left" >
+      <time title="創建時間" itemprop="dateCreated datePublished" datetime="2022-12-27T23:26:39+08:00">
+        12/27
+      </time>
+      <a href="/LeetCode/Note/Java/Medium/2ddf9d28/" title="LeetCode Note Java 00299：Bulls and Cows">LeetCode Note Java 00299：Bulls and Cows</a>
+      <br>
+      <br>
+    </li>
+    
+    <li class='pull-left' style="white-space:normal; text-align:left" >
+      <time title="創建時間" itemprop="dateCreated datePublished" datetime="2022-12-27T17:41:51+08:00">
+        12/27
+      </time>
+      <a href="/Tool/Jira/4ed23e02/" title="Tool Jira 01：Jira 建立 儀表板 (Dashboard)，碼農最舒適設定">Tool Jira 01：Jira 建立 儀表板 (Dashboard)，碼農最舒適設定</a>
+      <br>
+      <br>
+    </li>
+    
+    <li class='pull-left' style="white-space:normal; text-align:left" >
+      <time title="創建時間" itemprop="dateCreated datePublished" datetime="2022-12-23T15:53:17+08:00">
+        12/23
+      </time>
+      <a href="/Hexo/Blog/d951a84f/" title="Hexo Blog 06：NexT 主題加入 Google Adsense">Hexo Blog 06：NexT 主題加入 Google Adsense</a>
+      <br>
+      <br>
+    </li>
+    
+</ul>
+</div>
+
+        </div>
+      </div>
+    </div>
+
+    
+    <div class="sidebar-inner sidebar-blogroll">
+      <div class="links-of-blogroll animated">
+        <div class="links-of-blogroll-title"><i class="fa fa-globe fa-fw"></i>
+          Links
+        </div>
+        <ul class="links-of-blogroll-list">
+            <li class="links-of-blogroll-item">
+              <span class="exturl" data-url="aHR0cHM6Ly81dXBlcmIweS5jb20v" title="https:&#x2F;&#x2F;5uperb0y.com&#x2F;">5uperb0y's blog</span>
+            </li>
+        </ul>
+      </div>
+    </div>
+        <div class="pjax">
+        <div class="sidebar-inner sidebar-post-related">
+          <div class="animated">
+              <div class="links-of-blogroll-title"><i class="fa fa-signs-post fa-fw"></i>
+    相關文章
+  </div>
+  <ul class="popular-posts">
+    <li class="popular-posts-item">
+      <a class="popular-posts-link" href="/LeetCode/Note/Java/Medium/d1b4bfba/" rel="bookmark">
+        <time class="popular-posts-time">2022-12-15</time>
+        <br>
+      LeetCode Note Java 00049：Group Anagrams
+      </a>
+    </li>
+    <li class="popular-posts-item">
+      <a class="popular-posts-link" href="/LeetCode/Note/Java/Easy/448d5637/" rel="bookmark">
+        <time class="popular-posts-time">2022-12-14</time>
+        <br>
+      LeetCode Note Java 00217：Contains Duplicate
+      </a>
+    </li>
+    <li class="popular-posts-item">
+      <a class="popular-posts-link" href="/LeetCode/Note/Java/Easy/637201b9/" rel="bookmark">
+        <time class="popular-posts-time">2022-12-16</time>
+        <br>
+      LeetCode Note Java 00205：Isomorphic Strings
+      </a>
+    </li>
+    <li class="popular-posts-item">
+      <a class="popular-posts-link" href="/LeetCode/Note/Java/Easy/86c77d53/" rel="bookmark">
+        <time class="popular-posts-time">2022-12-15</time>
+        <br>
+      LeetCode Note Java 00242：Valid Anagram
+      </a>
+    </li>
+    <li class="popular-posts-item">
+      <a class="popular-posts-link" href="/LeetCode/Note/Java/Easy/41645b8/" rel="bookmark">
+        <time class="popular-posts-time">2022-12-14</time>
+        <br>
+      LeetCode Note Java 00001：Two Sum
+      </a>
+    </li>
+  </ul>
+
+          </div>
+        </div>
+        </div>
+  </aside>
+
+
+    </div>
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-TW">
+    <link itemprop="mainEntityOfPage" href="https://wcw0310.github.io/Java/Note/76cc3fdb/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="WCW">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hi I'm WCW!">
+      <meta itemprop="description" content="How I waste my time.">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="Java Note 01：常忘 Java 語法 | Hi I'm WCW!">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          Java Note 01：常忘 Java 語法
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">發表於</span>
+
+      <time title="創建時間：2022-12-06 16:33:11" itemprop="dateCreated datePublished" datetime="2022-12-06T16:33:11+08:00">2022-12-06</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新於</span>
+      <time title="修改時間：2022-12-29 23:16:11" itemprop="dateModified" datetime="2022-12-29T23:16:11+08:00">2022-12-29</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分類於</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Java/" itemprop="url" rel="index"><span itemprop="name">Java</span></a>
+        </span>
+          ，
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Java/Note/" itemprop="url" rel="index"><span itemprop="name">Note</span></a>
+        </span>
+    </span>
+
+  
+    <span class="post-meta-item" title="閱讀次數">
+      <span class="post-meta-item-icon">
+        <i class="far fa-eye"></i>
+      </span>
+      <span class="post-meta-item-text">閱讀次數：</span>
+      <span class="firestore-visitors-count"></span>
+    </span>
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus：</span>
+    
+    <a title="disqus" href="/Java/Note/76cc3fdb/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="Java/Note/76cc3fdb/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+    <span class="post-meta-item" title="文章字數">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">文章字數：</span>
+      <span>471</span>
+    </span>
+    <span class="post-meta-item" title="所需閱讀時間">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">所需閱讀時間 &asymp;</span>
+      <span>2 分鐘</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <p>被 IDE 寵壞後，默寫時連迴圈都寫不出來了，趕快來複習一下。</p>
+<span id="more"></span>
+
+
+
+<h2 id="for-loop"><a href="#for-loop" class="headerlink" title="for loop"></a>for loop</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">0</span>; i &lt; <span class="number">5</span>; i++) &#123;</span><br><span class="line">  System.out.println(i);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="String"><a href="#String" class="headerlink" title="String"></a>String</h2><p><span class="exturl" data-url="aHR0cHM6Ly93d3cucnVub29iLmNvbS9qYXZhL2phdmEtc3RyaW5nLmh0bWw=">Java String 类<i class="fa fa-external-link-alt"></i></span></p>
+<h3 id="返回字串長度："><a href="#返回字串長度：" class="headerlink" title="返回字串長度："></a>返回字串長度：</h3><p>int length();</p>
+<h3 id="判斷字串值是否相同"><a href="#判斷字串值是否相同" class="headerlink" title="判斷字串值是否相同"></a>判斷字串值是否相同</h3><p>boolean equals(String value);</p>
+<h3 id="返回指定索引的-char："><a href="#返回指定索引的-char：" class="headerlink" title="返回指定索引的 char："></a>返回指定索引的 char：</h3><p>char charAt(int index);</p>
+<h3 id="返回字串轉換成的-char-："><a href="#返回字串轉換成的-char-：" class="headerlink" title="返回字串轉換成的 char[]："></a>返回字串轉換成的 char[]：</h3><p>char[] toCharArray();</p>
+<h3 id="返回子字串（指定頭尾）："><a href="#返回子字串（指定頭尾）：" class="headerlink" title="返回子字串（指定頭尾）："></a>返回子字串（指定頭尾）：</h3><p>String substring(int beginIndex, int endIndex);<br>注意：包含頭，不包含尾。</p>
+<h3 id="返回子字串（指定頭）："><a href="#返回子字串（指定頭）：" class="headerlink" title="返回子字串（指定頭）："></a>返回子字串（指定頭）：</h3><p>String substring(int beginIndex);</p>
+<h2 id="Array"><a href="#Array" class="headerlink" title="Array"></a>Array</h2><p>建立新 Array 方法：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">int</span>[] intArray = <span class="keyword">new</span> <span class="title class_">int</span>[<span class="number">3</span>]; <span class="comment">// 返回長度為三，空的新 Array</span></span><br><span class="line"><span class="type">int</span>[] intArray2 = &#123;<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>&#125;;</span><br><span class="line"><span class="type">int</span>[] intArray3 = <span class="keyword">new</span> <span class="title class_">int</span>[]&#123;<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>&#125;; <span class="comment">// 返回自定義內容的新 Array</span></span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="Arrays"><a href="#Arrays" class="headerlink" title="Arrays"></a>Arrays</h2><p>Arrays 是處理各式 Array 的工具類。</p>
+<h3 id="排序傳入的-array："><a href="#排序傳入的-array：" class="headerlink" title="排序傳入的 array："></a>排序傳入的 array：</h3><p>Arrays.sort(array);</p>
+<h3 id="比較兩-arrays-值是否相同："><a href="#比較兩-arrays-值是否相同：" class="headerlink" title="比較兩 arrays 值是否相同："></a>比較兩 arrays 值是否相同：</h3><p>Arrays.equals(array1, array2);</p>
+<h2 id="HashMap"><a href="#HashMap" class="headerlink" title="HashMap"></a>HashMap</h2><p><span class="exturl" data-url="aHR0cHM6Ly93d3cucnVub29iLmNvbS9qYXZhL2phdmEtaGFzaG1hcC5odG1s">Java HashMap<i class="fa fa-external-link-alt"></i></span></p>
+<p>需要注意基本類別要換成封裝類別。</p>
+<h3 id="獲取指定-key-對應的-value："><a href="#獲取指定-key-對應的-value：" class="headerlink" title="獲取指定 key 對應的 value："></a>獲取指定 key 對應的 value：</h3><p>hashmap.get(key);</p>
+<h3 id="獲取指定-key-對應的-value，若找不到-key-就返回-default："><a href="#獲取指定-key-對應的-value，若找不到-key-就返回-default：" class="headerlink" title="獲取指定 key 對應的 value，若找不到 key 就返回 default："></a>獲取指定 key 對應的 value，若找不到 key 就返回 default：</h3><p>hashmap.getOrDefault(key, default);</p>
+<h3 id="添加鍵值對："><a href="#添加鍵值對：" class="headerlink" title="添加鍵值對："></a>添加鍵值對：</h3><p>hashmap.set(key, value);</p>
+<h3 id="檢查是否存在指定-key-對應的映射關係："><a href="#檢查是否存在指定-key-對應的映射關係：" class="headerlink" title="檢查是否存在指定 key 對應的映射關係："></a>檢查是否存在指定 key 對應的映射關係：</h3><p>hashmap.containsKey(key);</p>
+<h3 id="檢查是否存在指定-value-對應的映射關係："><a href="#檢查是否存在指定-value-對應的映射關係：" class="headerlink" title="檢查是否存在指定 value 對應的映射關係："></a>檢查是否存在指定 value 對應的映射關係：</h3><p>hashmap.containsValue(value);</p>
+<h3 id="刪除-key-對應的鍵值對："><a href="#刪除-key-對應的鍵值對：" class="headerlink" title="刪除 key 對應的鍵值對："></a>刪除 key 對應的鍵值對：</h3><p>hashmap.remove(key);</p>
+<h3 id="返回-hashmap-中所有-key-組成的-set："><a href="#返回-hashmap-中所有-key-組成的-set：" class="headerlink" title="返回 hashmap 中所有 key 組成的 set："></a>返回 hashmap 中所有 key 組成的 set：</h3><p>hashmap.keySet();</p>
+<h3 id="返回-hashmap-中所有-value-組成的-set："><a href="#返回-hashmap-中所有-value-組成的-set：" class="headerlink" title="返回 hashmap 中所有 value 組成的 set："></a>返回 hashmap 中所有 value 組成的 set：</h3><p>hashmap.values();</p>
+<h2 id="HashSet"><a href="#HashSet" class="headerlink" title="HashSet"></a>HashSet</h2><p><span class="exturl" data-url="aHR0cHM6Ly93d3cucnVub29iLmNvbS9qYXZhL2phdmEtaGFzaHNldC5odG1s">Java HashSet<i class="fa fa-external-link-alt"></i></span></p>
+<p>需要注意基本類別要換成封裝類別。</p>
+<h3 id="添加元素："><a href="#添加元素：" class="headerlink" title="添加元素："></a>添加元素：</h3><p>hashset.add(value);</p>
+<h3 id="判斷元素是否存在："><a href="#判斷元素是否存在：" class="headerlink" title="判斷元素是否存在："></a>判斷元素是否存在：</h3><p>hashset.contains(value);</p>
+<h3 id="刪除元素："><a href="#刪除元素：" class="headerlink" title="刪除元素："></a>刪除元素：</h3><p>hashset.remove(value);</p>
+<h3 id="獲取-hashset-大小："><a href="#獲取-hashset-大小：" class="headerlink" title="獲取 hashset 大小："></a>獲取 hashset 大小：</h3><p>hashset.size();</p>
+<h2 id="基礎型別的預設值"><a href="#基礎型別的預設值" class="headerlink" title="基礎型別的預設值"></a>基礎型別的預設值</h2><h3 id="int"><a href="#int" class="headerlink" title="int"></a>int</h3><p>0</p>
+<h2 id="三元運算子"><a href="#三元運算子" class="headerlink" title="三元運算子"></a>三元運算子</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">判斷式 ？ 若判斷為真執行區塊 ： 若判斷為假執行區塊</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="結語"><a href="#結語" class="headerlink" title="結語"></a>結語</h2><p>隨著科技進步，記憶體容量大到唸不出單位了，我的腦容量卻是連有沒有 1 byte 都不清楚。</p>
+<h2 id="參考資料"><a href="#參考資料" class="headerlink" title="參考資料"></a>參考資料</h2><p><span class="exturl" data-url="aHR0cHM6Ly9zdGFja292ZXJmbG93LmNvbS9xdWVzdGlvbnMvMTIwMDYyMS9ob3ctZG8taS1kZWNsYXJlLWFuZC1pbml0aWFsaXplLWFuLWFycmF5LWluLWphdmE=">How do I declare and initialize an array in Java?<i class="fa fa-external-link-alt"></i></span></p>
+<p><span class="exturl" data-url="aHR0cHM6Ly95dWJpbjU1MS5naXRib29rLmlvL2phdmEtbm90ZS9iYXNpY19qYXZhX3Byb2dyYW1taW5nL29wZXJhdG9yL3Rlcm5hcnlfaW5zdGFuY2VvZg==">三元、型態比對運算子<i class="fa fa-external-link-alt"></i></span></p>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          
+
+<div class="post-copyright">
+<ul>
+  <li class="post-copyright-author">
+      <strong>作者： </strong>WCW
+  </li>
+  <li class="post-copyright-link">
+      <strong>文章連結：</strong>
+      <a href="https://wcw0310.github.io/Java/Note/76cc3fdb/" title="Java Note 01：常忘 Java 語法">https://wcw0310.github.io/Java/Note/76cc3fdb/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版權聲明： </strong>本網誌所有文章除特別聲明外，均採用 <span class="exturl" data-url="aHR0cHM6Ly9jcmVhdGl2ZWNvbW1vbnMub3JnL2xpY2Vuc2VzL2J5LW5jLXNhLzQuMC9kZWVkLnpo"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</span> 許可協議。轉載請註明出處！
+  </li>
+</ul>
+</div>
+
+          <div class="post-tags">
+              <a href="/tags/Java/" rel="tag"><i class="fa fa-tag"></i> Java</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/Hexo/Debug/49ddc6c2/" rel="prev" title="Hexo Debug 03：sitemap.xml error xmlParseEntityRef: no name">
+                  <i class="fa fa-chevron-left"></i> Hexo Debug 03：sitemap.xml error xmlParseEntityRef: no name
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/LeetCode/Note/Java/Easy/41645b8/" rel="next" title="LeetCode Note Java 00001：Two Sum">
+                  LeetCode Note Java 00001：Two Sum <i class="fa fa-chevron-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+    
+  <div class="comments" id="disqus_thread">
+    <noscript>Please enable JavaScript to view the comments powered by Disqus.</noscript>
+  </div>
+  
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+
+<div class="copyright">
+  &copy; 
+  <span itemprop="copyrightYear">2022</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">WCW</span>
+</div>
+<div class="wordcount">
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-line"></i>
+    </span>
+      <span>總字數：</span>
+    <span title="總字數">20k</span>
+  </span>
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+      <span>所需總閱讀時間 &asymp;</span>
+    <span title="所需總閱讀時間">1:11</span>
+  </span>
+</div>
+<div class="busuanzi-count">
+    <span class="post-meta-item" id="busuanzi_container_site_uv">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-user"></i>
+      </span>
+      <span class="site-uv" title="訪客總數">
+        <span id="busuanzi_value_site_uv"></span>
+      </span>
+    </span>
+    <span class="post-meta-item" id="busuanzi_container_site_pv">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-eye"></i>
+      </span>
+      <span class="site-pv" title="總瀏覽次數">
+        <span id="busuanzi_value_site_pv"></span>
+      </span>
+    </span>
+</div>
+
+    </div>
+  </footer>
+
+  
+  <div class="reading-progress-bar"></div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+  
+  <script size="300" alpha="0.6" zIndex="-1" src="https://cdnjs.cloudflare.com/ajax/libs/ribbon.js/1.0.2/ribbon.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/next-theme-pjax/0.6.0/pjax.min.js" integrity="sha256-vxLn1tSKWD4dqbMRyv940UYw4sXgMtYcK6reefzZrao=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js" integrity="sha256-yt2kYMy0w8AbtF89WXb2P1rfjcP/HTHLT7097U8Y5b8=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/lozad.js/1.16.0/lozad.min.js" integrity="sha256-mOFREFhqmHeQbXpK2lp4nA3qooVgACfh88fpJftLBbc=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/next-boot.js"></script><script src="/js/pjax.js"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-generator-searchdb/1.4.1/search.js" integrity="sha256-1kfA5uHPf65M5cphT2dvymhkuyHPQp5A53EGZOnOLmc=" crossorigin="anonymous"></script>
+<script src="/js/third-party/search/local-search.js"></script>
+<script class="next-config" data-name="chatra" type="application/json">{"enable":true,"async":true,"id":"TmLvPs7eB6Zi6GE4o"}</script>
+<script src="/js/third-party/chat/chatra.js"></script>
+<script async src="https://call.chatra.io/chatra.js"></script>
+
+
+
+  <script src="/js/third-party/fancybox.js"></script>
+
+  <script src="/js/third-party/pace.js"></script>
+
+  
+  <script data-pjax async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/firebase/9.14.0/firebase-app-compat.js" integrity="sha256-9fuLFr3ejOEKWkdScSr6YpfK+PGTHGCEyXjpNTMk7To=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/firebase/9.14.0/firebase-firestore-compat.js" integrity="sha256-8LnvBJcioBFBHkk/Xn8U2lUMp8ispXCISYUxgwPNffs=" crossorigin="anonymous"></script>
+  <script class="next-config" data-name="firestore" type="application/json">{"enable":true,"collection":"articles","apiKey":"AIzaSyCSb2r8IVy2gr79FMEa1SwyUO6FhPjEj2c","projectId":"wcw0310blog"}</script>
+  <script src="/js/third-party/statistics/firestore.js"></script>
+
+
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/quicklink/2.3.0/quicklink.umd.js" integrity="sha256-yvJQOINiH9fWemHn0vCA5lsHWJaHs6/ZmO+1Ft04SvM=" crossorigin="anonymous"></script>
+  <script class="next-config" data-name="quicklink" type="application/json">{"enable":true,"home":true,"archive":true,"delay":true,"timeout":3000,"priority":true,"url":"https://wcw0310.github.io/Java/Note/76cc3fdb/"}</script>
+  <script src="/js/third-party/quicklink.js"></script>
+<script class="next-config" data-name="disqus" type="application/json">{"enable":true,"shortname":"wcw0310","count":true,"i18n":{"disqus":"disqus"}}</script>
+<script src="/js/third-party/comments/disqus.js"></script>
+<div class="moon-menu">
+  <div class="moon-menu-items">
+    
+    <div id="moon-menu-item-back2bottom" class="moon-menu-item">
+      <i class='fas fa-chevron-down'></i>    </div>
+    
+    <div id="moon-menu-item-back2top" class="moon-menu-item">
+      <i class='fas fa-chevron-up'></i>    </div>
+    
+  </div>
+  <div class="moon-menu-button">
+    <svg class="moon-menu-bg">
+      <circle class="moon-menu-cricle" cx="50%" cy="50%" r="44%"></circle>
+      <circle class="moon-menu-border" cx="50%" cy="50%" r="48%"></circle>
+    </svg>
+    <div class="moon-menu-content">
+      <div class="moon-menu-icon"><i class='fas fa-ellipsis-v'></i></div>
+      <div class="moon-menu-text"></div>
+    </div>
+  </div>
+</div><script src="/js/injector.js"></script>
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginModelPath":"assets/","model":{"scale":1,"hHeadPos":0.5,"vHeadPos":0.618,"jsonPath":"/live2dw/assets/tororo.model.json"},"display":{"superSample":2,"width":250,"height":500,"position":"left","hOffset":0,"vOffset":-20},"mobile":{"show":false,"scale":0.5},"react":{"opacityDefault":0.7,"opacityOnHover":0.2},"log":false,"pluginJsPath":"lib/","pluginRootPath":"live2dw/","tagMode":false});</script></body>
+</html>
