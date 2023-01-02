@@ -24,12 +24,12 @@
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"wcw0310.github.io","root":"/","images":"/images","scheme":"Gemini","darkmode":true,"version":"8.14.0","exturl":true,"sidebar":{"position":"right","display":"post","padding":18,"offset":12},"copycode":{"enable":true,"style":"flat"},"bookmark":{"enable":false,"color":"#222","save":"manual"},"mediumzoom":false,"lazyload":true,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":true,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜尋...","empty":"我們無法找到任何有關 ${query} 的搜索結果","hits_time":"${hits} 找到 ${time} 個結果","hits":"找到 ${hits} 個結果"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
 
-    <meta name="description" content="更換 Hexo 主題，初探 NexT 最後建出了最基本的 NexT 主題 Blog，看起來簡潔有力，但還是缺很多 Blog 的常見功能。本來以為要到處搜尋 Plugins 之類的，但 NexT 的官方文檔 已經列出了大量的選項與 Plugins，很多功能只要在 config 中啟用就好。  下面我會列出非常必須或啟用後覺得特別有感的功能，並提供我自己的設定給各位參考，此外非常建議大家優先閱讀官方文">
+    <meta name="description" content="前一篇系列文章：更換 Hexo 主題，初探 NexT 最後建出了最基本的 NexT 主題 Blog，看起來簡潔有力，但還是缺很多 Blog 的常見功能。本來以為要到處搜尋 Plugins 之類的，但 NexT 的官方文檔 已經列出了大量的選項與 Plugins，很多功能只要在 config 中啟用就好。 下面我會列出非常必須或啟用後覺得特別有感的功能，並提供我自己的設定給各位參考，此外非常建議大家">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Hexo Blog 03：繼續探索 NexT">
 <meta property="og:url" content="https://wcw0310.github.io/Hexo/Blog/a4c4ed5f/">
 <meta property="og:site_name" content="Hi I&#39;m WCW!">
-<meta property="og:description" content="更換 Hexo 主題，初探 NexT 最後建出了最基本的 NexT 主題 Blog，看起來簡潔有力，但還是缺很多 Blog 的常見功能。本來以為要到處搜尋 Plugins 之類的，但 NexT 的官方文檔 已經列出了大量的選項與 Plugins，很多功能只要在 config 中啟用就好。  下面我會列出非常必須或啟用後覺得特別有感的功能，並提供我自己的設定給各位參考，此外非常建議大家優先閱讀官方文">
+<meta property="og:description" content="前一篇系列文章：更換 Hexo 主題，初探 NexT 最後建出了最基本的 NexT 主題 Blog，看起來簡潔有力，但還是缺很多 Blog 的常見功能。本來以為要到處搜尋 Plugins 之類的，但 NexT 的官方文檔 已經列出了大量的選項與 Plugins，很多功能只要在 config 中啟用就好。 下面我會列出非常必須或啟用後覺得特別有感的功能，並提供我自己的設定給各位參考，此外非常建議大家">
 <meta property="og:locale" content="zh_TW">
 <meta property="og:image" content="https://github.com/WCW0310/blogPicture/blob/master/Hexo/Hexo-Blog-03-Hexo-Theme-NexT-2/nextSettingSample.png?raw=true">
 <meta property="og:image" content="https://github.com/WCW0310/blogPicture/blob/master/Hexo/Hexo-Blog-03-Hexo-Theme-NexT-2/sidebar.png?raw=true">
@@ -46,11 +46,11 @@
 <meta property="og:image" content="https://github.com/WCW0310/blogPicture/blob/master/Hexo/Hexo-Blog-03-Hexo-Theme-NexT-2/search.png?raw=true">
 <meta property="og:image" content="https://github.com/WCW0310/blogPicture/blob/master/Hexo/Hexo-Blog-03-Hexo-Theme-NexT-2/relatedPosts.png?raw=true">
 <meta property="article:published_time" content="2022-12-01T13:04:19.000Z">
-<meta property="article:modified_time" content="2022-12-29T15:16:11.272Z">
+<meta property="article:modified_time" content="2022-12-30T15:59:05.717Z">
 <meta property="article:author" content="WCW">
 <meta property="article:tag" content="Hexo">
-<meta property="article:tag" content="NexT">
 <meta property="article:tag" content="Firebase">
+<meta property="article:tag" content="NexT">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://github.com/WCW0310/blogPicture/blob/master/Hexo/Hexo-Blog-03-Hexo-Theme-NexT-2/nextSettingSample.png?raw=true">
 
@@ -118,7 +118,7 @@
 
 
 <nav class="site-nav">
-  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首頁</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>關於</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>標籤<span class="badge">26</span></a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分類<span class="badge">13</span></a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>歸檔<span class="badge">37</span></a></li>
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首頁</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>關於</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>標籤<span class="badge">27</span></a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分類<span class="badge">13</span></a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>歸檔<span class="badge">38</span></a></li>
       <li class="menu-item menu-item-search">
         <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜尋
         </a>
@@ -169,7 +169,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%88%90%E5%93%81"><span class="nav-number">1.</span> <span class="nav-text">成品</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%92%B0%E5%A2%83"><span class="nav-number">2.</span> <span class="nav-text">環境</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%BB%E9%A1%8C%E6%A8%A3%E5%BC%8F"><span class="nav-number">3.</span> <span class="nav-text">主題樣式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%81%B4%E9%82%8A%E6%AC%84%E4%BD%8D%E7%BD%AE"><span class="nav-number">4.</span> <span class="nav-text">側邊欄位置</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%A6%96%E9%A0%81%E6%96%87%E7%AB%A0%E6%8A%98%E7%96%8A%E8%88%87%E9%96%B1%E8%AE%80%E5%85%A8%E6%96%87%E6%8C%89%E9%88%95"><span class="nav-number">5.</span> <span class="nav-text">首頁文章折疊與閱讀全文按鈕</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%A8%AA%E5%AE%A2%E4%BA%BA%E6%AC%A1-x2F-%E7%B8%BD%E9%96%B1%E8%AE%80%E6%AC%A1%E6%95%B8"><span class="nav-number">6.</span> <span class="nav-text">訪客人次&#x2F;總閱讀次數</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%96%87%E7%AB%A0%E9%96%B1%E8%AE%80%E6%AC%A1%E6%95%B8-firestore"><span class="nav-number">7.</span> <span class="nav-text">文章閱讀次數 (firestore)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%A8%8B%E5%BC%8F%E7%A2%BC%E5%8D%80%E5%A1%8A%E8%A4%87%E8%A3%BD%E6%8C%89%E7%B4%90"><span class="nav-number">8.</span> <span class="nav-text">程式碼區塊複製按紐</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%BF%94%E5%9B%9E%E6%9C%80%E4%B8%8A%E6%8C%89%E9%88%95%E8%AA%BF%E6%95%B4"><span class="nav-number">9.</span> <span class="nav-text">返回最上按鈕調整</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%A0%81%E9%9D%A2%E8%BC%89%E5%85%A5%E9%80%B2%E5%BA%A6%E6%A2%9D"><span class="nav-number">10.</span> <span class="nav-text">頁面載入進度條</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%96%B1%E8%AE%80%E9%80%B2%E5%BA%A6%E6%A2%9D"><span class="nav-number">11.</span> <span class="nav-text">閱讀進度條</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%9B%B8%E7%B1%A4"><span class="nav-number">12.</span> <span class="nav-text">書籤</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%96%87%E7%AB%A0%E5%AD%97%E6%95%B8%E7%B5%B1%E8%A8%88-x2F-%E9%96%B1%E8%AE%80%E6%99%82%E9%96%93%E4%BC%B0%E8%A8%88"><span class="nav-number">13.</span> <span class="nav-text">文章字數統計&#x2F;閱讀時間估計</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%97%9C%E6%96%BC-About-%E3%80%81%E6%A8%99%E7%B1%A4-Tags-%E8%88%87-%E5%88%86%E9%A1%9E-Categories-%E9%A0%81%E9%9D%A2"><span class="nav-number">14.</span> <span class="nav-text">關於 (About)、標籤 (Tags) 與 分類 (Categories) 頁面</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BD%BF%E7%94%A8%E5%BB%BA%E7%AB%8B%E6%96%B0%E9%A0%81%E9%9D%A2%E6%8C%87%E4%BB%A4%EF%BC%9A"><span class="nav-number">14.1.</span> <span class="nav-text">使用建立新頁面指令：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BF%AE%E6%94%B9-custom-name-x2F-index-md%EF%BC%9A"><span class="nav-number">14.2.</span> <span class="nav-text">修改 custom-name&#x2F;index.md：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BF%AE%E6%94%B9%E4%B8%BB%E9%A1%8C%E8%A8%AD%E5%AE%9A%E6%AA%94%EF%BC%9A"><span class="nav-number">14.3.</span> <span class="nav-text">修改主題設定檔：</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%AB%99%E5%85%A7%E6%90%9C%E5%B0%8B"><span class="nav-number">15.</span> <span class="nav-text">站內搜尋</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%9B%B8%E9%97%9C%E6%96%87%E7%AB%A0"><span class="nav-number">16.</span> <span class="nav-text">相關文章</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%B5%90%E8%AA%9E"><span class="nav-number">17.</span> <span class="nav-text">結語</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8F%83%E8%80%83%E8%B3%87%E6%96%99"><span class="nav-number">18.</span> <span class="nav-text">參考資料</span></a></li></ol></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%88%90%E5%93%81"><span class="nav-number">1.</span> <span class="nav-text">成品</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%92%B0%E5%A2%83"><span class="nav-number">2.</span> <span class="nav-text">環境</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%BB%E9%A1%8C%E6%A8%A3%E5%BC%8F"><span class="nav-number">3.</span> <span class="nav-text">主題樣式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%81%B4%E9%82%8A%E6%AC%84%E4%BD%8D%E7%BD%AE"><span class="nav-number">4.</span> <span class="nav-text">側邊欄位置</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%A6%96%E9%A0%81%E6%96%87%E7%AB%A0%E6%8A%98%E7%96%8A%E8%88%87%E9%96%B1%E8%AE%80%E5%85%A8%E6%96%87%E6%8C%89%E9%88%95"><span class="nav-number">5.</span> <span class="nav-text">首頁文章折疊與閱讀全文按鈕</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%A8%AA%E5%AE%A2%E4%BA%BA%E6%AC%A1-x2F-%E7%B8%BD%E9%96%B1%E8%AE%80%E6%AC%A1%E6%95%B8"><span class="nav-number">6.</span> <span class="nav-text">訪客人次&#x2F;總閱讀次數</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%96%87%E7%AB%A0%E9%96%B1%E8%AE%80%E6%AC%A1%E6%95%B8-Firestore"><span class="nav-number">7.</span> <span class="nav-text">文章閱讀次數 (Firestore)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%A8%8B%E5%BC%8F%E7%A2%BC%E5%8D%80%E5%A1%8A%E8%A4%87%E8%A3%BD%E6%8C%89%E7%B4%90"><span class="nav-number">8.</span> <span class="nav-text">程式碼區塊複製按紐</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%BF%94%E5%9B%9E%E6%9C%80%E4%B8%8A%E6%8C%89%E9%88%95%E8%AA%BF%E6%95%B4"><span class="nav-number">9.</span> <span class="nav-text">返回最上按鈕調整</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%A0%81%E9%9D%A2%E8%BC%89%E5%85%A5%E9%80%B2%E5%BA%A6%E6%A2%9D"><span class="nav-number">10.</span> <span class="nav-text">頁面載入進度條</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%96%B1%E8%AE%80%E9%80%B2%E5%BA%A6%E6%A2%9D"><span class="nav-number">11.</span> <span class="nav-text">閱讀進度條</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%9B%B8%E7%B1%A4"><span class="nav-number">12.</span> <span class="nav-text">書籤</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%96%87%E7%AB%A0%E5%AD%97%E6%95%B8%E7%B5%B1%E8%A8%88-x2F-%E9%96%B1%E8%AE%80%E6%99%82%E9%96%93%E4%BC%B0%E8%A8%88"><span class="nav-number">13.</span> <span class="nav-text">文章字數統計&#x2F;閱讀時間估計</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%97%9C%E6%96%BC-About-%E3%80%81%E6%A8%99%E7%B1%A4-Tags-%E8%88%87-%E5%88%86%E9%A1%9E-Categories-%E9%A0%81%E9%9D%A2"><span class="nav-number">14.</span> <span class="nav-text">關於 (About)、標籤 (Tags) 與 分類 (Categories) 頁面</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BD%BF%E7%94%A8%E5%BB%BA%E7%AB%8B%E6%96%B0%E9%A0%81%E9%9D%A2%E6%8C%87%E4%BB%A4%EF%BC%9A"><span class="nav-number">14.1.</span> <span class="nav-text">使用建立新頁面指令：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BF%AE%E6%94%B9-custom-name-x2F-index-md%EF%BC%9A"><span class="nav-number">14.2.</span> <span class="nav-text">修改 custom-name&#x2F;index.md：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BF%AE%E6%94%B9%E4%B8%BB%E9%A1%8C%E8%A8%AD%E5%AE%9A%E6%AA%94%EF%BC%9A"><span class="nav-number">14.3.</span> <span class="nav-text">修改主題設定檔：</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%AB%99%E5%85%A7%E6%90%9C%E5%B0%8B"><span class="nav-number">15.</span> <span class="nav-text">站內搜尋</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%9B%B8%E9%97%9C%E6%96%87%E7%AB%A0"><span class="nav-number">16.</span> <span class="nav-text">相關文章</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%B5%90%E8%AA%9E"><span class="nav-number">17.</span> <span class="nav-text">結語</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8F%83%E8%80%83%E8%B3%87%E6%96%99"><span class="nav-number">18.</span> <span class="nav-text">參考資料</span></a></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -182,7 +182,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">37</span>
+          <span class="site-state-item-count">38</span>
           <span class="site-state-item-name">文章</span>
         </a>
       </div>
@@ -193,7 +193,7 @@
       </div>
       <div class="site-state-item site-state-tags">
           <a href="/tags/">
-        <span class="site-state-item-count">26</span>
+        <span class="site-state-item-count">27</span>
         <span class="site-state-item-name">標籤</span></a>
       </div>
   </nav>
@@ -209,7 +209,7 @@
     <h3 class="widget-title">Tag Cloud</h3>
     <div id="myCanvasContainer" class="widget tagcloud">
       <canvas width="250" height="250" id="resCanvas" style="width:100%">
-        <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Arrays-and-Hashing/" rel="tag">Arrays and Hashing</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Binary-Search/" rel="tag">Binary Search</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Chatra/" rel="tag">Chatra</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Disqus/" rel="tag">Disqus</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Firebase/" rel="tag">Firebase</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/GitHub-Pages/" rel="tag">GitHub Pages</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Google-Adsense/" rel="tag">Google Adsense</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Google-Analytics/" rel="tag">Google Analytics</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Google-Search-Console/" rel="tag">Google Search Console</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Greedy/" rel="tag">Greedy</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Hashmap/" rel="tag">Hashmap</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Hexo/" rel="tag">Hexo</a><span class="tag-list-count">13</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Java/" rel="tag">Java</a><span class="tag-list-count">23</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Jira/" rel="tag">Jira</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/LeetCode/" rel="tag">LeetCode</a><span class="tag-list-count">22</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Linked-List/" rel="tag">Linked List</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Markdown/" rel="tag">Markdown</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Microsoft-Bing/" rel="tag">Microsoft Bing</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/NexT/" rel="tag">NexT</a><span class="tag-list-count">6</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Prefix-Sum/" rel="tag">Prefix Sum</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/SEO/" rel="tag">SEO</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Sliding-Window/" rel="tag">Sliding Window</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/String/" rel="tag">String</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Two-Pointer/" rel="tag">Two Pointer</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Webmaster-Tools/" rel="tag">Webmaster Tools</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/xml/" rel="tag">xml</a><span class="tag-list-count">1</span></li></ul>
+        <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Arrays-and-Hashing/" rel="tag">Arrays and Hashing</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Binary-Search/" rel="tag">Binary Search</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Chatra/" rel="tag">Chatra</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Disqus/" rel="tag">Disqus</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Firebase/" rel="tag">Firebase</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/GitHub/" rel="tag">GitHub</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/GitHub-Pages/" rel="tag">GitHub Pages</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Google-Adsense/" rel="tag">Google Adsense</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Google-Analytics/" rel="tag">Google Analytics</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Google-Search-Console/" rel="tag">Google Search Console</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Greedy/" rel="tag">Greedy</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Hashmap/" rel="tag">Hashmap</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Hexo/" rel="tag">Hexo</a><span class="tag-list-count">14</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Java/" rel="tag">Java</a><span class="tag-list-count">23</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Jira/" rel="tag">Jira</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/LeetCode/" rel="tag">LeetCode</a><span class="tag-list-count">22</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Linked-List/" rel="tag">Linked List</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Markdown/" rel="tag">Markdown</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Microsoft-Bing/" rel="tag">Microsoft Bing</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/NexT/" rel="tag">NexT</a><span class="tag-list-count">6</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Prefix-Sum/" rel="tag">Prefix Sum</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/SEO/" rel="tag">SEO</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Sliding-Window/" rel="tag">Sliding Window</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/String/" rel="tag">String</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Two-Pointer/" rel="tag">Two Pointer</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Webmaster-Tools/" rel="tag">Webmaster Tools</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/xml/" rel="tag">xml</a><span class="tag-list-count">1</span></li></ul>
       </canvas>
     </div>
   </div>
@@ -229,10 +229,19 @@
     
     
     <li class='pull-left' style="white-space:normal; text-align:left" >
+      <time title="創建時間" itemprop="dateCreated datePublished" datetime="2022-12-30T15:33:31+08:00">
+        12/30
+      </time>
+      <a href="/Hexo/Debug/ba57c00/" title="Hexo Debug 04：Hexo 避免機密資訊上傳 GitHub">Hexo Debug 04：Hexo 避免機密資訊上傳 GitHub</a>
+      <br>
+      <br>
+    </li>
+    
+    <li class='pull-left' style="white-space:normal; text-align:left" >
       <time title="創建時間" itemprop="dateCreated datePublished" datetime="2022-12-29T17:26:48+08:00">
         12/29
       </time>
-      <a href="/Hexo/Blog/f48e7c63/" title="Hexo Note 04：NexT 主題菜單 (menu) 進階設置">Hexo Note 04：NexT 主題菜單 (menu) 進階設置</a>
+      <a href="/Hexo/Note/f48e7c63/" title="Hexo Note 04：NexT 主題菜單 (menu) 進階設置">Hexo Note 04：NexT 主題菜單 (menu) 進階設置</a>
       <br>
       <br>
     </li>
@@ -260,15 +269,6 @@
         12/27
       </time>
       <a href="/Tool/Jira/4ed23e02/" title="Tool Jira 01：Jira 建立 儀表板 (Dashboard)，碼農最舒適設定">Tool Jira 01：Jira 建立 儀表板 (Dashboard)，碼農最舒適設定</a>
-      <br>
-      <br>
-    </li>
-    
-    <li class='pull-left' style="white-space:normal; text-align:left" >
-      <time title="創建時間" itemprop="dateCreated datePublished" datetime="2022-12-23T15:53:17+08:00">
-        12/23
-      </time>
-      <a href="/Hexo/Blog/d951a84f/" title="Hexo Blog 06：NexT 主題加入 Google Adsense">Hexo Blog 06：NexT 主題加入 Google Adsense</a>
       <br>
       <br>
     </li>
@@ -308,10 +308,10 @@
       </a>
     </li>
     <li class="popular-posts-item">
-      <a class="popular-posts-link" href="/Hexo/Blog/dceed03/" rel="bookmark">
-        <time class="popular-posts-time">2022-11-23</time>
+      <a class="popular-posts-link" href="/Hexo/Debug/ba57c00/" rel="bookmark">
+        <time class="popular-posts-time">2022-12-30</time>
         <br>
-      Hexo Blog 01：使用 Hexo 迅速在 GitHub Pages 展開 Blog 旅程
+      Hexo Debug 04：Hexo 避免機密資訊上傳 GitHub
       </a>
     </li>
     <li class="popular-posts-item">
@@ -329,10 +329,10 @@
       </a>
     </li>
     <li class="popular-posts-item">
-      <a class="popular-posts-link" href="/Hexo/Blog/f48e7c63/" rel="bookmark">
-        <time class="popular-posts-time">2022-12-29</time>
+      <a class="popular-posts-link" href="/Hexo/Blog/dceed03/" rel="bookmark">
+        <time class="popular-posts-time">2022-11-23</time>
         <br>
-      Hexo Note 04：NexT 主題菜單 (menu) 進階設置
+      Hexo Blog 01：使用 Hexo 迅速在 GitHub Pages 展開 Blog 旅程
       </a>
     </li>
   </ul>
@@ -392,7 +392,7 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新於</span>
-      <time title="修改時間：2022-12-29 23:16:11" itemprop="dateModified" datetime="2022-12-29T23:16:11+08:00">2022-12-29</time>
+      <time title="修改時間：2022-12-30 23:59:05" itemprop="dateModified" datetime="2022-12-30T23:59:05+08:00">2022-12-30</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -453,8 +453,7 @@
     
     
     <div class="post-body" itemprop="articleBody">
-        <a href="/Hexo/Blog/a3d910a8/" title="Hexo Blog 02：更換 Hexo 主題，初探 NexT">更換 Hexo 主題，初探 NexT</a> 最後建出了最基本的 NexT 主題 Blog，看起來簡潔有力，但還是缺很多 Blog 的常見功能。本來以為要到處搜尋 Plugins 之類的，但 <span class="exturl" data-url="aHR0cHM6Ly90aGVtZS1uZXh0LmpzLm9yZy9kb2NzL2dldHRpbmctc3RhcnRlZC9jb25maWd1cmF0aW9uLmh0bWw=">NexT 的官方文檔<i class="fa fa-external-link-alt"></i></span> 已經列出了大量的選項與 Plugins，很多功能只要在 config 中啟用就好。
-
+        <p>前一篇系列文章：<a href="/Hexo/Blog/a3d910a8/" title="Hexo Blog 02：更換 Hexo 主題，初探 NexT">更換 Hexo 主題，初探 NexT</a> 最後建出了最基本的 NexT 主題 Blog，看起來簡潔有力，但還是缺很多 Blog 的常見功能。本來以為要到處搜尋 Plugins 之類的，但 <span class="exturl" data-url="aHR0cHM6Ly90aGVtZS1uZXh0LmpzLm9yZy9kb2NzL2dldHRpbmctc3RhcnRlZC9jb25maWd1cmF0aW9uLmh0bWw=">NexT 的官方文檔<i class="fa fa-external-link-alt"></i></span> 已經列出了大量的選項與 Plugins，很多功能只要在 config 中啟用就好。</p>
 <p>下面我會列出非常必須或啟用後覺得特別有感的功能，並提供我自己的設定給各位參考，此外非常建議大家優先閱讀官方文檔自行嘗試。</p>
 <span id="more"></span>
 
@@ -487,8 +486,8 @@
 <figure class="highlight yaml"><figcaption><span>_config.next.yml</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Show Views / Visitors of the website / page with busuanzi.</span></span><br><span class="line"><span class="comment"># For more information: http://ibruce.info/2015/04/04/busuanzi/</span></span><br><span class="line"><span class="attr">busuanzi_count:</span></span><br><span class="line">  <span class="attr">enable:</span> <span class="literal">true</span></span><br><span class="line">  <span class="attr">total_visitors:</span> <span class="literal">true</span> <span class="comment"># 網站總訪客人數，顯示在頁面底部</span></span><br><span class="line">  <span class="attr">total_visitors_icon:</span> <span class="string">fa</span> <span class="string">fa-user</span></span><br><span class="line">  <span class="attr">total_views:</span> <span class="literal">true</span> <span class="comment"># 網站總閱讀次數，網頁每次刷新都會加一 (快樂表)，顯示在頁面底部</span></span><br><span class="line">  <span class="attr">total_views_icon:</span> <span class="string">fa</span> <span class="string">fa-eye</span></span><br><span class="line">  <span class="attr">post_views:</span> <span class="literal">false</span> <span class="comment"># 文章總閱讀次數，網頁每次刷新都會加一 (快樂表)，顯示在文章標題下方。我個人是使用 firestore 實現非快樂表的此功能</span></span><br><span class="line">  <span class="attr">post_views_icon:</span> <span class="string">far</span> <span class="string">fa-eye</span></span><br></pre></td></tr></table></figure>
 
 <p>頁面底部的訪客人數與閱讀次數<br><img data-src="https://github.com/WCW0310/blogPicture/blob/master/Hexo/Hexo-Blog-03-Hexo-Theme-NexT-2/siteCount.png?raw=true"></p>
-<h2 id="文章閱讀次數-firestore"><a href="#文章閱讀次數-firestore" class="headerlink" title="文章閱讀次數 (firestore)"></a>文章閱讀次數 (firestore)</h2><p>使用 firestore 功能實現的文章閱讀次數，但其實應該說是文章訪客人數，同個瀏覽器重複進入文章是不會增加記數的。</p>
-<p>需要去 <span class="exturl" data-url="aHR0cHM6Ly9jb25zb2xlLmZpcmViYXNlLmdvb2dsZS5jb20vdS8wLw==">Google firebase<i class="fa fa-external-link-alt"></i></span> 建立新專案，並且取得 <code>apiKey</code> 與 <code>projectId</code>。</p>
+<h2 id="文章閱讀次數-Firestore"><a href="#文章閱讀次數-Firestore" class="headerlink" title="文章閱讀次數 (Firestore)"></a>文章閱讀次數 (Firestore)</h2><p>使用 firestore 功能實現的文章閱讀次數，但其實應該說是文章訪客人數，同個瀏覽器重複進入文章是不會增加記數的。</p>
+<p>需要去 <span class="exturl" data-url="aHR0cHM6Ly9jb25zb2xlLmZpcmViYXNlLmdvb2dsZS5jb20vdS8wLw==">Google Firebase<i class="fa fa-external-link-alt"></i></span> 建立新專案，並且取得 <code>apiKey</code> 與 <code>projectId</code>。</p>
 <p>按照 <span class="exturl" data-url="aHR0cHM6Ly90aGVtZS1uZXh0LmpzLm9yZy9kb2NzL3RoaXJkLXBhcnR5LXNlcnZpY2VzL3N0YXRpc3RpY3MtYW5kLWFuYWx5dGljcy5odG1sI0ZpcmViYXNl">NexT 文檔<i class="fa fa-external-link-alt"></i></span> 就可以完成。</p>
 <p>要注意的是 <code>apiKey</code> 必須進入 <code>Authentication</code> 頁面啟用該功能後才會生成。</p>
 <p>之後需要進入 <code>Firestore Database</code> 頁面建立新資料庫，讀取規則需照如下設定：</p>
@@ -592,6 +591,7 @@
 
 <p>相關文章範例<br><img data-src="https://github.com/WCW0310/blogPicture/blob/master/Hexo/Hexo-Blog-03-Hexo-Theme-NexT-2/relatedPosts.png?raw=true"></p>
 <h2 id="結語"><a href="#結語" class="headerlink" title="結語"></a>結語</h2><p>啟用以上功能後，Blog 頁面整個豐富了起來，但目前還是只能供讀者閱讀而已，下次再加上能讓讀者與作者交流的功能。</p>
+<p>下一篇系列文章：<a href="/Hexo/Blog/bf635840/" title="Hexo Blog 04：NexT 主題加入留言與聊天室機制">NexT 主題加入留言與聊天室機制</a></p>
 <h2 id="參考資料"><a href="#參考資料" class="headerlink" title="參考資料"></a>參考資料</h2><p><span class="exturl" data-url="aHR0cHM6Ly93ZWlyZW54dWUuZ2l0aHViLmlvLzIwMjEvMDYvMTEvaGV4b19uZXh0X2ZpcmVzdG9yZV92aXNpdG9ycy8=">Hexo × NexT × Firestore 顯示瀏覽人次<i class="fa fa-external-link-alt"></i></span></p>
 
     </div>
@@ -620,8 +620,8 @@
 
           <div class="post-tags">
               <a href="/tags/Hexo/" rel="tag"><i class="fa fa-tag"></i> Hexo</a>
-              <a href="/tags/NexT/" rel="tag"><i class="fa fa-tag"></i> NexT</a>
               <a href="/tags/Firebase/" rel="tag"><i class="fa fa-tag"></i> Firebase</a>
+              <a href="/tags/NexT/" rel="tag"><i class="fa fa-tag"></i> NexT</a>
           </div>
 
         
@@ -660,8 +660,8 @@
 
 
 <div class="copyright">
-  &copy; 
-  <span itemprop="copyrightYear">2022</span>
+  &copy; 2022 – 
+  <span itemprop="copyrightYear">2023</span>
   <span class="with-love">
     <i class="fa fa-heart"></i>
   </span>
@@ -673,14 +673,14 @@
       <i class="fa fa-chart-line"></i>
     </span>
       <span>總字數：</span>
-    <span title="總字數">20k</span>
+    <span title="總字數">21k</span>
   </span>
   <span class="post-meta-item">
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
       <span>所需總閱讀時間 &asymp;</span>
-    <span title="所需總閱讀時間">1:11</span>
+    <span title="所需總閱讀時間">1:15</span>
   </span>
 </div>
 <div class="busuanzi-count">

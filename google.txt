@@ -1,4 +1,5 @@
-https://wcw0310.github.io/Hexo/Blog/f48e7c63/
+https://wcw0310.github.io/Hexo/Debug/ba57c00/
+https://wcw0310.github.io/Hexo/Note/f48e7c63/
 https://wcw0310.github.io/LeetCode/Note/Java/Medium/2ce9d3d1/
 https://wcw0310.github.io/LeetCode/Note/Java/Medium/2ddf9d28/
 https://wcw0310.github.io/Tool/Jira/4ed23e02/

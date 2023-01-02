@@ -24,12 +24,12 @@
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"wcw0310.github.io","root":"/","images":"/images","scheme":"Gemini","darkmode":true,"version":"8.14.0","exturl":true,"sidebar":{"position":"right","display":"post","padding":18,"offset":12},"copycode":{"enable":true,"style":"flat"},"bookmark":{"enable":false,"color":"#222","save":"manual"},"mediumzoom":false,"lazyload":true,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":true,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜尋...","empty":"我們無法找到任何有關 ${query} 的搜索結果","hits_time":"${hits} 找到 ${time} 個結果","hits":"找到 ${hits} 個結果"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
 
-    <meta name="description" content="繼續探索 NexT 在 NexT 主題啟用了一些 Blog 常見功能，讓文章的簡單量化資訊一目了然。這回來加上讓讀者有機會與我們互動的留言與聊天室機制。">
+    <meta name="description" content="前一篇系列文章：繼續探索 NexT 在 NexT 主題啟用了一些 Blog 常見功能，讓文章的簡單量化資訊一目了然。這回來加上讓讀者有機會與我們互動的留言與聊天室機制。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Hexo Blog 04：NexT 主題加入留言與聊天室機制">
 <meta property="og:url" content="https://wcw0310.github.io/Hexo/Blog/bf635840/">
 <meta property="og:site_name" content="Hi I&#39;m WCW!">
-<meta property="og:description" content="繼續探索 NexT 在 NexT 主題啟用了一些 Blog 常見功能，讓文章的簡單量化資訊一目了然。這回來加上讓讀者有機會與我們互動的留言與聊天室機制。">
+<meta property="og:description" content="前一篇系列文章：繼續探索 NexT 在 NexT 主題啟用了一些 Blog 常見功能，讓文章的簡單量化資訊一目了然。這回來加上讓讀者有機會與我們互動的留言與聊天室機制。">
 <meta property="og:locale" content="zh_TW">
 <meta property="og:image" content="https://github.com/WCW0310/blogPicture/blob/master/Hexo/Hexo-Blog-04-Hexo-Theme-NexT-Comment-and-Chat/getStarted.png?raw=true">
 <meta property="og:image" content="https://github.com/WCW0310/blogPicture/blob/master/Hexo/Hexo-Blog-04-Hexo-Theme-NexT-Comment-and-Chat/installOnMySite.png?raw=true">
@@ -46,7 +46,7 @@
 <meta property="og:image" content="https://github.com/WCW0310/blogPicture/blob/master/Hexo/Hexo-Blog-04-Hexo-Theme-NexT-Comment-and-Chat/chatBTN.png?raw=true">
 <meta property="og:image" content="https://github.com/WCW0310/blogPicture/blob/master/Hexo/Hexo-Blog-04-Hexo-Theme-NexT-Comment-and-Chat/chatRoom.png?raw=true">
 <meta property="article:published_time" content="2022-12-06T04:15:12.000Z">
-<meta property="article:modified_time" content="2022-12-28T13:33:14.109Z">
+<meta property="article:modified_time" content="2022-12-30T15:59:05.718Z">
 <meta property="article:author" content="WCW">
 <meta property="article:tag" content="Hexo">
 <meta property="article:tag" content="NexT">
@@ -119,7 +119,7 @@
 
 
 <nav class="site-nav">
-  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首頁</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>關於</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>標籤<span class="badge">26</span></a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分類<span class="badge">13</span></a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>歸檔<span class="badge">37</span></a></li>
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首頁</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>關於</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>標籤<span class="badge">27</span></a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分類<span class="badge">13</span></a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>歸檔<span class="badge">38</span></a></li>
       <li class="menu-item menu-item-search">
         <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜尋
         </a>
@@ -183,7 +183,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">37</span>
+          <span class="site-state-item-count">38</span>
           <span class="site-state-item-name">文章</span>
         </a>
       </div>
@@ -194,7 +194,7 @@
       </div>
       <div class="site-state-item site-state-tags">
           <a href="/tags/">
-        <span class="site-state-item-count">26</span>
+        <span class="site-state-item-count">27</span>
         <span class="site-state-item-name">標籤</span></a>
       </div>
   </nav>
@@ -210,7 +210,7 @@
     <h3 class="widget-title">Tag Cloud</h3>
     <div id="myCanvasContainer" class="widget tagcloud">
       <canvas width="250" height="250" id="resCanvas" style="width:100%">
-        <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Arrays-and-Hashing/" rel="tag">Arrays and Hashing</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Binary-Search/" rel="tag">Binary Search</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Chatra/" rel="tag">Chatra</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Disqus/" rel="tag">Disqus</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Firebase/" rel="tag">Firebase</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/GitHub-Pages/" rel="tag">GitHub Pages</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Google-Adsense/" rel="tag">Google Adsense</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Google-Analytics/" rel="tag">Google Analytics</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Google-Search-Console/" rel="tag">Google Search Console</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Greedy/" rel="tag">Greedy</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Hashmap/" rel="tag">Hashmap</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Hexo/" rel="tag">Hexo</a><span class="tag-list-count">13</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Java/" rel="tag">Java</a><span class="tag-list-count">23</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Jira/" rel="tag">Jira</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/LeetCode/" rel="tag">LeetCode</a><span class="tag-list-count">22</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Linked-List/" rel="tag">Linked List</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Markdown/" rel="tag">Markdown</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Microsoft-Bing/" rel="tag">Microsoft Bing</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/NexT/" rel="tag">NexT</a><span class="tag-list-count">6</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Prefix-Sum/" rel="tag">Prefix Sum</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/SEO/" rel="tag">SEO</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Sliding-Window/" rel="tag">Sliding Window</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/String/" rel="tag">String</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Two-Pointer/" rel="tag">Two Pointer</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Webmaster-Tools/" rel="tag">Webmaster Tools</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/xml/" rel="tag">xml</a><span class="tag-list-count">1</span></li></ul>
+        <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Arrays-and-Hashing/" rel="tag">Arrays and Hashing</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Binary-Search/" rel="tag">Binary Search</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Chatra/" rel="tag">Chatra</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Disqus/" rel="tag">Disqus</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Firebase/" rel="tag">Firebase</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/GitHub/" rel="tag">GitHub</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/GitHub-Pages/" rel="tag">GitHub Pages</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Google-Adsense/" rel="tag">Google Adsense</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Google-Analytics/" rel="tag">Google Analytics</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Google-Search-Console/" rel="tag">Google Search Console</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Greedy/" rel="tag">Greedy</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Hashmap/" rel="tag">Hashmap</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Hexo/" rel="tag">Hexo</a><span class="tag-list-count">14</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Java/" rel="tag">Java</a><span class="tag-list-count">23</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Jira/" rel="tag">Jira</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/LeetCode/" rel="tag">LeetCode</a><span class="tag-list-count">22</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Linked-List/" rel="tag">Linked List</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Markdown/" rel="tag">Markdown</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Microsoft-Bing/" rel="tag">Microsoft Bing</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/NexT/" rel="tag">NexT</a><span class="tag-list-count">6</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Prefix-Sum/" rel="tag">Prefix Sum</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/SEO/" rel="tag">SEO</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Sliding-Window/" rel="tag">Sliding Window</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/String/" rel="tag">String</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Two-Pointer/" rel="tag">Two Pointer</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Webmaster-Tools/" rel="tag">Webmaster Tools</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/xml/" rel="tag">xml</a><span class="tag-list-count">1</span></li></ul>
       </canvas>
     </div>
   </div>
@@ -230,10 +230,19 @@
     
     
     <li class='pull-left' style="white-space:normal; text-align:left" >
+      <time title="創建時間" itemprop="dateCreated datePublished" datetime="2022-12-30T15:33:31+08:00">
+        12/30
+      </time>
+      <a href="/Hexo/Debug/ba57c00/" title="Hexo Debug 04：Hexo 避免機密資訊上傳 GitHub">Hexo Debug 04：Hexo 避免機密資訊上傳 GitHub</a>
+      <br>
+      <br>
+    </li>
+    
+    <li class='pull-left' style="white-space:normal; text-align:left" >
       <time title="創建時間" itemprop="dateCreated datePublished" datetime="2022-12-29T17:26:48+08:00">
         12/29
       </time>
-      <a href="/Hexo/Blog/f48e7c63/" title="Hexo Note 04：NexT 主題菜單 (menu) 進階設置">Hexo Note 04：NexT 主題菜單 (menu) 進階設置</a>
+      <a href="/Hexo/Note/f48e7c63/" title="Hexo Note 04：NexT 主題菜單 (menu) 進階設置">Hexo Note 04：NexT 主題菜單 (menu) 進階設置</a>
       <br>
       <br>
     </li>
@@ -261,15 +270,6 @@
         12/27
       </time>
       <a href="/Tool/Jira/4ed23e02/" title="Tool Jira 01：Jira 建立 儀表板 (Dashboard)，碼農最舒適設定">Tool Jira 01：Jira 建立 儀表板 (Dashboard)，碼農最舒適設定</a>
-      <br>
-      <br>
-    </li>
-    
-    <li class='pull-left' style="white-space:normal; text-align:left" >
-      <time title="創建時間" itemprop="dateCreated datePublished" datetime="2022-12-23T15:53:17+08:00">
-        12/23
-      </time>
-      <a href="/Hexo/Blog/d951a84f/" title="Hexo Blog 06：NexT 主題加入 Google Adsense">Hexo Blog 06：NexT 主題加入 Google Adsense</a>
       <br>
       <br>
     </li>
@@ -313,13 +313,6 @@
         <time class="popular-posts-time">2022-12-23</time>
         <br>
       Hexo Blog 06：NexT 主題加入 Google Adsense
-      </a>
-    </li>
-    <li class="popular-posts-item">
-      <a class="popular-posts-link" href="/Hexo/Blog/dceed03/" rel="bookmark">
-        <time class="popular-posts-time">2022-11-23</time>
-        <br>
-      Hexo Blog 01：使用 Hexo 迅速在 GitHub Pages 展開 Blog 旅程
       </a>
     </li>
   </ul>
@@ -379,7 +372,7 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新於</span>
-      <time title="修改時間：2022-12-28 21:33:14" itemprop="dateModified" datetime="2022-12-28T21:33:14+08:00">2022-12-28</time>
+      <time title="修改時間：2022-12-30 23:59:05" itemprop="dateModified" datetime="2022-12-30T23:59:05+08:00">2022-12-30</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -422,7 +415,7 @@
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">文章字數：</span>
-      <span>1.1k</span>
+      <span>1.2k</span>
     </span>
     <span class="post-meta-item" title="所需閱讀時間">
       <span class="post-meta-item-icon">
@@ -440,8 +433,7 @@
     
     
     <div class="post-body" itemprop="articleBody">
-        <a href="/Hexo/Blog/a4c4ed5f/" title="Hexo Blog 03：繼續探索 NexT">繼續探索 NexT</a> 在 NexT 主題啟用了一些 Blog 常見功能，讓文章的簡單量化資訊一目了然。這回來加上讓讀者有機會與我們互動的留言與聊天室機制。
-
+        <p>前一篇系列文章：<a href="/Hexo/Blog/a4c4ed5f/" title="Hexo Blog 03：繼續探索 NexT">繼續探索 NexT</a> 在 NexT 主題啟用了一些 Blog 常見功能，讓文章的簡單量化資訊一目了然。這回來加上讓讀者有機會與我們互動的留言與聊天室機制。</p>
 <span id="more"></span>
 
 
@@ -495,6 +487,7 @@
 </li>
 </ul>
 <h2 id="結語"><a href="#結語" class="headerlink" title="結語"></a>結語</h2><p>加入留言與聊天機制後 Blog 幾近完全體，各位可以好好撰寫文章了!</p>
+<p>下一篇系列文章：<a href="/Hexo/Blog/6528a7b6/" title="Hexo Blog 05：NexT 主題 SEO 相關設置">NexT 主題 SEO 相關設置</a></p>
 
     </div>
 
@@ -563,8 +556,8 @@
 
 
 <div class="copyright">
-  &copy; 
-  <span itemprop="copyrightYear">2022</span>
+  &copy; 2022 – 
+  <span itemprop="copyrightYear">2023</span>
   <span class="with-love">
     <i class="fa fa-heart"></i>
   </span>
@@ -576,14 +569,14 @@
       <i class="fa fa-chart-line"></i>
     </span>
       <span>總字數：</span>
-    <span title="總字數">20k</span>
+    <span title="總字數">21k</span>
   </span>
   <span class="post-meta-item">
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
       <span>所需總閱讀時間 &asymp;</span>
-    <span title="所需總閱讀時間">1:11</span>
+    <span title="所需總閱讀時間">1:15</span>
   </span>
 </div>
 <div class="busuanzi-count">

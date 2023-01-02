@@ -24,25 +24,31 @@
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"wcw0310.github.io","root":"/","images":"/images","scheme":"Gemini","darkmode":true,"version":"8.14.0","exturl":true,"sidebar":{"position":"right","display":"post","padding":18,"offset":12},"copycode":{"enable":true,"style":"flat"},"bookmark":{"enable":false,"color":"#222","save":"manual"},"mediumzoom":false,"lazyload":true,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":true,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜尋...","empty":"我們無法找到任何有關 ${query} 的搜索結果","hits_time":"${hits} 找到 ${time} 個結果","hits":"找到 ${hits} 個結果"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
 
-    <meta name="description" content="How I waste my time.">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Hi I&#39;m WCW!">
-<meta property="og:url" content="https://wcw0310.github.io/tags/Java/">
+    <meta name="description" content="先前在 繼續探索 NexT 我將存有 Firestore apiKey 的 _config.next.yml 檔案推到 GitHub 儲存庫中，結果沒過多久就收到陌生的警告 Email，提醒我有機密洩漏，霎那間令我知曉網路上的爬蟲有多兇猛，還好這次來的是正義的爬蟲 😰 既然知道可怕了，就趕快來解除危機吧！">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Hexo Debug 04：Hexo 避免機密資訊上傳 GitHub">
+<meta property="og:url" content="https://wcw0310.github.io/Hexo/Debug/ba57c00/">
 <meta property="og:site_name" content="Hi I&#39;m WCW!">
-<meta property="og:description" content="How I waste my time.">
+<meta property="og:description" content="先前在 繼續探索 NexT 我將存有 Firestore apiKey 的 _config.next.yml 檔案推到 GitHub 儲存庫中，結果沒過多久就收到陌生的警告 Email，提醒我有機密洩漏，霎那間令我知曉網路上的爬蟲有多兇猛，還好這次來的是正義的爬蟲 😰 既然知道可怕了，就趕快來解除危機吧！">
 <meta property="og:locale" content="zh_TW">
+<meta property="og:image" content="https://github.com/WCW0310/blogPicture/blob/master/Hexo/Hexo-Debug-04-Hexo-avoid-confidential-leak-on-GitHub/GitGuardian.png?raw=true">
+<meta property="article:published_time" content="2022-12-30T07:33:31.000Z">
+<meta property="article:modified_time" content="2022-12-30T15:59:05.718Z">
 <meta property="article:author" content="WCW">
+<meta property="article:tag" content="Hexo">
+<meta property="article:tag" content="GitHub">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://github.com/WCW0310/blogPicture/blob/master/Hexo/Hexo-Debug-04-Hexo-avoid-confidential-leak-on-GitHub/GitGuardian.png?raw=true">
 
 
-<link rel="canonical" href="https://wcw0310.github.io/tags/Java/">
+<link rel="canonical" href="https://wcw0310.github.io/Hexo/Debug/ba57c00/">
 
 
 
-<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":false,"lang":"zh-TW","comments":"","permalink":"","path":"tags/Java/index.html","title":""}</script>
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-TW","comments":true,"permalink":"https://wcw0310.github.io/Hexo/Debug/ba57c00/","path":"Hexo/Debug/ba57c00/","title":"Hexo Debug 04：Hexo 避免機密資訊上傳 GitHub"}</script>
 
 <script class="next-config" data-name="calendar" type="application/json">""</script>
-<title>標籤: Java | Hi I'm WCW!</title>
+<title>Hexo Debug 04：Hexo 避免機密資訊上傳 GitHub | Hi I'm WCW!</title>
   
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-NGNFG3T6E5"></script>
   <script class="next-config" data-name="google_analytics" type="application/json">{"tracking_id":"G-NGNFG3T6E5","only_pageview":false}</script>
@@ -136,7 +142,7 @@
   
   <aside class="sidebar">
 
-    <div class="sidebar-inner sidebar-overview-active">
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
       <ul class="sidebar-nav">
         <li class="sidebar-nav-toc">
           文章目錄
@@ -149,6 +155,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%BD%AA%E9%AD%81%E7%A6%8D%E9%A6%96"><span class="nav-number">1.</span> <span class="nav-text">罪魁禍首</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%9C%9F%E6%9C%9B"><span class="nav-number">2.</span> <span class="nav-text">期望</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%83%B3%E6%B3%95"><span class="nav-number">3.</span> <span class="nav-text">想法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%A7%A3%E6%B1%BA%E6%96%B9%E6%B3%95"><span class="nav-number">4.</span> <span class="nav-text">解決方法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%B5%90%E8%AA%9E"><span class="nav-number">5.</span> <span class="nav-text">結語</span></a></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -273,240 +280,229 @@
       </div>
     </div>
         <div class="pjax">
+        <div class="sidebar-inner sidebar-post-related">
+          <div class="animated">
+              <div class="links-of-blogroll-title"><i class="fa fa-signs-post fa-fw"></i>
+    相關文章
+  </div>
+  <ul class="popular-posts">
+    <li class="popular-posts-item">
+      <a class="popular-posts-link" href="/Hexo/Blog/dceed03/" rel="bookmark">
+        <time class="popular-posts-time">2022-11-23</time>
+        <br>
+      Hexo Blog 01：使用 Hexo 迅速在 GitHub Pages 展開 Blog 旅程
+      </a>
+    </li>
+    <li class="popular-posts-item">
+      <a class="popular-posts-link" href="/Hexo/Blog/6528a7b6/" rel="bookmark">
+        <time class="popular-posts-time">2022-12-06</time>
+        <br>
+      Hexo Blog 05：NexT 主題 SEO 相關設置
+      </a>
+    </li>
+    <li class="popular-posts-item">
+      <a class="popular-posts-link" href="/Hexo/Blog/a3d910a8/" rel="bookmark">
+        <time class="popular-posts-time">2022-11-29</time>
+        <br>
+      Hexo Blog 02：更換 Hexo 主題，初探 NexT
+      </a>
+    </li>
+    <li class="popular-posts-item">
+      <a class="popular-posts-link" href="/Hexo/Blog/a4c4ed5f/" rel="bookmark">
+        <time class="popular-posts-time">2022-12-01</time>
+        <br>
+      Hexo Blog 03：繼續探索 NexT
+      </a>
+    </li>
+  </ul>
+
+          </div>
+        </div>
         </div>
   </aside>
 
 
     </div>
 
-    <div class="main-inner tag posts-collapse">
+    <div class="main-inner post posts-expand">
 
 
   
+
+
+<div class="post-block">
   
   
-  <div class="post-block">
-    <div class="post-content">
-      <div class="collection-title">
-        <h1 class="collection-header">Java
-          <small>標籤</small>
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-TW">
+    <link itemprop="mainEntityOfPage" href="https://wcw0310.github.io/Hexo/Debug/ba57c00/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="WCW">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hi I'm WCW!">
+      <meta itemprop="description" content="How I waste my time.">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="Hexo Debug 04：Hexo 避免機密資訊上傳 GitHub | Hi I'm WCW!">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          Hexo Debug 04：Hexo 避免機密資訊上傳 GitHub
         </h1>
-      </div>
 
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">發表於</span>
       
-    <div class="collection-year">
-      <span class="collection-header">2022</span>
+
+      <time title="創建時間：2022-12-30 15:33:31 / 修改時間：23:59:05" itemprop="dateCreated datePublished" datetime="2022-12-30T15:33:31+08:00">2022-12-30</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分類於</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Hexo/" itemprop="url" rel="index"><span itemprop="name">Hexo</span></a>
+        </span>
+          ，
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Hexo/Debug/" itemprop="url" rel="index"><span itemprop="name">Debug</span></a>
+        </span>
+    </span>
+
+  
+    <span class="post-meta-item" title="閱讀次數">
+      <span class="post-meta-item-icon">
+        <i class="far fa-eye"></i>
+      </span>
+      <span class="post-meta-item-text">閱讀次數：</span>
+      <span class="firestore-visitors-count"></span>
+    </span>
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus：</span>
+    
+    <a title="disqus" href="/Hexo/Debug/ba57c00/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="Hexo/Debug/ba57c00/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+    <span class="post-meta-item" title="文章字數">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">文章字數：</span>
+      <span>585</span>
+    </span>
+    <span class="post-meta-item" title="所需閱讀時間">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">所需閱讀時間 &asymp;</span>
+      <span>2 分鐘</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <p>先前在 <a href="/Hexo/Blog/a4c4ed5f/" title="Hexo Blog 03：繼續探索 NexT">繼續探索 NexT</a> 我將存有 Firestore apiKey 的 <code>_config.next.yml</code> 檔案推到 GitHub 儲存庫中，結果沒過多久就收到陌生的警告 Email，提醒我有機密洩漏，霎那間令我知曉網路上的爬蟲有多兇猛，還好這次來的是正義的爬蟲 😰</p>
+<p>既然知道可怕了，就趕快來解除危機吧！</p>
+<span id="more"></span>
+
+
+
+<p>收到的警告信 (正義的爬蟲叫做 GitGuardian)：<br><img data-src="https://github.com/WCW0310/blogPicture/blob/master/Hexo/Hexo-Debug-04-Hexo-avoid-confidential-leak-on-GitHub/GitGuardian.png?raw=true"></p>
+<h2 id="罪魁禍首"><a href="#罪魁禍首" class="headerlink" title="罪魁禍首"></a>罪魁禍首</h2><p>當初照 <span class="exturl" data-url="aHR0cHM6Ly9oZXhvLmlvL3poLXR3L2RvY3MvZ2l0aHViLXBhZ2Vz">Hexo 文檔<i class="fa fa-external-link-alt"></i></span> 的方式部署 Blog 至 GitHub Pages，並沒有提醒要注意機密資訊，而 GitHub Pages 強迫儲存庫的能見度 (visibility) 設為 Public，導致只要有包含機密資訊就一定會洩漏。</p>
+<h2 id="期望"><a href="#期望" class="headerlink" title="期望"></a>期望</h2><p>程式碼中的機密資訊依然可以使用 GitHub 保存，但又不要輕易外流。</p>
+<h2 id="想法"><a href="#想法" class="headerlink" title="想法"></a>想法</h2><ul>
+<li><p>在 <code>.gitignore</code> 中加入 <code>_config.next.yml</code>：<br>這樣雖然可以避免洩漏資訊，但需要額外管理檔案，有違懶人的宗旨，只好否決。</p>
+</li>
+<li><p>讓 GitHub Pages 變為 Private：<br>這樣會直接讓 Blog 無法部屬，但可以嘗試換一種方式實現。</p>
+</li>
+</ul>
+<h2 id="解決方法"><a href="#解決方法" class="headerlink" title="解決方法"></a>解決方法</h2><p>就是很單純的在 GitHub 多開一個 Private 的儲存庫專門拿來放 Blog 專案。</p>
+<p>GitHub Pages 儲存庫就讓它專門放 Hexo 生成的靜態網頁檔案，用兩個儲存庫來各司其職。</p>
+<p>這兩件工作照 <span class="exturl" data-url="aHR0cHM6Ly9oZXhvLmlvL3poLXR3L2RvY3MvZ2l0aHViLXBhZ2Vz">Hexo 文檔<i class="fa fa-external-link-alt"></i></span> 的做法是分成兩個 Branch 來達成，main 用來存放 Blog 專案，gh-pages 用來存放靜態網頁檔案。</p>
+<p>雖然使用了兩個儲存庫，但消耗的精力其實是相同的，因為部屬 Blog 網站時我們都是用 <code>hexo deploy</code> 指令呼叫套件完成工作，套件會自動幫我們把靜態網頁檔案推至 GitHub Pages 儲存庫，我們只需要創建儲存庫跟設定好部署資訊即可。</p>
+<p>多開的 Private 儲存庫就會變成我們平常更新文章與 Hexo 設定的工作儲存庫。</p>
+<p>我把實作方法更新至 <a href="/Hexo/Blog/dceed03/" title="Hexo Blog 01：使用 Hexo 迅速在 GitHub Pages 展開 Blog 旅程">使用 Hexo 迅速在 GitHub Pages 展開 Blog 旅程</a> 跟著步驟實作就好，讓大家少走彎路。</p>
+<h2 id="結語"><a href="#結語" class="headerlink" title="結語"></a>結語</h2><p>雖然說將敏感內容藏進 Private 的儲存庫，但很多敏感資訊其實在開啟 Blog 網站後按 F12 就能直接找到 😂</p>
+
     </div>
 
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-      <div class="post-meta-container">
-        <time itemprop="dateCreated"
-              datetime="2022-12-29T11:36:52+08:00"
-              content="2022-12-29">
-          12-29
-        </time>
-      </div>
+    
+    
+    
 
-      <div class="post-title">
-          <a class="post-title-link" href="/LeetCode/Note/Java/Medium/2ce9d3d1/" itemprop="url">
-            <span itemprop="name">LeetCode Note Java 00438：Find All Anagrams in a String</span>
-          </a>
-      </div>
+    <footer class="post-footer">
+          
 
-      
-    </header>
+<div class="post-copyright">
+<ul>
+  <li class="post-copyright-author">
+      <strong>作者： </strong>WCW
+  </li>
+  <li class="post-copyright-link">
+      <strong>文章連結：</strong>
+      <a href="https://wcw0310.github.io/Hexo/Debug/ba57c00/" title="Hexo Debug 04：Hexo 避免機密資訊上傳 GitHub">https://wcw0310.github.io/Hexo/Debug/ba57c00/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版權聲明： </strong>本網誌所有文章除特別聲明外，均採用 <span class="exturl" data-url="aHR0cHM6Ly9jcmVhdGl2ZWNvbW1vbnMub3JnL2xpY2Vuc2VzL2J5LW5jLXNhLzQuMC9kZWVkLnpo"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</span> 許可協議。轉載請註明出處！
+  </li>
+</ul>
+</div>
+
+          <div class="post-tags">
+              <a href="/tags/Hexo/" rel="tag"><i class="fa fa-tag"></i> Hexo</a>
+              <a href="/tags/GitHub/" rel="tag"><i class="fa fa-tag"></i> GitHub</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/Hexo/Note/f48e7c63/" rel="prev" title="Hexo Note 04：NexT 主題菜單 (menu) 進階設置">
+                  <i class="fa fa-chevron-left"></i> Hexo Note 04：NexT 主題菜單 (menu) 進階設置
+                </a>
+            </div>
+            <div class="post-nav-item">
+            </div>
+          </div>
+    </footer>
   </article>
+</div>
 
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-      <div class="post-meta-container">
-        <time itemprop="dateCreated"
-              datetime="2022-12-27T23:26:39+08:00"
-              content="2022-12-27">
-          12-27
-        </time>
-      </div>
 
-      <div class="post-title">
-          <a class="post-title-link" href="/LeetCode/Note/Java/Medium/2ddf9d28/" itemprop="url">
-            <span itemprop="name">LeetCode Note Java 00299：Bulls and Cows</span>
-          </a>
-      </div>
 
-      
-    </header>
-  </article>
 
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-      <div class="post-meta-container">
-        <time itemprop="dateCreated"
-              datetime="2022-12-21T17:16:34+08:00"
-              content="2022-12-21">
-          12-21
-        </time>
-      </div>
 
-      <div class="post-title">
-          <a class="post-title-link" href="/LeetCode/Note/Java/Easy/243cafb6/" itemprop="url">
-            <span itemprop="name">LeetCode Note Java 00278：First Bad Version</span>
-          </a>
-      </div>
 
-      
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-      <div class="post-meta-container">
-        <time itemprop="dateCreated"
-              datetime="2022-12-21T14:06:42+08:00"
-              content="2022-12-21">
-          12-21
-        </time>
-      </div>
-
-      <div class="post-title">
-          <a class="post-title-link" href="/LeetCode/Note/Java/Easy/bff93c45/" itemprop="url">
-            <span itemprop="name">LeetCode Note Java 00704：Binary Search</span>
-          </a>
-      </div>
-
-      
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-      <div class="post-meta-container">
-        <time itemprop="dateCreated"
-              datetime="2022-12-19T18:01:08+08:00"
-              content="2022-12-19">
-          12-19
-        </time>
-      </div>
-
-      <div class="post-title">
-          <a class="post-title-link" href="/LeetCode/Note/Java/Easy/645a0db9/" itemprop="url">
-            <span itemprop="name">LeetCode Note Java 00014：Longest Common Prefix</span>
-          </a>
-      </div>
-
-      
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-      <div class="post-meta-container">
-        <time itemprop="dateCreated"
-              datetime="2022-12-19T15:30:52+08:00"
-              content="2022-12-19">
-          12-19
-        </time>
-      </div>
-
-      <div class="post-title">
-          <a class="post-title-link" href="/LeetCode/Note/Java/Easy/f4685209/" itemprop="url">
-            <span itemprop="name">LeetCode Note Java 00409：Longest Palindrome</span>
-          </a>
-      </div>
-
-      
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-      <div class="post-meta-container">
-        <time itemprop="dateCreated"
-              datetime="2022-12-19T11:58:51+08:00"
-              content="2022-12-19">
-          12-19
-        </time>
-      </div>
-
-      <div class="post-title">
-          <a class="post-title-link" href="/LeetCode/Note/Java/Easy/a41baae5/" itemprop="url">
-            <span itemprop="name">LeetCode Note Java 00121：Best Time to Buy and Sell Stock</span>
-          </a>
-      </div>
-
-      
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-      <div class="post-meta-container">
-        <time itemprop="dateCreated"
-              datetime="2022-12-18T20:11:16+08:00"
-              content="2022-12-18">
-          12-18
-        </time>
-      </div>
-
-      <div class="post-title">
-          <a class="post-title-link" href="/LeetCode/Note/Java/Easy/30f3f015/" itemprop="url">
-            <span itemprop="name">LeetCode Note Java 00141：Linked List Cycle</span>
-          </a>
-      </div>
-
-      
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-      <div class="post-meta-container">
-        <time itemprop="dateCreated"
-              datetime="2022-12-18T17:34:51+08:00"
-              content="2022-12-18">
-          12-18
-        </time>
-      </div>
-
-      <div class="post-title">
-          <a class="post-title-link" href="/LeetCode/Note/Java/Medium/9b4c1812/" itemprop="url">
-            <span itemprop="name">LeetCode Note Java 00142：Linked List Cycle II</span>
-          </a>
-      </div>
-
-      
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-      <div class="post-meta-container">
-        <time itemprop="dateCreated"
-              datetime="2022-12-18T14:55:39+08:00"
-              content="2022-12-18">
-          12-18
-        </time>
-      </div>
-
-      <div class="post-title">
-          <a class="post-title-link" href="/LeetCode/Note/Java/Easy/61390e2b/" itemprop="url">
-            <span itemprop="name">LeetCode Note Java 00876：Middle of the Linked List</span>
-          </a>
-      </div>
-
-      
-    </header>
-  </article>
-
-    </div>
+    
+  <div class="comments" id="disqus_thread">
+    <noscript>Please enable JavaScript to view the comments powered by Disqus.</noscript>
   </div>
   
-  
-  
-  <nav class="pagination">
-    <span class="page-number current">1</span><a class="page-number" href="/tags/Java/page/2/">2</a><a class="page-number" href="/tags/Java/page/3/">3</a><a class="extend next" rel="next" title="下一頁" aria-label="下一頁" href="/tags/Java/page/2/"><i class="fa fa-angle-right"></i></a>
-  </nav>
-
 </div>
   </main>
 
@@ -600,7 +596,7 @@
 
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/quicklink/2.3.0/quicklink.umd.js" integrity="sha256-yvJQOINiH9fWemHn0vCA5lsHWJaHs6/ZmO+1Ft04SvM=" crossorigin="anonymous"></script>
-  <script class="next-config" data-name="quicklink" type="application/json">{"enable":true,"home":true,"archive":true,"delay":true,"timeout":3000,"priority":true,"url":"https://wcw0310.github.io/tags/Java/"}</script>
+  <script class="next-config" data-name="quicklink" type="application/json">{"enable":true,"home":true,"archive":true,"delay":true,"timeout":3000,"priority":true,"url":"https://wcw0310.github.io/Hexo/Debug/ba57c00/"}</script>
   <script src="/js/third-party/quicklink.js"></script>
 <script class="next-config" data-name="disqus" type="application/json">{"enable":true,"shortname":"wcw0310","count":true,"i18n":{"disqus":"disqus"}}</script>
 <script src="/js/third-party/comments/disqus.js"></script>
