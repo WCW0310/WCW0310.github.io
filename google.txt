@@ -1,3 +1,7 @@
+https://wcw0310.github.io/LeetCode/Note/Java/Medium/5882686f/
+https://wcw0310.github.io/LeetCode/Note/Java/Medium/4ed39218/
+https://wcw0310.github.io/LeetCode/Note/Java/Medium/90bfb5ca/
+https://wcw0310.github.io/Android/Note/85ba8edf/
 https://wcw0310.github.io/LeetCode/Note/Java/Easy/e64a5a32/
 https://wcw0310.github.io/LeetCode/Note/Java/Medium/b92d4adc/
 https://wcw0310.github.io/LeetCode/Note/Java/Medium/b8b7538/
@@ -44,7 +48,3 @@ https://wcw0310.github.io/Hexo/Debug/49ddc6c2/
 https://wcw0310.github.io/Hexo/Blog/6528a7b6/
 https://wcw0310.github.io/Hexo/Blog/bf635840/
 https://wcw0310.github.io/Hexo/Debug/ec97b114/
-https://wcw0310.github.io/Hexo/Blog/a4c4ed5f/
-https://wcw0310.github.io/Hexo/Blog/a3d910a8/
-https://wcw0310.github.io/Hexo/Debug/9eeddd48/
-https://wcw0310.github.io/Hexo/Note/e88d5645/
