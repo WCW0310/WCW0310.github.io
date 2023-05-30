@@ -24,30 +24,25 @@
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"wcw0310.github.io","root":"/","images":"/images","scheme":"Gemini","darkmode":true,"version":"8.14.2","exturl":true,"sidebar":{"position":"right","display":"post","padding":18,"offset":12},"copycode":{"enable":true,"style":"flat"},"bookmark":{"enable":false,"color":"#222","save":"manual"},"mediumzoom":false,"lazyload":true,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":true,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜尋...","empty":"我們無法找到任何有關 ${query} 的搜索結果","hits_time":"${hits} 找到 ${time} 個結果","hits":"找到 ${hits} 個結果"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
 
-    <meta name="description" content="判斷輸入的數字是否回文。">
-<meta property="og:type" content="article">
-<meta property="og:title" content="LeetCode Note Java 00009：Palindrome Number">
-<meta property="og:url" content="https://wcw0310.github.io/LeetCode/Note/Java/Easy/a985eb04/">
+    <meta name="description" content="How I waste my time.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Hi I&#39;m WCW!">
+<meta property="og:url" content="https://wcw0310.github.io/archives/2023/05/">
 <meta property="og:site_name" content="Hi I&#39;m WCW!">
-<meta property="og:description" content="判斷輸入的數字是否回文。">
+<meta property="og:description" content="How I waste my time.">
 <meta property="og:locale" content="zh_TW">
-<meta property="article:published_time" content="2022-12-15T17:46:37.000Z">
-<meta property="article:modified_time" content="2023-02-25T09:52:12.128Z">
 <meta property="article:author" content="WCW">
-<meta property="article:tag" content="Java">
-<meta property="article:tag" content="LeetCode">
-<meta property="article:tag" content="math">
 <meta name="twitter:card" content="summary">
 
 
-<link rel="canonical" href="https://wcw0310.github.io/LeetCode/Note/Java/Easy/a985eb04/">
+<link rel="canonical" href="https://wcw0310.github.io/archives/2023/05/">
 
 
 
-<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-TW","comments":true,"permalink":"https://wcw0310.github.io/LeetCode/Note/Java/Easy/a985eb04/","path":"LeetCode/Note/Java/Easy/a985eb04/","title":"LeetCode Note Java 00009：Palindrome Number"}</script>
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":false,"lang":"zh-TW","comments":"","permalink":"","path":"archives/2023/05/index.html","title":""}</script>
 
 <script class="next-config" data-name="calendar" type="application/json">""</script>
-<title>LeetCode Note Java 00009：Palindrome Number | Hi I'm WCW!</title>
+<title>歸檔 | Hi I'm WCW!</title>
   
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-NGNFG3T6E5"></script>
   <script class="next-config" data-name="google_analytics" type="application/json">{"tracking_id":"G-NGNFG3T6E5","only_pageview":false}</script>
@@ -85,7 +80,7 @@
 
     <a href="/" class="brand" rel="start">
       <i class="logo-line"></i>
-      <p class="site-title">Hi I'm WCW!</p>
+      <h1 class="site-title">Hi I'm WCW!</h1>
       <i class="logo-line"></i>
     </a>
       <p class="site-subtitle" itemprop="description">WCW's blog</p>
@@ -139,7 +134,7 @@
   
   <aside class="sidebar">
 
-    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+    <div class="sidebar-inner sidebar-overview-active">
       <ul class="sidebar-nav">
         <li class="sidebar-nav-toc">
           文章目錄
@@ -152,7 +147,6 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%A1%8C%E7%9B%AE"><span class="nav-number">1.</span> <span class="nav-text">題目</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%88%91%E7%9A%84%E8%A7%A3%E6%B3%95"><span class="nav-number">2.</span> <span class="nav-text">我的解法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%AA%A2%E8%A8%8E"><span class="nav-number">3.</span> <span class="nav-text">檢討</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8F%83%E8%80%83%E8%B3%87%E6%96%99"><span class="nav-number">4.</span> <span class="nav-text">參考資料</span></a></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -277,247 +271,57 @@
       </div>
     </div>
         <div class="pjax">
-        <div class="sidebar-inner sidebar-post-related">
-          <div class="animated">
-              <div class="links-of-blogroll-title"><i class="fa fa-signs-post fa-fw"></i>
-    相關文章
-  </div>
-  <ul class="popular-posts">
-    <li class="popular-posts-item">
-      <a class="popular-posts-link" href="/LeetCode/Note/Java/Easy/f4685209/" rel="bookmark">
-        <time class="popular-posts-time">2022-12-19</time>
-        <br>
-      LeetCode Note Java 00409：Longest Palindrome
-      </a>
-    </li>
-    <li class="popular-posts-item">
-      <a class="popular-posts-link" href="/LeetCode/Note/Java/Easy/e64a5a32/" rel="bookmark">
-        <time class="popular-posts-time">2023-01-07</time>
-        <br>
-      LeetCode Note Java 00125：Valid Palindrome
-      </a>
-    </li>
-    <li class="popular-posts-item">
-      <a class="popular-posts-link" href="/LeetCode/Note/Java/Medium/90bfb5ca/" rel="bookmark">
-        <time class="popular-posts-time">2023-01-10</time>
-        <br>
-      LeetCode Note Java 00167：Two Sum II - Input Array Is Sorted
-      </a>
-    </li>
-    <li class="popular-posts-item">
-      <a class="popular-posts-link" href="/LeetCode/Note/Java/Medium/2ddf9d28/" rel="bookmark">
-        <time class="popular-posts-time">2022-12-27</time>
-        <br>
-      LeetCode Note Java 00299：Bulls and Cows
-      </a>
-    </li>
-    <li class="popular-posts-item">
-      <a class="popular-posts-link" href="/LeetCode/Note/Java/Easy/86c77d53/" rel="bookmark">
-        <time class="popular-posts-time">2022-12-15</time>
-        <br>
-      LeetCode Note Java 00242：Valid Anagram
-      </a>
-    </li>
-  </ul>
-
-          </div>
-        </div>
         </div>
   </aside>
 
 
     </div>
 
-    <div class="main-inner post posts-expand">
+    <div class="main-inner archive posts-collapse">
 
 
   
-
-
-<div class="post-block">
   
   
+  <div class="post-block">
+    <div class="post-content">
+      <div class="collection-title">
+        
+        <span class="collection-header">好! 目前共有 64 篇文章。 繼續努力。</span>
+      </div>
 
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-TW">
-    <link itemprop="mainEntityOfPage" href="https://wcw0310.github.io/LeetCode/Note/Java/Easy/a985eb04/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="WCW">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hi I'm WCW!">
-      <meta itemprop="description" content="How I waste my time.">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="LeetCode Note Java 00009：Palindrome Number | Hi I'm WCW!">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
-          LeetCode Note Java 00009：Palindrome Number
-        </h1>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">發表於</span>
-
-      <time title="創建時間：2022-12-16 01:46:37" itemprop="dateCreated datePublished" datetime="2022-12-16T01:46:37+08:00">2022-12-16</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar-check"></i>
-      </span>
-      <span class="post-meta-item-text">更新於</span>
-      <time title="修改時間：2023-02-25 17:52:12" itemprop="dateModified" datetime="2023-02-25T17:52:12+08:00">2023-02-25</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">分類於</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/LeetCode/" itemprop="url" rel="index"><span itemprop="name">LeetCode</span></a>
-        </span>
-          ，
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/LeetCode/Note/" itemprop="url" rel="index"><span itemprop="name">Note</span></a>
-        </span>
-          ，
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/LeetCode/Note/Java/" itemprop="url" rel="index"><span itemprop="name">Java</span></a>
-        </span>
-          ，
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/LeetCode/Note/Java/Easy/" itemprop="url" rel="index"><span itemprop="name">Easy</span></a>
-        </span>
-    </span>
-
-  
-    <span class="post-meta-item" title="閱讀次數">
-      <span class="post-meta-item-icon">
-        <i class="far fa-eye"></i>
-      </span>
-      <span class="post-meta-item-text">閱讀次數：</span>
-      <span class="firestore-visitors-count"></span>
-    </span>
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Disqus：</span>
-    
-    <a title="disqus" href="/LeetCode/Note/Java/Easy/a985eb04/#disqus_thread" itemprop="discussionUrl">
-      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="LeetCode/Note/Java/Easy/a985eb04/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-    <span class="post-meta-item" title="文章字數">
-      <span class="post-meta-item-icon">
-        <i class="far fa-file-word"></i>
-      </span>
-      <span class="post-meta-item-text">文章字數：</span>
-      <span>283</span>
-    </span>
-    <span class="post-meta-item" title="所需閱讀時間">
-      <span class="post-meta-item-icon">
-        <i class="far fa-clock"></i>
-      </span>
-      <span class="post-meta-item-text">所需閱讀時間 &asymp;</span>
-      <span>1 分鐘</span>
-    </span>
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-        <p>判斷輸入的數字是否回文。</p>
-<span id="more"></span>
-
-
-
-<h2 id="題目"><a href="#題目" class="headerlink" title="題目"></a>題目</h2><p><span class="exturl" data-url="aHR0cHM6Ly9sZWV0Y29kZS5jb20vcHJvYmxlbXMvcGFsaW5kcm9tZS1udW1iZXIv">Palindrome Number<i class="fa fa-external-link-alt"></i></span> Easy</p>
-<p>Given an integer x, return true if x is a palindrome, and false otherwise.</p>
-<h2 id="我的解法"><a href="#我的解法" class="headerlink" title="我的解法"></a>我的解法</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="type">boolean</span> <span class="title function_">isPalindrome</span><span class="params">(<span class="type">int</span> x)</span> &#123;</span><br><span class="line">        <span class="type">String</span> <span class="variable">xs</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">String</span>(<span class="string">&quot;&quot;</span> + x);</span><br><span class="line">        <span class="type">char</span>[] xca = xs.toCharArray();</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">0</span>; i &lt; xca.length; i++) &#123;</span><br><span class="line">            <span class="keyword">if</span> (xca[i] != xca[xca.length - <span class="number">1</span> - i]) &#123;</span><br><span class="line">                <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>將 int 做成 String，再轉成 charArray，最後用迴圈比較頭尾是否相同。</p>
-<h2 id="檢討"><a href="#檢討" class="headerlink" title="檢討"></a>檢討</h2><p>我應該是不想處理數字，所以傾向於轉換成文字，但講究時間或空間效率的好像不建議這樣做。</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line">    <span class="keyword">static</span> <span class="type">int</span> v;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="type">boolean</span> <span class="title function_">isPalindrome</span><span class="params">(<span class="type">int</span> x)</span> &#123;</span><br><span class="line">        <span class="comment">//optimizations</span></span><br><span class="line">        <span class="keyword">if</span>(x&lt;<span class="number">0</span>) <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">        <span class="keyword">if</span>(x&lt;<span class="number">10</span>) <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">        <span class="keyword">if</span>(x%<span class="number">10</span>==<span class="number">0</span>) <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">        <span class="keyword">if</span>(x&lt;<span class="number">100</span>&amp;&amp;x%<span class="number">11</span>==<span class="number">0</span>) <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">        <span class="keyword">if</span>(x&lt;<span class="number">1000</span>&amp;&amp;((x/<span class="number">100</span>)*<span class="number">10</span>+x%<span class="number">10</span>)%<span class="number">11</span>==<span class="number">0</span>) <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line"></span><br><span class="line">        <span class="comment">//actual logic</span></span><br><span class="line">        v=x%<span class="number">10</span>;</span><br><span class="line">        x=x/<span class="number">10</span>;</span><br><span class="line">        <span class="keyword">while</span>(x-v&gt;<span class="number">0</span>)</span><br><span class="line">        &#123;</span><br><span class="line">                v=v*<span class="number">10</span>+x%<span class="number">10</span>;</span><br><span class="line">                x/=<span class="number">10</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span>(v&gt;x)&#123;v/=<span class="number">10</span>;&#125;</span><br><span class="line">        <span class="keyword">return</span> v==x?<span class="literal">true</span>:<span class="literal">false</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>看到別人先判斷了一些快捷選項來減少計算，覺得可能滿重要的，不過解題通常都是想要快且正確，思考這些不知道是不是對實際開發比較好？</p>
-<h2 id="參考資料"><a href="#參考資料" class="headerlink" title="參考資料"></a>參考資料</h2><p><span class="exturl" data-url="aHR0cHM6Ly9sZWV0Y29kZS5jb20vcHJvYmxlbXMvcGFsaW5kcm9tZS1udW1iZXIvc29sdXRpb25zLzUzMTcvOS1tcy1qYXZhLWJlYXRzLTk5LTUtamF2YS1zb2x1dGlvbnMtZWFzeS10by11bmRlcnN0YW5kLw==">[9 ms JAVA] Beats 99.5 java solutions, easy to understand<i class="fa fa-external-link-alt"></i></span></p>
-
+      
+    <div class="collection-year">
+      <span class="collection-header">2023</span>
     </div>
 
-    
-    
-    
+  <article itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+      <div class="post-meta-container">
+        <time itemprop="dateCreated"
+              datetime="2023-05-30T20:52:40+08:00"
+              content="2023-05-30">
+          05-30
+        </time>
+      </div>
 
-    <footer class="post-footer">
-          
+      <div class="post-title">
+          <a class="post-title-link" href="/React-Native/Note/2775b30c/" itemprop="url">
+            <span itemprop="name">React Native Note：Custom Components</span>
+          </a>
+      </div>
 
-<div class="post-copyright">
-<ul>
-  <li class="post-copyright-author">
-      <strong>作者： </strong>WCW
-  </li>
-  <li class="post-copyright-link">
-      <strong>文章連結：</strong>
-      <a href="https://wcw0310.github.io/LeetCode/Note/Java/Easy/a985eb04/" title="LeetCode Note Java 00009：Palindrome Number">https://wcw0310.github.io/LeetCode/Note/Java/Easy/a985eb04/</a>
-  </li>
-  <li class="post-copyright-license">
-    <strong>版權聲明： </strong>本網誌所有文章除特別聲明外，均採用 <span class="exturl" data-url="aHR0cHM6Ly9jcmVhdGl2ZWNvbW1vbnMub3JnL2xpY2Vuc2VzL2J5LW5jLXNhLzQuMC9kZWVkLnpo"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</span> 許可協議。轉載請註明出處！
-  </li>
-</ul>
-</div>
-
-          <div class="post-tags">
-              <a href="/tags/Java/" rel="tag"><i class="fa fa-tag"></i> Java</a>
-              <a href="/tags/LeetCode/" rel="tag"><i class="fa fa-tag"></i> LeetCode</a>
-              <a href="/tags/math/" rel="tag"><i class="fa fa-tag"></i> math</a>
-          </div>
-
-        
-
-          <div class="post-nav">
-            <div class="post-nav-item">
-                <a href="/LeetCode/Note/Java/Easy/d6f0ae5b/" rel="prev" title="LeetCode Note Java 00724：Find Pivot Index">
-                  <i class="fa fa-chevron-left"></i> LeetCode Note Java 00724：Find Pivot Index
-                </a>
-            </div>
-            <div class="post-nav-item">
-                <a href="/LeetCode/Note/Java/Easy/637201b9/" rel="next" title="LeetCode Note Java 00205：Isomorphic Strings">
-                  LeetCode Note Java 00205：Isomorphic Strings <i class="fa fa-chevron-right"></i>
-                </a>
-            </div>
-          </div>
-    </footer>
+      
+    </header>
   </article>
-</div>
 
 
-
-
-
-
-    
-  <div class="comments" id="disqus_thread">
-    <noscript>Please enable JavaScript to view the comments powered by Disqus.</noscript>
+    </div>
   </div>
   
+  
+  
+
 </div>
   </main>
 
@@ -613,7 +417,7 @@
 
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/quicklink/2.3.0/quicklink.umd.js" integrity="sha256-yvJQOINiH9fWemHn0vCA5lsHWJaHs6/ZmO+1Ft04SvM=" crossorigin="anonymous"></script>
-  <script class="next-config" data-name="quicklink" type="application/json">{"enable":true,"home":true,"archive":true,"delay":true,"timeout":3000,"priority":true,"url":"https://wcw0310.github.io/LeetCode/Note/Java/Easy/a985eb04/"}</script>
+  <script class="next-config" data-name="quicklink" type="application/json">{"enable":true,"home":true,"archive":true,"delay":true,"timeout":3000,"priority":true,"url":"https://wcw0310.github.io/archives/2023/05/"}</script>
   <script src="/js/third-party/quicklink.js"></script>
 <script class="next-config" data-name="disqus" type="application/json">{"enable":true,"shortname":"wcw0310","count":true,"i18n":{"disqus":"disqus"}}</script>
 <script src="/js/third-party/comments/disqus.js"></script>
