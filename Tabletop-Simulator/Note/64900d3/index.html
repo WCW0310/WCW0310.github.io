@@ -24,15 +24,15 @@
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"wcw0310.github.io","root":"/","images":"/images","scheme":"Gemini","darkmode":true,"version":"8.14.2","exturl":true,"sidebar":{"position":"right","display":"post","padding":18,"offset":12},"copycode":{"enable":true,"style":"flat"},"bookmark":{"enable":false,"color":"#222","save":"manual"},"mediumzoom":false,"lazyload":true,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":true,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜尋...","empty":"我們無法找到任何有關 ${query} 的搜索結果","hits_time":"${hits} 找到 ${time} 個結果","hits":"找到 ${hits} 個結果"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
 
-    <meta name="description" content="一些使用 TTS VSCode 開發時常用到的功能。">
+    <meta name="description" content="一些使用 TTS VSCode 開發時的觀念。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Tabletop Simulator Note：TTS VSCode">
 <meta property="og:url" content="https://wcw0310.github.io/Tabletop-Simulator/Note/64900d3/">
 <meta property="og:site_name" content="Hi I&#39;m WCW!">
-<meta property="og:description" content="一些使用 TTS VSCode 開發時常用到的功能。">
+<meta property="og:description" content="一些使用 TTS VSCode 開發時的觀念。">
 <meta property="og:locale" content="zh_TW">
 <meta property="article:published_time" content="2023-08-01T12:38:38.000Z">
-<meta property="article:modified_time" content="2023-08-01T13:43:08.540Z">
+<meta property="article:modified_time" content="2023-08-05T06:49:17.897Z">
 <meta property="article:author" content="WCW">
 <meta property="article:tag" content="Tabletop Simulator">
 <meta name="twitter:card" content="summary">
@@ -150,7 +150,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Console"><span class="nav-number">1.</span> <span class="nav-text">Console++</span></a></li></ol></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Console"><span class="nav-number">1.</span> <span class="nav-text">Console++</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%88%87%E5%9C%A8-TTS-%E4%B8%AD%E7%9B%B4%E6%8E%A5%E9%96%8B%E7%99%BC%E7%9A%84%E5%B7%AE%E7%95%B0"><span class="nav-number">2.</span> <span class="nav-text">與在 TTS 中直接開發的差異</span></a></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -296,6 +296,13 @@
       </a>
     </li>
     <li class="popular-posts-item">
+      <a class="popular-posts-link" href="/Tool/ec1de664/" rel="bookmark">
+        <time class="popular-posts-time">2023-05-03</time>
+        <br>
+      Tool：Proxyman
+      </a>
+    </li>
+    <li class="popular-posts-item">
       <a class="popular-posts-link" href="/Tool/41e4a259/" rel="bookmark">
         <time class="popular-posts-time">2023-01-24</time>
         <br>
@@ -307,13 +314,6 @@
         <time class="popular-posts-time">2023-01-06</time>
         <br>
       Mac Note：Mac 常用技巧
-      </a>
-    </li>
-    <li class="popular-posts-item">
-      <a class="popular-posts-link" href="/Hexo/Blog/6528a7b6/" rel="bookmark">
-        <time class="popular-posts-time">2022-12-06</time>
-        <br>
-      Hexo Blog 05：NexT 主題 SEO 相關設置
       </a>
     </li>
   </ul>
@@ -365,9 +365,15 @@
         <i class="far fa-calendar"></i>
       </span>
       <span class="post-meta-item-text">發表於</span>
-      
 
-      <time title="創建時間：2023-08-01 20:38:38 / 修改時間：21:43:08" itemprop="dateCreated datePublished" datetime="2023-08-01T20:38:38+08:00">2023-08-01</time>
+      <time title="創建時間：2023-08-01 20:38:38" itemprop="dateCreated datePublished" datetime="2023-08-01T20:38:38+08:00">2023-08-01</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新於</span>
+      <time title="修改時間：2023-08-05 14:49:17" itemprop="dateModified" datetime="2023-08-05T14:49:17+08:00">2023-08-05</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -410,7 +416,7 @@
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">文章字數：</span>
-      <span>113</span>
+      <span>231</span>
     </span>
     <span class="post-meta-item" title="所需閱讀時間">
       <span class="post-meta-item-icon">
@@ -428,12 +434,13 @@
     
     
     <div class="post-body" itemprop="articleBody">
-        <p>一些使用 TTS VSCode 開發時常用到的功能。</p>
+        <p>一些使用 TTS VSCode 開發時的觀念。</p>
 <span id="more"></span>
 
 <h2 id="Console"><a href="#Console" class="headerlink" title="Console++"></a>Console++</h2><p><span class="exturl" data-url="aHR0cHM6Ly90dHMtdnNjb2RlLnJvbGFuZG9zdGFyLmNvbS9leHRlbnNpb24vY29uc29sZSsr">Console++<i class="fa fa-external-link-alt"></i></span><br><span class="exturl" data-url="aHR0cHM6Ly90dHMtdnNjb2RlLnJvbGFuZG9zdGFyLmNvbS9leHRlbnNpb24vb25FeHRlcm5hbENvbW1hbmQ=">External Command<i class="fa fa-external-link-alt"></i></span></p>
 <p>按照上方文章設置完後就能在專案中訂製特殊指令，這些指令只能由 VSCode 開啟的 Console++ 互動視窗中輸入，並且可以及時在相連的遊戲中觸發指定的腳本內容</p>
 <p>注意：當團隊中有設置這功能時，每個開發成員都必須安裝 Console++，否則會出錯</p>
+<h2 id="與在-TTS-中直接開發的差異"><a href="#與在-TTS-中直接開發的差異" class="headerlink" title="與在 TTS 中直接開發的差異"></a>與在 TTS 中直接開發的差異</h2><p>TTS 中雖然也能開發 Lua 腳本，但整個 Global.lua 視為一個檔案，所有變數與函數都為 global，不容易做到 local 的調用權限劃分。<br>而使用 TTS VSCode 時，藉由他的模組註冊機制，我們可以藉由拆分檔案來模組化專案，將 global 與 local 的性質發揮出來；這樣的唯一缺點大概是不容易在 TTS 中直接修改腳本了。</p>
 
     </div>
 
