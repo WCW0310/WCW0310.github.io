@@ -1,3 +1,4 @@
+https://wcw0310.github.io/Life/Share/2ac8f7fd/
 https://wcw0310.github.io/Tabletop-Simulator/Note/64900d3/
 https://wcw0310.github.io/Tabletop-Simulator/Note/756e548a/
 https://wcw0310.github.io/Tabletop-Simulator/Note/5fab3010/
@@ -7,4 +8,3 @@ https://wcw0310.github.io/Tool/ec1de664/
 https://wcw0310.github.io/React-Native/Note/c7f4268a/
 https://wcw0310.github.io/Android/Debug/9776d6f4/
 https://wcw0310.github.io/Tool/391444f2/
-https://wcw0310.github.io/LeetCode/Note/Java/Easy/a641d62a/
