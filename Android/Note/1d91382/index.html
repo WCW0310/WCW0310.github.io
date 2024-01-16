@@ -32,7 +32,7 @@
 <meta property="og:description" content="特殊的 Deep Links 可讓網站網址開啟 Android App 中的對應內容，照著官方文檔跟工具實踐通常不會有什麼問題，但在公司開發常常會發生莫名插曲。">
 <meta property="og:locale" content="zh_TW">
 <meta property="article:published_time" content="2024-01-08T13:23:09.000Z">
-<meta property="article:modified_time" content="2024-01-10T14:49:24.055Z">
+<meta property="article:modified_time" content="2024-01-16T13:52:17.696Z">
 <meta property="article:author" content="WCW">
 <meta property="article:tag" content="Android">
 <meta name="twitter:card" content="summary">
@@ -150,7 +150,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%BB%BA%E7%BD%AE%E6%B5%81%E7%A8%8B"><span class="nav-number">1.</span> <span class="nav-text">建置流程</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%B8%B8%E8%A6%8F%E6%B8%AC%E8%A9%A6%E6%96%B9%E5%BC%8F"><span class="nav-number">2.</span> <span class="nav-text">常規測試方式</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%B6%B2%E9%A0%81%E5%B7%A5%E5%85%B7"><span class="nav-number">2.1.</span> <span class="nav-text">網頁工具</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Digital-Asset-Links-API"><span class="nav-number">2.2.</span> <span class="nav-text">Digital Asset Links API</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%96%BC-Android-%E5%B0%88%E6%A1%88%E4%B8%AD%E4%BD%BF%E7%94%A8%E6%8C%87%E4%BB%A4"><span class="nav-number">2.3.</span> <span class="nav-text">於 Android 專案中使用指令</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%9C%AC%E5%9C%B0%E6%B8%AC%E8%A9%A6"><span class="nav-number">3.</span> <span class="nav-text">本地測試</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%BB%BA%E7%AB%8B%E6%9C%AC%E5%9C%B0%E7%B6%B2%E7%AB%99-server%EF%BC%88%E4%BB%A5-Node-js-Express-%E6%A1%86%E6%9E%B6%E7%82%BA%E4%BE%8B%EF%BC%89"><span class="nav-number">3.1.</span> <span class="nav-text">建立本地網站 server（以 Node.js Express 框架為例）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BD%BF%E7%94%A8-ngrok-%E5%B0%87%E6%9C%AC%E5%9C%B0%E7%B6%B2%E7%AB%99%E8%87%A8%E6%99%82%E6%9A%B4%E9%9C%B2%E7%B5%A6%E5%A4%96%E9%83%A8"><span class="nav-number">3.2.</span> <span class="nav-text">使用 ngrok 將本地網站臨時暴露給外部</span></a></li></ol></li></ol></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%BB%BA%E7%BD%AE%E6%B5%81%E7%A8%8B"><span class="nav-number">1.</span> <span class="nav-text">建置流程</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%B8%B8%E8%A6%8F%E6%B8%AC%E8%A9%A6%E6%96%B9%E5%BC%8F"><span class="nav-number">2.</span> <span class="nav-text">常規測試方式</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%B6%B2%E9%A0%81%E5%B7%A5%E5%85%B7"><span class="nav-number">2.1.</span> <span class="nav-text">網頁工具</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Digital-Asset-Links-API"><span class="nav-number">2.2.</span> <span class="nav-text">Digital Asset Links API</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%96%BC-Android-%E5%B0%88%E6%A1%88%E4%B8%AD%E4%BD%BF%E7%94%A8%E6%8C%87%E4%BB%A4"><span class="nav-number">2.3.</span> <span class="nav-text">於 Android 專案中使用指令</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%9C%AC%E5%9C%B0%E6%B8%AC%E8%A9%A6"><span class="nav-number">3.</span> <span class="nav-text">本地測試</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%A3%9D%E7%BD%AE%E8%A8%AD%E5%AE%9A%E4%B8%AD%E6%89%8B%E5%8B%95%E8%A8%AD%E5%AE%9A-App-%E9%96%8B%E5%95%9F%E9%80%A3%E7%B5%90"><span class="nav-number">3.1.</span> <span class="nav-text">裝置設定中手動設定 App 開啟連結</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%9C%A8%E6%9C%AC%E5%9C%B0%E5%BB%BA%E7%AB%8B%E7%B6%B2%E7%AB%99-server-%E4%B8%A6%E9%80%8F%E9%81%8E%E7%AC%AC%E4%B8%89%E6%96%B9%E6%9C%8D%E5%8B%99%EF%BC%88ngrok%EF%BC%89%E5%B0%87%E6%9C%AC%E5%9C%B0%E7%B6%B2%E7%AB%99%E8%87%A8%E6%99%82%E6%9A%B4%E9%9C%B2%E7%B5%A6%E5%A4%96%E9%83%A8%E9%80%A3%E7%B7%9A%E6%B8%AC%E8%A9%A6"><span class="nav-number">3.2.</span> <span class="nav-text">在本地建立網站 server 並透過第三方服務（ngrok）將本地網站臨時暴露給外部連線測試</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%BB%BA%E7%AB%8B%E6%9C%AC%E5%9C%B0%E7%B6%B2%E7%AB%99-server%EF%BC%88%E4%BB%A5-Node-js-Express-%E6%A1%86%E6%9E%B6%E7%82%BA%E4%BE%8B%EF%BC%89"><span class="nav-number">3.2.1.</span> <span class="nav-text">建立本地網站 server（以 Node.js Express 框架為例）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%BD%BF%E7%94%A8-ngrok-%E5%B0%87%E6%9C%AC%E5%9C%B0%E7%B6%B2%E7%AB%99%E8%87%A8%E6%99%82%E6%9A%B4%E9%9C%B2%E7%B5%A6%E5%A4%96%E9%83%A8"><span class="nav-number">3.2.2.</span> <span class="nav-text">使用 ngrok 將本地網站臨時暴露給外部</span></a></li></ol></li></ol></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -373,7 +373,7 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新於</span>
-      <time title="修改時間：2024-01-10 22:49:24" itemprop="dateModified" datetime="2024-01-10T22:49:24+08:00">2024-01-10</time>
+      <time title="修改時間：2024-01-16 21:52:17" itemprop="dateModified" datetime="2024-01-16T21:52:17+08:00">2024-01-16</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -416,7 +416,7 @@
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">文章字數：</span>
-      <span>814</span>
+      <span>927</span>
     </span>
     <span class="post-meta-item" title="所需閱讀時間">
       <span class="post-meta-item-icon">
@@ -455,8 +455,9 @@
 <h3 id="於-Android-專案中使用指令"><a href="#於-Android-專案中使用指令" class="headerlink" title="於 Android 專案中使用指令"></a>於 Android 專案中使用指令</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">adb shell am start -a android.intent.action.VIEW -c android.intent.category.BROWSABLE -d &quot;https://www.example.com&quot;</span><br></pre></td></tr></table></figure>
 
 <p>將其中網址 <code>https://www.example.com</code> 換成正確的<br>若建置成功，系統會發出正確 intent 叫起 app，失敗則會開啟瀏覽器前往該網頁</p>
-<h2 id="本地測試"><a href="#本地測試" class="headerlink" title="本地測試"></a>本地測試</h2><p>若後端或網頁端沒辦法將 assetlinks.json 檔案放到正確的網頁位置時可以選擇在本地建立網站 server，再透過第三方服務（ngrok）將本地網站臨時暴露給外部連線測試</p>
-<h3 id="建立本地網站-server（以-Node-js-Express-框架為例）"><a href="#建立本地網站-server（以-Node-js-Express-框架為例）" class="headerlink" title="建立本地網站 server（以 Node.js Express 框架為例）"></a>建立本地網站 server（以 Node.js Express 框架為例）</h3><ol>
+<h2 id="本地測試"><a href="#本地測試" class="headerlink" title="本地測試"></a>本地測試</h2><p>若後端或網頁端沒辦法將 assetlinks.json 檔案放到正確的網頁位置時，或是使用非公開網域進行測試時可以透過建立本地環境來模擬，並使用測試指令來進行驗證</p>
+<h3 id="裝置設定中手動設定-App-開啟連結"><a href="#裝置設定中手動設定-App-開啟連結" class="headerlink" title="裝置設定中手動設定 App 開啟連結"></a>裝置設定中手動設定 App 開啟連結</h3><p>進入裝置的 設定 &gt; 應用程式 &gt; YOUR_APP &gt; 應用程式資訊 &gt; 進階 &gt; 預設為開啟 &gt; 開啟連結 設定，前提是該連結需要先在 App 的 AndroidManifest.xml 中加入<br>設定完後就能使用測試指令測試該連結</p>
+<h3 id="在本地建立網站-server-並透過第三方服務（ngrok）將本地網站臨時暴露給外部連線測試"><a href="#在本地建立網站-server-並透過第三方服務（ngrok）將本地網站臨時暴露給外部連線測試" class="headerlink" title="在本地建立網站 server 並透過第三方服務（ngrok）將本地網站臨時暴露給外部連線測試"></a>在本地建立網站 server 並透過第三方服務（ngrok）將本地網站臨時暴露給外部連線測試</h3><h4 id="建立本地網站-server（以-Node-js-Express-框架為例）"><a href="#建立本地網站-server（以-Node-js-Express-框架為例）" class="headerlink" title="建立本地網站 server（以 Node.js Express 框架為例）"></a>建立本地網站 server（以 Node.js Express 框架為例）</h4><ol>
 <li>開啟新的專案資料夾並進入</li>
 <li>若沒裝過 express，使用指令安裝：npm install express</li>
 <li>建立一個 server.js 文件</li>
@@ -467,7 +468,7 @@
 <li>啟動 server：node server.js</li>
 <li>使用瀏覽器前往 <code>http://localhost:3000/.well-known/assetlinks.json</code> 檢查是否有看到 assetlinks.json 檔案內容</li>
 </ol>
-<h3 id="使用-ngrok-將本地網站臨時暴露給外部"><a href="#使用-ngrok-將本地網站臨時暴露給外部" class="headerlink" title="使用 ngrok 將本地網站臨時暴露給外部"></a>使用 ngrok 將本地網站臨時暴露給外部</h3><ol>
+<h4 id="使用-ngrok-將本地網站臨時暴露給外部"><a href="#使用-ngrok-將本地網站臨時暴露給外部" class="headerlink" title="使用 ngrok 將本地網站臨時暴露給外部"></a>使用 ngrok 將本地網站臨時暴露給外部</h4><ol>
 <li><span class="exturl" data-url="aHR0cHM6Ly9uZ3Jvay5jb20v">ngrok 官網<i class="fa fa-external-link-alt"></i></span> 註冊 ngrok 帳號，隨後取得 token</li>
 <li>安裝 ngrok：brew install ngrok&#x2F;ngrok&#x2F;ngrok</li>
 <li>加入 token：ngrok config add-authtoken YOUR_TOKEN</li>
@@ -549,14 +550,14 @@
       <i class="fa fa-chart-line"></i>
     </span>
       <span>總字數：</span>
-    <span title="總字數">34k</span>
+    <span title="總字數">35k</span>
   </span>
   <span class="post-meta-item">
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
       <span>所需總閱讀時間 &asymp;</span>
-    <span title="所需總閱讀時間">2:05</span>
+    <span title="所需總閱讀時間">2:06</span>
   </span>
 </div>
 <div class="busuanzi-count">
