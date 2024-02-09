@@ -32,7 +32,7 @@
 <meta property="og:description" content="強大的 HTTP 調試工具。">
 <meta property="og:locale" content="zh_TW">
 <meta property="article:published_time" content="2023-05-03T06:57:02.000Z">
-<meta property="article:modified_time" content="2023-11-04T08:20:02.802Z">
+<meta property="article:modified_time" content="2024-01-22T12:22:51.214Z">
 <meta property="article:author" content="WCW">
 <meta property="article:tag" content="Proxyman">
 <meta name="twitter:card" content="summary">
@@ -373,7 +373,7 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新於</span>
-      <time title="修改時間：2023-11-04 16:20:02" itemprop="dateModified" datetime="2023-11-04T16:20:02+08:00">2023-11-04</time>
+      <time title="修改時間：2024-01-22 20:22:51" itemprop="dateModified" datetime="2024-01-22T20:22:51+08:00">2024-01-22</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -412,7 +412,7 @@
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">文章字數：</span>
-      <span>441</span>
+      <span>484</span>
     </span>
     <span class="post-meta-item" title="所需閱讀時間">
       <span class="post-meta-item-icon">
@@ -436,7 +436,7 @@
 <h2 id="Certificate"><a href="#Certificate" class="headerlink" title="Certificate"></a>Certificate</h2><p>因為需要獲取加密的 api 封包，所以需要對各裝置進行認證設置<br>Certificate 選項位於最上方<br>iOS 模擬器沒遇到什麼障礙<br>Android 模擬器需要使用 google api，因此我目前用不出來，因為專案會把沒有 play store 視為 root，進而阻止繼續使用<br>Android 實機需要定期下載 CA 憑證，並進入裝置設定進行安裝，通常在：設定&gt;密碼與安全&gt;系統安全&gt;加密和憑證&gt;信任的憑證|安裝憑證<br>Android 實機與 Praxyman 連線時需要更改網路 proxy，但須注意沒連接時要將 網路 proxy 關掉，否則 run app 時無法與 metro 連線</p>
 <h2 id="作用限制"><a href="#作用限制" class="headerlink" title="作用限制"></a>作用限制</h2><p>android 只能操作 debug 版的 app，因為遵循官方建議：<code>Make sure you remove these configs from your Production build.</code>。<br>ios 應該都能操作。</p>
 <p>記住這些差異才不會在奇怪的地方卡住浪費時間。</p>
-<h2 id="Map-Local"><a href="#Map-Local" class="headerlink" title="Map Local"></a>Map Local</h2><p>可以攔截 api 儲存回傳內容成 json 檔，並調整成想要的內容後來測試 api 在不同回傳下的結果<br>Map Local 選項位於最上方的 Tools 中，開啟後會額外顯示在視窗右下角<br>原本可以同時儲存很多組設置，更新後只能同時儲存兩組設置，妥妥的養套殺😭</p>
+<h2 id="Map-Local"><a href="#Map-Local" class="headerlink" title="Map Local"></a>Map Local</h2><p>可以攔截 api 儲存回傳內容成 json 檔，並調整成想要的內容後來測試 api 在不同回傳下的結果<br>Map Local 選項位於最上方的 Tools 中，開啟後會額外顯示在視窗右下角<br>原本可以同時儲存很多組設置，更新後只能同時儲存兩組設置，妥妥的養套殺😭<br>mock 網址時必須以 <code>/</code> 結尾，如：<code>https://abcdefghijk/</code>，不然會 mock 失敗，不是很懂為何結尾不能沒有 <code>/</code>。<br>網址好像也都必須是小寫字母🧐。</p>
 <h3 id="Local-json-File-撰寫方式"><a href="#Local-json-File-撰寫方式" class="headerlink" title="Local json File 撰寫方式"></a>Local json File 撰寫方式</h3><p><span class="exturl" data-url="aHR0cHM6Ly9kb2NzLnByb3h5bWFuLmlvL2FkdmFuY2VkLWZlYXR1cmVzL21hcC1sb2NhbA==">Map Local (File)<i class="fa fa-external-link-alt"></i></span><br>網路通信過於複雜，Proxyman 提供了一些網路或伺服器狀態的設置方法<br>文件大致包含 Status code, Response Headers, Response Body<br>只寫 Response Body 會視為 200 OK，這樣如果要測試錯誤狀況時，在程式碼中不會進到 catch 的地方，可能會導致誤判<br>常用 Status code:<br>404 Not Found</p>
 
     </div>
