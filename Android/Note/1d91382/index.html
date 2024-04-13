@@ -1,0 +1,657 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#222" media="(prefers-color-scheme: dark)"><meta name="generator" content="Hexo 6.3.0">
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+  <meta name="google-site-verification" content="1RLUKP6tlSUzYUSF29puYUhLlAIcz9H8s7DDqgKrGdY">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha256-wiz7ZSCn/btzhjKDQBms9Hx4sSeUYsDrTLg7roPstac=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancyapps-ui/5.0.33/fancybox/fancybox.css" integrity="sha256-gkQVf8UKZgQ0HyuxL/VnacadJ+D2Kox2TCEBuNQg5+w=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pace/1.2.4/themes/blue/pace-theme-minimal.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pace/1.2.4/pace.min.js" integrity="sha256-gqd7YTjg/BtfqWSwsJOvndl0Bxc8gFImLEkXQT8+qj0=" crossorigin="anonymous"></script>
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"wcw0310.github.io","root":"/","images":"/images","scheme":"Gemini","darkmode":true,"version":"8.19.2","exturl":true,"sidebar":{"position":"right","display":"post","padding":18,"offset":12},"copycode":{"enable":true,"style":"flat"},"fold":{"enable":true,"height":500},"bookmark":{"enable":false,"color":"#222","save":"manual"},"mediumzoom":false,"lazyload":true,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":true,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜尋...","empty":"我們無法找到任何有關 ${query} 的搜索結果","hits_time":"${hits} 找到 ${time} 個結果","hits":"找到 ${hits} 個結果"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
+
+    <meta name="description" content="特殊的 Deep Links 可讓網站網址開啟 Android App 中的對應內容，照著官方文檔跟工具實踐通常不會有什麼問題，但在公司開發常常會發生莫名插曲。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Android Note：App Links">
+<meta property="og:url" content="https://wcw0310.github.io/Android/Note/1d91382/">
+<meta property="og:site_name" content="Hi I&#39;m WCW!">
+<meta property="og:description" content="特殊的 Deep Links 可讓網站網址開啟 Android App 中的對應內容，照著官方文檔跟工具實踐通常不會有什麼問題，但在公司開發常常會發生莫名插曲。">
+<meta property="og:locale" content="zh_TW">
+<meta property="article:published_time" content="2024-01-08T13:23:09.000Z">
+<meta property="article:modified_time" content="2024-04-05T06:01:01.190Z">
+<meta property="article:author" content="WCW">
+<meta property="article:tag" content="Android">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="canonical" href="https://wcw0310.github.io/Android/Note/1d91382/">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-TW","comments":true,"permalink":"https://wcw0310.github.io/Android/Note/1d91382/","path":"Android/Note/1d91382/","title":"Android Note：App Links"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>Android Note：App Links | Hi I'm WCW!</title>
+  
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-NGNFG3T6E5"></script>
+  <script class="next-config" data-name="google_analytics" type="application/json">{"tracking_id":"G-NGNFG3T6E5","only_pageview":false,"measure_protocol_api_secret":null}</script>
+  <script src="/js/third-party/analytics/google-analytics.js"></script>
+
+
+
+
+
+
+
+
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5074749359677811"
+     crossorigin="anonymous"></script><link rel="stylesheet" type="text/css" href="/css/injector/main.css" /><link rel="preload" as="style" href="/css/injector/light.css" /><link rel="preload" as="style" href="/css/injector/dark.css" />
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <div class="column">
+      <header class="header" itemscope itemtype="http://schema.org/WPHeader"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切換導航欄" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">Hi I'm WCW!</p>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description">WCW's blog</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger" aria-label="搜尋" role="button">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首頁</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>關於</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>標籤<span class="badge">48</span></a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分類<span class="badge">29</span></a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>歸檔<span class="badge">78</span></a></li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜尋
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup"><div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off" maxlength="80"
+           placeholder="搜尋..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close" role="button">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div class="search-result-container no-result">
+  <div class="search-result-icon">
+    <i class="fa fa-spinner fa-pulse fa-5x"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</header>
+        
+  
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目錄
+        </li>
+        <li class="sidebar-nav-overview">
+          本站概要
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%BB%BA%E7%BD%AE%E6%B5%81%E7%A8%8B"><span class="nav-number">1.</span> <span class="nav-text">建置流程</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%B8%B8%E8%A6%8F%E6%B8%AC%E8%A9%A6%E6%96%B9%E5%BC%8F"><span class="nav-number">2.</span> <span class="nav-text">常規測試方式</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%B6%B2%E9%A0%81%E5%B7%A5%E5%85%B7"><span class="nav-number">2.1.</span> <span class="nav-text">網頁工具</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Digital-Asset-Links-API"><span class="nav-number">2.2.</span> <span class="nav-text">Digital Asset Links API</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%96%BC-Android-%E5%B0%88%E6%A1%88%E4%B8%AD%E4%BD%BF%E7%94%A8%E6%8C%87%E4%BB%A4"><span class="nav-number">2.3.</span> <span class="nav-text">於 Android 專案中使用指令</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%9C%AC%E5%9C%B0%E6%B8%AC%E8%A9%A6"><span class="nav-number">3.</span> <span class="nav-text">本地測試</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%A3%9D%E7%BD%AE%E8%A8%AD%E5%AE%9A%E4%B8%AD%E6%89%8B%E5%8B%95%E8%A8%AD%E5%AE%9A-App-%E9%96%8B%E5%95%9F%E9%80%A3%E7%B5%90"><span class="nav-number">3.1.</span> <span class="nav-text">裝置設定中手動設定 App 開啟連結</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%9C%A8%E6%9C%AC%E5%9C%B0%E5%BB%BA%E7%AB%8B%E7%B6%B2%E7%AB%99-server-%E4%B8%A6%E9%80%8F%E9%81%8E%E7%AC%AC%E4%B8%89%E6%96%B9%E6%9C%8D%E5%8B%99%EF%BC%88ngrok%EF%BC%89%E5%B0%87%E6%9C%AC%E5%9C%B0%E7%B6%B2%E7%AB%99%E8%87%A8%E6%99%82%E6%9A%B4%E9%9C%B2%E7%B5%A6%E5%A4%96%E9%83%A8%E9%80%A3%E7%B7%9A%E6%B8%AC%E8%A9%A6"><span class="nav-number">3.2.</span> <span class="nav-text">在本地建立網站 server 並透過第三方服務（ngrok）將本地網站臨時暴露給外部連線測試</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%BB%BA%E7%AB%8B%E6%9C%AC%E5%9C%B0%E7%B6%B2%E7%AB%99-server%EF%BC%88%E4%BB%A5-Node-js-Express-%E6%A1%86%E6%9E%B6%E7%82%BA%E4%BE%8B%EF%BC%89"><span class="nav-number">3.2.1.</span> <span class="nav-text">建立本地網站 server（以 Node.js Express 框架為例）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%BD%BF%E7%94%A8-ngrok-%E5%B0%87%E6%9C%AC%E5%9C%B0%E7%B6%B2%E7%AB%99%E8%87%A8%E6%99%82%E6%9A%B4%E9%9C%B2%E7%B5%A6%E5%A4%96%E9%83%A8"><span class="nav-number">3.2.2.</span> <span class="nav-text">使用 ngrok 將本地網站臨時暴露給外部</span></a></li></ol></li></ol></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">WCW</p>
+  <div class="site-description" itemprop="description">How I waste my time.</div>
+</div>
+<div class="site-state-wrap animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">78</span>
+          <span class="site-state-item-name">文章</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+          <a href="/categories/">
+        <span class="site-state-item-count">29</span>
+        <span class="site-state-item-name">分類</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+          <a href="/tags/">
+        <span class="site-state-item-count">48</span>
+        <span class="site-state-item-name">標籤</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="cc-license animated" itemprop="license">
+    <span class="exturl cc-opacity" data-url="aHR0cHM6Ly9jcmVhdGl2ZWNvbW1vbnMub3JnL2xpY2Vuc2VzL2J5LW5jLXNhLzQuMC9kZWVkLnpo"><img src="https://cdnjs.cloudflare.com/ajax/libs/creativecommons-vocabulary/2020.11.3/assets/license_badges/small/by_nc_sa.svg" alt="Creative Commons"></span>
+  </div>
+
+
+  <script type="text/javascript" charset="utf-8" src="/js/tagcloud.js"></script>
+  <script type="text/javascript" charset="utf-8" src="/js/tagcanvas.js"></script>
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div id="myCanvasContainer" class="widget tagcloud">
+      <canvas width="250" height="250" id="resCanvas" style="width:100%">
+        <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Android/" rel="tag">Android</a><span class="tag-list-count">6</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Chatra/" rel="tag">Chatra</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Disqus/" rel="tag">Disqus</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Firebase/" rel="tag">Firebase</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/GitHub/" rel="tag">GitHub</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/GitHub-Pages/" rel="tag">GitHub Pages</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Google-Adsense/" rel="tag">Google Adsense</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Google-Analytics/" rel="tag">Google Analytics</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Google-Search-Console/" rel="tag">Google Search Console</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Hexo/" rel="tag">Hexo</a><span class="tag-list-count">14</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Home-Assistant/" rel="tag">Home Assistant</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Java/" rel="tag">Java</a><span class="tag-list-count">41</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Jira/" rel="tag">Jira</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/LeetCode/" rel="tag">LeetCode</a><span class="tag-list-count">40</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Linux/" rel="tag">Linux</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Lua/" rel="tag">Lua</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Mac/" rel="tag">Mac</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Markdown/" rel="tag">Markdown</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Microsoft-Bing/" rel="tag">Microsoft Bing</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/NexT/" rel="tag">NexT</a><span class="tag-list-count">6</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Proxyman/" rel="tag">Proxyman</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/React-Native/" rel="tag">React Native</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/SEO/" rel="tag">SEO</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/SQLite/" rel="tag">SQLite</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Smart-Home/" rel="tag">Smart Home</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Tabletop-Simulator/" rel="tag">Tabletop Simulator</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Visual-Studio-Code/" rel="tag">Visual Studio Code</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Webmaster-Tools/" rel="tag">Webmaster Tools</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/andriodTest/" rel="tag">andriodTest</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/array/" rel="tag">array</a><span class="tag-list-count">11</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/binary-search/" rel="tag">binary-search</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/dynamic-programming/" rel="tag">dynamic-programming</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/greedy/" rel="tag">greedy</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hash-table/" rel="tag">hash-table</a><span class="tag-list-count">11</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/heap/" rel="tag">heap</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/klogg/" rel="tag">klogg</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/linked-list/" rel="tag">linked-list</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/math/" rel="tag">math</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ordered-map/" rel="tag">ordered-map</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/sliding-window/" rel="tag">sliding-window</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/sort/" rel="tag">sort</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/stack/" rel="tag">stack</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/string/" rel="tag">string</a><span class="tag-list-count">6</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/tree/" rel="tag">tree</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/trie/" rel="tag">trie</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/two-pointers/" rel="tag">two-pointers</a><span class="tag-list-count">10</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/union-find/" rel="tag">union-find</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/xml/" rel="tag">xml</a><span class="tag-list-count">1</span></li></ul>
+      </canvas>
+    </div>
+  </div>
+
+
+
+
+<div class="links-of-blogroll motion-element links-of-blogroll-block">
+<br>
+<div class="links-of-blogroll-title">
+    <!-- 設定你要的fa fa icon-->
+    <i class="fa fa-history fa-" aria-hidden="true"></i>
+    近期文章
+</div>
+<ul class="links-of-blogroll-list">
+    <!---->
+    
+    
+    <li class='pull-left' style="white-space:normal; text-align:left" >
+      <time title="創建時間" itemprop="dateCreated datePublished" datetime="2024-02-19T20:15:00+08:00">
+        02/19
+      </time>
+      <a href="/Mac/Note/e2407cf9/" title="Mac Note：完整移除應用">Mac Note：完整移除應用</a>
+      <br>
+      <br>
+    </li>
+    
+    <li class='pull-left' style="white-space:normal; text-align:left" >
+      <time title="創建時間" itemprop="dateCreated datePublished" datetime="2024-02-14T14:40:05+08:00">
+        02/14
+      </time>
+      <a href="/Life/Share/a4e0acfc/" title="Life Share：Home Assistant">Life Share：Home Assistant</a>
+      <br>
+      <br>
+    </li>
+    
+    <li class='pull-left' style="white-space:normal; text-align:left" >
+      <time title="創建時間" itemprop="dateCreated datePublished" datetime="2024-01-08T21:23:09+08:00">
+        01/08
+      </time>
+      <a href="/Android/Note/1d91382/" title="Android Note：App Links">Android Note：App Links</a>
+      <br>
+      <br>
+    </li>
+    
+    <li class='pull-left' style="white-space:normal; text-align:left" >
+      <time title="創建時間" itemprop="dateCreated datePublished" datetime="2024-01-06T15:25:49+08:00">
+        01/06
+      </time>
+      <a href="/Android/Note/fdd5466a/" title="Android Note：DecorView">Android Note：DecorView</a>
+      <br>
+      <br>
+    </li>
+    
+    <li class='pull-left' style="white-space:normal; text-align:left" >
+      <time title="創建時間" itemprop="dateCreated datePublished" datetime="2023-09-07T21:42:33+08:00">
+        09/07
+      </time>
+      <a href="/Project/158b204b/" title="Project：TTS MESSAGE MOD">Project：TTS MESSAGE MOD</a>
+      <br>
+      <br>
+    </li>
+    
+</ul>
+</div>
+
+        </div>
+      </div>
+    </div>
+
+    
+    <div class="sidebar-inner sidebar-blogroll">
+      <div class="links-of-blogroll animated">
+        <div class="links-of-blogroll-title"><i class="fa fa-globe fa-fw"></i>
+          Links
+        </div>
+        <ul class="links-of-blogroll-list">
+            <li class="links-of-blogroll-item">
+              <span class="exturl" data-url="aHR0cHM6Ly81dXBlcmIweS5jb20v" title="https:&#x2F;&#x2F;5uperb0y.com&#x2F;">5uperb0y's blog</span>
+            </li>
+        </ul>
+      </div>
+    </div>
+        <div class="pjax">
+        <div class="sidebar-inner sidebar-post-related">
+          <div class="animated">
+              <div class="links-of-blogroll-title"><i class="fa fa-signs-post fa-fw"></i>
+    相關文章
+  </div>
+  <ul class="popular-posts">
+    <li class="popular-posts-item">
+      <a class="popular-posts-link" href="/Android/Note/fdd5466a/" rel="bookmark">
+        <time class="popular-posts-time">2024-01-06</time>
+        <br>
+      Android Note：DecorView
+      </a>
+    </li>
+    <li class="popular-posts-item">
+      <a class="popular-posts-link" href="/LeetCode/Note/Java/Easy/30f3f015/" rel="bookmark">
+        <time class="popular-posts-time">2022-12-18</time>
+        <br>
+      LeetCode Note Java 00141：Linked List Cycle
+      </a>
+    </li>
+    <li class="popular-posts-item">
+      <a class="popular-posts-link" href="/Android/Note/8318bca4/" rel="bookmark">
+        <time class="popular-posts-time">2023-01-06</time>
+        <br>
+      Android Note：常用 Android Debug Bridge (adb) 功能
+      </a>
+    </li>
+    <li class="popular-posts-item">
+      <a class="popular-posts-link" href="/LeetCode/Note/Java/Medium/a0a5adef/" rel="bookmark">
+        <time class="popular-posts-time">2022-12-14</time>
+        <br>
+      LeetCode Note Java 00002：Add Two Numbers
+      </a>
+    </li>
+    <li class="popular-posts-item">
+      <a class="popular-posts-link" href="/LeetCode/Note/Java/Easy/861a2560/" rel="bookmark">
+        <time class="popular-posts-time">2022-12-18</time>
+        <br>
+      LeetCode Note Java 00206：Reverse Linked List
+      </a>
+    </li>
+  </ul>
+
+          </div>
+        </div>
+        </div>
+  </aside>
+
+
+    </div>
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-TW">
+    <link itemprop="mainEntityOfPage" href="https://wcw0310.github.io/Android/Note/1d91382/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="WCW">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hi I'm WCW!">
+      <meta itemprop="description" content="How I waste my time.">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="Android Note：App Links | Hi I'm WCW!">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          Android Note：App Links
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">發表於</span>
+
+      <time title="創建時間：2024-01-08 21:23:09" itemprop="dateCreated datePublished" datetime="2024-01-08T21:23:09+08:00">2024-01-08</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新於</span>
+      <time title="修改時間：2024-04-05 14:01:01" itemprop="dateModified" datetime="2024-04-05T14:01:01+08:00">2024-04-05</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分類於</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Android/" itemprop="url" rel="index"><span itemprop="name">Android</span></a>
+        </span>
+          ，
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Android/Note/" itemprop="url" rel="index"><span itemprop="name">Note</span></a>
+        </span>
+    </span>
+
+  
+    <span class="post-meta-item" title="閱讀次數">
+      <span class="post-meta-item-icon">
+        <i class="far fa-eye"></i>
+      </span>
+      <span class="post-meta-item-text">閱讀次數：</span>
+      <span class="firestore-visitors-count"></span>
+    </span>
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus：</span>
+    
+    <a title="disqus" href="/Android/Note/1d91382/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="Android/Note/1d91382/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+    <span class="post-meta-item" title="文章字數">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">文章字數：</span>
+      <span>927</span>
+    </span>
+    <span class="post-meta-item" title="所需閱讀時間">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">所需閱讀時間 &asymp;</span>
+      <span>3 分鐘</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody"><p>特殊的 Deep Links 可讓網站網址開啟 Android App 中的對應內容，照著官方文檔跟工具實踐通常不會有什麼問題，但在公司開發常常會發生莫名插曲。</p>
+<span id="more"></span>
+
+<h2 id="建置流程"><a href="#建置流程" class="headerlink" title="建置流程"></a>建置流程</h2><ol>
+<li>依照 <span class="exturl" data-url="aHR0cHM6Ly9kZXZlbG9wZXIuYW5kcm9pZC5jb20vdHJhaW5pbmcvYXBwLWxpbmtzL3ZlcmlmeS1hbmRyb2lkLWFwcGxpbmtz">官方文檔<i class="fa fa-external-link-alt"></i></span> 使用 Android Studio 的 <span class="exturl" data-url="aHR0cHM6Ly9kZXZlbG9wZXIuYW5kcm9pZC5jb20vc3R1ZGlvL3dyaXRlL2FwcC1saW5rLWluZGV4aW5n">App Links Assistant<i class="fa fa-external-link-alt"></i></span> 設定 <span class="exturl" data-url="aHR0cHM6Ly9kZXZlbG9wZXJzLmdvb2dsZS5jb20vZGlnaXRhbC1hc3NldC1saW5rcw==">Digital Asset Links
+<i class="fa fa-external-link-alt"></i></span> 並取得 <code>assetlinks.json</code> 檔案</li>
+<li>後端或網頁端需要將 <code>assetlinks.json</code> 檔案置於網頁根目錄的 <code>/.well-known/assetlinks.json</code> 路徑，並且能透過網址 <code>https://www.example.com/.well-known/assetlinks.json</code> 獲取 <code>assetlinks.json</code> 檔案內容</li>
+</ol>
+<p>[注意事項]<br>問題通常發生在 <code>assetlinks.json</code> 檔案的部署，因為後端或網頁端常常會有一些理由想要方便一下，然而 Android 這邊要求的比較嚴格（跟 iOS 類似功能的設定比較），強烈建議後端或網頁端把官方文檔仔細看，畢竟部署這件事通常不是 App 端負責處理，這裡列出幾個踩過的雷：</p>
+<ol>
+<li>不能透過重新導向來獲取 <code>assetlinks.json</code> 檔案，這可能會發生在後端或網頁端想取巧時</li>
+<li>不能設置需要透過 VPN 才到得了的網站 domain，這很麻煩，因為很多公司的網頁測試版都只能用內網連，如果其實可以做到的話拜託告訴我🙏🏼</li>
+<li>server response 必須為 HTTP 200 否則都視為錯誤，這則是沒注意就會錯</li>
+<li><code>assetlinks.json</code> 檔案必須在 HTTP headers 設定為 Content-Type: application&#x2F;json，這也是沒注意就會錯</li>
+</ol>
+<h2 id="常規測試方式"><a href="#常規測試方式" class="headerlink" title="常規測試方式"></a>常規測試方式</h2><h3 id="網頁工具"><a href="#網頁工具" class="headerlink" title="網頁工具"></a>網頁工具</h3><p><span class="exturl" data-url="aHR0cHM6Ly9kZXZlbG9wZXJzLmdvb2dsZS5jb20vZGlnaXRhbC1hc3NldC1saW5rcy90b29scy9nZW5lcmF0b3I=">Statement List Generator and Tester<i class="fa fa-external-link-alt"></i></span></p>
+<h3 id="Digital-Asset-Links-API"><a href="#Digital-Asset-Links-API" class="headerlink" title="Digital Asset Links API"></a>Digital Asset Links API</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">https://digitalassetlinks.googleapis.com/v1/statements:list?source.web.site=https://domain.name:optional_port&amp;relation=delegate_permission/common.handle_all_urls</span><br></pre></td></tr></table></figure>
+
+<p>將 <code>domain.name:optional_port</code> 換成自己網站的 domain</p>
+<h3 id="於-Android-專案中使用指令"><a href="#於-Android-專案中使用指令" class="headerlink" title="於 Android 專案中使用指令"></a>於 Android 專案中使用指令</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">adb shell am start -a android.intent.action.VIEW -c android.intent.category.BROWSABLE -d &quot;https://www.example.com&quot;</span><br></pre></td></tr></table></figure>
+
+<p>將其中網址 <code>https://www.example.com</code> 換成正確的<br>若建置成功，系統會發出正確 intent 叫起 app，失敗則會開啟瀏覽器前往該網頁</p>
+<h2 id="本地測試"><a href="#本地測試" class="headerlink" title="本地測試"></a>本地測試</h2><p>若後端或網頁端沒辦法將 assetlinks.json 檔案放到正確的網頁位置時，或是使用非公開網域進行測試時可以透過建立本地環境來模擬，並使用測試指令來進行驗證</p>
+<h3 id="裝置設定中手動設定-App-開啟連結"><a href="#裝置設定中手動設定-App-開啟連結" class="headerlink" title="裝置設定中手動設定 App 開啟連結"></a>裝置設定中手動設定 App 開啟連結</h3><p>進入裝置的 設定 &gt; 應用程式 &gt; YOUR_APP &gt; 應用程式資訊 &gt; 進階 &gt; 預設為開啟 &gt; 開啟連結 設定，前提是該連結需要先在 App 的 AndroidManifest.xml 中加入<br>設定完後就能使用測試指令測試該連結</p>
+<h3 id="在本地建立網站-server-並透過第三方服務（ngrok）將本地網站臨時暴露給外部連線測試"><a href="#在本地建立網站-server-並透過第三方服務（ngrok）將本地網站臨時暴露給外部連線測試" class="headerlink" title="在本地建立網站 server 並透過第三方服務（ngrok）將本地網站臨時暴露給外部連線測試"></a>在本地建立網站 server 並透過第三方服務（ngrok）將本地網站臨時暴露給外部連線測試</h3><h4 id="建立本地網站-server（以-Node-js-Express-框架為例）"><a href="#建立本地網站-server（以-Node-js-Express-框架為例）" class="headerlink" title="建立本地網站 server（以 Node.js Express 框架為例）"></a>建立本地網站 server（以 Node.js Express 框架為例）</h4><ol>
+<li>開啟新的專案資料夾並進入</li>
+<li>若沒裝過 express，使用指令安裝：npm install express</li>
+<li>建立一個 server.js 文件</li>
+</ol>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> express = <span class="built_in">require</span>(<span class="string">&#x27;express&#x27;</span>);</span><br><span class="line"><span class="keyword">const</span> app = <span class="title function_">express</span>();</span><br><span class="line"><span class="keyword">const</span> port = <span class="number">3000</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 基本的 Hello World 路由</span></span><br><span class="line">app.<span class="title function_">get</span>(<span class="string">&#x27;/&#x27;</span>, <span class="function">(<span class="params">req, res</span>) =&gt;</span> &#123;</span><br><span class="line">  res.<span class="title function_">send</span>(<span class="string">&#x27;Hello World!&#x27;</span>);</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 處理 .well-known/assetlinks.json 的請求</span></span><br><span class="line">app.<span class="title function_">get</span>(<span class="string">&#x27;/.well-known/assetlinks.json&#x27;</span>, <span class="function">(<span class="params">req, res</span>) =&gt;</span> &#123;</span><br><span class="line">  res.<span class="title function_">json</span>(</span><br><span class="line">    <span class="comment">// 填入 assetlinks.json 內容</span></span><br><span class="line">    [&#123;</span><br><span class="line">        <span class="string">&quot;relation&quot;</span>: [<span class="string">&quot;delegate_permission/common.handle_all_urls&quot;</span>],</span><br><span class="line">        <span class="string">&quot;target&quot;</span>: &#123;</span><br><span class="line">          <span class="string">&quot;namespace&quot;</span>: <span class="string">&quot;android_app&quot;</span>,</span><br><span class="line">          <span class="string">&quot;package_name&quot;</span>: <span class="string">&quot;YOUR_PACKAGE_NAME&quot;</span>,</span><br><span class="line">          <span class="string">&quot;sha256_cert_fingerprints&quot;</span>:</span><br><span class="line">          [<span class="string">&quot;YOUR_SHA256_CERT_FINGERPRINTS&quot;</span>]</span><br><span class="line">        &#125;</span><br><span class="line">      &#125;]</span><br><span class="line">  );</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 啟動伺服器</span></span><br><span class="line">app.<span class="title function_">listen</span>(port, <span class="function">() =&gt;</span> &#123;</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">`Server running at http://localhost:<span class="subst">$&#123;port&#125;</span>`</span>);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
+<ol start="4">
+<li>啟動 server：node server.js</li>
+<li>使用瀏覽器前往 <code>http://localhost:3000/.well-known/assetlinks.json</code> 檢查是否有看到 assetlinks.json 檔案內容</li>
+</ol>
+<h4 id="使用-ngrok-將本地網站臨時暴露給外部"><a href="#使用-ngrok-將本地網站臨時暴露給外部" class="headerlink" title="使用 ngrok 將本地網站臨時暴露給外部"></a>使用 ngrok 將本地網站臨時暴露給外部</h4><ol>
+<li><span class="exturl" data-url="aHR0cHM6Ly9uZ3Jvay5jb20v">ngrok 官網<i class="fa fa-external-link-alt"></i></span> 註冊 ngrok 帳號，隨後取得 token</li>
+<li>安裝 ngrok：brew install ngrok&#x2F;ngrok&#x2F;ngrok</li>
+<li>加入 token：ngrok config add-authtoken YOUR_TOKEN</li>
+<li>啟動 ngrok 服務，因為前述本地 server 的 port 設為 3000，所以者裡也要填 3000：ngrok http 3000</li>
+<li>由 <code>Forwarding</code> 取得這次的臨時公開網址（每次啟動都會換）</li>
+<li>將這網址拿去設定 Digital Asset Link API 就能照正常流程進行 app link 測試</li>
+</ol>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          
+
+<div class="post-copyright">
+<ul>
+  <li class="post-copyright-author">
+      <strong>作者： </strong>WCW
+  </li>
+  <li class="post-copyright-link">
+      <strong>文章連結：</strong>
+      <a href="https://wcw0310.github.io/Android/Note/1d91382/" title="Android Note：App Links">https://wcw0310.github.io/Android/Note/1d91382/</a>
+  </li>
+  <li class="post-copyright-license">
+      <strong>版權聲明： </strong>本網誌所有文章除特別聲明外，均採用 <span class="exturl" data-url="aHR0cHM6Ly9jcmVhdGl2ZWNvbW1vbnMub3JnL2xpY2Vuc2VzL2J5LW5jLXNhLzQuMC9kZWVkLnpo"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</span> 許可協議。轉載請註明出處！
+  </li>
+</ul>
+</div>
+
+          <div class="post-tags">
+              <a href="/tags/Android/" rel="tag"><i class="fa fa-tag"></i> Android</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/Android/Note/fdd5466a/" rel="prev" title="Android Note：DecorView">
+                  <i class="fa fa-angle-left"></i> Android Note：DecorView
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/Life/Share/a4e0acfc/" rel="next" title="Life Share：Home Assistant">
+                  Life Share：Home Assistant <i class="fa fa-angle-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+    
+  <div class="comments" id="disqus_thread">
+    <noscript>Please enable JavaScript to view the comments powered by Disqus.</noscript>
+  </div>
+  
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+  <div class="copyright">
+    &copy; 2022 – 
+    <span itemprop="copyrightYear">2024</span>
+    <span class="with-love">
+      <i class="fa fa-heart"></i>
+    </span>
+    <span class="author" itemprop="copyrightHolder">WCW</span>
+  </div>
+<div class="wordcount">
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-line"></i>
+    </span>
+      <span>總字數：</span>
+    <span title="總字數">35k</span>
+  </span>
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+      <span>所需總閱讀時間 &asymp;</span>
+    <span title="所需總閱讀時間">2:07</span>
+  </span>
+</div>
+<div class="busuanzi-count">
+    <span class="post-meta-item" id="busuanzi_container_site_uv">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-user"></i>
+      </span>
+      <span class="site-uv" title="訪客總數">
+        <span id="busuanzi_value_site_uv"></span>
+      </span>
+    </span>
+    <span class="post-meta-item" id="busuanzi_container_site_pv">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-eye"></i>
+      </span>
+      <span class="site-pv" title="總瀏覽次數">
+        <span id="busuanzi_value_site_pv"></span>
+      </span>
+    </span>
+</div>
+
+    </div>
+  </footer>
+
+  
+  <div class="reading-progress-bar"></div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+  
+  <script size="300" alpha="0.6" zIndex="-1" src="https://cdnjs.cloudflare.com/ajax/libs/ribbon.js/1.0.2/ribbon.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/next-theme-pjax/0.6.0/pjax.min.js" integrity="sha256-vxLn1tSKWD4dqbMRyv940UYw4sXgMtYcK6reefzZrao=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/fancyapps-ui/5.0.33/fancybox/fancybox.umd.js" integrity="sha256-+2+qOqR8CKoHh/AsVR9k2qaDBKWjYNC2nozhYmv5j9k=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/lozad.js/1.16.0/lozad.min.js" integrity="sha256-mOFREFhqmHeQbXpK2lp4nA3qooVgACfh88fpJftLBbc=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/next-boot.js"></script><script src="/js/pjax.js"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-generator-searchdb/1.4.1/search.js" integrity="sha256-1kfA5uHPf65M5cphT2dvymhkuyHPQp5A53EGZOnOLmc=" crossorigin="anonymous"></script>
+<script src="/js/third-party/search/local-search.js"></script>
+<script class="next-config" data-name="chatra" type="application/json">{"enable":true,"async":true,"id":"TmLvPs7eB6Zi6GE4o"}</script>
+<script src="/js/third-party/chat/chatra.js"></script>
+<script async src="https://call.chatra.io/chatra.js"></script>
+
+
+  <script class="next-config" data-name="mermaid" type="application/json">{"enable":true,"theme":{"light":"default","dark":"dark"},"js":{"url":"https://cdnjs.cloudflare.com/ajax/libs/mermaid/10.7.0/mermaid.min.js","integrity":"sha256-TtLOdUA8mstPoO6sGvHIGx2ceXrrX4KgIItO06XOn8A="}}</script>
+  <script src="/js/third-party/tags/mermaid.js"></script>
+
+
+  <script src="/js/third-party/fancybox.js"></script>
+
+  <script src="/js/third-party/pace.js"></script>
+
+
+  
+  <script data-pjax async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/firebase/10.7.2/firebase-app-compat.js" integrity="sha256-xdQCzG9qpUPD/bs/ZEI5cFbxep9Zp6F1VJm3d9ynNcw=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/firebase/10.7.2/firebase-firestore-compat.js" integrity="sha256-T7LqKXz+9Heox++4MR5RWllW/F1mamRl5xZjMdejtoE=" crossorigin="anonymous"></script>
+  <script class="next-config" data-name="firestore" type="application/json">{"enable":true,"collection":"articles","apiKey":"AIzaSyCSb2r8IVy2gr79FMEa1SwyUO6FhPjEj2c","projectId":"wcw0310blog"}</script>
+  <script src="/js/third-party/statistics/firestore.js"></script>
+
+
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/quicklink/2.3.0/quicklink.umd.js" integrity="sha256-yvJQOINiH9fWemHn0vCA5lsHWJaHs6/ZmO+1Ft04SvM=" crossorigin="anonymous"></script>
+  <script class="next-config" data-name="quicklink" type="application/json">{"enable":true,"home":true,"archive":true,"delay":true,"timeout":3000,"priority":true,"url":"https://wcw0310.github.io/Android/Note/1d91382/"}</script>
+  <script src="/js/third-party/quicklink.js"></script>
+<script class="next-config" data-name="disqus" type="application/json">{"enable":true,"shortname":"wcw0310","count":true,"i18n":{"disqus":"disqus"}}</script>
+<script src="/js/third-party/comments/disqus.js"></script>
+<div class="moon-menu">
+  <div class="moon-menu-items">
+    
+    <div id="moon-menu-item-back2bottom" class="moon-menu-item">
+      <i class='fas fa-chevron-down'></i>    </div>
+    
+    <div id="moon-menu-item-back2top" class="moon-menu-item">
+      <i class='fas fa-chevron-up'></i>    </div>
+    
+  </div>
+  <div class="moon-menu-button">
+    <svg class="moon-menu-bg">
+      <circle class="moon-menu-cricle" cx="50%" cy="50%" r="44%"></circle>
+      <circle class="moon-menu-border" cx="50%" cy="50%" r="48%"></circle>
+    </svg>
+    <div class="moon-menu-content">
+      <div class="moon-menu-icon"><i class='fas fa-ellipsis-v'></i></div>
+      <div class="moon-menu-text"></div>
+    </div>
+  </div>
+</div><script src="/js/injector.js"></script>
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginModelPath":"assets/","model":{"scale":1,"hHeadPos":0.5,"vHeadPos":0.618,"jsonPath":"/live2dw/assets/tororo.model.json"},"display":{"superSample":2,"width":250,"height":500,"position":"left","hOffset":0,"vOffset":-20},"mobile":{"show":false,"scale":0.5},"react":{"opacityDefault":0.7,"opacityOnHover":0.2},"log":false,"pluginJsPath":"lib/","pluginRootPath":"live2dw/","tagMode":false});</script></body>
+</html>
