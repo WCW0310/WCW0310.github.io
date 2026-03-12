@@ -1,6 +1,83 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>Java Note 01：常忘 Java 語法</title>
+    <url>/Java/Note/76cc3fdb/</url>
+    <content><![CDATA[<p>為了麵包不得已開始刷題人生，但被 IDE 寵壞後，默寫時連迴圈都寫不出來了，趕快來複習一下。</p>
+<span id="more"></span>
+
+<h2 id="for-loop"><a href="#for-loop" class="headerlink" title="for loop"></a>for loop</h2><figure class="highlight java"><figcaption><span>基本</span></figcaption><table><tr><td class="code"><pre><span class="line"><span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">0</span>; i &lt; <span class="number">5</span>; i++) &#123;</span><br><span class="line">  System.out.println(i);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight java"><figcaption><span>迭代</span></figcaption><table><tr><td class="code"><pre><span class="line"><span class="keyword">for</span> (<span class="type">int</span> i : array) &#123;</span><br><span class="line">  System.out.println(i);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="String"><a href="#String" class="headerlink" title="String"></a>String</h2><p><span class="exturl" data-url="aHR0cHM6Ly93d3cucnVub29iLmNvbS9qYXZhL2phdmEtc3RyaW5nLmh0bWw=">Java String 类<i class="fa fa-external-link-alt"></i></span></p>
+<h3 id="返回字串長度"><a href="#返回字串長度" class="headerlink" title="返回字串長度"></a>返回字串長度</h3><p>int length();</p>
+<h3 id="判斷字串值是否相同"><a href="#判斷字串值是否相同" class="headerlink" title="判斷字串值是否相同"></a>判斷字串值是否相同</h3><p>boolean equals(String value);</p>
+<h3 id="返回指定索引的-char"><a href="#返回指定索引的-char" class="headerlink" title="返回指定索引的 char"></a>返回指定索引的 char</h3><p>char charAt(int index);</p>
+<h3 id="返回字串轉換成的-char"><a href="#返回字串轉換成的-char" class="headerlink" title="返回字串轉換成的 char[]"></a>返回字串轉換成的 char[]</h3><p>char[] toCharArray();</p>
+<h3 id="返回子字串（指定頭尾）"><a href="#返回子字串（指定頭尾）" class="headerlink" title="返回子字串（指定頭尾）"></a>返回子字串（指定頭尾）</h3><p>String substring(int beginIndex, int endIndex);<br>注意：包含頭，不包含尾。</p>
+<h3 id="返回子字串（指定頭）"><a href="#返回子字串（指定頭）" class="headerlink" title="返回子字串（指定頭）"></a>返回子字串（指定頭）</h3><p>String substring(int beginIndex);</p>
+<h3 id="判斷是否包含指定字符序列"><a href="#判斷是否包含指定字符序列" class="headerlink" title="判斷是否包含指定字符序列"></a>判斷是否包含指定字符序列</h3><p>boolean contains(CharSequence chars);</p>
+<h2 id="Character"><a href="#Character" class="headerlink" title="Character"></a>Character</h2><h3 id="確定是否為字母或數字"><a href="#確定是否為字母或數字" class="headerlink" title="確定是否為字母或數字"></a>確定是否為字母或數字</h3><p>Character.isLetterOrDigit(char)</p>
+<h2 id="Array"><a href="#Array" class="headerlink" title="Array"></a>Array</h2><h3 id="建立新-Array-方法"><a href="#建立新-Array-方法" class="headerlink" title="建立新 Array 方法"></a>建立新 Array 方法</h3><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="type">int</span>[] intArray = <span class="keyword">new</span> <span class="title class_">int</span>[<span class="number">3</span>]; <span class="comment">// 長度為三，空的 Array</span></span><br><span class="line"><span class="type">int</span>[] intArray2 = &#123;<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>&#125;; <span class="comment">// 自定義內容的 Array，算是 intArray3 方法的語法糖</span></span><br><span class="line"><span class="type">int</span>[] intArray3 = <span class="keyword">new</span> <span class="title class_">int</span>[]&#123;<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>&#125;; <span class="comment">// 與 intArray2 一樣，不過在前面沒有表達式的型別宣告時只能這樣用，不然會出 illegal start of expression 錯</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="ArrayList"><a href="#ArrayList" class="headerlink" title="ArrayList"></a>ArrayList</h2><p><span class="exturl" data-url="aHR0cHM6Ly93d3cucnVub29iLmNvbS9qYXZhL2phdmEtYXJyYXlsaXN0Lmh0bWw=">Java ArrayList<i class="fa fa-external-link-alt"></i></span></p>
+<h2 id="Arrays"><a href="#Arrays" class="headerlink" title="Arrays"></a>Arrays</h2><p>Arrays 是處理各式 Array 的工具類。</p>
+<h3 id="排序傳入的-array"><a href="#排序傳入的-array" class="headerlink" title="排序傳入的 array"></a>排序傳入的 array</h3><p>Arrays.sort(array);</p>
+<h3 id="比較兩-arrays-值是否相同"><a href="#比較兩-arrays-值是否相同" class="headerlink" title="比較兩 arrays 值是否相同"></a>比較兩 arrays 值是否相同</h3><p>Arrays.equals(array1, array2);</p>
+<h3 id="生成裝有-values-的-List"><a href="#生成裝有-values-的-List" class="headerlink" title="生成裝有 values 的 List"></a>生成裝有 values 的 List</h3><p>Arrays.asList(value1, value2, …);<br>返回的 List 不適合拿來操作，通常是用來快速建立指定元素的 ArrayList 或 HashSet 之類的類別。</p>
+<h2 id="Collections"><a href="#Collections" class="headerlink" title="Collections"></a>Collections</h2><h3 id="排序"><a href="#排序" class="headerlink" title="排序"></a>排序</h3><p>Collections.sort(list);<br>Arrays 的 sort 不能排序 ArrayList，所以要用這個。</p>
+<p>Collections.reverseOrder()<br>在建構 PriorityQueue 之類的 class 時可以用此指定反向順序。</p>
+<h2 id="HashMap"><a href="#HashMap" class="headerlink" title="HashMap"></a>HashMap</h2><p><span class="exturl" data-url="aHR0cHM6Ly93d3cucnVub29iLmNvbS9qYXZhL2phdmEtaGFzaG1hcC5odG1s">Java HashMap<i class="fa fa-external-link-alt"></i></span></p>
+<p>需要注意基本類別要換成封裝類別。</p>
+<h3 id="獲取指定-key-對應的-value"><a href="#獲取指定-key-對應的-value" class="headerlink" title="獲取指定 key 對應的 value"></a>獲取指定 key 對應的 value</h3><p>hashmap.get(key);</p>
+<h3 id="獲取指定-key-對應的-value，若找不到-key-就返回-default"><a href="#獲取指定-key-對應的-value，若找不到-key-就返回-default" class="headerlink" title="獲取指定 key 對應的 value，若找不到 key 就返回 default"></a>獲取指定 key 對應的 value，若找不到 key 就返回 default</h3><p>hashmap.getOrDefault(key, default);</p>
+<h3 id="添加鍵值對"><a href="#添加鍵值對" class="headerlink" title="添加鍵值對"></a>添加鍵值對</h3><p>hashmap.put(key, value);</p>
+<h3 id="檢查是否存在指定-key-對應的映射關係"><a href="#檢查是否存在指定-key-對應的映射關係" class="headerlink" title="檢查是否存在指定 key 對應的映射關係"></a>檢查是否存在指定 key 對應的映射關係</h3><p>hashmap.containsKey(key);</p>
+<h3 id="檢查是否存在指定-value-對應的映射關係"><a href="#檢查是否存在指定-value-對應的映射關係" class="headerlink" title="檢查是否存在指定 value 對應的映射關係"></a>檢查是否存在指定 value 對應的映射關係</h3><p>hashmap.containsValue(value);</p>
+<h3 id="刪除-key-對應的鍵值對"><a href="#刪除-key-對應的鍵值對" class="headerlink" title="刪除 key 對應的鍵值對"></a>刪除 key 對應的鍵值對</h3><p>hashmap.remove(key);</p>
+<h3 id="返回-hashmap-中所有-key-組成的-set"><a href="#返回-hashmap-中所有-key-組成的-set" class="headerlink" title="返回 hashmap 中所有 key 組成的 set"></a>返回 hashmap 中所有 key 組成的 set</h3><p>hashmap.keySet();</p>
+<h3 id="返回-hashmap-中所有-value-組成的-set"><a href="#返回-hashmap-中所有-value-組成的-set" class="headerlink" title="返回 hashmap 中所有 value 組成的 set"></a>返回 hashmap 中所有 value 組成的 set</h3><p>hashmap.values();</p>
+<h3 id="返回-hashmap-中所有-映射關係-的-set"><a href="#返回-hashmap-中所有-映射關係-的-set" class="headerlink" title="返回 hashmap 中所有 映射關係 的 set"></a>返回 hashmap 中所有 映射關係 的 set</h3><p>hashmap.entrySet();<br>換容器時會使用到，每個鍵值對的類型為 <code>Map.Entry</code><br>Map.Entry 取得鍵：getKey()<br>Map.Entry 取得值：getValue()</p>
+<h2 id="HashSet"><a href="#HashSet" class="headerlink" title="HashSet"></a>HashSet</h2><p><span class="exturl" data-url="aHR0cHM6Ly93d3cucnVub29iLmNvbS9qYXZhL2phdmEtaGFzaHNldC5odG1s">Java HashSet<i class="fa fa-external-link-alt"></i></span></p>
+<p>需要注意基本類別要換成封裝類別。</p>
+<h3 id="添加元素"><a href="#添加元素" class="headerlink" title="添加元素"></a>添加元素</h3><p>hashset.add(value);</p>
+<h3 id="判斷元素是否存在"><a href="#判斷元素是否存在" class="headerlink" title="判斷元素是否存在"></a>判斷元素是否存在</h3><p>hashset.contains(value);</p>
+<h3 id="刪除元素"><a href="#刪除元素" class="headerlink" title="刪除元素"></a>刪除元素</h3><p>hashset.remove(value);</p>
+<h3 id="獲取-hashset-大小"><a href="#獲取-hashset-大小" class="headerlink" title="獲取 hashset 大小"></a>獲取 hashset 大小</h3><p>hashset.size();</p>
+<h3 id="交集技巧"><a href="#交集技巧" class="headerlink" title="交集技巧"></a>交集技巧</h3><p>hashset1.retainAll(hashset2);<br>返回扣掉兩 sets 未交集元素後的 hashset1。</p>
+<h3 id="差集技巧"><a href="#差集技巧" class="headerlink" title="差集技巧"></a>差集技巧</h3><p>hashset1.removeAll(hashset2);<br>返回扣掉兩 sets 交集元素後的 hashset1。</p>
+<h3 id="聯集技巧"><a href="#聯集技巧" class="headerlink" title="聯集技巧"></a>聯集技巧</h3><p>hashset1.addAll(hashset2);<br>返回加上兩 sets 未交集元素後的 hashset1。</p>
+<h2 id="PriorityQueue"><a href="#PriorityQueue" class="headerlink" title="PriorityQueue"></a>PriorityQueue</h2><p><span class="exturl" data-url="aHR0cHM6Ly93d3cuY2Fpbmlhb2pjLmNvbS9qYXZhL2phdmEtcHJpb3JpdHlxdWV1ZS5odG1s">Java PriorityQueue<i class="fa fa-external-link-alt"></i></span></p>
+<p>先進先出，預設先出來的是最小的 (Ascending Order)</p>
+<h3 id="建構方式"><a href="#建構方式" class="headerlink" title="建構方式"></a>建構方式</h3><p>可以帶入自定義的 Comparator，如：</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">PriorityQueue&lt;Map.Entry&lt;Integer, Integer&gt;&gt; pq = <span class="keyword">new</span> <span class="title class_">PriorityQueue</span>&lt;&gt;(</span><br><span class="line">  (a, b) -&gt; a.getValue() - b.getValue()</span><br><span class="line">);</span><br></pre></td></tr></table></figure>
+
+<h3 id="新增元素"><a href="#新增元素" class="headerlink" title="新增元素"></a>新增元素</h3><p>add()</p>
+<h3 id="訪問開頭元素"><a href="#訪問開頭元素" class="headerlink" title="訪問開頭元素"></a>訪問開頭元素</h3><p>peek()</p>
+<h3 id="返回並刪除隊列開頭"><a href="#返回並刪除隊列開頭" class="headerlink" title="返回並刪除隊列開頭"></a>返回並刪除隊列開頭</h3><p>poll()</p>
+<h2 id="Stream"><a href="#Stream" class="headerlink" title="Stream"></a>Stream</h2><p><span class="exturl" data-url="aHR0cHM6Ly93d3cucnVub29iLmNvbS9qYXZhL2phdmE4LXN0cmVhbXMuaHRtbA==">Java 8 Stream<i class="fa fa-external-link-alt"></i></span></p>
+<h2 id="Math"><a href="#Math" class="headerlink" title="Math"></a>Math</h2><h3 id="比大小"><a href="#比大小" class="headerlink" title="比大小"></a>比大小</h3><p>Math.min(value1, value2);<br>Math.max(value1, value2);</p>
+<h3 id="絕對值"><a href="#絕對值" class="headerlink" title="絕對值"></a>絕對值</h3><p>Math.abs(value);</p>
+<h2 id="printf"><a href="#printf" class="headerlink" title="printf"></a>printf</h2><p><span class="exturl" data-url="aHR0cHM6Ly93d3cucnVub29iLmNvbS93M2Nub3RlL2phdmEtcHJpbnRmLWZvcm1hdGUtZGVtby5odG1s">Java 格式化输出 printf 用法<i class="fa fa-external-link-alt"></i></span></p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">System.out.printf();</span><br></pre></td></tr></table></figure>
+
+<h2 id="基礎型別的預設值"><a href="#基礎型別的預設值" class="headerlink" title="基礎型別的預設值"></a>基礎型別的預設值</h2><h3 id="int"><a href="#int" class="headerlink" title="int"></a>int</h3><p>0</p>
+<h2 id="三元運算子"><a href="#三元運算子" class="headerlink" title="三元運算子"></a>三元運算子</h2><figure class="highlight java"><table><tr><td class="code"><pre><span class="line">判斷式 ？ 若判斷為真執行區塊 ： 若判斷為假執行區塊</span><br></pre></td></tr></table></figure>
+
+<h2 id="結語"><a href="#結語" class="headerlink" title="結語"></a>結語</h2><p>隨著科技進步，記憶體容量大到唸不出單位了，我的腦容量卻是連有沒有 1 byte 都不清楚。</p>
+<h2 id="參考資料"><a href="#參考資料" class="headerlink" title="參考資料"></a>參考資料</h2><p><span class="exturl" data-url="aHR0cHM6Ly9wZGFpLnRlY2gv">Java 全栈知识体系<i class="fa fa-external-link-alt"></i></span></p>
+<p><span class="exturl" data-url="aHR0cHM6Ly9yaWNrYnNyLm1lZGl1bS5jb20vJUU5JTk2JTkyJUU4JTgxJThBLWFycmF5cy1hc2xpc3QtJUU3JTlBJTg0JUU1JTlEJTkxLTgzODlkM2YxZTU0NA==">閒聊「Arrays.asList()」的坑<i class="fa fa-external-link-alt"></i></span></p>
+]]></content>
+      <categories>
+        <category>Java</category>
+        <category>Note</category>
+      </categories>
+      <tags>
+        <tag>Java</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Android Debug：Android Studio androidTest 跑不起來</title>
     <url>/Android/Debug/76c15376/</url>
     <content><![CDATA[<p>每次搞自動測試都一個頭兩個大，到底是升級後的 IDE 有問題還是裝置太爛？</p>
@@ -55,58 +132,6 @@
       <tags>
         <tag>Android</tag>
         <tag>SQLite</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Android Note：Activity Manager (am) intent arguments</title>
-    <url>/Android/Note/85ba8edf/</url>
-    <content><![CDATA[<p>有鑑於 Android 中 <span class="exturl" data-url="aHR0cHM6Ly9kZXZlbG9wZXIuYW5kcm9pZC5jb20vZ3VpZGUvY29tcG9uZW50cy9pbnRlbnRzLWZpbHRlcnM=">Intents and Intent Filters<i class="fa fa-external-link-alt"></i></span> 本身的複雜度，其指令參數也是那樣誇張沒錯。不過人腦記一些最基礎必要的東西就好了，太複雜的就交給查表。</p>
-<span id="more"></span>
-
-<p>Intemt 大致由以下這幾類東西組成：</p>
-<ul>
-<li>Component name</li>
-<li>Action</li>
-<li>Data</li>
-<li>Category</li>
-<li>Extras</li>
-<li>Flags</li>
-</ul>
-<p>不過大多都不是必須組件，直接以例子來說明，下面是以 Activity Manager 發出一個 broadcast 的指令：</p>
-<figure class="highlight sh"><figcaption><span>command line tool</span></figcaption><table><tr><td class="code"><pre><span class="line">$ am broadcast -a action_string --es es_key es_value --ei ei_key ei_value</span><br></pre></td></tr></table></figure>
-
-<p>其中 <code>am broadcast</code> 是要求 Activity Manager 發出 broadcast 的宣告<br>後面的 <code>-a action_string --es es_key es_value --ei ei_key ei_value</code> 整串都是 intent arguments，而這其中又能分為三組：</p>
-<ul>
-<li><code>-a action_string</code>：<code>-a</code> 表示加入 Action，後方 <code>action_string</code> 即是要使用的 Action 字串。</li>
-<li><code>--es es_key es_value</code>：<code>--es</code> 表示加入 Extra String 的鍵值對，後方 <code>es_key es_value</code> 即為該鍵值對。</li>
-<li><code>--ei ei_key ei_value</code>：<code>--ei</code> 表示加入 Extra Integer 的鍵值對，後方 <code>ei_key ei_value</code> 即為該鍵值對。</li>
-</ul>
-<h2 id="參考資料"><a href="#參考資料" class="headerlink" title="參考資料"></a>參考資料</h2><p><span class="exturl" data-url="aHR0cHM6Ly9kZXZlbG9wZXIuYW5kcm9pZC5jb20vc3R1ZGlvL2NvbW1hbmQtbGluZS9hZGIjSW50ZW50U3BlYw==">Specification for intent arguments<i class="fa fa-external-link-alt"></i></span></p>
-]]></content>
-      <categories>
-        <category>Android</category>
-        <category>Note</category>
-      </categories>
-      <tags>
-        <tag>Android</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Android Note：DecorView</title>
-    <url>/Android/Note/fdd5466a/</url>
-    <content><![CDATA[<p>獲取當前 Activity 的根視圖。</p>
-<span id="more"></span>
-
-<figure class="highlight kotlin"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 獲取 DecorView，他是整個窗口的最頂層視圖</span></span><br><span class="line"><span class="keyword">val</span> decorView = window.decorView</span><br><span class="line"></span><br><span class="line"><span class="comment">// 獲取內容視圖的根視圖</span></span><br><span class="line"><span class="keyword">val</span> rootView = decorView.findViewById&lt;ViewGroup&gt;(android.R.id.content)</span><br></pre></td></tr></table></figure>
-
-<p>其中 <code>android.R.id.content</code> 這個 id 對跨平台框架的 android 原生操作有奇效，像是添加 android 原生畫面之類的</p>
-]]></content>
-      <categories>
-        <category>Android</category>
-        <category>Note</category>
-      </categories>
-      <tags>
-        <tag>Android</tag>
       </tags>
   </entry>
   <entry>
@@ -165,77 +190,48 @@
       </tags>
   </entry>
   <entry>
-    <title>Android Note：常用 Android Debug Bridge (adb) 功能</title>
-    <url>/Android/Note/8318bca4/</url>
-    <content><![CDATA[<p>我常用的 adb 功能。</p>
+    <title>Android Note：DecorView</title>
+    <url>/Android/Note/fdd5466a/</url>
+    <content><![CDATA[<p>獲取當前 Activity 的根視圖。</p>
 <span id="more"></span>
 
-<h2 id="設定-Path-環境變數"><a href="#設定-Path-環境變數" class="headerlink" title="設定 Path 環境變數"></a>設定 Path 環境變數</h2><h3 id="Windows"><a href="#Windows" class="headerlink" title="Windows"></a>Windows</h3><p>Android Studio 隨附的 adb 所在路徑：<br>C:\Users\username\AppData\Local\Android\Sdk\platform-tools</p>
-<p>控制台\系統及安全性\系統、進階系統設定、環境變數、系統變數：Path：瀏覽：找到上述路徑、確定。</p>
-<p>打開 command line tool 輸入：adb 跳出資訊表示設置成功，之後在任何資料夾都能直接呼叫 adb；若未設置 Path 環境變數，要使用 adb 必須進到存放 adb 的路徑。</p>
-<h2 id="TCP-IP-連接設備"><a href="#TCP-IP-連接設備" class="headerlink" title="TCP&#x2F;IP 連接設備"></a>TCP&#x2F;IP 連接設備</h2><figure class="highlight sh"><figcaption><span>command line tool</span></figcaption><table><tr><td class="code"><pre><span class="line">$ adb connect device_ip_address[:PORT]</span><br></pre></td></tr></table></figure>
+<figure class="highlight kotlin"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 獲取 DecorView，他是整個窗口的最頂層視圖</span></span><br><span class="line"><span class="keyword">val</span> decorView = window.decorView</span><br><span class="line"></span><br><span class="line"><span class="comment">// 獲取內容視圖的根視圖</span></span><br><span class="line"><span class="keyword">val</span> rootView = decorView.findViewById&lt;ViewGroup&gt;(android.R.id.content)</span><br></pre></td></tr></table></figure>
 
-<p>default port&#x3D;5555。</p>
-<h2 id="切斷-TCP-IP-連接"><a href="#切斷-TCP-IP-連接" class="headerlink" title="切斷 TCP&#x2F;IP 連接"></a>切斷 TCP&#x2F;IP 連接</h2><figure class="highlight sh"><figcaption><span>command line tool</span></figcaption><table><tr><td class="code"><pre><span class="line">$ adb disconnect [device_ip_address[:PORT]]</span><br></pre></td></tr></table></figure>
+<p>其中 <code>android.R.id.content</code> 這個 id 對跨平台框架的 android 原生操作有奇效，像是添加 android 原生畫面之類的</p>
+]]></content>
+      <categories>
+        <category>Android</category>
+        <category>Note</category>
+      </categories>
+      <tags>
+        <tag>Android</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Android Note：Activity Manager (am) intent arguments</title>
+    <url>/Android/Note/85ba8edf/</url>
+    <content><![CDATA[<p>有鑑於 Android 中 <span class="exturl" data-url="aHR0cHM6Ly9kZXZlbG9wZXIuYW5kcm9pZC5jb20vZ3VpZGUvY29tcG9uZW50cy9pbnRlbnRzLWZpbHRlcnM=">Intents and Intent Filters<i class="fa fa-external-link-alt"></i></span> 本身的複雜度，其指令參數也是那樣誇張沒錯。不過人腦記一些最基礎必要的東西就好了，太複雜的就交給查表。</p>
+<span id="more"></span>
 
-<p>不指定會切斷所有連接。</p>
-<h2 id="列出所有連接設備"><a href="#列出所有連接設備" class="headerlink" title="列出所有連接設備"></a>列出所有連接設備</h2><figure class="highlight sh"><figcaption><span>command line tool</span></figcaption><table><tr><td class="code"><pre><span class="line">$ adb devices [-l]</span><br></pre></td></tr></table></figure>
+<p>Intemt 大致由以下這幾類東西組成：</p>
+<ul>
+<li>Component name</li>
+<li>Action</li>
+<li>Data</li>
+<li>Category</li>
+<li>Extras</li>
+<li>Flags</li>
+</ul>
+<p>不過大多都不是必須組件，直接以例子來說明，下面是以 Activity Manager 發出一個 broadcast 的指令：</p>
+<figure class="highlight sh"><figcaption><span>command line tool</span></figcaption><table><tr><td class="code"><pre><span class="line">$ am broadcast -a action_string --es es_key es_value --ei ei_key ei_value</span><br></pre></td></tr></table></figure>
 
-<p>預設會列出 adb 給這些設備指定的 serial number 與 state。<br>加上 <code>-l</code> (long output) 會印出設備詳細資訊：device product、model、device、transport_id。</p>
-<h2 id="指定設備下指令"><a href="#指定設備下指令" class="headerlink" title="指定設備下指令"></a>指定設備下指令</h2><p>若連接了多台設備，要先知道設備的 serial number 才能指定個別設備下指令。</p>
-<figure class="highlight sh"><figcaption><span>command line tool</span></figcaption><table><tr><td class="code"><pre><span class="line">$ adb -s serial_number adb_command</span><br></pre></td></tr></table></figure>
-
-<h2 id="下載-Logcat"><a href="#下載-Logcat" class="headerlink" title="下載 Logcat"></a>下載 Logcat</h2><p>即使機器使用當下沒有連接監視設備，事後接上機器也能下載。</p>
-<p>及時寫在 command line：</p>
-<figure class="highlight sh"><figcaption><span>command line tool</span></figcaption><table><tr><td class="code"><pre><span class="line">adb logcat</span><br></pre></td></tr></table></figure>
-
-<p>並寫入特定檔案至當前資料夾：</p>
-<figure class="highlight sh"><figcaption><span>command line tool</span></figcaption><table><tr><td class="code"><pre><span class="line">adb logcat -d &gt; crash.txt</span><br></pre></td></tr></table></figure>
-
-<p>從特定位置擷取Logcat：</p>
-<figure class="highlight sh"><figcaption><span>command line tool</span></figcaption><table><tr><td class="code"><pre><span class="line">adb logcat &gt; schedule.txt</span><br></pre></td></tr></table></figure>
-
-<p>結束擷取：<br><code>Ctrl</code> + <code>C</code></p>
-<h2 id="下載-Bugreport"><a href="#下載-Bugreport" class="headerlink" title="下載 Bugreport"></a>下載 Bugreport</h2><figure class="highlight sh"><figcaption><span>command line tool</span></figcaption><table><tr><td class="code"><pre><span class="line">adb bugreport</span><br></pre></td></tr></table></figure>
-
-<p>要回報錯誤報告給開發商時才要下載此檔案，回報時需使用.zip檔案格式。</p>
-<h2 id="安裝-App"><a href="#安裝-App" class="headerlink" title="安裝 App"></a>安裝 App</h2><figure class="highlight sh"><figcaption><span>command line tool</span></figcaption><table><tr><td class="code"><pre><span class="line">$ adb install path_to_apk</span><br></pre></td></tr></table></figure>
-
-<h2 id="文件傳輸"><a href="#文件傳輸" class="headerlink" title="文件傳輸"></a>文件傳輸</h2><h3 id="設備複製到本地"><a href="#設備複製到本地" class="headerlink" title="設備複製到本地"></a>設備複製到本地</h3><figure class="highlight sh"><figcaption><span>command line tool</span></figcaption><table><tr><td class="code"><pre><span class="line">$ adb pull remote_path local_path</span><br></pre></td></tr></table></figure>
-
-<h3 id="本地複製到設備"><a href="#本地複製到設備" class="headerlink" title="本地複製到設備"></a>本地複製到設備</h3><figure class="highlight sh"><figcaption><span>command line tool</span></figcaption><table><tr><td class="code"><pre><span class="line">$ adb push local_path remote_path</span><br></pre></td></tr></table></figure>
-
-<p>path 可以是文件或目錄。</p>
-<h2 id="重啟設備"><a href="#重啟設備" class="headerlink" title="重啟設備"></a>重啟設備</h2><figure class="highlight sh"><figcaption><span>command line tool</span></figcaption><table><tr><td class="code"><pre><span class="line">$ adb reboot</span><br></pre></td></tr></table></figure>
-
-<h2 id="root-權限"><a href="#root-權限" class="headerlink" title="root 權限"></a>root 權限</h2><h3 id="以-root-權限重啟-adbd"><a href="#以-root-權限重啟-adbd" class="headerlink" title="以 root 權限重啟 adbd"></a>以 root 權限重啟 adbd</h3><figure class="highlight sh"><figcaption><span>command line tool</span></figcaption><table><tr><td class="code"><pre><span class="line">$ adb root</span><br></pre></td></tr></table></figure>
-
-<h3 id="以非-root-權限重啟-adbd"><a href="#以非-root-權限重啟-adbd" class="headerlink" title="以非 root 權限重啟 adbd"></a>以非 root 權限重啟 adbd</h3><figure class="highlight sh"><figcaption><span>command line tool</span></figcaption><table><tr><td class="code"><pre><span class="line">$ adb unroot</span><br></pre></td></tr></table></figure>
-
-<h2 id="停止-adb-server"><a href="#停止-adb-server" class="headerlink" title="停止 adb server"></a>停止 adb server</h2><figure class="highlight sh"><figcaption><span>command line tool</span></figcaption><table><tr><td class="code"><pre><span class="line">$ adb kill-server</span><br></pre></td></tr></table></figure>
-
-<p>會斷絕所有連接，需要重新連，通常是 adb 出問題時才會用到這個指令。</p>
-<h2 id="下-shell-指令"><a href="#下-shell-指令" class="headerlink" title="下 shell 指令"></a>下 shell 指令</h2><p>基本上 Android 的 shell 指令是用指令操作 Android 設備時的精華。</p>
-<figure class="highlight sh"><figcaption><span>command line tool</span></figcaption><table><tr><td class="code"><pre><span class="line">$ adb shell [shell_command]</span><br></pre></td></tr></table></figure>
-
-<p>Android 本質是 Linux 核心擴增的框架，因此能對其使用 Unix 指令。<br>不直接下指令可以進入交互式 shell，可以使用 <code>Ctrl</code> + <code>D</code> 或輸入 <code>exit</code> 離開。</p>
-<h3 id="模擬按鍵輸入"><a href="#模擬按鍵輸入" class="headerlink" title="模擬按鍵輸入"></a>模擬按鍵輸入</h3><figure class="highlight sh"><figcaption><span>command line tool</span></figcaption><table><tr><td class="code"><pre><span class="line">$ input keyevent keycode</span><br></pre></td></tr></table></figure>
-
-<p><span class="exturl" data-url="aHR0cHM6Ly9kZXZlbG9wZXIuYW5kcm9pZC5jb20vcmVmZXJlbmNlL2FuZHJvaWQvdmlldy9LZXlFdmVudCNLRVlDT0RFX0JBQ0s=">KeyEvent<i class="fa fa-external-link-alt"></i></span></p>
-<h3 id="activity-manager"><a href="#activity-manager" class="headerlink" title="activity manager"></a>activity manager</h3><p>算是最重要的 Android Shell 指令，可以操作 Android 主要元件。</p>
-<figure class="highlight sh"><figcaption><span>command line tool</span></figcaption><table><tr><td class="code"><pre><span class="line">$ am am_command</span><br></pre></td></tr></table></figure>
-
-<h4 id="啟動-Activity"><a href="#啟動-Activity" class="headerlink" title="啟動 Activity"></a>啟動 Activity</h4><figure class="highlight sh"><figcaption><span>command line tool</span></figcaption><table><tr><td class="code"><pre><span class="line">$ am start [options] intent</span><br></pre></td></tr></table></figure>
-
-<h4 id="啟動-Service"><a href="#啟動-Service" class="headerlink" title="啟動 Service"></a>啟動 Service</h4><figure class="highlight sh"><figcaption><span>command line tool</span></figcaption><table><tr><td class="code"><pre><span class="line">$ am start [options] intent</span><br></pre></td></tr></table></figure>
-
-<h4 id="啟動-Broadcast"><a href="#啟動-Broadcast" class="headerlink" title="啟動 Broadcast"></a>啟動 Broadcast</h4><figure class="highlight sh"><figcaption><span>command line tool</span></figcaption><table><tr><td class="code"><pre><span class="line">$ am broadcast [options] intent</span><br></pre></td></tr></table></figure>
-
-<h3 id="package-manager"><a href="#package-manager" class="headerlink" title="package manager"></a>package manager</h3><p>管理 App 的。</p>
-<figure class="highlight sh"><figcaption><span>command line tool</span></figcaption><table><tr><td class="code"><pre><span class="line">$ pm pm_command</span><br></pre></td></tr></table></figure>
-
-<h2 id="參考資料"><a href="#參考資料" class="headerlink" title="參考資料"></a>參考資料</h2><p>command: adb help</p>
-<p><span class="exturl" data-url="aHR0cHM6Ly9kZXZlbG9wZXIuYW5kcm9pZC5jb20vc3R1ZGlvL2NvbW1hbmQtbGluZS9hZGI=">Android Debug Bridge (adb)<i class="fa fa-external-link-alt"></i></span><br><span class="exturl" data-url="aHR0cHM6Ly9qdWVqaW4uY24vcG9zdC82ODQ0OTAzOTE4MTEyMDc5ODg1">关于 adb 命令你所需要知道的<i class="fa fa-external-link-alt"></i></span></p>
+<p>其中 <code>am broadcast</code> 是要求 Activity Manager 發出 broadcast 的宣告<br>後面的 <code>-a action_string --es es_key es_value --ei ei_key ei_value</code> 整串都是 intent arguments，而這其中又能分為三組：</p>
+<ul>
+<li><code>-a action_string</code>：<code>-a</code> 表示加入 Action，後方 <code>action_string</code> 即是要使用的 Action 字串。</li>
+<li><code>--es es_key es_value</code>：<code>--es</code> 表示加入 Extra String 的鍵值對，後方 <code>es_key es_value</code> 即為該鍵值對。</li>
+<li><code>--ei ei_key ei_value</code>：<code>--ei</code> 表示加入 Extra Integer 的鍵值對，後方 <code>ei_key ei_value</code> 即為該鍵值對。</li>
+</ul>
+<h2 id="參考資料"><a href="#參考資料" class="headerlink" title="參考資料"></a>參考資料</h2><p><span class="exturl" data-url="aHR0cHM6Ly9kZXZlbG9wZXIuYW5kcm9pZC5jb20vc3R1ZGlvL2NvbW1hbmQtbGluZS9hZGIjSW50ZW50U3BlYw==">Specification for intent arguments<i class="fa fa-external-link-alt"></i></span></p>
 ]]></content>
       <categories>
         <category>Android</category>
@@ -334,6 +330,87 @@
       </tags>
   </entry>
   <entry>
+    <title>Android Note：常用 Android Debug Bridge (adb) 功能</title>
+    <url>/Android/Note/8318bca4/</url>
+    <content><![CDATA[<p>我常用的 adb 功能。</p>
+<span id="more"></span>
+
+<h2 id="設定-Path-環境變數"><a href="#設定-Path-環境變數" class="headerlink" title="設定 Path 環境變數"></a>設定 Path 環境變數</h2><h3 id="Windows"><a href="#Windows" class="headerlink" title="Windows"></a>Windows</h3><p>Android Studio 隨附的 adb 所在路徑：<br>C:\Users\username\AppData\Local\Android\Sdk\platform-tools</p>
+<p>控制台\系統及安全性\系統、進階系統設定、環境變數、系統變數：Path：瀏覽：找到上述路徑、確定。</p>
+<p>打開 command line tool 輸入：adb 跳出資訊表示設置成功，之後在任何資料夾都能直接呼叫 adb；若未設置 Path 環境變數，要使用 adb 必須進到存放 adb 的路徑。</p>
+<h2 id="TCP-IP-連接設備"><a href="#TCP-IP-連接設備" class="headerlink" title="TCP&#x2F;IP 連接設備"></a>TCP&#x2F;IP 連接設備</h2><figure class="highlight sh"><figcaption><span>command line tool</span></figcaption><table><tr><td class="code"><pre><span class="line">$ adb connect device_ip_address[:PORT]</span><br></pre></td></tr></table></figure>
+
+<p>default port&#x3D;5555。</p>
+<h2 id="切斷-TCP-IP-連接"><a href="#切斷-TCP-IP-連接" class="headerlink" title="切斷 TCP&#x2F;IP 連接"></a>切斷 TCP&#x2F;IP 連接</h2><figure class="highlight sh"><figcaption><span>command line tool</span></figcaption><table><tr><td class="code"><pre><span class="line">$ adb disconnect [device_ip_address[:PORT]]</span><br></pre></td></tr></table></figure>
+
+<p>不指定會切斷所有連接。</p>
+<h2 id="列出所有連接設備"><a href="#列出所有連接設備" class="headerlink" title="列出所有連接設備"></a>列出所有連接設備</h2><figure class="highlight sh"><figcaption><span>command line tool</span></figcaption><table><tr><td class="code"><pre><span class="line">$ adb devices [-l]</span><br></pre></td></tr></table></figure>
+
+<p>預設會列出 adb 給這些設備指定的 serial number 與 state。<br>加上 <code>-l</code> (long output) 會印出設備詳細資訊：device product、model、device、transport_id。</p>
+<h2 id="指定設備下指令"><a href="#指定設備下指令" class="headerlink" title="指定設備下指令"></a>指定設備下指令</h2><p>若連接了多台設備，要先知道設備的 serial number 才能指定個別設備下指令。</p>
+<figure class="highlight sh"><figcaption><span>command line tool</span></figcaption><table><tr><td class="code"><pre><span class="line">$ adb -s serial_number adb_command</span><br></pre></td></tr></table></figure>
+
+<h2 id="下載-Logcat"><a href="#下載-Logcat" class="headerlink" title="下載 Logcat"></a>下載 Logcat</h2><p>即使機器使用當下沒有連接監視設備，事後接上機器也能下載。</p>
+<p>及時寫在 command line：</p>
+<figure class="highlight sh"><figcaption><span>command line tool</span></figcaption><table><tr><td class="code"><pre><span class="line">adb logcat</span><br></pre></td></tr></table></figure>
+
+<p>並寫入特定檔案至當前資料夾：</p>
+<figure class="highlight sh"><figcaption><span>command line tool</span></figcaption><table><tr><td class="code"><pre><span class="line">adb logcat -d &gt; crash.txt</span><br></pre></td></tr></table></figure>
+
+<p>從特定位置擷取Logcat：</p>
+<figure class="highlight sh"><figcaption><span>command line tool</span></figcaption><table><tr><td class="code"><pre><span class="line">adb logcat &gt; schedule.txt</span><br></pre></td></tr></table></figure>
+
+<p>結束擷取：<br><code>Ctrl</code> + <code>C</code></p>
+<h2 id="下載-Bugreport"><a href="#下載-Bugreport" class="headerlink" title="下載 Bugreport"></a>下載 Bugreport</h2><figure class="highlight sh"><figcaption><span>command line tool</span></figcaption><table><tr><td class="code"><pre><span class="line">adb bugreport</span><br></pre></td></tr></table></figure>
+
+<p>要回報錯誤報告給開發商時才要下載此檔案，回報時需使用.zip檔案格式。</p>
+<h2 id="安裝-App"><a href="#安裝-App" class="headerlink" title="安裝 App"></a>安裝 App</h2><figure class="highlight sh"><figcaption><span>command line tool</span></figcaption><table><tr><td class="code"><pre><span class="line">$ adb install path_to_apk</span><br></pre></td></tr></table></figure>
+
+<h2 id="文件傳輸"><a href="#文件傳輸" class="headerlink" title="文件傳輸"></a>文件傳輸</h2><h3 id="設備複製到本地"><a href="#設備複製到本地" class="headerlink" title="設備複製到本地"></a>設備複製到本地</h3><figure class="highlight sh"><figcaption><span>command line tool</span></figcaption><table><tr><td class="code"><pre><span class="line">$ adb pull remote_path local_path</span><br></pre></td></tr></table></figure>
+
+<h3 id="本地複製到設備"><a href="#本地複製到設備" class="headerlink" title="本地複製到設備"></a>本地複製到設備</h3><figure class="highlight sh"><figcaption><span>command line tool</span></figcaption><table><tr><td class="code"><pre><span class="line">$ adb push local_path remote_path</span><br></pre></td></tr></table></figure>
+
+<p>path 可以是文件或目錄。</p>
+<h2 id="重啟設備"><a href="#重啟設備" class="headerlink" title="重啟設備"></a>重啟設備</h2><figure class="highlight sh"><figcaption><span>command line tool</span></figcaption><table><tr><td class="code"><pre><span class="line">$ adb reboot</span><br></pre></td></tr></table></figure>
+
+<h2 id="root-權限"><a href="#root-權限" class="headerlink" title="root 權限"></a>root 權限</h2><h3 id="以-root-權限重啟-adbd"><a href="#以-root-權限重啟-adbd" class="headerlink" title="以 root 權限重啟 adbd"></a>以 root 權限重啟 adbd</h3><figure class="highlight sh"><figcaption><span>command line tool</span></figcaption><table><tr><td class="code"><pre><span class="line">$ adb root</span><br></pre></td></tr></table></figure>
+
+<h3 id="以非-root-權限重啟-adbd"><a href="#以非-root-權限重啟-adbd" class="headerlink" title="以非 root 權限重啟 adbd"></a>以非 root 權限重啟 adbd</h3><figure class="highlight sh"><figcaption><span>command line tool</span></figcaption><table><tr><td class="code"><pre><span class="line">$ adb unroot</span><br></pre></td></tr></table></figure>
+
+<h2 id="停止-adb-server"><a href="#停止-adb-server" class="headerlink" title="停止 adb server"></a>停止 adb server</h2><figure class="highlight sh"><figcaption><span>command line tool</span></figcaption><table><tr><td class="code"><pre><span class="line">$ adb kill-server</span><br></pre></td></tr></table></figure>
+
+<p>會斷絕所有連接，需要重新連，通常是 adb 出問題時才會用到這個指令。</p>
+<h2 id="下-shell-指令"><a href="#下-shell-指令" class="headerlink" title="下 shell 指令"></a>下 shell 指令</h2><p>基本上 Android 的 shell 指令是用指令操作 Android 設備時的精華。</p>
+<figure class="highlight sh"><figcaption><span>command line tool</span></figcaption><table><tr><td class="code"><pre><span class="line">$ adb shell [shell_command]</span><br></pre></td></tr></table></figure>
+
+<p>Android 本質是 Linux 核心擴增的框架，因此能對其使用 Unix 指令。<br>不直接下指令可以進入交互式 shell，可以使用 <code>Ctrl</code> + <code>D</code> 或輸入 <code>exit</code> 離開。</p>
+<h3 id="模擬按鍵輸入"><a href="#模擬按鍵輸入" class="headerlink" title="模擬按鍵輸入"></a>模擬按鍵輸入</h3><figure class="highlight sh"><figcaption><span>command line tool</span></figcaption><table><tr><td class="code"><pre><span class="line">$ input keyevent keycode</span><br></pre></td></tr></table></figure>
+
+<p><span class="exturl" data-url="aHR0cHM6Ly9kZXZlbG9wZXIuYW5kcm9pZC5jb20vcmVmZXJlbmNlL2FuZHJvaWQvdmlldy9LZXlFdmVudCNLRVlDT0RFX0JBQ0s=">KeyEvent<i class="fa fa-external-link-alt"></i></span></p>
+<h3 id="activity-manager"><a href="#activity-manager" class="headerlink" title="activity manager"></a>activity manager</h3><p>算是最重要的 Android Shell 指令，可以操作 Android 主要元件。</p>
+<figure class="highlight sh"><figcaption><span>command line tool</span></figcaption><table><tr><td class="code"><pre><span class="line">$ am am_command</span><br></pre></td></tr></table></figure>
+
+<h4 id="啟動-Activity"><a href="#啟動-Activity" class="headerlink" title="啟動 Activity"></a>啟動 Activity</h4><figure class="highlight sh"><figcaption><span>command line tool</span></figcaption><table><tr><td class="code"><pre><span class="line">$ am start [options] intent</span><br></pre></td></tr></table></figure>
+
+<h4 id="啟動-Service"><a href="#啟動-Service" class="headerlink" title="啟動 Service"></a>啟動 Service</h4><figure class="highlight sh"><figcaption><span>command line tool</span></figcaption><table><tr><td class="code"><pre><span class="line">$ am start [options] intent</span><br></pre></td></tr></table></figure>
+
+<h4 id="啟動-Broadcast"><a href="#啟動-Broadcast" class="headerlink" title="啟動 Broadcast"></a>啟動 Broadcast</h4><figure class="highlight sh"><figcaption><span>command line tool</span></figcaption><table><tr><td class="code"><pre><span class="line">$ am broadcast [options] intent</span><br></pre></td></tr></table></figure>
+
+<h3 id="package-manager"><a href="#package-manager" class="headerlink" title="package manager"></a>package manager</h3><p>管理 App 的。</p>
+<figure class="highlight sh"><figcaption><span>command line tool</span></figcaption><table><tr><td class="code"><pre><span class="line">$ pm pm_command</span><br></pre></td></tr></table></figure>
+
+<h2 id="參考資料"><a href="#參考資料" class="headerlink" title="參考資料"></a>參考資料</h2><p>command: adb help</p>
+<p><span class="exturl" data-url="aHR0cHM6Ly9kZXZlbG9wZXIuYW5kcm9pZC5jb20vc3R1ZGlvL2NvbW1hbmQtbGluZS9hZGI=">Android Debug Bridge (adb)<i class="fa fa-external-link-alt"></i></span><br><span class="exturl" data-url="aHR0cHM6Ly9qdWVqaW4uY24vcG9zdC82ODQ0OTAzOTE4MTEyMDc5ODg1">关于 adb 命令你所需要知道的<i class="fa fa-external-link-alt"></i></span></p>
+]]></content>
+      <categories>
+        <category>Android</category>
+        <category>Note</category>
+      </categories>
+      <tags>
+        <tag>Android</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Hexo Blog 02：更換 Hexo 主題，初探 NexT</title>
     <url>/Hexo/Blog/a3d910a8/</url>
     <content><![CDATA[<p>前一篇系列文章：<a href="/Hexo/Blog/dceed03/" title="Hexo Blog 01：使用 Hexo 迅速在 GitHub Pages 展開 Blog 旅程">使用 Hexo 迅速在 GitHub Pages 展開 Blog 旅程</a>  最後列了一些使用 Hexo Blog 要解決的問題，最重要的應該就是更換主題了，因為要擴充功能什麼的幾乎都能透過更改主題的設定實踐。</p>
@@ -397,76 +474,6 @@
       <tags>
         <tag>Hexo</tag>
         <tag>NexT</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Hexo Blog 04：NexT 主題加入留言與聊天室機制</title>
-    <url>/Hexo/Blog/bf635840/</url>
-    <content><![CDATA[<p>前一篇系列文章：<a href="/Hexo/Blog/a4c4ed5f/" title="Hexo Blog 03：繼續探索 NexT">繼續探索 NexT</a> 在 NexT 主題啟用了一些 Blog 常見功能，讓文章的簡單量化資訊一目了然。這回來加上讓讀者有機會與我們互動的留言與聊天室機制。</p>
-<span id="more"></span>
-
-
-
-<h2 id="環境"><a href="#環境" class="headerlink" title="環境"></a>環境</h2><p>Hexo: 6.3.0</p>
-<p>hexo-cli: 4.3.0</p>
-<p>NexT: 8.14.0</p>
-<h2 id="留言機制"><a href="#留言機制" class="headerlink" title="留言機制"></a>留言機制</h2><p>NexT 提供了 <span class="exturl" data-url="aHR0cHM6Ly90aGVtZS1uZXh0LmpzLm9yZy9kb2NzL3RoaXJkLXBhcnR5LXNlcnZpY2VzL2NvbW1lbnRz">數種留言方案<i class="fa fa-external-link-alt"></i></span>，每種方案都有其使用上優缺點，可以思考一下自己 Blog 的客群來選擇。也可以全部都啟用，給讀者自行選擇要用什麼方案。</p>
-<p>我是直接使用列在最前面的 <span class="exturl" data-url="aHR0cHM6Ly9kaXNxdXMuY29tLw==">Disqus<i class="fa fa-external-link-alt"></i></span>，只需要簡單註冊一下，取得 <code>shortname</code> 後貼進主題設定檔中即可：</p>
-<h3 id="進入-Disqus-官網"><a href="#進入-Disqus-官網" class="headerlink" title="進入 Disqus 官網"></a>進入 <span class="exturl" data-url="aHR0cHM6Ly9kaXNxdXMuY29tLw==">Disqus 官網<i class="fa fa-external-link-alt"></i></span></h3><h3 id="點擊-GET-STARTED"><a href="#點擊-GET-STARTED" class="headerlink" title="點擊 GET STARTED"></a>點擊 GET STARTED</h3><p><img data-src="https://github.com/WCW0310/blogPicture/blob/master/Hexo/Hexo-Blog-04-Hexo-Theme-NexT-Comment-and-Chat/getStarted.png?raw=true"></p>
-<h3 id="Signup-註冊"><a href="#Signup-註冊" class="headerlink" title="Signup 註冊"></a>Signup 註冊</h3><h3 id="What-would-you-like-to-do-with-Disqus"><a href="#What-would-you-like-to-do-with-Disqus" class="headerlink" title="What would you like to do with Disqus?"></a>What would you like to do with Disqus?</h3><p>點擊 I want to install Disqus on my site<br><img data-src="https://github.com/WCW0310/blogPicture/blob/master/Hexo/Hexo-Blog-04-Hexo-Theme-NexT-Comment-and-Chat/installOnMySite.png?raw=true"></p>
-<h3 id="Create-a-new-site"><a href="#Create-a-new-site" class="headerlink" title="Create a new site"></a>Create a new site</h3><p>給 Disqus Websete 命名與設定類別 (可以隨便設，因為可以刪除)，完成後點擊 Create Site<br><img data-src="https://github.com/WCW0310/blogPicture/blob/master/Hexo/Hexo-Blog-04-Hexo-Theme-NexT-Comment-and-Chat/createNewSite.png?raw=true"></p>
-<h3 id="Select-a-plan"><a href="#Select-a-plan" class="headerlink" title="Select a plan"></a>Select a plan</h3><p>頁面往下滑，找到 Basic 方案，點擊 Subscribe Now (這是免費方案!)<br><img data-src="https://github.com/WCW0310/blogPicture/blob/master/Hexo/Hexo-Blog-04-Hexo-Theme-NexT-Comment-and-Chat/selectPlan.png?raw=true"></p>
-<h3 id="What-platform-is-your-site-on"><a href="#What-platform-is-your-site-on" class="headerlink" title="What platform is your site on?"></a>What platform is your site on?</h3><p>頁面往下滑，找到此按鈕並點擊<br><img data-src="https://github.com/WCW0310/blogPicture/blob/master/Hexo/Hexo-Blog-04-Hexo-Theme-NexT-Comment-and-Chat/platform.png?raw=true"></p>
-<h3 id="Universal-Code-install-instructions"><a href="#Universal-Code-install-instructions" class="headerlink" title="Universal Code install instructions"></a>Universal Code install instructions</h3><p>忽略此頁面內容，往下滑，找到 Configure 並點擊<br><img data-src="https://github.com/WCW0310/blogPicture/blob/master/Hexo/Hexo-Blog-04-Hexo-Theme-NexT-Comment-and-Chat/configure.png?raw=true"></p>
-<h3 id="Configure-Disqus"><a href="#Configure-Disqus" class="headerlink" title="Configure Disqus"></a>Configure Disqus</h3><p>Website URL 填入 Blog 網址</p>
-<p>點擊 Next<br><img data-src="https://github.com/WCW0310/blogPicture/blob/master/Hexo/Hexo-Blog-04-Hexo-Theme-NexT-Comment-and-Chat/configSetting.png?raw=true"></p>
-<h3 id="Comment-and-Moderation-Settings"><a href="#Comment-and-Moderation-Settings" class="headerlink" title="Comment and Moderation Settings"></a>Comment and Moderation Settings</h3><p>選擇想要的留言規範後點擊 Complete Setup 即完成設定<br><img data-src="https://github.com/WCW0310/blogPicture/blob/master/Hexo/Hexo-Blog-04-Hexo-Theme-NexT-Comment-and-Chat/commentSetting.png?raw=true"></p>
-<p>Disqus 設定完成<br><img data-src="https://github.com/WCW0310/blogPicture/blob/master/Hexo/Hexo-Blog-04-Hexo-Theme-NexT-Comment-and-Chat/complete.png?raw=true"></p>
-<h3 id="取得-Shortname"><a href="#取得-Shortname" class="headerlink" title="取得 Shortname"></a>取得 Shortname</h3><p>點擊上方 Settings tab 即可找到 Shortname，將其複製 (本範例中的 Shortname 已刪除，僅供參考用途)<br><img data-src="https://github.com/WCW0310/blogPicture/blob/master/Hexo/Hexo-Blog-04-Hexo-Theme-NexT-Comment-and-Chat/Shortname.png?raw=true"></p>
-<h3 id="將-Shortname-貼進主題設定檔中："><a href="#將-Shortname-貼進主題設定檔中：" class="headerlink" title="將 Shortname 貼進主題設定檔中："></a>將 Shortname 貼進主題設定檔中：</h3><figure class="highlight yaml"><figcaption><span>_config.next.yml</span></figcaption><table><tr><td class="code"><pre><span class="line"><span class="comment"># Disqus</span></span><br><span class="line"><span class="comment"># For more information: https://disqus.com</span></span><br><span class="line"><span class="attr">disqus:</span></span><br><span class="line">  <span class="attr">enable:</span> <span class="literal">true</span></span><br><span class="line">  <span class="attr">shortname:</span> <span class="string">OOOOO</span></span><br><span class="line">  <span class="attr">count:</span> <span class="literal">true</span></span><br></pre></td></tr></table></figure>
-
-<h3 id="重新部署-Blog"><a href="#重新部署-Blog" class="headerlink" title="重新部署 Blog"></a>重新部署 Blog</h3><p>設定好之後重新部署 Blog，留言板就會自動出現在文章或特定頁面下方了，缺點大概是無法使用訪客匿名留言，必須使用 Disqus 帳號或社群平台帳號登入才能留言，如：Facdbook、Twitter 及 Google。</p>
-<p>大功告成!<br><img data-src="https://github.com/WCW0310/blogPicture/blob/master/Hexo/Hexo-Blog-04-Hexo-Theme-NexT-Comment-and-Chat/disqusSample.png?raw=true"></p>
-<p>補充：後來找到一款可以免登入的留言板 <span class="exturl" data-url="aHR0cHM6Ly9kaXNjdXNzLmpzLm9yZy8=">Discuss<i class="fa fa-external-link-alt"></i></span>，我自己是沒套用，但我有用 <span class="exturl" data-url="aHR0cHM6Ly93d3cuaW1sZXRlLmNuLw==">Lete乐特<i class="fa fa-external-link-alt"></i></span> 這位大大的其他套件。</p>
-<h2 id="聊天室機制"><a href="#聊天室機制" class="headerlink" title="聊天室機制"></a>聊天室機制</h2><p>NexT 目前提供了 <span class="exturl" data-url="aHR0cHM6Ly90aGVtZS1uZXh0LmpzLm9yZy9kb2NzL3RoaXJkLXBhcnR5LXNlcnZpY2VzL2NoYXQtc2VydmljZXM=">三種聊天室方案<i class="fa fa-external-link-alt"></i></span>，一次只能啟用一種，若是在設定中開啟了多個，NexT 只會啟用在設定檔中列在比較前面的。</p>
-<p><span class="exturl" data-url="aHR0cHM6Ly90aGVtZS1uZXh0LmpzLm9yZy8=">NexT 官網<i class="fa fa-external-link-alt"></i></span> 使用的是 <span class="exturl" data-url="aHR0cHM6Ly9naXR0ZXIuaW0v">Gitter<i class="fa fa-external-link-alt"></i></span>，是多人聊天室，我覺得可以取代留言板，不過不管創建聊天室或是加入聊天都是使用 GitHub 帳號。</p>
-<p>我目前是使用 <span class="exturl" data-url="aHR0cHM6Ly9jaGF0cmEuY29tLw==">Chatra<i class="fa fa-external-link-alt"></i></span>，性質是偏向商家 (作者) 對顧客 (讀者) 的聊天室，讀者不需要登入即可與作者取得聯繫。</p>
-<p><span class="exturl" data-url="aHR0cHM6Ly9jaGF0cmEuY29tLw==">Chatra<i class="fa fa-external-link-alt"></i></span> 的啟用方法也是註冊後取得 <code>id</code> 後貼進主題設定檔中即可：</p>
-<h3 id="進入-Chatra-官網"><a href="#進入-Chatra-官網" class="headerlink" title="進入 Chatra 官網"></a>進入 <span class="exturl" data-url="aHR0cHM6Ly9jaGF0cmEuY29tLw==">Chatra 官網<i class="fa fa-external-link-alt"></i></span></h3><h3 id="點擊-GET-STARTED-1"><a href="#點擊-GET-STARTED-1" class="headerlink" title="點擊 GET STARTED"></a>點擊 GET STARTED</h3><p><img data-src="https://github.com/WCW0310/blogPicture/blob/master/Hexo/Hexo-Blog-04-Hexo-Theme-NexT-Comment-and-Chat/getStarted2.png?raw=true"></p>
-<h3 id="填入-email-註冊"><a href="#填入-email-註冊" class="headerlink" title="填入 email 註冊"></a>填入 email 註冊</h3><p>填入 email 後點擊 <code>Let&#39;s go!</code> 即完成註冊。</p>
-<p>需要進入登記的 email 收驗證信來驗證身份。</p>
-<h3 id="左方側邊欄進入-Settings-Chat-widget-找到-HTML-程式碼："><a href="#左方側邊欄進入-Settings-Chat-widget-找到-HTML-程式碼：" class="headerlink" title="左方側邊欄進入 Settings &gt; Chat widget 找到 HTML 程式碼："></a>左方側邊欄進入 <span class="exturl" data-url="aHR0cHM6Ly9hcHAuY2hhdHJhLmlvL3NldHRpbmdzL2ludGVncmF0aW9ucy93aWRnZXQ=">Settings &gt; Chat widget<i class="fa fa-external-link-alt"></i></span> 找到 HTML 程式碼：</h3><figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="comment">&lt;!-- Chatra &#123;literal&#125; --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript">    (<span class="keyword">function</span>(<span class="params">d, w, c</span>) &#123;</span></span><br><span class="line"><span class="language-javascript">        w.<span class="property">ChatraID</span> = <span class="string">&#x27;OOOOO&#x27;</span>;</span></span><br><span class="line"><span class="language-javascript">        <span class="keyword">var</span> s = d.<span class="title function_">createElement</span>(<span class="string">&#x27;script&#x27;</span>);</span></span><br><span class="line"><span class="language-javascript">        w[c] = w[c] || <span class="keyword">function</span>(<span class="params"></span>) &#123;</span></span><br><span class="line"><span class="language-javascript">            (w[c].<span class="property">q</span> = w[c].<span class="property">q</span> || []).<span class="title function_">push</span>(<span class="variable language_">arguments</span>);</span></span><br><span class="line"><span class="language-javascript">        &#125;;</span></span><br><span class="line"><span class="language-javascript">        s.<span class="property">async</span> = <span class="literal">true</span>;</span></span><br><span class="line"><span class="language-javascript">        s.<span class="property">src</span> = <span class="string">&#x27;https://call.chatra.io/chatra.js&#x27;</span>;</span></span><br><span class="line"><span class="language-javascript">        <span class="keyword">if</span> (d.<span class="property">head</span>) d.<span class="property">head</span>.<span class="title function_">appendChild</span>(s);</span></span><br><span class="line"><span class="language-javascript">    &#125;)(<span class="variable language_">document</span>, <span class="variable language_">window</span>, <span class="string">&#x27;Chatra&#x27;</span>);</span></span><br><span class="line"><span class="language-javascript"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="comment">&lt;!-- /Chatra &#123;/literal&#125; --&gt;</span></span><br></pre></td></tr></table></figure>
-
-<p>找到 w.ChatraID，複製引號間的 ID。</p>
-<h3 id="將複製的-ID-貼進主題設定檔中："><a href="#將複製的-ID-貼進主題設定檔中：" class="headerlink" title="將複製的 ID 貼進主題設定檔中："></a>將複製的 ID 貼進主題設定檔中：</h3><figure class="highlight yaml"><figcaption><span>_config.next.yml</span></figcaption><table><tr><td class="code"><pre><span class="line"><span class="comment"># Chatra Support</span></span><br><span class="line"><span class="comment"># For more information: https://chatra.com</span></span><br><span class="line"><span class="comment"># Dashboard: https://app.chatra.io/settings/general</span></span><br><span class="line"><span class="attr">chatra:</span></span><br><span class="line">  <span class="attr">enable:</span> <span class="literal">true</span></span><br><span class="line">  <span class="attr">async:</span> <span class="literal">true</span></span><br><span class="line">  <span class="attr">id:</span> <span class="string">OOOOO</span> <span class="comment"># Visit Dashboard to get your ChatraID</span></span><br><span class="line">  <span class="comment">#embed: # Unfinished experimental feature for developers. See: https://chatra.com/help/api/#injectto</span></span><br></pre></td></tr></table></figure>
-
-<h3 id="重新部署-Blog-1"><a href="#重新部署-Blog-1" class="headerlink" title="重新部署 Blog"></a>重新部署 Blog</h3><p>聊天室按鈕就會自動出現在 Blog 頁面下方了，可以在它網站裡的 <span class="exturl" data-url="aHR0cHM6Ly9hcHAuY2hhdHJhLmlvL3NldHRpbmdzL2ludGVncmF0aW9ucy93aWRnZXQ=">Settings &gt; Chat widget<i class="fa fa-external-link-alt"></i></span> 設定其顯示的位置。</p>
-<p>聊天室按鈕 (我的在頁面右下方)<br><img data-src="https://github.com/WCW0310/blogPicture/blob/master/Hexo/Hexo-Blog-04-Hexo-Theme-NexT-Comment-and-Chat/chatBTN.png?raw=true"></p>
-<p>聊天室 (點擊聊天室按鈕開啟)<br><img data-src="https://github.com/WCW0310/blogPicture/blob/master/Hexo/Hexo-Blog-04-Hexo-Theme-NexT-Comment-and-Chat/chatRoom.png?raw=true"></p>
-<p>也因為它自己就有按鈕，我們不用開啟 NexT 提供的 <code>Chat</code> 按鈕：</p>
-<figure class="highlight yaml"><figcaption><span>_config.next.yml</span></figcaption><table><tr><td class="code"><pre><span class="line"><span class="comment"># A button to open designated chat widget in sidebar.</span></span><br><span class="line"><span class="comment"># Firstly, you need to enable and configure the chat service.</span></span><br><span class="line"><span class="attr">chat:</span></span><br><span class="line">  <span class="attr">enable:</span> <span class="literal">false</span></span><br><span class="line">  <span class="attr">icon:</span> <span class="string">fa</span> <span class="string">fa-comment</span> <span class="comment"># Icon name in Font Awesome, set false to disable icon.</span></span><br><span class="line">  <span class="attr">text:</span> <span class="string">Chat</span> <span class="comment"># Button text, change it as you wish.</span></span><br></pre></td></tr></table></figure>
-
-<h3 id="接收訊息"><a href="#接收訊息" class="headerlink" title="接收訊息"></a>接收訊息</h3><p>如果有人透過 Blog 的 Chatra 聊天室傳訊息給你，你要怎麼知道?</p>
-<ul>
-<li><p>App：在行動裝置或電腦安裝 <span class="exturl" data-url="aHR0cHM6Ly9hcHAuY2hhdHJhLmlvL2FwcHM=">Chatra App<i class="fa fa-external-link-alt"></i></span>，登入帳號即可即時收到別人傳的訊息。</p>
-</li>
-<li><p>Web：在 <span class="exturl" data-url="aHR0cHM6Ly9jaGF0cmEuY29tLw==">Chatra 官網<i class="fa fa-external-link-alt"></i></span> 登入帳號就可以看到全部訊息。</p>
-</li>
-<li><p>Email：如果你沒有使用 App 或登入網站的習慣，Chatra 會定期把你沒讀的訊息用 Email 寄給你。</p>
-</li>
-</ul>
-<h2 id="結語"><a href="#結語" class="headerlink" title="結語"></a>結語</h2><p>加入留言與聊天機制後 Blog 幾近完全體，各位可以好好撰寫文章了!</p>
-<p>下一篇系列文章：<a href="/Hexo/Blog/6528a7b6/" title="Hexo Blog 05：NexT 主題 SEO 相關設置">NexT 主題 SEO 相關設置</a></p>
-]]></content>
-      <categories>
-        <category>Hexo</category>
-        <category>Blog</category>
-      </categories>
-      <tags>
-        <tag>Hexo</tag>
-        <tag>NexT</tag>
-        <tag>Disqus</tag>
-        <tag>Chatra</tag>
       </tags>
   </entry>
   <entry>
@@ -619,89 +626,68 @@
       </categories>
       <tags>
         <tag>Hexo</tag>
-        <tag>NexT</tag>
         <tag>Firebase</tag>
+        <tag>NexT</tag>
       </tags>
   </entry>
   <entry>
-    <title>Hexo Blog 06：NexT 主題加入 Google Adsense</title>
-    <url>/Hexo/Blog/d951a84f/</url>
-    <content><![CDATA[<p>前一篇系列文章：<a href="/Hexo/Blog/6528a7b6/" title="Hexo Blog 05：NexT 主題 SEO 相關設置">NexT 主題 SEO 相關設置</a> 加入向搜尋引擎自動推送網址的功能後，我們的 Blog 終於能出現在人們視野中。而有能見度後就是要收取過路費阿 (咦?</p>
+    <title>Hexo Blog 04：NexT 主題加入留言與聊天室機制</title>
+    <url>/Hexo/Blog/bf635840/</url>
+    <content><![CDATA[<p>前一篇系列文章：<a href="/Hexo/Blog/a4c4ed5f/" title="Hexo Blog 03：繼續探索 NexT">繼續探索 NexT</a> 在 NexT 主題啟用了一些 Blog 常見功能，讓文章的簡單量化資訊一目了然。這回來加上讓讀者有機會與我們互動的留言與聊天室機制。</p>
 <span id="more"></span>
 
 
 
-<h2 id="目標"><a href="#目標" class="headerlink" title="目標"></a>目標</h2><ul>
-<li>於 Blog 加入並啟用 Google Adsense</li>
-</ul>
 <h2 id="環境"><a href="#環境" class="headerlink" title="環境"></a>環境</h2><p>Hexo: 6.3.0</p>
 <p>hexo-cli: 4.3.0</p>
 <p>NexT: 8.14.0</p>
-<h2 id="於-Google-AdSense-新增網站並獲取-AdSense-程式碼"><a href="#於-Google-AdSense-新增網站並獲取-AdSense-程式碼" class="headerlink" title="於 Google AdSense 新增網站並獲取 AdSense 程式碼"></a>於 <span class="exturl" data-url="aHR0cHM6Ly93d3cuZ29vZ2xlLmNvbS9hZHNlbnNlLw==">Google AdSense<i class="fa fa-external-link-alt"></i></span> 新增網站並獲取 AdSense 程式碼</h2><p>由於我是申請成功後才想說要來記錄申請過程，所以看不到首次申請的畫面了…不過重要的地方不變。</p>
-<p>基本上按照 <span class="exturl" data-url="aHR0cHM6Ly9zdXBwb3J0Lmdvb2dsZS5jb20vYWRzZW5zZS9hbnN3ZXIvMTAxNjI=">Google AdSense 官方說明<i class="fa fa-external-link-alt"></i></span> 操作即可。</p>
-<h3 id="添加網址"><a href="#添加網址" class="headerlink" title="添加網址"></a>添加網址</h3><p>總之就是輸入 Blog 的網址<br><img data-src="https://github.com/WCW0310/blogPicture/blob/master/Hexo/Hexo-Blog-06-Hexo-Theme-NexT-Google-Adsense/addUrl.png?raw=true"></p>
-<h3 id="三步驟設定"><a href="#三步驟設定" class="headerlink" title="三步驟設定"></a>三步驟設定</h3><p>進去之後大致會看到由左至右三個步驟：</p>
-<ol>
-<li><span class="exturl" data-url="aHR0cHM6Ly9zdXBwb3J0Lmdvb2dsZS5jb20vYWRzZW5zZS9hbnN3ZXIvNDczMzM=">輸入您的付款資訊<i class="fa fa-external-link-alt"></i></span>：</li>
-</ol>
-<p>就乖乖的按網站指示填資料。</p>
-<ol start="2">
-<li><span class="exturl" data-url="aHR0cHM6Ly9zdXBwb3J0Lmdvb2dsZS5jb20vYWRzZW5zZS9hbnN3ZXIvMTA2NTc4ODU=">(選擇性) 查看廣告在網站上的呈現模樣<i class="fa fa-external-link-alt"></i></span>：</li>
-</ol>
-<p>我是直接選擇 <code>自動廣告</code>，這樣通過審查後 Google 會自己將廣告內容插入我們的 Blog，而且他已經很人性化，提供我們選擇想要的廣告板型了。</p>
-<p>若是想要全部自定義，就需要使用 NexT 主題的 <span class="exturl" data-url="aHR0cHM6Ly90aGVtZS1uZXh0LmpzLm9yZy9kb2NzL2FkdmFuY2VkLXNldHRpbmdzL2N1c3RvbS1maWxlcy5odG1s">Custom Files<i class="fa fa-external-link-alt"></i></span> 配合一些主題參數化設置或是其他插件協助完成。</p>
-<ol start="3">
-<li><span class="exturl" data-url="aHR0cHM6Ly9zdXBwb3J0Lmdvb2dsZS5jb20vYWRzZW5zZS9hbnN3ZXIvNzU4NDI2Mw==">將您的網站連結到 AdSense<i class="fa fa-external-link-alt"></i></span>：</li>
-</ol>
-<p>進去此選項即可複製 HTML 程式碼：</p>
-<figure class="highlight html"><figcaption><span>此為範例，請複製自己的</span></figcaption><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">async</span> <span class="attr">src</span>=<span class="string">&quot;https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-OOOOOOOOOOOOOOOO&quot;</span></span></span><br><span class="line"><span class="tag">     <span class="attr">crossorigin</span>=<span class="string">&quot;anonymous&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h2 id="留言機制"><a href="#留言機制" class="headerlink" title="留言機制"></a>留言機制</h2><p>NexT 提供了 <span class="exturl" data-url="aHR0cHM6Ly90aGVtZS1uZXh0LmpzLm9yZy9kb2NzL3RoaXJkLXBhcnR5LXNlcnZpY2VzL2NvbW1lbnRz">數種留言方案<i class="fa fa-external-link-alt"></i></span>，每種方案都有其使用上優缺點，可以思考一下自己 Blog 的客群來選擇。也可以全部都啟用，給讀者自行選擇要用什麼方案。</p>
+<p>我是直接使用列在最前面的 <span class="exturl" data-url="aHR0cHM6Ly9kaXNxdXMuY29tLw==">Disqus<i class="fa fa-external-link-alt"></i></span>，只需要簡單註冊一下，取得 <code>shortname</code> 後貼進主題設定檔中即可：</p>
+<h3 id="進入-Disqus-官網"><a href="#進入-Disqus-官網" class="headerlink" title="進入 Disqus 官網"></a>進入 <span class="exturl" data-url="aHR0cHM6Ly9kaXNxdXMuY29tLw==">Disqus 官網<i class="fa fa-external-link-alt"></i></span></h3><h3 id="點擊-GET-STARTED"><a href="#點擊-GET-STARTED" class="headerlink" title="點擊 GET STARTED"></a>點擊 GET STARTED</h3><p><img data-src="https://github.com/WCW0310/blogPicture/blob/master/Hexo/Hexo-Blog-04-Hexo-Theme-NexT-Comment-and-Chat/getStarted.png?raw=true"></p>
+<h3 id="Signup-註冊"><a href="#Signup-註冊" class="headerlink" title="Signup 註冊"></a>Signup 註冊</h3><h3 id="What-would-you-like-to-do-with-Disqus"><a href="#What-would-you-like-to-do-with-Disqus" class="headerlink" title="What would you like to do with Disqus?"></a>What would you like to do with Disqus?</h3><p>點擊 I want to install Disqus on my site<br><img data-src="https://github.com/WCW0310/blogPicture/blob/master/Hexo/Hexo-Blog-04-Hexo-Theme-NexT-Comment-and-Chat/installOnMySite.png?raw=true"></p>
+<h3 id="Create-a-new-site"><a href="#Create-a-new-site" class="headerlink" title="Create a new site"></a>Create a new site</h3><p>給 Disqus Websete 命名與設定類別 (可以隨便設，因為可以刪除)，完成後點擊 Create Site<br><img data-src="https://github.com/WCW0310/blogPicture/blob/master/Hexo/Hexo-Blog-04-Hexo-Theme-NexT-Comment-and-Chat/createNewSite.png?raw=true"></p>
+<h3 id="Select-a-plan"><a href="#Select-a-plan" class="headerlink" title="Select a plan"></a>Select a plan</h3><p>頁面往下滑，找到 Basic 方案，點擊 Subscribe Now (這是免費方案!)<br><img data-src="https://github.com/WCW0310/blogPicture/blob/master/Hexo/Hexo-Blog-04-Hexo-Theme-NexT-Comment-and-Chat/selectPlan.png?raw=true"></p>
+<h3 id="What-platform-is-your-site-on"><a href="#What-platform-is-your-site-on" class="headerlink" title="What platform is your site on?"></a>What platform is your site on?</h3><p>頁面往下滑，找到此按鈕並點擊<br><img data-src="https://github.com/WCW0310/blogPicture/blob/master/Hexo/Hexo-Blog-04-Hexo-Theme-NexT-Comment-and-Chat/platform.png?raw=true"></p>
+<h3 id="Universal-Code-install-instructions"><a href="#Universal-Code-install-instructions" class="headerlink" title="Universal Code install instructions"></a>Universal Code install instructions</h3><p>忽略此頁面內容，往下滑，找到 Configure 並點擊<br><img data-src="https://github.com/WCW0310/blogPicture/blob/master/Hexo/Hexo-Blog-04-Hexo-Theme-NexT-Comment-and-Chat/configure.png?raw=true"></p>
+<h3 id="Configure-Disqus"><a href="#Configure-Disqus" class="headerlink" title="Configure Disqus"></a>Configure Disqus</h3><p>Website URL 填入 Blog 網址</p>
+<p>點擊 Next<br><img data-src="https://github.com/WCW0310/blogPicture/blob/master/Hexo/Hexo-Blog-04-Hexo-Theme-NexT-Comment-and-Chat/configSetting.png?raw=true"></p>
+<h3 id="Comment-and-Moderation-Settings"><a href="#Comment-and-Moderation-Settings" class="headerlink" title="Comment and Moderation Settings"></a>Comment and Moderation Settings</h3><p>選擇想要的留言規範後點擊 Complete Setup 即完成設定<br><img data-src="https://github.com/WCW0310/blogPicture/blob/master/Hexo/Hexo-Blog-04-Hexo-Theme-NexT-Comment-and-Chat/commentSetting.png?raw=true"></p>
+<p>Disqus 設定完成<br><img data-src="https://github.com/WCW0310/blogPicture/blob/master/Hexo/Hexo-Blog-04-Hexo-Theme-NexT-Comment-and-Chat/complete.png?raw=true"></p>
+<h3 id="取得-Shortname"><a href="#取得-Shortname" class="headerlink" title="取得 Shortname"></a>取得 Shortname</h3><p>點擊上方 Settings tab 即可找到 Shortname，將其複製 (本範例中的 Shortname 已刪除，僅供參考用途)<br><img data-src="https://github.com/WCW0310/blogPicture/blob/master/Hexo/Hexo-Blog-04-Hexo-Theme-NexT-Comment-and-Chat/Shortname.png?raw=true"></p>
+<h3 id="將-Shortname-貼進主題設定檔中："><a href="#將-Shortname-貼進主題設定檔中：" class="headerlink" title="將 Shortname 貼進主題設定檔中："></a>將 Shortname 貼進主題設定檔中：</h3><figure class="highlight yaml"><figcaption><span>_config.next.yml</span></figcaption><table><tr><td class="code"><pre><span class="line"><span class="comment"># Disqus</span></span><br><span class="line"><span class="comment"># For more information: https://disqus.com</span></span><br><span class="line"><span class="attr">disqus:</span></span><br><span class="line">  <span class="attr">enable:</span> <span class="literal">true</span></span><br><span class="line">  <span class="attr">shortname:</span> <span class="string">OOOOO</span></span><br><span class="line">  <span class="attr">count:</span> <span class="literal">true</span></span><br></pre></td></tr></table></figure>
 
-<p>複製後即可點擊 <code>要求審查</code>，再來就乖乖等 Google 審查吧，Google 是說 <code>通常會在幾天內完成，但有時可能需時 2 至 4 週</code>。</p>
-<h2 id="將-HTML-程式碼加入-Blog"><a href="#將-HTML-程式碼加入-Blog" class="headerlink" title="將 HTML 程式碼加入 Blog"></a>將 HTML 程式碼加入 Blog</h2><p>Google 要求將 HTML 程式碼貼入 <code>&lt;head&gt; 和 &lt;/head&gt;</code> 這兩個代碼之間。</p>
-<p>而現在要在 NexT 主題做到這件事非常簡單，使用 <span class="exturl" data-url="aHR0cHM6Ly90aGVtZS1uZXh0LmpzLm9yZy9kb2NzL2FkdmFuY2VkLXNldHRpbmdzL2N1c3RvbS1maWxlcy5odG1s">Custom Files<i class="fa fa-external-link-alt"></i></span> 功能就能在不破壞主題程式碼的情況下完成：</p>
-<ol>
-<li>於 Blog 專案根目錄中的 <code>source/_data</code> 建立 <code>head.njk</code> 檔案，並將剛剛複製的 HTML 程式碼貼入；若先前就已建立  <code>head.njk</code> 檔案則是將 HTML 程式碼貼到檔案最末端即可：</li>
-</ol>
-<figure class="highlight plaintext"><figcaption><span>/source/_data/head.njk</span></figcaption><table><tr><td class="code"><pre><span class="line">&#123;# Google AdSense #&#125;</span><br><span class="line">&lt;script async src=&quot;https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-OOOOOOOOOOOOOOOO&quot;</span><br><span class="line">     crossorigin=&quot;anonymous&quot;&gt;&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+<h3 id="重新部署-Blog"><a href="#重新部署-Blog" class="headerlink" title="重新部署 Blog"></a>重新部署 Blog</h3><p>設定好之後重新部署 Blog，留言板就會自動出現在文章或特定頁面下方了，缺點大概是無法使用訪客匿名留言，必須使用 Disqus 帳號或社群平台帳號登入才能留言，如：Facdbook、Twitter 及 Google。</p>
+<p>大功告成!<br><img data-src="https://github.com/WCW0310/blogPicture/blob/master/Hexo/Hexo-Blog-04-Hexo-Theme-NexT-Comment-and-Chat/disqusSample.png?raw=true"></p>
+<p>補充：後來找到一款可以免登入的留言板 <span class="exturl" data-url="aHR0cHM6Ly9kaXNjdXNzLmpzLm9yZy8=">Discuss<i class="fa fa-external-link-alt"></i></span>，我自己是沒套用，但我有用 <span class="exturl" data-url="aHR0cHM6Ly93d3cuaW1sZXRlLmNuLw==">Lete乐特<i class="fa fa-external-link-alt"></i></span> 這位大大的其他套件。</p>
+<h2 id="聊天室機制"><a href="#聊天室機制" class="headerlink" title="聊天室機制"></a>聊天室機制</h2><p>NexT 目前提供了 <span class="exturl" data-url="aHR0cHM6Ly90aGVtZS1uZXh0LmpzLm9yZy9kb2NzL3RoaXJkLXBhcnR5LXNlcnZpY2VzL2NoYXQtc2VydmljZXM=">三種聊天室方案<i class="fa fa-external-link-alt"></i></span>，一次只能啟用一種，若是在設定中開啟了多個，NexT 只會啟用在設定檔中列在比較前面的。</p>
+<p><span class="exturl" data-url="aHR0cHM6Ly90aGVtZS1uZXh0LmpzLm9yZy8=">NexT 官網<i class="fa fa-external-link-alt"></i></span> 使用的是 <span class="exturl" data-url="aHR0cHM6Ly9naXR0ZXIuaW0v">Gitter<i class="fa fa-external-link-alt"></i></span>，是多人聊天室，我覺得可以取代留言板，不過不管創建聊天室或是加入聊天都是使用 GitHub 帳號。</p>
+<p>我目前是使用 <span class="exturl" data-url="aHR0cHM6Ly9jaGF0cmEuY29tLw==">Chatra<i class="fa fa-external-link-alt"></i></span>，性質是偏向商家 (作者) 對顧客 (讀者) 的聊天室，讀者不需要登入即可與作者取得聯繫。</p>
+<p><span class="exturl" data-url="aHR0cHM6Ly9jaGF0cmEuY29tLw==">Chatra<i class="fa fa-external-link-alt"></i></span> 的啟用方法也是註冊後取得 <code>id</code> 後貼進主題設定檔中即可：</p>
+<h3 id="進入-Chatra-官網"><a href="#進入-Chatra-官網" class="headerlink" title="進入 Chatra 官網"></a>進入 <span class="exturl" data-url="aHR0cHM6Ly9jaGF0cmEuY29tLw==">Chatra 官網<i class="fa fa-external-link-alt"></i></span></h3><h3 id="點擊-GET-STARTED-1"><a href="#點擊-GET-STARTED-1" class="headerlink" title="點擊 GET STARTED"></a>點擊 GET STARTED</h3><p><img data-src="https://github.com/WCW0310/blogPicture/blob/master/Hexo/Hexo-Blog-04-Hexo-Theme-NexT-Comment-and-Chat/getStarted2.png?raw=true"></p>
+<h3 id="填入-email-註冊"><a href="#填入-email-註冊" class="headerlink" title="填入 email 註冊"></a>填入 email 註冊</h3><p>填入 email 後點擊 <code>Let&#39;s go!</code> 即完成註冊。</p>
+<p>需要進入登記的 email 收驗證信來驗證身份。</p>
+<h3 id="左方側邊欄進入-Settings-Chat-widget-找到-HTML-程式碼："><a href="#左方側邊欄進入-Settings-Chat-widget-找到-HTML-程式碼：" class="headerlink" title="左方側邊欄進入 Settings &gt; Chat widget 找到 HTML 程式碼："></a>左方側邊欄進入 <span class="exturl" data-url="aHR0cHM6Ly9hcHAuY2hhdHJhLmlvL3NldHRpbmdzL2ludGVncmF0aW9ucy93aWRnZXQ=">Settings &gt; Chat widget<i class="fa fa-external-link-alt"></i></span> 找到 HTML 程式碼：</h3><figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="comment">&lt;!-- Chatra &#123;literal&#125; --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript">    (<span class="keyword">function</span>(<span class="params">d, w, c</span>) &#123;</span></span><br><span class="line"><span class="language-javascript">        w.<span class="property">ChatraID</span> = <span class="string">&#x27;OOOOO&#x27;</span>;</span></span><br><span class="line"><span class="language-javascript">        <span class="keyword">var</span> s = d.<span class="title function_">createElement</span>(<span class="string">&#x27;script&#x27;</span>);</span></span><br><span class="line"><span class="language-javascript">        w[c] = w[c] || <span class="keyword">function</span>(<span class="params"></span>) &#123;</span></span><br><span class="line"><span class="language-javascript">            (w[c].<span class="property">q</span> = w[c].<span class="property">q</span> || []).<span class="title function_">push</span>(<span class="variable language_">arguments</span>);</span></span><br><span class="line"><span class="language-javascript">        &#125;;</span></span><br><span class="line"><span class="language-javascript">        s.<span class="property">async</span> = <span class="literal">true</span>;</span></span><br><span class="line"><span class="language-javascript">        s.<span class="property">src</span> = <span class="string">&#x27;https://call.chatra.io/chatra.js&#x27;</span>;</span></span><br><span class="line"><span class="language-javascript">        <span class="keyword">if</span> (d.<span class="property">head</span>) d.<span class="property">head</span>.<span class="title function_">appendChild</span>(s);</span></span><br><span class="line"><span class="language-javascript">    &#125;)(<span class="variable language_">document</span>, <span class="variable language_">window</span>, <span class="string">&#x27;Chatra&#x27;</span>);</span></span><br><span class="line"><span class="language-javascript"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="comment">&lt;!-- /Chatra &#123;/literal&#125; --&gt;</span></span><br></pre></td></tr></table></figure>
 
-<ol start="2">
-<li>將 NexT 主題設定中 head 的註解移除：</li>
-</ol>
-<figure class="highlight yaml"><figcaption><span>_config.next.yml</span></figcaption><table><tr><td class="code"><pre><span class="line"><span class="attr">custom_file_path:</span></span><br><span class="line">  <span class="attr">head:</span> <span class="string">source/_data/head.njk</span></span><br></pre></td></tr></table></figure>
+<p>找到 w.ChatraID，複製引號間的 ID。</p>
+<h3 id="將複製的-ID-貼進主題設定檔中："><a href="#將複製的-ID-貼進主題設定檔中：" class="headerlink" title="將複製的 ID 貼進主題設定檔中："></a>將複製的 ID 貼進主題設定檔中：</h3><figure class="highlight yaml"><figcaption><span>_config.next.yml</span></figcaption><table><tr><td class="code"><pre><span class="line"><span class="comment"># Chatra Support</span></span><br><span class="line"><span class="comment"># For more information: https://chatra.com</span></span><br><span class="line"><span class="comment"># Dashboard: https://app.chatra.io/settings/general</span></span><br><span class="line"><span class="attr">chatra:</span></span><br><span class="line">  <span class="attr">enable:</span> <span class="literal">true</span></span><br><span class="line">  <span class="attr">async:</span> <span class="literal">true</span></span><br><span class="line">  <span class="attr">id:</span> <span class="string">OOOOO</span> <span class="comment"># Visit Dashboard to get your ChatraID</span></span><br><span class="line">  <span class="comment">#embed: # Unfinished experimental feature for developers. See: https://chatra.com/help/api/#injectto</span></span><br></pre></td></tr></table></figure>
 
-<ol start="3">
-<li><p>重新部署 Blog 網站即完成設定。</p>
-</li>
-<li><p>若想要自行檢查有沒有插入成功，只要進 Blog 網站，按 F12 看網頁原始碼的 <code>&lt;head&gt; 和 &lt;/head&gt;</code> 間有沒有該程式碼即可。</p>
-</li>
-<li><p>再來真的只能乖乖等 Google 審查了…</p>
-</li>
-</ol>
-<h2 id="等待審查"><a href="#等待審查" class="headerlink" title="等待審查"></a>等待審查</h2><p>我在等待約兩週後收到審查結果的 Email：</p>
-<p>通過審查 Email<br><img data-src="https://github.com/WCW0310/blogPicture/blob/master/Hexo/Hexo-Blog-06-Hexo-Theme-NexT-Google-Adsense/adApproveEmail.png?raw=true"></p>
-<p>(照前面步驟操作基本上都要成功，若是沒成功可能就要寫信跟 Google 吵架了…)</p>
-<h2 id="消除警告"><a href="#消除警告" class="headerlink" title="消除警告"></a>消除警告</h2><p>通過審查後，前往 <span class="exturl" data-url="aHR0cHM6Ly93d3cuZ29vZ2xlLmNvbS9hZHNlbnNlLw==">Google AdSense 首頁<i class="fa fa-external-link-alt"></i></span> 會看到 收益表 跟 兩則警告：</p>
-<p>Google AdSense 首頁<br><img data-src="https://github.com/WCW0310/blogPicture/blob/master/Hexo/Hexo-Blog-06-Hexo-Theme-NexT-Google-Adsense/adsenseApprove.png?raw=true"></p>
-<p>兩則警告<br><img data-src="https://github.com/WCW0310/blogPicture/blob/master/Hexo/Hexo-Blog-06-Hexo-Theme-NexT-Google-Adsense/adsenseWarn.png?raw=true"></p>
+<h3 id="重新部署-Blog-1"><a href="#重新部署-Blog-1" class="headerlink" title="重新部署 Blog"></a>重新部署 Blog</h3><p>聊天室按鈕就會自動出現在 Blog 頁面下方了，可以在它網站裡的 <span class="exturl" data-url="aHR0cHM6Ly9hcHAuY2hhdHJhLmlvL3NldHRpbmdzL2ludGVncmF0aW9ucy93aWRnZXQ=">Settings &gt; Chat widget<i class="fa fa-external-link-alt"></i></span> 設定其顯示的位置。</p>
+<p>聊天室按鈕 (我的在頁面右下方)<br><img data-src="https://github.com/WCW0310/blogPicture/blob/master/Hexo/Hexo-Blog-04-Hexo-Theme-NexT-Comment-and-Chat/chatBTN.png?raw=true"></p>
+<p>聊天室 (點擊聊天室按鈕開啟)<br><img data-src="https://github.com/WCW0310/blogPicture/blob/master/Hexo/Hexo-Blog-04-Hexo-Theme-NexT-Comment-and-Chat/chatRoom.png?raw=true"></p>
+<p>也因為它自己就有按鈕，我們不用開啟 NexT 提供的 <code>Chat</code> 按鈕：</p>
+<figure class="highlight yaml"><figcaption><span>_config.next.yml</span></figcaption><table><tr><td class="code"><pre><span class="line"><span class="comment"># A button to open designated chat widget in sidebar.</span></span><br><span class="line"><span class="comment"># Firstly, you need to enable and configure the chat service.</span></span><br><span class="line"><span class="attr">chat:</span></span><br><span class="line">  <span class="attr">enable:</span> <span class="literal">false</span></span><br><span class="line">  <span class="attr">icon:</span> <span class="string">fa</span> <span class="string">fa-comment</span> <span class="comment"># Icon name in Font Awesome, set false to disable icon.</span></span><br><span class="line">  <span class="attr">text:</span> <span class="string">Chat</span> <span class="comment"># Button text, change it as you wish.</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="接收訊息"><a href="#接收訊息" class="headerlink" title="接收訊息"></a>接收訊息</h3><p>如果有人透過 Blog 的 Chatra 聊天室傳訊息給你，你要怎麼知道?</p>
 <ul>
-<li><p>一個是要我們在 Blog 網站中加入 <code>ads.txt</code> 檔案。</p>
+<li><p>App：在行動裝置或電腦安裝 <span class="exturl" data-url="aHR0cHM6Ly9hcHAuY2hhdHJhLmlvL2FwcHM=">Chatra App<i class="fa fa-external-link-alt"></i></span>，登入帳號即可即時收到別人傳的訊息。</p>
 </li>
-<li><p>一個是要我們公開自己的賣家資訊。</p>
+<li><p>Web：在 <span class="exturl" data-url="aHR0cHM6Ly9jaGF0cmEuY29tLw==">Chatra 官網<i class="fa fa-external-link-alt"></i></span> 登入帳號就可以看到全部訊息。</p>
+</li>
+<li><p>Email：如果你沒有使用 App 或登入網站的習慣，Chatra 會定期把你沒讀的訊息用 Email 寄給你。</p>
 </li>
 </ul>
-<h3 id="加入-ads-txt"><a href="#加入-ads-txt" class="headerlink" title="加入 ads.txt"></a>加入 ads.txt</h3><p>點擊 <code>ads.txt</code> 警告的 <code>立即修正</code>，會看到以下畫面：</p>
-<p>點擊 下載 來獲取 ads.txt 檔案<br><img data-src="https://github.com/WCW0310/blogPicture/blob/master/Hexo/Hexo-Blog-06-Hexo-Theme-NexT-Google-Adsense/adsTxtDownload.png?raw=true"></p>
-<p>將 ads.txt 檔案置於 Blog 專案根目錄的 source 資料夾中，再重新部署 Blog 網站即完成設定。</p>
-<p>我們可以在 Blog網址&#x2F;ads.txt 網頁中看到其內容。</p>
-<p>設定完後該警告不會馬上消失，只能等待 Google 檢查。</p>
-<p>我自己是調整後的隔天警告就消失。</p>
-<h3 id="公開賣家資訊-Google-sellers-json"><a href="#公開賣家資訊-Google-sellers-json" class="headerlink" title="公開賣家資訊 (Google sellers.json)"></a>公開賣家資訊 (Google sellers.json)</h3><p>點擊 <code>公開自己的賣家資訊</code> 警告的 <code>操作</code>，會看到以下畫面：</p>
-<p>設成 資訊公開 並填入 商家網域 即完成設定<br><img data-src="https://github.com/WCW0310/blogPicture/blob/master/Hexo/Hexo-Blog-06-Hexo-Theme-NexT-Google-Adsense/sellerJsonOpen.png?raw=true"></p>
-<p>設定完後重新整理 <span class="exturl" data-url="aHR0cHM6Ly93d3cuZ29vZ2xlLmNvbS9hZHNlbnNlLw==">Google AdSense 首頁<i class="fa fa-external-link-alt"></i></span> 就會看到該警告消失。</p>
-<h2 id="等廣告出現"><a href="#等廣告出現" class="headerlink" title="等廣告出現"></a>等廣告出現</h2><p>剛通過審查也不會馬上有廣告出現，一樣只能等…</p>
-<p>通過審查 Email 內容<br><img data-src="https://github.com/WCW0310/blogPicture/blob/master/Hexo/Hexo-Blog-06-Hexo-Theme-NexT-Google-Adsense/wait4ads.png?raw=true"></p>
-<p>我自己是通過後的隔天才出現廣告。</p>
-<h2 id="結語"><a href="#結語" class="headerlink" title="結語"></a>結語</h2><p>連廣告都開通了，至此 Blog 的基礎建置算是大功告成，接下來能做的事情就是多寫文章來充實 Blog 內容，或是到處參考別人 Blog 有哪些酷功能來跟進 XD，祝大家玩得開心 ~</p>
+<h2 id="結語"><a href="#結語" class="headerlink" title="結語"></a>結語</h2><p>加入留言與聊天機制後 Blog 幾近完全體，各位可以好好撰寫文章了!</p>
+<p>下一篇系列文章：<a href="/Hexo/Blog/6528a7b6/" title="Hexo Blog 05：NexT 主題 SEO 相關設置">NexT 主題 SEO 相關設置</a></p>
 ]]></content>
       <categories>
         <category>Hexo</category>
@@ -710,7 +696,8 @@
       <tags>
         <tag>Hexo</tag>
         <tag>NexT</tag>
-        <tag>Google Adsense</tag>
+        <tag>Disqus</tag>
+        <tag>Chatra</tag>
       </tags>
   </entry>
   <entry>
@@ -807,6 +794,96 @@
         <tag>Microsoft Bing</tag>
         <tag>Webmaster Tools</tag>
         <tag>Google Analytics</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Hexo Blog 06：NexT 主題加入 Google Adsense</title>
+    <url>/Hexo/Blog/d951a84f/</url>
+    <content><![CDATA[<p>前一篇系列文章：<a href="/Hexo/Blog/6528a7b6/" title="Hexo Blog 05：NexT 主題 SEO 相關設置">NexT 主題 SEO 相關設置</a> 加入向搜尋引擎自動推送網址的功能後，我們的 Blog 終於能出現在人們視野中。而有能見度後就是要收取過路費阿 (咦?</p>
+<span id="more"></span>
+
+
+
+<h2 id="目標"><a href="#目標" class="headerlink" title="目標"></a>目標</h2><ul>
+<li>於 Blog 加入並啟用 Google Adsense</li>
+</ul>
+<h2 id="環境"><a href="#環境" class="headerlink" title="環境"></a>環境</h2><p>Hexo: 6.3.0</p>
+<p>hexo-cli: 4.3.0</p>
+<p>NexT: 8.14.0</p>
+<h2 id="於-Google-AdSense-新增網站並獲取-AdSense-程式碼"><a href="#於-Google-AdSense-新增網站並獲取-AdSense-程式碼" class="headerlink" title="於 Google AdSense 新增網站並獲取 AdSense 程式碼"></a>於 <span class="exturl" data-url="aHR0cHM6Ly93d3cuZ29vZ2xlLmNvbS9hZHNlbnNlLw==">Google AdSense<i class="fa fa-external-link-alt"></i></span> 新增網站並獲取 AdSense 程式碼</h2><p>由於我是申請成功後才想說要來記錄申請過程，所以看不到首次申請的畫面了…不過重要的地方不變。</p>
+<p>基本上按照 <span class="exturl" data-url="aHR0cHM6Ly9zdXBwb3J0Lmdvb2dsZS5jb20vYWRzZW5zZS9hbnN3ZXIvMTAxNjI=">Google AdSense 官方說明<i class="fa fa-external-link-alt"></i></span> 操作即可。</p>
+<h3 id="添加網址"><a href="#添加網址" class="headerlink" title="添加網址"></a>添加網址</h3><p>總之就是輸入 Blog 的網址<br><img data-src="https://github.com/WCW0310/blogPicture/blob/master/Hexo/Hexo-Blog-06-Hexo-Theme-NexT-Google-Adsense/addUrl.png?raw=true"></p>
+<h3 id="三步驟設定"><a href="#三步驟設定" class="headerlink" title="三步驟設定"></a>三步驟設定</h3><p>進去之後大致會看到由左至右三個步驟：</p>
+<ol>
+<li><span class="exturl" data-url="aHR0cHM6Ly9zdXBwb3J0Lmdvb2dsZS5jb20vYWRzZW5zZS9hbnN3ZXIvNDczMzM=">輸入您的付款資訊<i class="fa fa-external-link-alt"></i></span>：</li>
+</ol>
+<p>就乖乖的按網站指示填資料。</p>
+<ol start="2">
+<li><span class="exturl" data-url="aHR0cHM6Ly9zdXBwb3J0Lmdvb2dsZS5jb20vYWRzZW5zZS9hbnN3ZXIvMTA2NTc4ODU=">(選擇性) 查看廣告在網站上的呈現模樣<i class="fa fa-external-link-alt"></i></span>：</li>
+</ol>
+<p>我是直接選擇 <code>自動廣告</code>，這樣通過審查後 Google 會自己將廣告內容插入我們的 Blog，而且他已經很人性化，提供我們選擇想要的廣告板型了。</p>
+<p>若是想要全部自定義，就需要使用 NexT 主題的 <span class="exturl" data-url="aHR0cHM6Ly90aGVtZS1uZXh0LmpzLm9yZy9kb2NzL2FkdmFuY2VkLXNldHRpbmdzL2N1c3RvbS1maWxlcy5odG1s">Custom Files<i class="fa fa-external-link-alt"></i></span> 配合一些主題參數化設置或是其他插件協助完成。</p>
+<ol start="3">
+<li><span class="exturl" data-url="aHR0cHM6Ly9zdXBwb3J0Lmdvb2dsZS5jb20vYWRzZW5zZS9hbnN3ZXIvNzU4NDI2Mw==">將您的網站連結到 AdSense<i class="fa fa-external-link-alt"></i></span>：</li>
+</ol>
+<p>進去此選項即可複製 HTML 程式碼：</p>
+<figure class="highlight html"><figcaption><span>此為範例，請複製自己的</span></figcaption><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">async</span> <span class="attr">src</span>=<span class="string">&quot;https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-OOOOOOOOOOOOOOOO&quot;</span></span></span><br><span class="line"><span class="tag">     <span class="attr">crossorigin</span>=<span class="string">&quot;anonymous&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>複製後即可點擊 <code>要求審查</code>，再來就乖乖等 Google 審查吧，Google 是說 <code>通常會在幾天內完成，但有時可能需時 2 至 4 週</code>。</p>
+<h2 id="將-HTML-程式碼加入-Blog"><a href="#將-HTML-程式碼加入-Blog" class="headerlink" title="將 HTML 程式碼加入 Blog"></a>將 HTML 程式碼加入 Blog</h2><p>Google 要求將 HTML 程式碼貼入 <code>&lt;head&gt; 和 &lt;/head&gt;</code> 這兩個代碼之間。</p>
+<p>而現在要在 NexT 主題做到這件事非常簡單，使用 <span class="exturl" data-url="aHR0cHM6Ly90aGVtZS1uZXh0LmpzLm9yZy9kb2NzL2FkdmFuY2VkLXNldHRpbmdzL2N1c3RvbS1maWxlcy5odG1s">Custom Files<i class="fa fa-external-link-alt"></i></span> 功能就能在不破壞主題程式碼的情況下完成：</p>
+<ol>
+<li>於 Blog 專案根目錄中的 <code>source/_data</code> 建立 <code>head.njk</code> 檔案，並將剛剛複製的 HTML 程式碼貼入；若先前就已建立  <code>head.njk</code> 檔案則是將 HTML 程式碼貼到檔案最末端即可：</li>
+</ol>
+<figure class="highlight plaintext"><figcaption><span>/source/_data/head.njk</span></figcaption><table><tr><td class="code"><pre><span class="line">&#123;# Google AdSense #&#125;</span><br><span class="line">&lt;script async src=&quot;https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-OOOOOOOOOOOOOOOO&quot;</span><br><span class="line">     crossorigin=&quot;anonymous&quot;&gt;&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+
+<ol start="2">
+<li>將 NexT 主題設定中 head 的註解移除：</li>
+</ol>
+<figure class="highlight yaml"><figcaption><span>_config.next.yml</span></figcaption><table><tr><td class="code"><pre><span class="line"><span class="attr">custom_file_path:</span></span><br><span class="line">  <span class="attr">head:</span> <span class="string">source/_data/head.njk</span></span><br></pre></td></tr></table></figure>
+
+<ol start="3">
+<li><p>重新部署 Blog 網站即完成設定。</p>
+</li>
+<li><p>若想要自行檢查有沒有插入成功，只要進 Blog 網站，按 F12 看網頁原始碼的 <code>&lt;head&gt; 和 &lt;/head&gt;</code> 間有沒有該程式碼即可。</p>
+</li>
+<li><p>再來真的只能乖乖等 Google 審查了…</p>
+</li>
+</ol>
+<h2 id="等待審查"><a href="#等待審查" class="headerlink" title="等待審查"></a>等待審查</h2><p>我在等待約兩週後收到審查結果的 Email：</p>
+<p>通過審查 Email<br><img data-src="https://github.com/WCW0310/blogPicture/blob/master/Hexo/Hexo-Blog-06-Hexo-Theme-NexT-Google-Adsense/adApproveEmail.png?raw=true"></p>
+<p>(照前面步驟操作基本上都要成功，若是沒成功可能就要寫信跟 Google 吵架了…)</p>
+<h2 id="消除警告"><a href="#消除警告" class="headerlink" title="消除警告"></a>消除警告</h2><p>通過審查後，前往 <span class="exturl" data-url="aHR0cHM6Ly93d3cuZ29vZ2xlLmNvbS9hZHNlbnNlLw==">Google AdSense 首頁<i class="fa fa-external-link-alt"></i></span> 會看到 收益表 跟 兩則警告：</p>
+<p>Google AdSense 首頁<br><img data-src="https://github.com/WCW0310/blogPicture/blob/master/Hexo/Hexo-Blog-06-Hexo-Theme-NexT-Google-Adsense/adsenseApprove.png?raw=true"></p>
+<p>兩則警告<br><img data-src="https://github.com/WCW0310/blogPicture/blob/master/Hexo/Hexo-Blog-06-Hexo-Theme-NexT-Google-Adsense/adsenseWarn.png?raw=true"></p>
+<ul>
+<li><p>一個是要我們在 Blog 網站中加入 <code>ads.txt</code> 檔案。</p>
+</li>
+<li><p>一個是要我們公開自己的賣家資訊。</p>
+</li>
+</ul>
+<h3 id="加入-ads-txt"><a href="#加入-ads-txt" class="headerlink" title="加入 ads.txt"></a>加入 ads.txt</h3><p>點擊 <code>ads.txt</code> 警告的 <code>立即修正</code>，會看到以下畫面：</p>
+<p>點擊 下載 來獲取 ads.txt 檔案<br><img data-src="https://github.com/WCW0310/blogPicture/blob/master/Hexo/Hexo-Blog-06-Hexo-Theme-NexT-Google-Adsense/adsTxtDownload.png?raw=true"></p>
+<p>將 ads.txt 檔案置於 Blog 專案根目錄的 source 資料夾中，再重新部署 Blog 網站即完成設定。</p>
+<p>我們可以在 Blog網址&#x2F;ads.txt 網頁中看到其內容。</p>
+<p>設定完後該警告不會馬上消失，只能等待 Google 檢查。</p>
+<p>我自己是調整後的隔天警告就消失。</p>
+<h3 id="公開賣家資訊-Google-sellers-json"><a href="#公開賣家資訊-Google-sellers-json" class="headerlink" title="公開賣家資訊 (Google sellers.json)"></a>公開賣家資訊 (Google sellers.json)</h3><p>點擊 <code>公開自己的賣家資訊</code> 警告的 <code>操作</code>，會看到以下畫面：</p>
+<p>設成 資訊公開 並填入 商家網域 即完成設定<br><img data-src="https://github.com/WCW0310/blogPicture/blob/master/Hexo/Hexo-Blog-06-Hexo-Theme-NexT-Google-Adsense/sellerJsonOpen.png?raw=true"></p>
+<p>設定完後重新整理 <span class="exturl" data-url="aHR0cHM6Ly93d3cuZ29vZ2xlLmNvbS9hZHNlbnNlLw==">Google AdSense 首頁<i class="fa fa-external-link-alt"></i></span> 就會看到該警告消失。</p>
+<h2 id="等廣告出現"><a href="#等廣告出現" class="headerlink" title="等廣告出現"></a>等廣告出現</h2><p>剛通過審查也不會馬上有廣告出現，一樣只能等…</p>
+<p>通過審查 Email 內容<br><img data-src="https://github.com/WCW0310/blogPicture/blob/master/Hexo/Hexo-Blog-06-Hexo-Theme-NexT-Google-Adsense/wait4ads.png?raw=true"></p>
+<p>我自己是通過後的隔天才出現廣告。</p>
+<h2 id="結語"><a href="#結語" class="headerlink" title="結語"></a>結語</h2><p>連廣告都開通了，至此 Blog 的基礎建置算是大功告成，接下來能做的事情就是多寫文章來充實 Blog 內容，或是到處參考別人 Blog 有哪些酷功能來跟進 XD，祝大家玩得開心 ~</p>
+]]></content>
+      <categories>
+        <category>Hexo</category>
+        <category>Blog</category>
+      </categories>
+      <tags>
+        <tag>Hexo</tag>
+        <tag>NexT</tag>
+        <tag>Google Adsense</tag>
       </tags>
   </entry>
   <entry>
@@ -926,34 +1003,6 @@
       </tags>
   </entry>
   <entry>
-    <title>Hexo Debug 03：sitemap.xml error xmlParseEntityRef: no name</title>
-    <url>/Hexo/Debug/49ddc6c2/</url>
-    <content><![CDATA[<p>在檢查自己 Hexo Blog 網頁的 sitemap.xml 時頁面顯示：</p>
-<div class="note "><h3 id="This-page-contains-the-following-errors"><a href="#This-page-contains-the-following-errors" class="headerlink" title="This page contains the following errors:"></a>This page contains the following errors:</h3><p>error on line 5 at column 69: xmlParseEntityRef: no name</p>
-<h3 id="Below-is-a-rendering-of-the-page-up-to-the-first-error"><a href="#Below-is-a-rendering-of-the-page-up-to-the-first-error" class="headerlink" title="Below is a rendering of the page up to the first error."></a>Below is a rendering of the page up to the first error.</h3></div>
-
-<span id="more"></span>
-
-
-
-<h2 id="環境"><a href="#環境" class="headerlink" title="環境"></a>環境</h2><p>Hexo: 6.3.0</p>
-<p>hexo-cli: 4.3.0</p>
-<p>NexT: 8.13.2</p>
-<h2 id="期望"><a href="#期望" class="headerlink" title="期望"></a>期望</h2><p>能正常顯示 sitemap.xml 的 xml 格式內容。</p>
-<h2 id="解決方法"><a href="#解決方法" class="headerlink" title="解決方法"></a>解決方法</h2><p>經調查發現是我 .md 檔案的檔名含有 <code>&amp;</code> 符號，將 <code>&amp;</code> 改掉就恢復正常了。</p>
-<h2 id="結語"><a href="#結語" class="headerlink" title="結語"></a>結語</h2><p>關於 .md 檔名或 post title 遇到特殊符號常常會出錯，建議全部避免。</p>
-<h2 id="參考資料"><a href="#參考資料" class="headerlink" title="參考資料"></a>參考資料</h2><p><span class="exturl" data-url="aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0F1Z3VzdE1lL2FydGljbGUvZGV0YWlscy8xMjA3MDQ3NTU=">【Bug】xmlParseEntityRef: no name<i class="fa fa-external-link-alt"></i></span></p>
-]]></content>
-      <categories>
-        <category>Hexo</category>
-        <category>Debug</category>
-      </categories>
-      <tags>
-        <tag>Hexo</tag>
-        <tag>xml</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Hexo Debug 02：Markdown 文字連結語法渲染失敗</title>
     <url>/Hexo/Debug/ec97b114/</url>
     <content><![CDATA[<p>在檢查自己 Hexo Blog 網頁渲染情況時，發現一些 <strong>文字連結</strong> (超連結) 竟然直接顯示出 <span class="exturl" data-url="aHR0cHM6Ly9tYXJrZG93bi50dy8jbGluaw==">本來的 Markdown 語法<i class="fa fa-external-link-alt"></i></span>，非常不美觀，而且無法點擊網址進行跳轉。</p>
@@ -999,30 +1048,23 @@
       </tags>
   </entry>
   <entry>
-    <title>Hexo Debug 04：Hexo 避免機密資訊上傳 GitHub</title>
-    <url>/Hexo/Debug/ba57c00/</url>
-    <content><![CDATA[<p>先前在 <a href="/Hexo/Blog/a4c4ed5f/" title="Hexo Blog 03：繼續探索 NexT">繼續探索 NexT</a> 我將存有 Firestore apiKey 的 <code>_config.next.yml</code> 檔案推到 GitHub 儲存庫中，結果沒過多久就收到陌生的警告 Email，提醒我有機密洩漏，霎那間令我知曉網路上的爬蟲有多兇猛，還好這次來的是正義的爬蟲 😰</p>
-<p>既然知道可怕了，就趕快來解除危機吧！</p>
+    <title>Hexo Debug 03：sitemap.xml error xmlParseEntityRef: no name</title>
+    <url>/Hexo/Debug/49ddc6c2/</url>
+    <content><![CDATA[<p>在檢查自己 Hexo Blog 網頁的 sitemap.xml 時頁面顯示：</p>
+<div class="note "><h3 id="This-page-contains-the-following-errors"><a href="#This-page-contains-the-following-errors" class="headerlink" title="This page contains the following errors:"></a>This page contains the following errors:</h3><p>error on line 5 at column 69: xmlParseEntityRef: no name</p>
+<h3 id="Below-is-a-rendering-of-the-page-up-to-the-first-error"><a href="#Below-is-a-rendering-of-the-page-up-to-the-first-error" class="headerlink" title="Below is a rendering of the page up to the first error."></a>Below is a rendering of the page up to the first error.</h3></div>
+
 <span id="more"></span>
 
 
 
-<p>收到的警告信 (正義的爬蟲叫做 GitGuardian)：<br><img data-src="https://github.com/WCW0310/blogPicture/blob/master/Hexo/Hexo-Debug-04-Hexo-avoid-confidential-leak-on-GitHub/GitGuardian.png?raw=true"></p>
-<h2 id="罪魁禍首"><a href="#罪魁禍首" class="headerlink" title="罪魁禍首"></a>罪魁禍首</h2><p>當初照 <span class="exturl" data-url="aHR0cHM6Ly9oZXhvLmlvL3poLXR3L2RvY3MvZ2l0aHViLXBhZ2Vz">Hexo 文檔<i class="fa fa-external-link-alt"></i></span> 的方式部署 Blog 至 GitHub Pages，並沒有提醒要注意機密資訊，而 GitHub Pages 強迫儲存庫的能見度 (visibility) 設為 Public，導致只要有包含機密資訊就一定會洩漏。</p>
-<h2 id="期望"><a href="#期望" class="headerlink" title="期望"></a>期望</h2><p>程式碼中的機密資訊依然可以使用 GitHub 保存，但又不要輕易外流。</p>
-<h2 id="想法"><a href="#想法" class="headerlink" title="想法"></a>想法</h2><ul>
-<li><p>在 <code>.gitignore</code> 中加入 <code>_config.next.yml</code>：<br>這樣雖然可以避免洩漏資訊，但需要額外管理檔案，有違懶人的宗旨，只好否決。</p>
-</li>
-<li><p>讓 GitHub Pages 變為 Private：<br>這樣會直接讓 Blog 無法部屬，但可以嘗試換一種方式實現。</p>
-</li>
-</ul>
-<h2 id="解決方法"><a href="#解決方法" class="headerlink" title="解決方法"></a>解決方法</h2><p>就是很單純的在 GitHub 多開一個 Private 的儲存庫專門拿來放 Blog 專案。</p>
-<p>GitHub Pages 儲存庫就讓它專門放 Hexo 生成的靜態網頁檔案，用兩個儲存庫來各司其職。</p>
-<p>這兩件工作照 <span class="exturl" data-url="aHR0cHM6Ly9oZXhvLmlvL3poLXR3L2RvY3MvZ2l0aHViLXBhZ2Vz">Hexo 文檔<i class="fa fa-external-link-alt"></i></span> 的做法是分成兩個 Branch 來達成，main 用來存放 Blog 專案，gh-pages 用來存放靜態網頁檔案。</p>
-<p>雖然使用了兩個儲存庫，但消耗的精力其實是相同的，因為部屬 Blog 網站時我們都是用 <code>hexo deploy</code> 指令呼叫套件完成工作，套件會自動幫我們把靜態網頁檔案推至 GitHub Pages 儲存庫，我們只需要創建儲存庫跟設定好部署資訊即可。</p>
-<p>多開的 Private 儲存庫就會變成我們平常更新文章與 Hexo 設定的工作儲存庫。</p>
-<p>我把實作方法更新至 <a href="/Hexo/Blog/dceed03/" title="Hexo Blog 01：使用 Hexo 迅速在 GitHub Pages 展開 Blog 旅程">使用 Hexo 迅速在 GitHub Pages 展開 Blog 旅程</a> 跟著步驟實作就好，讓大家少走彎路。</p>
-<h2 id="結語"><a href="#結語" class="headerlink" title="結語"></a>結語</h2><p>雖然說將敏感內容藏進 Private 的儲存庫，但很多敏感資訊其實在開啟 Blog 網站後按 F12 就能直接找到 😂</p>
+<h2 id="環境"><a href="#環境" class="headerlink" title="環境"></a>環境</h2><p>Hexo: 6.3.0</p>
+<p>hexo-cli: 4.3.0</p>
+<p>NexT: 8.13.2</p>
+<h2 id="期望"><a href="#期望" class="headerlink" title="期望"></a>期望</h2><p>能正常顯示 sitemap.xml 的 xml 格式內容。</p>
+<h2 id="解決方法"><a href="#解決方法" class="headerlink" title="解決方法"></a>解決方法</h2><p>經調查發現是我 .md 檔案的檔名含有 <code>&amp;</code> 符號，將 <code>&amp;</code> 改掉就恢復正常了。</p>
+<h2 id="結語"><a href="#結語" class="headerlink" title="結語"></a>結語</h2><p>關於 .md 檔名或 post title 遇到特殊符號常常會出錯，建議全部避免。</p>
+<h2 id="參考資料"><a href="#參考資料" class="headerlink" title="參考資料"></a>參考資料</h2><p><span class="exturl" data-url="aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0F1Z3VzdE1lL2FydGljbGUvZGV0YWlscy8xMjA3MDQ3NTU=">【Bug】xmlParseEntityRef: no name<i class="fa fa-external-link-alt"></i></span></p>
 ]]></content>
       <categories>
         <category>Hexo</category>
@@ -1030,7 +1072,7 @@
       </categories>
       <tags>
         <tag>Hexo</tag>
-        <tag>GitHub</tag>
+        <tag>xml</tag>
       </tags>
   </entry>
   <entry>
@@ -1110,6 +1152,41 @@
       </categories>
       <tags>
         <tag>Hexo</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Hexo Debug 04：Hexo 避免機密資訊上傳 GitHub</title>
+    <url>/Hexo/Debug/ba57c00/</url>
+    <content><![CDATA[<p>先前在 <a href="/Hexo/Blog/a4c4ed5f/" title="Hexo Blog 03：繼續探索 NexT">繼續探索 NexT</a> 我將存有 Firestore apiKey 的 <code>_config.next.yml</code> 檔案推到 GitHub 儲存庫中，結果沒過多久就收到陌生的警告 Email，提醒我有機密洩漏，霎那間令我知曉網路上的爬蟲有多兇猛，還好這次來的是正義的爬蟲 😰</p>
+<p>既然知道可怕了，就趕快來解除危機吧！</p>
+<span id="more"></span>
+
+
+
+<p>收到的警告信 (正義的爬蟲叫做 GitGuardian)：<br><img data-src="https://github.com/WCW0310/blogPicture/blob/master/Hexo/Hexo-Debug-04-Hexo-avoid-confidential-leak-on-GitHub/GitGuardian.png?raw=true"></p>
+<h2 id="罪魁禍首"><a href="#罪魁禍首" class="headerlink" title="罪魁禍首"></a>罪魁禍首</h2><p>當初照 <span class="exturl" data-url="aHR0cHM6Ly9oZXhvLmlvL3poLXR3L2RvY3MvZ2l0aHViLXBhZ2Vz">Hexo 文檔<i class="fa fa-external-link-alt"></i></span> 的方式部署 Blog 至 GitHub Pages，並沒有提醒要注意機密資訊，而 GitHub Pages 強迫儲存庫的能見度 (visibility) 設為 Public，導致只要有包含機密資訊就一定會洩漏。</p>
+<h2 id="期望"><a href="#期望" class="headerlink" title="期望"></a>期望</h2><p>程式碼中的機密資訊依然可以使用 GitHub 保存，但又不要輕易外流。</p>
+<h2 id="想法"><a href="#想法" class="headerlink" title="想法"></a>想法</h2><ul>
+<li><p>在 <code>.gitignore</code> 中加入 <code>_config.next.yml</code>：<br>這樣雖然可以避免洩漏資訊，但需要額外管理檔案，有違懶人的宗旨，只好否決。</p>
+</li>
+<li><p>讓 GitHub Pages 變為 Private：<br>這樣會直接讓 Blog 無法部屬，但可以嘗試換一種方式實現。</p>
+</li>
+</ul>
+<h2 id="解決方法"><a href="#解決方法" class="headerlink" title="解決方法"></a>解決方法</h2><p>就是很單純的在 GitHub 多開一個 Private 的儲存庫專門拿來放 Blog 專案。</p>
+<p>GitHub Pages 儲存庫就讓它專門放 Hexo 生成的靜態網頁檔案，用兩個儲存庫來各司其職。</p>
+<p>這兩件工作照 <span class="exturl" data-url="aHR0cHM6Ly9oZXhvLmlvL3poLXR3L2RvY3MvZ2l0aHViLXBhZ2Vz">Hexo 文檔<i class="fa fa-external-link-alt"></i></span> 的做法是分成兩個 Branch 來達成，main 用來存放 Blog 專案，gh-pages 用來存放靜態網頁檔案。</p>
+<p>雖然使用了兩個儲存庫，但消耗的精力其實是相同的，因為部屬 Blog 網站時我們都是用 <code>hexo deploy</code> 指令呼叫套件完成工作，套件會自動幫我們把靜態網頁檔案推至 GitHub Pages 儲存庫，我們只需要創建儲存庫跟設定好部署資訊即可。</p>
+<p>多開的 Private 儲存庫就會變成我們平常更新文章與 Hexo 設定的工作儲存庫。</p>
+<p>我把實作方法更新至 <a href="/Hexo/Blog/dceed03/" title="Hexo Blog 01：使用 Hexo 迅速在 GitHub Pages 展開 Blog 旅程">使用 Hexo 迅速在 GitHub Pages 展開 Blog 旅程</a> 跟著步驟實作就好，讓大家少走彎路。</p>
+<h2 id="結語"><a href="#結語" class="headerlink" title="結語"></a>結語</h2><p>雖然說將敏感內容藏進 Private 的儲存庫，但很多敏感資訊其實在開啟 Blog 網站後按 F12 就能直接找到 😂</p>
+]]></content>
+      <categories>
+        <category>Hexo</category>
+        <category>Debug</category>
+      </categories>
+      <tags>
+        <tag>Hexo</tag>
+        <tag>GitHub</tag>
       </tags>
   </entry>
   <entry>
@@ -1211,83 +1288,6 @@
       </tags>
   </entry>
   <entry>
-    <title>Java Note 01：常忘 Java 語法</title>
-    <url>/Java/Note/76cc3fdb/</url>
-    <content><![CDATA[<p>為了麵包不得已開始刷題人生，但被 IDE 寵壞後，默寫時連迴圈都寫不出來了，趕快來複習一下。</p>
-<span id="more"></span>
-
-<h2 id="for-loop"><a href="#for-loop" class="headerlink" title="for loop"></a>for loop</h2><figure class="highlight java"><figcaption><span>基本</span></figcaption><table><tr><td class="code"><pre><span class="line"><span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">0</span>; i &lt; <span class="number">5</span>; i++) &#123;</span><br><span class="line">  System.out.println(i);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight java"><figcaption><span>迭代</span></figcaption><table><tr><td class="code"><pre><span class="line"><span class="keyword">for</span> (<span class="type">int</span> i : array) &#123;</span><br><span class="line">  System.out.println(i);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h2 id="String"><a href="#String" class="headerlink" title="String"></a>String</h2><p><span class="exturl" data-url="aHR0cHM6Ly93d3cucnVub29iLmNvbS9qYXZhL2phdmEtc3RyaW5nLmh0bWw=">Java String 类<i class="fa fa-external-link-alt"></i></span></p>
-<h3 id="返回字串長度"><a href="#返回字串長度" class="headerlink" title="返回字串長度"></a>返回字串長度</h3><p>int length();</p>
-<h3 id="判斷字串值是否相同"><a href="#判斷字串值是否相同" class="headerlink" title="判斷字串值是否相同"></a>判斷字串值是否相同</h3><p>boolean equals(String value);</p>
-<h3 id="返回指定索引的-char"><a href="#返回指定索引的-char" class="headerlink" title="返回指定索引的 char"></a>返回指定索引的 char</h3><p>char charAt(int index);</p>
-<h3 id="返回字串轉換成的-char"><a href="#返回字串轉換成的-char" class="headerlink" title="返回字串轉換成的 char[]"></a>返回字串轉換成的 char[]</h3><p>char[] toCharArray();</p>
-<h3 id="返回子字串（指定頭尾）"><a href="#返回子字串（指定頭尾）" class="headerlink" title="返回子字串（指定頭尾）"></a>返回子字串（指定頭尾）</h3><p>String substring(int beginIndex, int endIndex);<br>注意：包含頭，不包含尾。</p>
-<h3 id="返回子字串（指定頭）"><a href="#返回子字串（指定頭）" class="headerlink" title="返回子字串（指定頭）"></a>返回子字串（指定頭）</h3><p>String substring(int beginIndex);</p>
-<h3 id="判斷是否包含指定字符序列"><a href="#判斷是否包含指定字符序列" class="headerlink" title="判斷是否包含指定字符序列"></a>判斷是否包含指定字符序列</h3><p>boolean contains(CharSequence chars);</p>
-<h2 id="Character"><a href="#Character" class="headerlink" title="Character"></a>Character</h2><h3 id="確定是否為字母或數字"><a href="#確定是否為字母或數字" class="headerlink" title="確定是否為字母或數字"></a>確定是否為字母或數字</h3><p>Character.isLetterOrDigit(char)</p>
-<h2 id="Array"><a href="#Array" class="headerlink" title="Array"></a>Array</h2><h3 id="建立新-Array-方法"><a href="#建立新-Array-方法" class="headerlink" title="建立新 Array 方法"></a>建立新 Array 方法</h3><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="type">int</span>[] intArray = <span class="keyword">new</span> <span class="title class_">int</span>[<span class="number">3</span>]; <span class="comment">// 長度為三，空的 Array</span></span><br><span class="line"><span class="type">int</span>[] intArray2 = &#123;<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>&#125;; <span class="comment">// 自定義內容的 Array，算是 intArray3 方法的語法糖</span></span><br><span class="line"><span class="type">int</span>[] intArray3 = <span class="keyword">new</span> <span class="title class_">int</span>[]&#123;<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>&#125;; <span class="comment">// 與 intArray2 一樣，不過在前面沒有表達式的型別宣告時只能這樣用，不然會出 illegal start of expression 錯</span></span><br></pre></td></tr></table></figure>
-
-<h2 id="ArrayList"><a href="#ArrayList" class="headerlink" title="ArrayList"></a>ArrayList</h2><p><span class="exturl" data-url="aHR0cHM6Ly93d3cucnVub29iLmNvbS9qYXZhL2phdmEtYXJyYXlsaXN0Lmh0bWw=">Java ArrayList<i class="fa fa-external-link-alt"></i></span></p>
-<h2 id="Arrays"><a href="#Arrays" class="headerlink" title="Arrays"></a>Arrays</h2><p>Arrays 是處理各式 Array 的工具類。</p>
-<h3 id="排序傳入的-array"><a href="#排序傳入的-array" class="headerlink" title="排序傳入的 array"></a>排序傳入的 array</h3><p>Arrays.sort(array);</p>
-<h3 id="比較兩-arrays-值是否相同"><a href="#比較兩-arrays-值是否相同" class="headerlink" title="比較兩 arrays 值是否相同"></a>比較兩 arrays 值是否相同</h3><p>Arrays.equals(array1, array2);</p>
-<h3 id="生成裝有-values-的-List"><a href="#生成裝有-values-的-List" class="headerlink" title="生成裝有 values 的 List"></a>生成裝有 values 的 List</h3><p>Arrays.asList(value1, value2, …);<br>返回的 List 不適合拿來操作，通常是用來快速建立指定元素的 ArrayList 或 HashSet 之類的類別。</p>
-<h2 id="Collections"><a href="#Collections" class="headerlink" title="Collections"></a>Collections</h2><h3 id="排序"><a href="#排序" class="headerlink" title="排序"></a>排序</h3><p>Collections.sort(list);<br>Arrays 的 sort 不能排序 ArrayList，所以要用這個。</p>
-<p>Collections.reverseOrder()<br>在建構 PriorityQueue 之類的 class 時可以用此指定反向順序。</p>
-<h2 id="HashMap"><a href="#HashMap" class="headerlink" title="HashMap"></a>HashMap</h2><p><span class="exturl" data-url="aHR0cHM6Ly93d3cucnVub29iLmNvbS9qYXZhL2phdmEtaGFzaG1hcC5odG1s">Java HashMap<i class="fa fa-external-link-alt"></i></span></p>
-<p>需要注意基本類別要換成封裝類別。</p>
-<h3 id="獲取指定-key-對應的-value"><a href="#獲取指定-key-對應的-value" class="headerlink" title="獲取指定 key 對應的 value"></a>獲取指定 key 對應的 value</h3><p>hashmap.get(key);</p>
-<h3 id="獲取指定-key-對應的-value，若找不到-key-就返回-default"><a href="#獲取指定-key-對應的-value，若找不到-key-就返回-default" class="headerlink" title="獲取指定 key 對應的 value，若找不到 key 就返回 default"></a>獲取指定 key 對應的 value，若找不到 key 就返回 default</h3><p>hashmap.getOrDefault(key, default);</p>
-<h3 id="添加鍵值對"><a href="#添加鍵值對" class="headerlink" title="添加鍵值對"></a>添加鍵值對</h3><p>hashmap.put(key, value);</p>
-<h3 id="檢查是否存在指定-key-對應的映射關係"><a href="#檢查是否存在指定-key-對應的映射關係" class="headerlink" title="檢查是否存在指定 key 對應的映射關係"></a>檢查是否存在指定 key 對應的映射關係</h3><p>hashmap.containsKey(key);</p>
-<h3 id="檢查是否存在指定-value-對應的映射關係"><a href="#檢查是否存在指定-value-對應的映射關係" class="headerlink" title="檢查是否存在指定 value 對應的映射關係"></a>檢查是否存在指定 value 對應的映射關係</h3><p>hashmap.containsValue(value);</p>
-<h3 id="刪除-key-對應的鍵值對"><a href="#刪除-key-對應的鍵值對" class="headerlink" title="刪除 key 對應的鍵值對"></a>刪除 key 對應的鍵值對</h3><p>hashmap.remove(key);</p>
-<h3 id="返回-hashmap-中所有-key-組成的-set"><a href="#返回-hashmap-中所有-key-組成的-set" class="headerlink" title="返回 hashmap 中所有 key 組成的 set"></a>返回 hashmap 中所有 key 組成的 set</h3><p>hashmap.keySet();</p>
-<h3 id="返回-hashmap-中所有-value-組成的-set"><a href="#返回-hashmap-中所有-value-組成的-set" class="headerlink" title="返回 hashmap 中所有 value 組成的 set"></a>返回 hashmap 中所有 value 組成的 set</h3><p>hashmap.values();</p>
-<h3 id="返回-hashmap-中所有-映射關係-的-set"><a href="#返回-hashmap-中所有-映射關係-的-set" class="headerlink" title="返回 hashmap 中所有 映射關係 的 set"></a>返回 hashmap 中所有 映射關係 的 set</h3><p>hashmap.entrySet();<br>換容器時會使用到，每個鍵值對的類型為 <code>Map.Entry</code><br>Map.Entry 取得鍵：getKey()<br>Map.Entry 取得值：getValue()</p>
-<h2 id="HashSet"><a href="#HashSet" class="headerlink" title="HashSet"></a>HashSet</h2><p><span class="exturl" data-url="aHR0cHM6Ly93d3cucnVub29iLmNvbS9qYXZhL2phdmEtaGFzaHNldC5odG1s">Java HashSet<i class="fa fa-external-link-alt"></i></span></p>
-<p>需要注意基本類別要換成封裝類別。</p>
-<h3 id="添加元素"><a href="#添加元素" class="headerlink" title="添加元素"></a>添加元素</h3><p>hashset.add(value);</p>
-<h3 id="判斷元素是否存在"><a href="#判斷元素是否存在" class="headerlink" title="判斷元素是否存在"></a>判斷元素是否存在</h3><p>hashset.contains(value);</p>
-<h3 id="刪除元素"><a href="#刪除元素" class="headerlink" title="刪除元素"></a>刪除元素</h3><p>hashset.remove(value);</p>
-<h3 id="獲取-hashset-大小"><a href="#獲取-hashset-大小" class="headerlink" title="獲取 hashset 大小"></a>獲取 hashset 大小</h3><p>hashset.size();</p>
-<h3 id="交集技巧"><a href="#交集技巧" class="headerlink" title="交集技巧"></a>交集技巧</h3><p>hashset1.retainAll(hashset2);<br>返回扣掉兩 sets 未交集元素後的 hashset1。</p>
-<h3 id="差集技巧"><a href="#差集技巧" class="headerlink" title="差集技巧"></a>差集技巧</h3><p>hashset1.removeAll(hashset2);<br>返回扣掉兩 sets 交集元素後的 hashset1。</p>
-<h3 id="聯集技巧"><a href="#聯集技巧" class="headerlink" title="聯集技巧"></a>聯集技巧</h3><p>hashset1.addAll(hashset2);<br>返回加上兩 sets 未交集元素後的 hashset1。</p>
-<h2 id="PriorityQueue"><a href="#PriorityQueue" class="headerlink" title="PriorityQueue"></a>PriorityQueue</h2><p><span class="exturl" data-url="aHR0cHM6Ly93d3cuY2Fpbmlhb2pjLmNvbS9qYXZhL2phdmEtcHJpb3JpdHlxdWV1ZS5odG1s">Java PriorityQueue<i class="fa fa-external-link-alt"></i></span></p>
-<p>先進先出，預設先出來的是最小的 (Ascending Order)</p>
-<h3 id="建構方式"><a href="#建構方式" class="headerlink" title="建構方式"></a>建構方式</h3><p>可以帶入自定義的 Comparator，如：</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">PriorityQueue&lt;Map.Entry&lt;Integer, Integer&gt;&gt; pq = <span class="keyword">new</span> <span class="title class_">PriorityQueue</span>&lt;&gt;(</span><br><span class="line">  (a, b) -&gt; a.getValue() - b.getValue()</span><br><span class="line">);</span><br></pre></td></tr></table></figure>
-
-<h3 id="新增元素"><a href="#新增元素" class="headerlink" title="新增元素"></a>新增元素</h3><p>add()</p>
-<h3 id="訪問開頭元素"><a href="#訪問開頭元素" class="headerlink" title="訪問開頭元素"></a>訪問開頭元素</h3><p>peek()</p>
-<h3 id="返回並刪除隊列開頭"><a href="#返回並刪除隊列開頭" class="headerlink" title="返回並刪除隊列開頭"></a>返回並刪除隊列開頭</h3><p>poll()</p>
-<h2 id="Stream"><a href="#Stream" class="headerlink" title="Stream"></a>Stream</h2><p><span class="exturl" data-url="aHR0cHM6Ly93d3cucnVub29iLmNvbS9qYXZhL2phdmE4LXN0cmVhbXMuaHRtbA==">Java 8 Stream<i class="fa fa-external-link-alt"></i></span></p>
-<h2 id="Math"><a href="#Math" class="headerlink" title="Math"></a>Math</h2><h3 id="比大小"><a href="#比大小" class="headerlink" title="比大小"></a>比大小</h3><p>Math.min(value1, value2);<br>Math.max(value1, value2);</p>
-<h3 id="絕對值"><a href="#絕對值" class="headerlink" title="絕對值"></a>絕對值</h3><p>Math.abs(value);</p>
-<h2 id="printf"><a href="#printf" class="headerlink" title="printf"></a>printf</h2><p><span class="exturl" data-url="aHR0cHM6Ly93d3cucnVub29iLmNvbS93M2Nub3RlL2phdmEtcHJpbnRmLWZvcm1hdGUtZGVtby5odG1s">Java 格式化输出 printf 用法<i class="fa fa-external-link-alt"></i></span></p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">System.out.printf();</span><br></pre></td></tr></table></figure>
-
-<h2 id="基礎型別的預設值"><a href="#基礎型別的預設值" class="headerlink" title="基礎型別的預設值"></a>基礎型別的預設值</h2><h3 id="int"><a href="#int" class="headerlink" title="int"></a>int</h3><p>0</p>
-<h2 id="三元運算子"><a href="#三元運算子" class="headerlink" title="三元運算子"></a>三元運算子</h2><figure class="highlight java"><table><tr><td class="code"><pre><span class="line">判斷式 ？ 若判斷為真執行區塊 ： 若判斷為假執行區塊</span><br></pre></td></tr></table></figure>
-
-<h2 id="結語"><a href="#結語" class="headerlink" title="結語"></a>結語</h2><p>隨著科技進步，記憶體容量大到唸不出單位了，我的腦容量卻是連有沒有 1 byte 都不清楚。</p>
-<h2 id="參考資料"><a href="#參考資料" class="headerlink" title="參考資料"></a>參考資料</h2><p><span class="exturl" data-url="aHR0cHM6Ly9wZGFpLnRlY2gv">Java 全栈知识体系<i class="fa fa-external-link-alt"></i></span></p>
-<p><span class="exturl" data-url="aHR0cHM6Ly9yaWNrYnNyLm1lZGl1bS5jb20vJUU5JTk2JTkyJUU4JTgxJThBLWFycmF5cy1hc2xpc3QtJUU3JTlBJTg0JUU1JTlEJTkxLTgzODlkM2YxZTU0NA==">閒聊「Arrays.asList()」的坑<i class="fa fa-external-link-alt"></i></span></p>
-]]></content>
-      <categories>
-        <category>Java</category>
-        <category>Note</category>
-      </categories>
-      <tags>
-        <tag>Java</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Mac Note：Mac 常用技巧</title>
     <url>/Mac/Note/91c8942c/</url>
     <content><![CDATA[<p>列出我日常使用 mac 時遇到的一些障礙。</p>
@@ -1327,6 +1327,71 @@
       </categories>
       <tags>
         <tag>Mac</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Tool Jira 01：Jira 建立 儀表板 (Dashboard)，碼農最舒適設定</title>
+    <url>/Tool/Jira/4ed23e02/</url>
+    <content><![CDATA[<p>身為碼農基本只管解 issue，Jira 這種專案管理工具的功能實在過於複雜，在此分享我在 Jira 中唯一使用的功能 – 儀表板 (Dashboard)。</p>
+<p>想要一目了然的查看某團隊或某專案的工作量之類資訊時，建立自定義的 儀表板 (Dashboard) 是滿推薦的方式。</p>
+<span id="more"></span>
+
+
+
+<h2 id="成品"><a href="#成品" class="headerlink" title="成品"></a>成品</h2><p>我習慣設成一個專案一張 <code>二維篩選統計資料</code> 表，X軸為 <code>優先順序</code>，y軸為 <code>受託人</code>，數字為 issue 數目。<br><img data-src="https://github.com/WCW0310/blogPicture/blob/master/Tool/Tool-Jira-01-create-dashboard/JiraSample.png?raw=true"></p>
+<p>這樣能清楚知道誰身上 loading 較重，哪些人較有餘力協助別人之類的 (不過通常也不能這樣判斷啦 XD)。</p>
+<h2 id="建立篩選條件-Filter-："><a href="#建立篩選條件-Filter-：" class="headerlink" title="建立篩選條件 (Filter)："></a>建立篩選條件 (Filter)：</h2><p>建立 儀表板 之前需要先建立數個 篩選條件 (Filter) 供 儀表板 使用。</p>
+<h3 id="選擇上方-篩選-Filter-tab"><a href="#選擇上方-篩選-Filter-tab" class="headerlink" title="選擇上方 篩選 (Filter) tab"></a>選擇上方 <code>篩選</code> (Filter) tab</h3><p><img data-src="https://github.com/WCW0310/blogPicture/blob/master/Tool/Tool-Jira-01-create-dashboard/filter.png?raw=true"></p>
+<h3 id="選擇-檢視所有篩選條件-View-all-filters"><a href="#選擇-檢視所有篩選條件-View-all-filters" class="headerlink" title="選擇 檢視所有篩選條件 (View all filters)"></a>選擇 <code>檢視所有篩選條件</code> (View all filters)</h3><p><img data-src="https://github.com/WCW0310/blogPicture/blob/master/Tool/Tool-Jira-01-create-dashboard/viewAllFilters.png?raw=true"></p>
+<h3 id="點選右上-建立篩選條件-Create-filter"><a href="#點選右上-建立篩選條件-Create-filter" class="headerlink" title="點選右上 建立篩選條件 (Create filter)"></a>點選右上 <code>建立篩選條件</code> (Create filter)</h3><p><img data-src="https://github.com/WCW0310/blogPicture/blob/master/Tool/Tool-Jira-01-create-dashboard/createFilter.png?raw=true"></p>
+<h3 id="自己視需求設定篩選條件"><a href="#自己視需求設定篩選條件" class="headerlink" title="自己視需求設定篩選條件"></a>自己視需求設定篩選條件</h3><p><img data-src="https://github.com/WCW0310/blogPicture/blob/master/Tool/Tool-Jira-01-create-dashboard/searchFilter.png?raw=true"></p>
+<p>我自己有設定的是 <code>專案</code> 跟 <code>狀態</code>。<br>專案：為了讓篩選有意義，一個篩選設定一個專案就滿剛好的。<br>狀態：只設定對於開發有意義的狀態，如：<code>開放</code>、<code>進行中</code>、<code>已解決</code>。</p>
+<p>設定好後點擊上方的 <code>另存新檔</code>。</p>
+<h3 id="設定-篩選條件名稱-後點擊-提交"><a href="#設定-篩選條件名稱-後點擊-提交" class="headerlink" title="設定 篩選條件名稱 後點擊 提交"></a>設定 <code>篩選條件名稱</code> 後點擊 <code>提交</code></h3><p><img data-src="https://github.com/WCW0310/blogPicture/blob/master/Tool/Tool-Jira-01-create-dashboard/setFilterName.png?raw=true"></p>
+<p>直接設成專案名稱即可。</p>
+<p>這樣就建立好一個新的篩選條件，可以再選擇上方 <code>篩選</code> (Filter) tab 找到它。</p>
+<h2 id="儀表板-Dashboard-自訂成呈現所有人題目數量的表格："><a href="#儀表板-Dashboard-自訂成呈現所有人題目數量的表格：" class="headerlink" title="儀表板 (Dashboard) 自訂成呈現所有人題目數量的表格："></a>儀表板 (Dashboard) 自訂成呈現所有人題目數量的表格：</h2><h3 id="選擇上方-儀表板-Dashboard-tab"><a href="#選擇上方-儀表板-Dashboard-tab" class="headerlink" title="選擇上方 儀表板 (Dashboard) tab"></a>選擇上方 <code>儀表板</code> (Dashboard) tab</h3><h3 id="選擇-建立儀表板-Create-new-dashboard"><a href="#選擇-建立儀表板-Create-new-dashboard" class="headerlink" title="選擇 建立儀表板 (Create new dashboard)"></a>選擇 <code>建立儀表板</code> (Create new dashboard)</h3><h3 id="填入名稱後點擊-儲存"><a href="#填入名稱後點擊-儲存" class="headerlink" title="填入名稱後點擊 儲存"></a>填入名稱後點擊 <code>儲存</code></h3><p><img data-src="https://github.com/WCW0310/blogPicture/blob/master/Tool/Tool-Jira-01-create-dashboard/createDashboard.png?raw=true"></p>
+<p>可以依你的分類標準命名，或是命名成 <code>我的 Dashboard</code> 之類的。</p>
+<h3 id="就會看到空的儀表板"><a href="#就會看到空的儀表板" class="headerlink" title="就會看到空的儀表板"></a>就會看到空的儀表板</h3><p><img data-src="https://github.com/WCW0310/blogPicture/blob/master/Tool/Tool-Jira-01-create-dashboard/blankDashboard.png?raw=true"></p>
+<p>可以看到右方有非常多種小工具，不過身為不管事的碼農不用浪費太多精力在這裡。</p>
+<p>右方找到 <code>二維篩選統計資料</code> 點擊 <code>新增</code> 就會看到儀表板出現 <code>二維篩選統計資料</code> 的設定欄。</p>
+<h3 id="設定-二維篩選統計資料-Two-Dimensional-Filter-Statistics-表"><a href="#設定-二維篩選統計資料-Two-Dimensional-Filter-Statistics-表" class="headerlink" title="設定 二維篩選統計資料 (Two Dimensional Filter Statistics) 表"></a>設定 <code>二維篩選統計資料</code> (Two Dimensional Filter Statistics) 表</h3><p><img data-src="https://github.com/WCW0310/blogPicture/blob/master/Tool/Tool-Jira-01-create-dashboard/settingData.png?raw=true"></p>
+<p>在 <code>已儲存的篩選條件</code> (Saved Filter) 中找到先前設定的 篩選條件。</p>
+<p><code>X 軸</code> 設成 <code>優先順序</code> (Priority)。</p>
+<p><code>Y 軸</code> 設成 <code>受託人</code>。</p>
+<p><code>結果數目</code> (Number of Results) 設成 50。</p>
+<p>最後點擊 <code>儲存</code> 即完成表格設定。</p>
+<h3 id="點擊右上角的-完成-結束-儀表板-設定"><a href="#點擊右上角的-完成-結束-儀表板-設定" class="headerlink" title="點擊右上角的 完成 結束 儀表板 設定"></a>點擊右上角的 <code>完成</code> 結束 儀表板 設定</h3><p><img data-src="https://github.com/WCW0310/blogPicture/blob/master/Tool/Tool-Jira-01-create-dashboard/tableSample.png?raw=true"></p>
+<h3 id="大功告成"><a href="#大功告成" class="headerlink" title="大功告成"></a>大功告成</h3><p>多設定幾個專案的表格就會跟一開始的圖片一樣有多張表格了。</p>
+<h2 id="結語"><a href="#結語" class="headerlink" title="結語"></a>結語</h2><p>上述設定都是我自己的偏好，完全可以依各自喜好做其他設定，不要被工具奴化就好~</p>
+<p>Jira 可以自定義的東西太多了，除非公司有特殊需求，或你本身就要負責專案管理，不然真心覺得越少碰它越好，其他時間能簡易的察看任務就好。</p>
+]]></content>
+      <categories>
+        <category>Tool</category>
+        <category>Jira</category>
+      </categories>
+      <tags>
+        <tag>Jira</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Tool：Proxyman</title>
+    <url>/Tool/ec1de664/</url>
+    <content><![CDATA[<p>強大的 HTTP 調試工具。</p>
+<span id="more"></span>
+
+<p><span class="exturl" data-url="aHR0cHM6Ly9wcm94eW1hbi5pby8=">Proxyman<i class="fa fa-external-link-alt"></i></span></p>
+<h2 id="Certificate"><a href="#Certificate" class="headerlink" title="Certificate"></a>Certificate</h2><p>因為需要獲取加密的 api 封包，所以需要對各裝置進行認證設置<br>Certificate 選項位於最上方<br>iOS 模擬器沒遇到什麼障礙<br>Android 模擬器需要使用 google api，因此我目前用不出來，因為專案會把沒有 play store 視為 root，進而阻止繼續使用<br>Android 實機需要定期下載 CA 憑證，並進入裝置設定進行安裝，通常在：設定&gt;密碼與安全&gt;系統安全&gt;加密和憑證&gt;信任的憑證|安裝憑證<br>Android 實機與 Praxyman 連線時需要更改網路 proxy，但須注意沒連接時要將 網路 proxy 關掉，否則 run app 時無法與 metro 連線</p>
+<h2 id="作用限制"><a href="#作用限制" class="headerlink" title="作用限制"></a>作用限制</h2><p>android 只能操作 debug 版的 app，因為遵循官方建議：<code>Make sure you remove these configs from your Production build.</code>。<br>ios 應該都能操作。</p>
+<p>記住這些差異才不會在奇怪的地方卡住浪費時間。</p>
+<h2 id="Map-Local"><a href="#Map-Local" class="headerlink" title="Map Local"></a>Map Local</h2><p>可以攔截 api 儲存回傳內容成 json 檔，並調整成想要的內容後來測試 api 在不同回傳下的結果<br>Map Local 選項位於最上方的 Tools 中，開啟後會額外顯示在視窗右下角<br>原本可以同時儲存很多組設置，更新後只能同時儲存兩組設置，妥妥的養套殺😭<br>mock 網址時必須以 <code>/</code> 結尾，如：<code>https://abcdefghijk/</code>，不然會 mock 失敗，不是很懂為何結尾不能沒有 <code>/</code>。<br>網址好像也都必須是小寫字母🧐。</p>
+<h3 id="Local-json-File-撰寫方式"><a href="#Local-json-File-撰寫方式" class="headerlink" title="Local json File 撰寫方式"></a>Local json File 撰寫方式</h3><p><span class="exturl" data-url="aHR0cHM6Ly9kb2NzLnByb3h5bWFuLmlvL2FkdmFuY2VkLWZlYXR1cmVzL21hcC1sb2NhbA==">Map Local (File)<i class="fa fa-external-link-alt"></i></span><br>網路通信過於複雜，Proxyman 提供了一些網路或伺服器狀態的設置方法<br>文件大致包含 Status code, Response Headers, Response Body<br>只寫 Response Body 會視為 200 OK，這樣如果要測試錯誤狀況時，在程式碼中不會進到 catch 的地方，可能會導致誤判<br>常用 Status code:<br>404 Not Found</p>
+]]></content>
+      <categories>
+        <category>Tool</category>
+      </categories>
+      <tags>
+        <tag>Proxyman</tag>
       </tags>
   </entry>
   <entry>
@@ -1373,32 +1438,23 @@
       </tags>
   </entry>
   <entry>
-    <title>React Native Debug：無法連上 Firebase Analytics DebugView</title>
-    <url>/React-Native/Debug/e908ab10/</url>
-    <content><![CDATA[<p>小細節可能誤大局，偷走我一整週的蠢事。</p>
+    <title>Tool：Visual Studio Code</title>
+    <url>/Tool/41e4a259/</url>
+    <content><![CDATA[<p>工程師的好夥伴，懂他越多，效率越高。</p>
 <span id="more"></span>
 
-<p>Firebase 專案中將 development 與 production App 分別設置不同的套件名稱：development app 套件名稱結尾會加上 <code>.debug</code>。<br>理論上這種配置很常見，不過我要使用 Firebase console 的 Analytics DebugView 時，卻遲遲無法連上。<br>直接說答案，因為我們將 development app 的 Analytics 數據流給刪除了。</p>
-<p>如何從 Firebase console 中查看此設定？</p>
-<blockquote>
-<p>點擊 <code>專案總覽</code> 右邊的齒輪<br>選擇 <code>專案設定</code><br>選擇 <code>整合</code><br>點擊 <code>Google Analytics</code> 的 <code>管理</code> (這步可能需要更高的權限)<br>點擊 <code>已連結的 Google Analytics (分析) 帳戶</code><br>選擇 <code>數據流</code> 就可以看到目前有跟 Google Analytics 連結的 App，其套件名稱會寫在 App 名下方<br>點擊 <code>&gt;</code> 可以看到 <code>應用數據流詳情</code>，其實跟在 Firebase 設定 App 的地方差不多<br>點擊右上角 <code>...</code> 可以看到 <code>刪除數據流</code>，我們 development App 的數據流應該就是在此刪除的</p>
-</blockquote>
-<p>總之在 Google Analytics 刪除 App 的數據流，就會使 Firebase console 的 Analytics DebugView 無法跟該 App 連結。</p>
-<ul>
-<li>在 <code>google-services.json</code> 檔案中依然有包含該 App 的套件名稱</li>
-<li>firebase.analytics log 中也依舊會包含傳送 event 資料的 log</li>
-</ul>
-<p>會發生這種奇妙現象是因為我們本來要將 development app 轉移到另一個 Firebase 專案，但不知道什麼原因只做一半．．．</p>
-<p>轉移後會需要換新的 <code>google-services.json</code> 記住更換後要記得清除 gradle 資料，不然會繼續使用舊的，也不會有提示。</p>
+<h2 id="常用快捷鍵"><a href="#常用快捷鍵" class="headerlink" title="常用快捷鍵"></a>常用快捷鍵</h2><p>Code &gt; 喜好設定 &gt; 鍵盤快速鍵 [command + K command + S]</p>
+<p>一些快捷鍵在非英文輸入法會失效。</p>
+<p>search file: command P (mac)<br>go forward &#x2F; go back: ctrl shift - &#x2F; ctrl -<br>editor.fold &#x2F; editor.unfold: alt cmd [ &#x2F; alt cmd ]<br>editor.foldAll &#x2F; editor.unfoldAll: cmd+k cmd+0 &#x2F; cmd+k cmd+j</p>
+<h2 id="auto-format"><a href="#auto-format" class="headerlink" title="auto format"></a>auto format</h2><p>option shift F (mac) &#x2F; ctrl shift F (windows)<br>有些檔案類型的 formatter 需要進 command shift p 手動指定</p>
+<h2 id="切換語言"><a href="#切換語言" class="headerlink" title="切換語言"></a>切換語言</h2><p>command + shift + p<br>輸入 language<br>選取 Configure Display Language<br>選取要切換的語系</p>
+<h2 id="參考資料"><a href="#參考資料" class="headerlink" title="參考資料"></a>參考資料</h2><p><span class="exturl" data-url="aHR0cHM6Ly9jb2Rpbmdpc2xvdmUuY29tL2lzc3VlLWZvcm1hdC1jb2RlLXZzY29kZS1zaG9ydGN1dC8=">Unable to format code in VSCode on MacOS using shortcut (solved)<i class="fa fa-external-link-alt"></i></span></p>
 ]]></content>
       <categories>
-        <category>React Native</category>
-        <category>Debug</category>
+        <category>Tool</category>
       </categories>
       <tags>
-        <tag>Firebase</tag>
-        <tag>Google Analytics</tag>
-        <tag>React Native</tag>
+        <tag>Visual Studio Code</tag>
       </tags>
   </entry>
   <entry>
@@ -1660,110 +1716,6 @@
       </tags>
   </entry>
   <entry>
-    <title>Tool Jira 01：Jira 建立 儀表板 (Dashboard)，碼農最舒適設定</title>
-    <url>/Tool/Jira/4ed23e02/</url>
-    <content><![CDATA[<p>身為碼農基本只管解 issue，Jira 這種專案管理工具的功能實在過於複雜，在此分享我在 Jira 中唯一使用的功能 – 儀表板 (Dashboard)。</p>
-<p>想要一目了然的查看某團隊或某專案的工作量之類資訊時，建立自定義的 儀表板 (Dashboard) 是滿推薦的方式。</p>
-<span id="more"></span>
-
-
-
-<h2 id="成品"><a href="#成品" class="headerlink" title="成品"></a>成品</h2><p>我習慣設成一個專案一張 <code>二維篩選統計資料</code> 表，X軸為 <code>優先順序</code>，y軸為 <code>受託人</code>，數字為 issue 數目。<br><img data-src="https://github.com/WCW0310/blogPicture/blob/master/Tool/Tool-Jira-01-create-dashboard/JiraSample.png?raw=true"></p>
-<p>這樣能清楚知道誰身上 loading 較重，哪些人較有餘力協助別人之類的 (不過通常也不能這樣判斷啦 XD)。</p>
-<h2 id="建立篩選條件-Filter-："><a href="#建立篩選條件-Filter-：" class="headerlink" title="建立篩選條件 (Filter)："></a>建立篩選條件 (Filter)：</h2><p>建立 儀表板 之前需要先建立數個 篩選條件 (Filter) 供 儀表板 使用。</p>
-<h3 id="選擇上方-篩選-Filter-tab"><a href="#選擇上方-篩選-Filter-tab" class="headerlink" title="選擇上方 篩選 (Filter) tab"></a>選擇上方 <code>篩選</code> (Filter) tab</h3><p><img data-src="https://github.com/WCW0310/blogPicture/blob/master/Tool/Tool-Jira-01-create-dashboard/filter.png?raw=true"></p>
-<h3 id="選擇-檢視所有篩選條件-View-all-filters"><a href="#選擇-檢視所有篩選條件-View-all-filters" class="headerlink" title="選擇 檢視所有篩選條件 (View all filters)"></a>選擇 <code>檢視所有篩選條件</code> (View all filters)</h3><p><img data-src="https://github.com/WCW0310/blogPicture/blob/master/Tool/Tool-Jira-01-create-dashboard/viewAllFilters.png?raw=true"></p>
-<h3 id="點選右上-建立篩選條件-Create-filter"><a href="#點選右上-建立篩選條件-Create-filter" class="headerlink" title="點選右上 建立篩選條件 (Create filter)"></a>點選右上 <code>建立篩選條件</code> (Create filter)</h3><p><img data-src="https://github.com/WCW0310/blogPicture/blob/master/Tool/Tool-Jira-01-create-dashboard/createFilter.png?raw=true"></p>
-<h3 id="自己視需求設定篩選條件"><a href="#自己視需求設定篩選條件" class="headerlink" title="自己視需求設定篩選條件"></a>自己視需求設定篩選條件</h3><p><img data-src="https://github.com/WCW0310/blogPicture/blob/master/Tool/Tool-Jira-01-create-dashboard/searchFilter.png?raw=true"></p>
-<p>我自己有設定的是 <code>專案</code> 跟 <code>狀態</code>。<br>專案：為了讓篩選有意義，一個篩選設定一個專案就滿剛好的。<br>狀態：只設定對於開發有意義的狀態，如：<code>開放</code>、<code>進行中</code>、<code>已解決</code>。</p>
-<p>設定好後點擊上方的 <code>另存新檔</code>。</p>
-<h3 id="設定-篩選條件名稱-後點擊-提交"><a href="#設定-篩選條件名稱-後點擊-提交" class="headerlink" title="設定 篩選條件名稱 後點擊 提交"></a>設定 <code>篩選條件名稱</code> 後點擊 <code>提交</code></h3><p><img data-src="https://github.com/WCW0310/blogPicture/blob/master/Tool/Tool-Jira-01-create-dashboard/setFilterName.png?raw=true"></p>
-<p>直接設成專案名稱即可。</p>
-<p>這樣就建立好一個新的篩選條件，可以再選擇上方 <code>篩選</code> (Filter) tab 找到它。</p>
-<h2 id="儀表板-Dashboard-自訂成呈現所有人題目數量的表格："><a href="#儀表板-Dashboard-自訂成呈現所有人題目數量的表格：" class="headerlink" title="儀表板 (Dashboard) 自訂成呈現所有人題目數量的表格："></a>儀表板 (Dashboard) 自訂成呈現所有人題目數量的表格：</h2><h3 id="選擇上方-儀表板-Dashboard-tab"><a href="#選擇上方-儀表板-Dashboard-tab" class="headerlink" title="選擇上方 儀表板 (Dashboard) tab"></a>選擇上方 <code>儀表板</code> (Dashboard) tab</h3><h3 id="選擇-建立儀表板-Create-new-dashboard"><a href="#選擇-建立儀表板-Create-new-dashboard" class="headerlink" title="選擇 建立儀表板 (Create new dashboard)"></a>選擇 <code>建立儀表板</code> (Create new dashboard)</h3><h3 id="填入名稱後點擊-儲存"><a href="#填入名稱後點擊-儲存" class="headerlink" title="填入名稱後點擊 儲存"></a>填入名稱後點擊 <code>儲存</code></h3><p><img data-src="https://github.com/WCW0310/blogPicture/blob/master/Tool/Tool-Jira-01-create-dashboard/createDashboard.png?raw=true"></p>
-<p>可以依你的分類標準命名，或是命名成 <code>我的 Dashboard</code> 之類的。</p>
-<h3 id="就會看到空的儀表板"><a href="#就會看到空的儀表板" class="headerlink" title="就會看到空的儀表板"></a>就會看到空的儀表板</h3><p><img data-src="https://github.com/WCW0310/blogPicture/blob/master/Tool/Tool-Jira-01-create-dashboard/blankDashboard.png?raw=true"></p>
-<p>可以看到右方有非常多種小工具，不過身為不管事的碼農不用浪費太多精力在這裡。</p>
-<p>右方找到 <code>二維篩選統計資料</code> 點擊 <code>新增</code> 就會看到儀表板出現 <code>二維篩選統計資料</code> 的設定欄。</p>
-<h3 id="設定-二維篩選統計資料-Two-Dimensional-Filter-Statistics-表"><a href="#設定-二維篩選統計資料-Two-Dimensional-Filter-Statistics-表" class="headerlink" title="設定 二維篩選統計資料 (Two Dimensional Filter Statistics) 表"></a>設定 <code>二維篩選統計資料</code> (Two Dimensional Filter Statistics) 表</h3><p><img data-src="https://github.com/WCW0310/blogPicture/blob/master/Tool/Tool-Jira-01-create-dashboard/settingData.png?raw=true"></p>
-<p>在 <code>已儲存的篩選條件</code> (Saved Filter) 中找到先前設定的 篩選條件。</p>
-<p><code>X 軸</code> 設成 <code>優先順序</code> (Priority)。</p>
-<p><code>Y 軸</code> 設成 <code>受託人</code>。</p>
-<p><code>結果數目</code> (Number of Results) 設成 50。</p>
-<p>最後點擊 <code>儲存</code> 即完成表格設定。</p>
-<h3 id="點擊右上角的-完成-結束-儀表板-設定"><a href="#點擊右上角的-完成-結束-儀表板-設定" class="headerlink" title="點擊右上角的 完成 結束 儀表板 設定"></a>點擊右上角的 <code>完成</code> 結束 儀表板 設定</h3><p><img data-src="https://github.com/WCW0310/blogPicture/blob/master/Tool/Tool-Jira-01-create-dashboard/tableSample.png?raw=true"></p>
-<h3 id="大功告成"><a href="#大功告成" class="headerlink" title="大功告成"></a>大功告成</h3><p>多設定幾個專案的表格就會跟一開始的圖片一樣有多張表格了。</p>
-<h2 id="結語"><a href="#結語" class="headerlink" title="結語"></a>結語</h2><p>上述設定都是我自己的偏好，完全可以依各自喜好做其他設定，不要被工具奴化就好~</p>
-<p>Jira 可以自定義的東西太多了，除非公司有特殊需求，或你本身就要負責專案管理，不然真心覺得越少碰它越好，其他時間能簡易的察看任務就好。</p>
-]]></content>
-      <categories>
-        <category>Tool</category>
-        <category>Jira</category>
-      </categories>
-      <tags>
-        <tag>Jira</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Tool：Visual Studio Code</title>
-    <url>/Tool/41e4a259/</url>
-    <content><![CDATA[<p>工程師的好夥伴，懂他越多，效率越高。</p>
-<span id="more"></span>
-
-<h2 id="常用快捷鍵"><a href="#常用快捷鍵" class="headerlink" title="常用快捷鍵"></a>常用快捷鍵</h2><p>Code &gt; 喜好設定 &gt; 鍵盤快速鍵 [command + K command + S]</p>
-<p>一些快捷鍵在非英文輸入法會失效。</p>
-<p>search file: command P (mac)<br>go forward &#x2F; go back: ctrl shift - &#x2F; ctrl -<br>editor.fold &#x2F; editor.unfold: alt cmd [ &#x2F; alt cmd ]<br>editor.foldAll &#x2F; editor.unfoldAll: cmd+k cmd+0 &#x2F; cmd+k cmd+j</p>
-<h2 id="auto-format"><a href="#auto-format" class="headerlink" title="auto format"></a>auto format</h2><p>option shift F (mac) &#x2F; ctrl shift F (windows)<br>有些檔案類型的 formatter 需要進 command shift p 手動指定</p>
-<h2 id="切換語言"><a href="#切換語言" class="headerlink" title="切換語言"></a>切換語言</h2><p>command + shift + p<br>輸入 language<br>選取 Configure Display Language<br>選取要切換的語系</p>
-<h2 id="參考資料"><a href="#參考資料" class="headerlink" title="參考資料"></a>參考資料</h2><p><span class="exturl" data-url="aHR0cHM6Ly9jb2Rpbmdpc2xvdmUuY29tL2lzc3VlLWZvcm1hdC1jb2RlLXZzY29kZS1zaG9ydGN1dC8=">Unable to format code in VSCode on MacOS using shortcut (solved)<i class="fa fa-external-link-alt"></i></span></p>
-]]></content>
-      <categories>
-        <category>Tool</category>
-      </categories>
-      <tags>
-        <tag>Visual Studio Code</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Tool：Proxyman</title>
-    <url>/Tool/ec1de664/</url>
-    <content><![CDATA[<p>強大的 HTTP 調試工具。</p>
-<span id="more"></span>
-
-<p><span class="exturl" data-url="aHR0cHM6Ly9wcm94eW1hbi5pby8=">Proxyman<i class="fa fa-external-link-alt"></i></span></p>
-<h2 id="Certificate"><a href="#Certificate" class="headerlink" title="Certificate"></a>Certificate</h2><p>因為需要獲取加密的 api 封包，所以需要對各裝置進行認證設置<br>Certificate 選項位於最上方<br>iOS 模擬器沒遇到什麼障礙<br>Android 模擬器需要使用 google api，因此我目前用不出來，因為專案會把沒有 play store 視為 root，進而阻止繼續使用<br>Android 實機需要定期下載 CA 憑證，並進入裝置設定進行安裝，通常在：設定&gt;密碼與安全&gt;系統安全&gt;加密和憑證&gt;信任的憑證|安裝憑證<br>Android 實機與 Praxyman 連線時需要更改網路 proxy，但須注意沒連接時要將 網路 proxy 關掉，否則 run app 時無法與 metro 連線</p>
-<h2 id="作用限制"><a href="#作用限制" class="headerlink" title="作用限制"></a>作用限制</h2><p>android 只能操作 debug 版的 app，因為遵循官方建議：<code>Make sure you remove these configs from your Production build.</code>。<br>ios 應該都能操作。</p>
-<p>記住這些差異才不會在奇怪的地方卡住浪費時間。</p>
-<h2 id="Map-Local"><a href="#Map-Local" class="headerlink" title="Map Local"></a>Map Local</h2><p>可以攔截 api 儲存回傳內容成 json 檔，並調整成想要的內容後來測試 api 在不同回傳下的結果<br>Map Local 選項位於最上方的 Tools 中，開啟後會額外顯示在視窗右下角<br>原本可以同時儲存很多組設置，更新後只能同時儲存兩組設置，妥妥的養套殺😭<br>mock 網址時必須以 <code>/</code> 結尾，如：<code>https://abcdefghijk/</code>，不然會 mock 失敗，不是很懂為何結尾不能沒有 <code>/</code>。<br>網址好像也都必須是小寫字母🧐。</p>
-<h3 id="Local-json-File-撰寫方式"><a href="#Local-json-File-撰寫方式" class="headerlink" title="Local json File 撰寫方式"></a>Local json File 撰寫方式</h3><p><span class="exturl" data-url="aHR0cHM6Ly9kb2NzLnByb3h5bWFuLmlvL2FkdmFuY2VkLWZlYXR1cmVzL21hcC1sb2NhbA==">Map Local (File)<i class="fa fa-external-link-alt"></i></span><br>網路通信過於複雜，Proxyman 提供了一些網路或伺服器狀態的設置方法<br>文件大致包含 Status code, Response Headers, Response Body<br>只寫 Response Body 會視為 200 OK，這樣如果要測試錯誤狀況時，在程式碼中不會進到 catch 的地方，可能會導致誤判<br>常用 Status code:<br>404 Not Found</p>
-]]></content>
-      <categories>
-        <category>Tool</category>
-      </categories>
-      <tags>
-        <tag>Proxyman</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Tool：klogg</title>
-    <url>/Tool/391444f2/</url>
-    <content><![CDATA[<p>看程式 log (.log檔案) 比較好看的工具。</p>
-<span id="more"></span>
-
-<p>klogg：有 Dark mode 的 glogg，現在基本好像都用這個了，glogg 沒再更新的樣子。</p>
-<p><span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL3Zhcmlhci9rbG9nZy9ibG9iL21hc3Rlci9ET0NVTUVOVEFUSU9OLm1k">Klogg documentation<i class="fa fa-external-link-alt"></i></span></p>
-<h2 id="標記行"><a href="#標記行" class="headerlink" title="標記行"></a>標記行</h2><p>點擊左邊圓點</p>
-<p>選擇單行或多行 &gt; 按 m</p>
-<h2 id="同時搜尋兩個關鍵字"><a href="#同時搜尋兩個關鍵字" class="headerlink" title="同時搜尋兩個關鍵字"></a>同時搜尋兩個關鍵字</h2><p>|：用直線隔開兩關鍵字(or)</p>
-]]></content>
-      <categories>
-        <category>Tool</category>
-      </categories>
-      <tags>
-        <tag>klogg</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Life Share：Home Assistant</title>
     <url>/Life/Share/a4e0acfc/</url>
     <content><![CDATA[<p>提升生活小確幸。</p>
@@ -1791,6 +1743,25 @@
       </tags>
   </entry>
   <entry>
+    <title>Tool：klogg</title>
+    <url>/Tool/391444f2/</url>
+    <content><![CDATA[<p>看程式 log (.log檔案) 比較好看的工具。</p>
+<span id="more"></span>
+
+<p>klogg：有 Dark mode 的 glogg，現在基本好像都用這個了，glogg 沒再更新的樣子。</p>
+<p><span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL3Zhcmlhci9rbG9nZy9ibG9iL21hc3Rlci9ET0NVTUVOVEFUSU9OLm1k">Klogg documentation<i class="fa fa-external-link-alt"></i></span></p>
+<h2 id="標記行"><a href="#標記行" class="headerlink" title="標記行"></a>標記行</h2><p>點擊左邊圓點</p>
+<p>選擇單行或多行 &gt; 按 m</p>
+<h2 id="同時搜尋兩個關鍵字"><a href="#同時搜尋兩個關鍵字" class="headerlink" title="同時搜尋兩個關鍵字"></a>同時搜尋兩個關鍵字</h2><p>|：用直線隔開兩關鍵字(or)</p>
+]]></content>
+      <categories>
+        <category>Tool</category>
+      </categories>
+      <tags>
+        <tag>klogg</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Life Share：Smart Home</title>
     <url>/Life/Share/2ac8f7fd/</url>
     <content><![CDATA[<p>提升生活小確幸。</p>
@@ -1815,6 +1786,35 @@
       </categories>
       <tags>
         <tag>Smart Home</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>React Native Debug：無法連上 Firebase Analytics DebugView</title>
+    <url>/React-Native/Debug/e908ab10/</url>
+    <content><![CDATA[<p>小細節可能誤大局，偷走我一整週的蠢事。</p>
+<span id="more"></span>
+
+<p>Firebase 專案中將 development 與 production App 分別設置不同的套件名稱：development app 套件名稱結尾會加上 <code>.debug</code>。<br>理論上這種配置很常見，不過我要使用 Firebase console 的 Analytics DebugView 時，卻遲遲無法連上。<br>直接說答案，因為我們將 development app 的 Analytics 數據流給刪除了。</p>
+<p>如何從 Firebase console 中查看此設定？</p>
+<blockquote>
+<p>點擊 <code>專案總覽</code> 右邊的齒輪<br>選擇 <code>專案設定</code><br>選擇 <code>整合</code><br>點擊 <code>Google Analytics</code> 的 <code>管理</code> (這步可能需要更高的權限)<br>點擊 <code>已連結的 Google Analytics (分析) 帳戶</code><br>選擇 <code>數據流</code> 就可以看到目前有跟 Google Analytics 連結的 App，其套件名稱會寫在 App 名下方<br>點擊 <code>&gt;</code> 可以看到 <code>應用數據流詳情</code>，其實跟在 Firebase 設定 App 的地方差不多<br>點擊右上角 <code>...</code> 可以看到 <code>刪除數據流</code>，我們 development App 的數據流應該就是在此刪除的</p>
+</blockquote>
+<p>總之在 Google Analytics 刪除 App 的數據流，就會使 Firebase console 的 Analytics DebugView 無法跟該 App 連結。</p>
+<ul>
+<li>在 <code>google-services.json</code> 檔案中依然有包含該 App 的套件名稱</li>
+<li>firebase.analytics log 中也依舊會包含傳送 event 資料的 log</li>
+</ul>
+<p>會發生這種奇妙現象是因為我們本來要將 development app 轉移到另一個 Firebase 專案，但不知道什麼原因只做一半．．．</p>
+<p>轉移後會需要換新的 <code>google-services.json</code> 記住更換後要記得清除 gradle 資料，不然會繼續使用舊的，也不會有提示。</p>
+]]></content>
+      <categories>
+        <category>React Native</category>
+        <category>Debug</category>
+      </categories>
+      <tags>
+        <tag>Firebase</tag>
+        <tag>React Native</tag>
+        <tag>Google Analytics</tag>
       </tags>
   </entry>
 </search>
