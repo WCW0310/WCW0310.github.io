@@ -1,83 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>Java Note 01：常忘 Java 語法</title>
-    <url>/Java/Note/76cc3fdb/</url>
-    <content><![CDATA[<p>為了麵包不得已開始刷題人生，但被 IDE 寵壞後，默寫時連迴圈都寫不出來了，趕快來複習一下。</p>
-<span id="more"></span>
-
-<h2 id="for-loop"><a href="#for-loop" class="headerlink" title="for loop"></a>for loop</h2><figure class="highlight java"><figcaption><span>基本</span></figcaption><table><tr><td class="code"><pre><span class="line"><span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">0</span>; i &lt; <span class="number">5</span>; i++) &#123;</span><br><span class="line">  System.out.println(i);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight java"><figcaption><span>迭代</span></figcaption><table><tr><td class="code"><pre><span class="line"><span class="keyword">for</span> (<span class="type">int</span> i : array) &#123;</span><br><span class="line">  System.out.println(i);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h2 id="String"><a href="#String" class="headerlink" title="String"></a>String</h2><p><span class="exturl" data-url="aHR0cHM6Ly93d3cucnVub29iLmNvbS9qYXZhL2phdmEtc3RyaW5nLmh0bWw=">Java String 类<i class="fa fa-external-link-alt"></i></span></p>
-<h3 id="返回字串長度"><a href="#返回字串長度" class="headerlink" title="返回字串長度"></a>返回字串長度</h3><p>int length();</p>
-<h3 id="判斷字串值是否相同"><a href="#判斷字串值是否相同" class="headerlink" title="判斷字串值是否相同"></a>判斷字串值是否相同</h3><p>boolean equals(String value);</p>
-<h3 id="返回指定索引的-char"><a href="#返回指定索引的-char" class="headerlink" title="返回指定索引的 char"></a>返回指定索引的 char</h3><p>char charAt(int index);</p>
-<h3 id="返回字串轉換成的-char"><a href="#返回字串轉換成的-char" class="headerlink" title="返回字串轉換成的 char[]"></a>返回字串轉換成的 char[]</h3><p>char[] toCharArray();</p>
-<h3 id="返回子字串（指定頭尾）"><a href="#返回子字串（指定頭尾）" class="headerlink" title="返回子字串（指定頭尾）"></a>返回子字串（指定頭尾）</h3><p>String substring(int beginIndex, int endIndex);<br>注意：包含頭，不包含尾。</p>
-<h3 id="返回子字串（指定頭）"><a href="#返回子字串（指定頭）" class="headerlink" title="返回子字串（指定頭）"></a>返回子字串（指定頭）</h3><p>String substring(int beginIndex);</p>
-<h3 id="判斷是否包含指定字符序列"><a href="#判斷是否包含指定字符序列" class="headerlink" title="判斷是否包含指定字符序列"></a>判斷是否包含指定字符序列</h3><p>boolean contains(CharSequence chars);</p>
-<h2 id="Character"><a href="#Character" class="headerlink" title="Character"></a>Character</h2><h3 id="確定是否為字母或數字"><a href="#確定是否為字母或數字" class="headerlink" title="確定是否為字母或數字"></a>確定是否為字母或數字</h3><p>Character.isLetterOrDigit(char)</p>
-<h2 id="Array"><a href="#Array" class="headerlink" title="Array"></a>Array</h2><h3 id="建立新-Array-方法"><a href="#建立新-Array-方法" class="headerlink" title="建立新 Array 方法"></a>建立新 Array 方法</h3><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="type">int</span>[] intArray = <span class="keyword">new</span> <span class="title class_">int</span>[<span class="number">3</span>]; <span class="comment">// 長度為三，空的 Array</span></span><br><span class="line"><span class="type">int</span>[] intArray2 = &#123;<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>&#125;; <span class="comment">// 自定義內容的 Array，算是 intArray3 方法的語法糖</span></span><br><span class="line"><span class="type">int</span>[] intArray3 = <span class="keyword">new</span> <span class="title class_">int</span>[]&#123;<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>&#125;; <span class="comment">// 與 intArray2 一樣，不過在前面沒有表達式的型別宣告時只能這樣用，不然會出 illegal start of expression 錯</span></span><br></pre></td></tr></table></figure>
-
-<h2 id="ArrayList"><a href="#ArrayList" class="headerlink" title="ArrayList"></a>ArrayList</h2><p><span class="exturl" data-url="aHR0cHM6Ly93d3cucnVub29iLmNvbS9qYXZhL2phdmEtYXJyYXlsaXN0Lmh0bWw=">Java ArrayList<i class="fa fa-external-link-alt"></i></span></p>
-<h2 id="Arrays"><a href="#Arrays" class="headerlink" title="Arrays"></a>Arrays</h2><p>Arrays 是處理各式 Array 的工具類。</p>
-<h3 id="排序傳入的-array"><a href="#排序傳入的-array" class="headerlink" title="排序傳入的 array"></a>排序傳入的 array</h3><p>Arrays.sort(array);</p>
-<h3 id="比較兩-arrays-值是否相同"><a href="#比較兩-arrays-值是否相同" class="headerlink" title="比較兩 arrays 值是否相同"></a>比較兩 arrays 值是否相同</h3><p>Arrays.equals(array1, array2);</p>
-<h3 id="生成裝有-values-的-List"><a href="#生成裝有-values-的-List" class="headerlink" title="生成裝有 values 的 List"></a>生成裝有 values 的 List</h3><p>Arrays.asList(value1, value2, …);<br>返回的 List 不適合拿來操作，通常是用來快速建立指定元素的 ArrayList 或 HashSet 之類的類別。</p>
-<h2 id="Collections"><a href="#Collections" class="headerlink" title="Collections"></a>Collections</h2><h3 id="排序"><a href="#排序" class="headerlink" title="排序"></a>排序</h3><p>Collections.sort(list);<br>Arrays 的 sort 不能排序 ArrayList，所以要用這個。</p>
-<p>Collections.reverseOrder()<br>在建構 PriorityQueue 之類的 class 時可以用此指定反向順序。</p>
-<h2 id="HashMap"><a href="#HashMap" class="headerlink" title="HashMap"></a>HashMap</h2><p><span class="exturl" data-url="aHR0cHM6Ly93d3cucnVub29iLmNvbS9qYXZhL2phdmEtaGFzaG1hcC5odG1s">Java HashMap<i class="fa fa-external-link-alt"></i></span></p>
-<p>需要注意基本類別要換成封裝類別。</p>
-<h3 id="獲取指定-key-對應的-value"><a href="#獲取指定-key-對應的-value" class="headerlink" title="獲取指定 key 對應的 value"></a>獲取指定 key 對應的 value</h3><p>hashmap.get(key);</p>
-<h3 id="獲取指定-key-對應的-value，若找不到-key-就返回-default"><a href="#獲取指定-key-對應的-value，若找不到-key-就返回-default" class="headerlink" title="獲取指定 key 對應的 value，若找不到 key 就返回 default"></a>獲取指定 key 對應的 value，若找不到 key 就返回 default</h3><p>hashmap.getOrDefault(key, default);</p>
-<h3 id="添加鍵值對"><a href="#添加鍵值對" class="headerlink" title="添加鍵值對"></a>添加鍵值對</h3><p>hashmap.put(key, value);</p>
-<h3 id="檢查是否存在指定-key-對應的映射關係"><a href="#檢查是否存在指定-key-對應的映射關係" class="headerlink" title="檢查是否存在指定 key 對應的映射關係"></a>檢查是否存在指定 key 對應的映射關係</h3><p>hashmap.containsKey(key);</p>
-<h3 id="檢查是否存在指定-value-對應的映射關係"><a href="#檢查是否存在指定-value-對應的映射關係" class="headerlink" title="檢查是否存在指定 value 對應的映射關係"></a>檢查是否存在指定 value 對應的映射關係</h3><p>hashmap.containsValue(value);</p>
-<h3 id="刪除-key-對應的鍵值對"><a href="#刪除-key-對應的鍵值對" class="headerlink" title="刪除 key 對應的鍵值對"></a>刪除 key 對應的鍵值對</h3><p>hashmap.remove(key);</p>
-<h3 id="返回-hashmap-中所有-key-組成的-set"><a href="#返回-hashmap-中所有-key-組成的-set" class="headerlink" title="返回 hashmap 中所有 key 組成的 set"></a>返回 hashmap 中所有 key 組成的 set</h3><p>hashmap.keySet();</p>
-<h3 id="返回-hashmap-中所有-value-組成的-set"><a href="#返回-hashmap-中所有-value-組成的-set" class="headerlink" title="返回 hashmap 中所有 value 組成的 set"></a>返回 hashmap 中所有 value 組成的 set</h3><p>hashmap.values();</p>
-<h3 id="返回-hashmap-中所有-映射關係-的-set"><a href="#返回-hashmap-中所有-映射關係-的-set" class="headerlink" title="返回 hashmap 中所有 映射關係 的 set"></a>返回 hashmap 中所有 映射關係 的 set</h3><p>hashmap.entrySet();<br>換容器時會使用到，每個鍵值對的類型為 <code>Map.Entry</code><br>Map.Entry 取得鍵：getKey()<br>Map.Entry 取得值：getValue()</p>
-<h2 id="HashSet"><a href="#HashSet" class="headerlink" title="HashSet"></a>HashSet</h2><p><span class="exturl" data-url="aHR0cHM6Ly93d3cucnVub29iLmNvbS9qYXZhL2phdmEtaGFzaHNldC5odG1s">Java HashSet<i class="fa fa-external-link-alt"></i></span></p>
-<p>需要注意基本類別要換成封裝類別。</p>
-<h3 id="添加元素"><a href="#添加元素" class="headerlink" title="添加元素"></a>添加元素</h3><p>hashset.add(value);</p>
-<h3 id="判斷元素是否存在"><a href="#判斷元素是否存在" class="headerlink" title="判斷元素是否存在"></a>判斷元素是否存在</h3><p>hashset.contains(value);</p>
-<h3 id="刪除元素"><a href="#刪除元素" class="headerlink" title="刪除元素"></a>刪除元素</h3><p>hashset.remove(value);</p>
-<h3 id="獲取-hashset-大小"><a href="#獲取-hashset-大小" class="headerlink" title="獲取 hashset 大小"></a>獲取 hashset 大小</h3><p>hashset.size();</p>
-<h3 id="交集技巧"><a href="#交集技巧" class="headerlink" title="交集技巧"></a>交集技巧</h3><p>hashset1.retainAll(hashset2);<br>返回扣掉兩 sets 未交集元素後的 hashset1。</p>
-<h3 id="差集技巧"><a href="#差集技巧" class="headerlink" title="差集技巧"></a>差集技巧</h3><p>hashset1.removeAll(hashset2);<br>返回扣掉兩 sets 交集元素後的 hashset1。</p>
-<h3 id="聯集技巧"><a href="#聯集技巧" class="headerlink" title="聯集技巧"></a>聯集技巧</h3><p>hashset1.addAll(hashset2);<br>返回加上兩 sets 未交集元素後的 hashset1。</p>
-<h2 id="PriorityQueue"><a href="#PriorityQueue" class="headerlink" title="PriorityQueue"></a>PriorityQueue</h2><p><span class="exturl" data-url="aHR0cHM6Ly93d3cuY2Fpbmlhb2pjLmNvbS9qYXZhL2phdmEtcHJpb3JpdHlxdWV1ZS5odG1s">Java PriorityQueue<i class="fa fa-external-link-alt"></i></span></p>
-<p>先進先出，預設先出來的是最小的 (Ascending Order)</p>
-<h3 id="建構方式"><a href="#建構方式" class="headerlink" title="建構方式"></a>建構方式</h3><p>可以帶入自定義的 Comparator，如：</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">PriorityQueue&lt;Map.Entry&lt;Integer, Integer&gt;&gt; pq = <span class="keyword">new</span> <span class="title class_">PriorityQueue</span>&lt;&gt;(</span><br><span class="line">  (a, b) -&gt; a.getValue() - b.getValue()</span><br><span class="line">);</span><br></pre></td></tr></table></figure>
-
-<h3 id="新增元素"><a href="#新增元素" class="headerlink" title="新增元素"></a>新增元素</h3><p>add()</p>
-<h3 id="訪問開頭元素"><a href="#訪問開頭元素" class="headerlink" title="訪問開頭元素"></a>訪問開頭元素</h3><p>peek()</p>
-<h3 id="返回並刪除隊列開頭"><a href="#返回並刪除隊列開頭" class="headerlink" title="返回並刪除隊列開頭"></a>返回並刪除隊列開頭</h3><p>poll()</p>
-<h2 id="Stream"><a href="#Stream" class="headerlink" title="Stream"></a>Stream</h2><p><span class="exturl" data-url="aHR0cHM6Ly93d3cucnVub29iLmNvbS9qYXZhL2phdmE4LXN0cmVhbXMuaHRtbA==">Java 8 Stream<i class="fa fa-external-link-alt"></i></span></p>
-<h2 id="Math"><a href="#Math" class="headerlink" title="Math"></a>Math</h2><h3 id="比大小"><a href="#比大小" class="headerlink" title="比大小"></a>比大小</h3><p>Math.min(value1, value2);<br>Math.max(value1, value2);</p>
-<h3 id="絕對值"><a href="#絕對值" class="headerlink" title="絕對值"></a>絕對值</h3><p>Math.abs(value);</p>
-<h2 id="printf"><a href="#printf" class="headerlink" title="printf"></a>printf</h2><p><span class="exturl" data-url="aHR0cHM6Ly93d3cucnVub29iLmNvbS93M2Nub3RlL2phdmEtcHJpbnRmLWZvcm1hdGUtZGVtby5odG1s">Java 格式化输出 printf 用法<i class="fa fa-external-link-alt"></i></span></p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">System.out.printf();</span><br></pre></td></tr></table></figure>
-
-<h2 id="基礎型別的預設值"><a href="#基礎型別的預設值" class="headerlink" title="基礎型別的預設值"></a>基礎型別的預設值</h2><h3 id="int"><a href="#int" class="headerlink" title="int"></a>int</h3><p>0</p>
-<h2 id="三元運算子"><a href="#三元運算子" class="headerlink" title="三元運算子"></a>三元運算子</h2><figure class="highlight java"><table><tr><td class="code"><pre><span class="line">判斷式 ？ 若判斷為真執行區塊 ： 若判斷為假執行區塊</span><br></pre></td></tr></table></figure>
-
-<h2 id="結語"><a href="#結語" class="headerlink" title="結語"></a>結語</h2><p>隨著科技進步，記憶體容量大到唸不出單位了，我的腦容量卻是連有沒有 1 byte 都不清楚。</p>
-<h2 id="參考資料"><a href="#參考資料" class="headerlink" title="參考資料"></a>參考資料</h2><p><span class="exturl" data-url="aHR0cHM6Ly9wZGFpLnRlY2gv">Java 全栈知识体系<i class="fa fa-external-link-alt"></i></span></p>
-<p><span class="exturl" data-url="aHR0cHM6Ly9yaWNrYnNyLm1lZGl1bS5jb20vJUU5JTk2JTkyJUU4JTgxJThBLWFycmF5cy1hc2xpc3QtJUU3JTlBJTg0JUU1JTlEJTkxLTgzODlkM2YxZTU0NA==">閒聊「Arrays.asList()」的坑<i class="fa fa-external-link-alt"></i></span></p>
-]]></content>
-      <categories>
-        <category>Java</category>
-        <category>Note</category>
-      </categories>
-      <tags>
-        <tag>Java</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Android Debug：Android Studio androidTest 跑不起來</title>
     <url>/Android/Debug/76c15376/</url>
     <content><![CDATA[<p>每次搞自動測試都一個頭兩個大，到底是升級後的 IDE 有問題還是裝置太爛？</p>
@@ -114,24 +37,21 @@
       </tags>
   </entry>
   <entry>
-    <title>Android Debug：SQLite 不支援 variance 語法</title>
-    <url>/Android/Debug/9776d6f4/</url>
-    <content><![CDATA[<p>從 MySQL 將 SQL 程式碼遷移至 Android 的 SQLite，發現 SQLite 不支援 variance function。</p>
+    <title>Android Note：DecorView</title>
+    <url>/Android/Note/fdd5466a/</url>
+    <content><![CDATA[<p>獲取當前 Activity 的根視圖。</p>
 <span id="more"></span>
 
-<h2 id="遭遇問題"><a href="#遭遇問題" class="headerlink" title="遭遇問題"></a>遭遇問題</h2><p>android.database.sqlite.SQLiteException: no such function: variance (code 1 SQLITE_ERROR): , while compiling: SELECT variance</p>
-<h2 id="解決方法"><a href="#解決方法" class="headerlink" title="解決方法"></a>解決方法</h2><p>將 SELECT variance(var) FROM table</p>
-<p>改成 SELECT SUM((var-(SELECT AVG(var) FROM table))*(var-(SELECT AVG(var) FROM table)))&#x2F;(COUNT(var)-1) AS Variance FROM table</p>
-<h2 id="結語"><a href="#結語" class="headerlink" title="結語"></a>結語</h2><p>其實就是將 variance 的算式展開。</p>
-<h2 id="參考資料"><a href="#參考資料" class="headerlink" title="參考資料"></a>參考資料</h2><p><span class="exturl" data-url="aHR0cHM6Ly9zdGFja292ZXJmbG93LmNvbS9xdWVzdGlvbnMvMjU4OTU4NzQvY2FsY3VsYXRlLXZhcmlhbmNlLWluLXNxbGl0ZQ==">Calculate variance in sqlite<i class="fa fa-external-link-alt"></i></span></p>
+<figure class="highlight kotlin"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 獲取 DecorView，他是整個窗口的最頂層視圖</span></span><br><span class="line"><span class="keyword">val</span> decorView = window.decorView</span><br><span class="line"></span><br><span class="line"><span class="comment">// 獲取內容視圖的根視圖</span></span><br><span class="line"><span class="keyword">val</span> rootView = decorView.findViewById&lt;ViewGroup&gt;(android.R.id.content)</span><br></pre></td></tr></table></figure>
+
+<p>其中 <code>android.R.id.content</code> 這個 id 對跨平台框架的 android 原生操作有奇效，像是添加 android 原生畫面之類的</p>
 ]]></content>
       <categories>
         <category>Android</category>
-        <category>Debug</category>
+        <category>Note</category>
       </categories>
       <tags>
         <tag>Android</tag>
-        <tag>SQLite</tag>
       </tags>
   </entry>
   <entry>
@@ -190,14 +110,77 @@
       </tags>
   </entry>
   <entry>
-    <title>Android Note：DecorView</title>
-    <url>/Android/Note/fdd5466a/</url>
-    <content><![CDATA[<p>獲取當前 Activity 的根視圖。</p>
+    <title>Android Note：常用 Android Debug Bridge (adb) 功能</title>
+    <url>/Android/Note/8318bca4/</url>
+    <content><![CDATA[<p>我常用的 adb 功能。</p>
 <span id="more"></span>
 
-<figure class="highlight kotlin"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 獲取 DecorView，他是整個窗口的最頂層視圖</span></span><br><span class="line"><span class="keyword">val</span> decorView = window.decorView</span><br><span class="line"></span><br><span class="line"><span class="comment">// 獲取內容視圖的根視圖</span></span><br><span class="line"><span class="keyword">val</span> rootView = decorView.findViewById&lt;ViewGroup&gt;(android.R.id.content)</span><br></pre></td></tr></table></figure>
+<h2 id="設定-Path-環境變數"><a href="#設定-Path-環境變數" class="headerlink" title="設定 Path 環境變數"></a>設定 Path 環境變數</h2><h3 id="Windows"><a href="#Windows" class="headerlink" title="Windows"></a>Windows</h3><p>Android Studio 隨附的 adb 所在路徑：<br>C:\Users\username\AppData\Local\Android\Sdk\platform-tools</p>
+<p>控制台\系統及安全性\系統、進階系統設定、環境變數、系統變數：Path：瀏覽：找到上述路徑、確定。</p>
+<p>打開 command line tool 輸入：adb 跳出資訊表示設置成功，之後在任何資料夾都能直接呼叫 adb；若未設置 Path 環境變數，要使用 adb 必須進到存放 adb 的路徑。</p>
+<h2 id="TCP-IP-連接設備"><a href="#TCP-IP-連接設備" class="headerlink" title="TCP&#x2F;IP 連接設備"></a>TCP&#x2F;IP 連接設備</h2><figure class="highlight sh"><figcaption><span>command line tool</span></figcaption><table><tr><td class="code"><pre><span class="line">$ adb connect device_ip_address[:PORT]</span><br></pre></td></tr></table></figure>
 
-<p>其中 <code>android.R.id.content</code> 這個 id 對跨平台框架的 android 原生操作有奇效，像是添加 android 原生畫面之類的</p>
+<p>default port&#x3D;5555。</p>
+<h2 id="切斷-TCP-IP-連接"><a href="#切斷-TCP-IP-連接" class="headerlink" title="切斷 TCP&#x2F;IP 連接"></a>切斷 TCP&#x2F;IP 連接</h2><figure class="highlight sh"><figcaption><span>command line tool</span></figcaption><table><tr><td class="code"><pre><span class="line">$ adb disconnect [device_ip_address[:PORT]]</span><br></pre></td></tr></table></figure>
+
+<p>不指定會切斷所有連接。</p>
+<h2 id="列出所有連接設備"><a href="#列出所有連接設備" class="headerlink" title="列出所有連接設備"></a>列出所有連接設備</h2><figure class="highlight sh"><figcaption><span>command line tool</span></figcaption><table><tr><td class="code"><pre><span class="line">$ adb devices [-l]</span><br></pre></td></tr></table></figure>
+
+<p>預設會列出 adb 給這些設備指定的 serial number 與 state。<br>加上 <code>-l</code> (long output) 會印出設備詳細資訊：device product、model、device、transport_id。</p>
+<h2 id="指定設備下指令"><a href="#指定設備下指令" class="headerlink" title="指定設備下指令"></a>指定設備下指令</h2><p>若連接了多台設備，要先知道設備的 serial number 才能指定個別設備下指令。</p>
+<figure class="highlight sh"><figcaption><span>command line tool</span></figcaption><table><tr><td class="code"><pre><span class="line">$ adb -s serial_number adb_command</span><br></pre></td></tr></table></figure>
+
+<h2 id="下載-Logcat"><a href="#下載-Logcat" class="headerlink" title="下載 Logcat"></a>下載 Logcat</h2><p>即使機器使用當下沒有連接監視設備，事後接上機器也能下載。</p>
+<p>及時寫在 command line：</p>
+<figure class="highlight sh"><figcaption><span>command line tool</span></figcaption><table><tr><td class="code"><pre><span class="line">adb logcat</span><br></pre></td></tr></table></figure>
+
+<p>並寫入特定檔案至當前資料夾：</p>
+<figure class="highlight sh"><figcaption><span>command line tool</span></figcaption><table><tr><td class="code"><pre><span class="line">adb logcat -d &gt; crash.txt</span><br></pre></td></tr></table></figure>
+
+<p>從特定位置擷取Logcat：</p>
+<figure class="highlight sh"><figcaption><span>command line tool</span></figcaption><table><tr><td class="code"><pre><span class="line">adb logcat &gt; schedule.txt</span><br></pre></td></tr></table></figure>
+
+<p>結束擷取：<br><code>Ctrl</code> + <code>C</code></p>
+<h2 id="下載-Bugreport"><a href="#下載-Bugreport" class="headerlink" title="下載 Bugreport"></a>下載 Bugreport</h2><figure class="highlight sh"><figcaption><span>command line tool</span></figcaption><table><tr><td class="code"><pre><span class="line">adb bugreport</span><br></pre></td></tr></table></figure>
+
+<p>要回報錯誤報告給開發商時才要下載此檔案，回報時需使用.zip檔案格式。</p>
+<h2 id="安裝-App"><a href="#安裝-App" class="headerlink" title="安裝 App"></a>安裝 App</h2><figure class="highlight sh"><figcaption><span>command line tool</span></figcaption><table><tr><td class="code"><pre><span class="line">$ adb install path_to_apk</span><br></pre></td></tr></table></figure>
+
+<h2 id="文件傳輸"><a href="#文件傳輸" class="headerlink" title="文件傳輸"></a>文件傳輸</h2><h3 id="設備複製到本地"><a href="#設備複製到本地" class="headerlink" title="設備複製到本地"></a>設備複製到本地</h3><figure class="highlight sh"><figcaption><span>command line tool</span></figcaption><table><tr><td class="code"><pre><span class="line">$ adb pull remote_path local_path</span><br></pre></td></tr></table></figure>
+
+<h3 id="本地複製到設備"><a href="#本地複製到設備" class="headerlink" title="本地複製到設備"></a>本地複製到設備</h3><figure class="highlight sh"><figcaption><span>command line tool</span></figcaption><table><tr><td class="code"><pre><span class="line">$ adb push local_path remote_path</span><br></pre></td></tr></table></figure>
+
+<p>path 可以是文件或目錄。</p>
+<h2 id="重啟設備"><a href="#重啟設備" class="headerlink" title="重啟設備"></a>重啟設備</h2><figure class="highlight sh"><figcaption><span>command line tool</span></figcaption><table><tr><td class="code"><pre><span class="line">$ adb reboot</span><br></pre></td></tr></table></figure>
+
+<h2 id="root-權限"><a href="#root-權限" class="headerlink" title="root 權限"></a>root 權限</h2><h3 id="以-root-權限重啟-adbd"><a href="#以-root-權限重啟-adbd" class="headerlink" title="以 root 權限重啟 adbd"></a>以 root 權限重啟 adbd</h3><figure class="highlight sh"><figcaption><span>command line tool</span></figcaption><table><tr><td class="code"><pre><span class="line">$ adb root</span><br></pre></td></tr></table></figure>
+
+<h3 id="以非-root-權限重啟-adbd"><a href="#以非-root-權限重啟-adbd" class="headerlink" title="以非 root 權限重啟 adbd"></a>以非 root 權限重啟 adbd</h3><figure class="highlight sh"><figcaption><span>command line tool</span></figcaption><table><tr><td class="code"><pre><span class="line">$ adb unroot</span><br></pre></td></tr></table></figure>
+
+<h2 id="停止-adb-server"><a href="#停止-adb-server" class="headerlink" title="停止 adb server"></a>停止 adb server</h2><figure class="highlight sh"><figcaption><span>command line tool</span></figcaption><table><tr><td class="code"><pre><span class="line">$ adb kill-server</span><br></pre></td></tr></table></figure>
+
+<p>會斷絕所有連接，需要重新連，通常是 adb 出問題時才會用到這個指令。</p>
+<h2 id="下-shell-指令"><a href="#下-shell-指令" class="headerlink" title="下 shell 指令"></a>下 shell 指令</h2><p>基本上 Android 的 shell 指令是用指令操作 Android 設備時的精華。</p>
+<figure class="highlight sh"><figcaption><span>command line tool</span></figcaption><table><tr><td class="code"><pre><span class="line">$ adb shell [shell_command]</span><br></pre></td></tr></table></figure>
+
+<p>Android 本質是 Linux 核心擴增的框架，因此能對其使用 Unix 指令。<br>不直接下指令可以進入交互式 shell，可以使用 <code>Ctrl</code> + <code>D</code> 或輸入 <code>exit</code> 離開。</p>
+<h3 id="模擬按鍵輸入"><a href="#模擬按鍵輸入" class="headerlink" title="模擬按鍵輸入"></a>模擬按鍵輸入</h3><figure class="highlight sh"><figcaption><span>command line tool</span></figcaption><table><tr><td class="code"><pre><span class="line">$ input keyevent keycode</span><br></pre></td></tr></table></figure>
+
+<p><span class="exturl" data-url="aHR0cHM6Ly9kZXZlbG9wZXIuYW5kcm9pZC5jb20vcmVmZXJlbmNlL2FuZHJvaWQvdmlldy9LZXlFdmVudCNLRVlDT0RFX0JBQ0s=">KeyEvent<i class="fa fa-external-link-alt"></i></span></p>
+<h3 id="activity-manager"><a href="#activity-manager" class="headerlink" title="activity manager"></a>activity manager</h3><p>算是最重要的 Android Shell 指令，可以操作 Android 主要元件。</p>
+<figure class="highlight sh"><figcaption><span>command line tool</span></figcaption><table><tr><td class="code"><pre><span class="line">$ am am_command</span><br></pre></td></tr></table></figure>
+
+<h4 id="啟動-Activity"><a href="#啟動-Activity" class="headerlink" title="啟動 Activity"></a>啟動 Activity</h4><figure class="highlight sh"><figcaption><span>command line tool</span></figcaption><table><tr><td class="code"><pre><span class="line">$ am start [options] intent</span><br></pre></td></tr></table></figure>
+
+<h4 id="啟動-Service"><a href="#啟動-Service" class="headerlink" title="啟動 Service"></a>啟動 Service</h4><figure class="highlight sh"><figcaption><span>command line tool</span></figcaption><table><tr><td class="code"><pre><span class="line">$ am start [options] intent</span><br></pre></td></tr></table></figure>
+
+<h4 id="啟動-Broadcast"><a href="#啟動-Broadcast" class="headerlink" title="啟動 Broadcast"></a>啟動 Broadcast</h4><figure class="highlight sh"><figcaption><span>command line tool</span></figcaption><table><tr><td class="code"><pre><span class="line">$ am broadcast [options] intent</span><br></pre></td></tr></table></figure>
+
+<h3 id="package-manager"><a href="#package-manager" class="headerlink" title="package manager"></a>package manager</h3><p>管理 App 的。</p>
+<figure class="highlight sh"><figcaption><span>command line tool</span></figcaption><table><tr><td class="code"><pre><span class="line">$ pm pm_command</span><br></pre></td></tr></table></figure>
+
+<h2 id="參考資料"><a href="#參考資料" class="headerlink" title="參考資料"></a>參考資料</h2><p>command: adb help</p>
+<p><span class="exturl" data-url="aHR0cHM6Ly9kZXZlbG9wZXIuYW5kcm9pZC5jb20vc3R1ZGlvL2NvbW1hbmQtbGluZS9hZGI=">Android Debug Bridge (adb)<i class="fa fa-external-link-alt"></i></span><br><span class="exturl" data-url="aHR0cHM6Ly9qdWVqaW4uY24vcG9zdC82ODQ0OTAzOTE4MTEyMDc5ODg1">关于 adb 命令你所需要知道的<i class="fa fa-external-link-alt"></i></span></p>
 ]]></content>
       <categories>
         <category>Android</category>
@@ -239,6 +222,27 @@
       </categories>
       <tags>
         <tag>Android</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Android Debug：SQLite 不支援 variance 語法</title>
+    <url>/Android/Debug/9776d6f4/</url>
+    <content><![CDATA[<p>從 MySQL 將 SQL 程式碼遷移至 Android 的 SQLite，發現 SQLite 不支援 variance function。</p>
+<span id="more"></span>
+
+<h2 id="遭遇問題"><a href="#遭遇問題" class="headerlink" title="遭遇問題"></a>遭遇問題</h2><p>android.database.sqlite.SQLiteException: no such function: variance (code 1 SQLITE_ERROR): , while compiling: SELECT variance</p>
+<h2 id="解決方法"><a href="#解決方法" class="headerlink" title="解決方法"></a>解決方法</h2><p>將 SELECT variance(var) FROM table</p>
+<p>改成 SELECT SUM((var-(SELECT AVG(var) FROM table))*(var-(SELECT AVG(var) FROM table)))&#x2F;(COUNT(var)-1) AS Variance FROM table</p>
+<h2 id="結語"><a href="#結語" class="headerlink" title="結語"></a>結語</h2><p>其實就是將 variance 的算式展開。</p>
+<h2 id="參考資料"><a href="#參考資料" class="headerlink" title="參考資料"></a>參考資料</h2><p><span class="exturl" data-url="aHR0cHM6Ly9zdGFja292ZXJmbG93LmNvbS9xdWVzdGlvbnMvMjU4OTU4NzQvY2FsY3VsYXRlLXZhcmlhbmNlLWluLXNxbGl0ZQ==">Calculate variance in sqlite<i class="fa fa-external-link-alt"></i></span></p>
+]]></content>
+      <categories>
+        <category>Android</category>
+        <category>Debug</category>
+      </categories>
+      <tags>
+        <tag>Android</tag>
+        <tag>SQLite</tag>
       </tags>
   </entry>
   <entry>
@@ -330,87 +334,6 @@
       </tags>
   </entry>
   <entry>
-    <title>Android Note：常用 Android Debug Bridge (adb) 功能</title>
-    <url>/Android/Note/8318bca4/</url>
-    <content><![CDATA[<p>我常用的 adb 功能。</p>
-<span id="more"></span>
-
-<h2 id="設定-Path-環境變數"><a href="#設定-Path-環境變數" class="headerlink" title="設定 Path 環境變數"></a>設定 Path 環境變數</h2><h3 id="Windows"><a href="#Windows" class="headerlink" title="Windows"></a>Windows</h3><p>Android Studio 隨附的 adb 所在路徑：<br>C:\Users\username\AppData\Local\Android\Sdk\platform-tools</p>
-<p>控制台\系統及安全性\系統、進階系統設定、環境變數、系統變數：Path：瀏覽：找到上述路徑、確定。</p>
-<p>打開 command line tool 輸入：adb 跳出資訊表示設置成功，之後在任何資料夾都能直接呼叫 adb；若未設置 Path 環境變數，要使用 adb 必須進到存放 adb 的路徑。</p>
-<h2 id="TCP-IP-連接設備"><a href="#TCP-IP-連接設備" class="headerlink" title="TCP&#x2F;IP 連接設備"></a>TCP&#x2F;IP 連接設備</h2><figure class="highlight sh"><figcaption><span>command line tool</span></figcaption><table><tr><td class="code"><pre><span class="line">$ adb connect device_ip_address[:PORT]</span><br></pre></td></tr></table></figure>
-
-<p>default port&#x3D;5555。</p>
-<h2 id="切斷-TCP-IP-連接"><a href="#切斷-TCP-IP-連接" class="headerlink" title="切斷 TCP&#x2F;IP 連接"></a>切斷 TCP&#x2F;IP 連接</h2><figure class="highlight sh"><figcaption><span>command line tool</span></figcaption><table><tr><td class="code"><pre><span class="line">$ adb disconnect [device_ip_address[:PORT]]</span><br></pre></td></tr></table></figure>
-
-<p>不指定會切斷所有連接。</p>
-<h2 id="列出所有連接設備"><a href="#列出所有連接設備" class="headerlink" title="列出所有連接設備"></a>列出所有連接設備</h2><figure class="highlight sh"><figcaption><span>command line tool</span></figcaption><table><tr><td class="code"><pre><span class="line">$ adb devices [-l]</span><br></pre></td></tr></table></figure>
-
-<p>預設會列出 adb 給這些設備指定的 serial number 與 state。<br>加上 <code>-l</code> (long output) 會印出設備詳細資訊：device product、model、device、transport_id。</p>
-<h2 id="指定設備下指令"><a href="#指定設備下指令" class="headerlink" title="指定設備下指令"></a>指定設備下指令</h2><p>若連接了多台設備，要先知道設備的 serial number 才能指定個別設備下指令。</p>
-<figure class="highlight sh"><figcaption><span>command line tool</span></figcaption><table><tr><td class="code"><pre><span class="line">$ adb -s serial_number adb_command</span><br></pre></td></tr></table></figure>
-
-<h2 id="下載-Logcat"><a href="#下載-Logcat" class="headerlink" title="下載 Logcat"></a>下載 Logcat</h2><p>即使機器使用當下沒有連接監視設備，事後接上機器也能下載。</p>
-<p>及時寫在 command line：</p>
-<figure class="highlight sh"><figcaption><span>command line tool</span></figcaption><table><tr><td class="code"><pre><span class="line">adb logcat</span><br></pre></td></tr></table></figure>
-
-<p>並寫入特定檔案至當前資料夾：</p>
-<figure class="highlight sh"><figcaption><span>command line tool</span></figcaption><table><tr><td class="code"><pre><span class="line">adb logcat -d &gt; crash.txt</span><br></pre></td></tr></table></figure>
-
-<p>從特定位置擷取Logcat：</p>
-<figure class="highlight sh"><figcaption><span>command line tool</span></figcaption><table><tr><td class="code"><pre><span class="line">adb logcat &gt; schedule.txt</span><br></pre></td></tr></table></figure>
-
-<p>結束擷取：<br><code>Ctrl</code> + <code>C</code></p>
-<h2 id="下載-Bugreport"><a href="#下載-Bugreport" class="headerlink" title="下載 Bugreport"></a>下載 Bugreport</h2><figure class="highlight sh"><figcaption><span>command line tool</span></figcaption><table><tr><td class="code"><pre><span class="line">adb bugreport</span><br></pre></td></tr></table></figure>
-
-<p>要回報錯誤報告給開發商時才要下載此檔案，回報時需使用.zip檔案格式。</p>
-<h2 id="安裝-App"><a href="#安裝-App" class="headerlink" title="安裝 App"></a>安裝 App</h2><figure class="highlight sh"><figcaption><span>command line tool</span></figcaption><table><tr><td class="code"><pre><span class="line">$ adb install path_to_apk</span><br></pre></td></tr></table></figure>
-
-<h2 id="文件傳輸"><a href="#文件傳輸" class="headerlink" title="文件傳輸"></a>文件傳輸</h2><h3 id="設備複製到本地"><a href="#設備複製到本地" class="headerlink" title="設備複製到本地"></a>設備複製到本地</h3><figure class="highlight sh"><figcaption><span>command line tool</span></figcaption><table><tr><td class="code"><pre><span class="line">$ adb pull remote_path local_path</span><br></pre></td></tr></table></figure>
-
-<h3 id="本地複製到設備"><a href="#本地複製到設備" class="headerlink" title="本地複製到設備"></a>本地複製到設備</h3><figure class="highlight sh"><figcaption><span>command line tool</span></figcaption><table><tr><td class="code"><pre><span class="line">$ adb push local_path remote_path</span><br></pre></td></tr></table></figure>
-
-<p>path 可以是文件或目錄。</p>
-<h2 id="重啟設備"><a href="#重啟設備" class="headerlink" title="重啟設備"></a>重啟設備</h2><figure class="highlight sh"><figcaption><span>command line tool</span></figcaption><table><tr><td class="code"><pre><span class="line">$ adb reboot</span><br></pre></td></tr></table></figure>
-
-<h2 id="root-權限"><a href="#root-權限" class="headerlink" title="root 權限"></a>root 權限</h2><h3 id="以-root-權限重啟-adbd"><a href="#以-root-權限重啟-adbd" class="headerlink" title="以 root 權限重啟 adbd"></a>以 root 權限重啟 adbd</h3><figure class="highlight sh"><figcaption><span>command line tool</span></figcaption><table><tr><td class="code"><pre><span class="line">$ adb root</span><br></pre></td></tr></table></figure>
-
-<h3 id="以非-root-權限重啟-adbd"><a href="#以非-root-權限重啟-adbd" class="headerlink" title="以非 root 權限重啟 adbd"></a>以非 root 權限重啟 adbd</h3><figure class="highlight sh"><figcaption><span>command line tool</span></figcaption><table><tr><td class="code"><pre><span class="line">$ adb unroot</span><br></pre></td></tr></table></figure>
-
-<h2 id="停止-adb-server"><a href="#停止-adb-server" class="headerlink" title="停止 adb server"></a>停止 adb server</h2><figure class="highlight sh"><figcaption><span>command line tool</span></figcaption><table><tr><td class="code"><pre><span class="line">$ adb kill-server</span><br></pre></td></tr></table></figure>
-
-<p>會斷絕所有連接，需要重新連，通常是 adb 出問題時才會用到這個指令。</p>
-<h2 id="下-shell-指令"><a href="#下-shell-指令" class="headerlink" title="下 shell 指令"></a>下 shell 指令</h2><p>基本上 Android 的 shell 指令是用指令操作 Android 設備時的精華。</p>
-<figure class="highlight sh"><figcaption><span>command line tool</span></figcaption><table><tr><td class="code"><pre><span class="line">$ adb shell [shell_command]</span><br></pre></td></tr></table></figure>
-
-<p>Android 本質是 Linux 核心擴增的框架，因此能對其使用 Unix 指令。<br>不直接下指令可以進入交互式 shell，可以使用 <code>Ctrl</code> + <code>D</code> 或輸入 <code>exit</code> 離開。</p>
-<h3 id="模擬按鍵輸入"><a href="#模擬按鍵輸入" class="headerlink" title="模擬按鍵輸入"></a>模擬按鍵輸入</h3><figure class="highlight sh"><figcaption><span>command line tool</span></figcaption><table><tr><td class="code"><pre><span class="line">$ input keyevent keycode</span><br></pre></td></tr></table></figure>
-
-<p><span class="exturl" data-url="aHR0cHM6Ly9kZXZlbG9wZXIuYW5kcm9pZC5jb20vcmVmZXJlbmNlL2FuZHJvaWQvdmlldy9LZXlFdmVudCNLRVlDT0RFX0JBQ0s=">KeyEvent<i class="fa fa-external-link-alt"></i></span></p>
-<h3 id="activity-manager"><a href="#activity-manager" class="headerlink" title="activity manager"></a>activity manager</h3><p>算是最重要的 Android Shell 指令，可以操作 Android 主要元件。</p>
-<figure class="highlight sh"><figcaption><span>command line tool</span></figcaption><table><tr><td class="code"><pre><span class="line">$ am am_command</span><br></pre></td></tr></table></figure>
-
-<h4 id="啟動-Activity"><a href="#啟動-Activity" class="headerlink" title="啟動 Activity"></a>啟動 Activity</h4><figure class="highlight sh"><figcaption><span>command line tool</span></figcaption><table><tr><td class="code"><pre><span class="line">$ am start [options] intent</span><br></pre></td></tr></table></figure>
-
-<h4 id="啟動-Service"><a href="#啟動-Service" class="headerlink" title="啟動 Service"></a>啟動 Service</h4><figure class="highlight sh"><figcaption><span>command line tool</span></figcaption><table><tr><td class="code"><pre><span class="line">$ am start [options] intent</span><br></pre></td></tr></table></figure>
-
-<h4 id="啟動-Broadcast"><a href="#啟動-Broadcast" class="headerlink" title="啟動 Broadcast"></a>啟動 Broadcast</h4><figure class="highlight sh"><figcaption><span>command line tool</span></figcaption><table><tr><td class="code"><pre><span class="line">$ am broadcast [options] intent</span><br></pre></td></tr></table></figure>
-
-<h3 id="package-manager"><a href="#package-manager" class="headerlink" title="package manager"></a>package manager</h3><p>管理 App 的。</p>
-<figure class="highlight sh"><figcaption><span>command line tool</span></figcaption><table><tr><td class="code"><pre><span class="line">$ pm pm_command</span><br></pre></td></tr></table></figure>
-
-<h2 id="參考資料"><a href="#參考資料" class="headerlink" title="參考資料"></a>參考資料</h2><p>command: adb help</p>
-<p><span class="exturl" data-url="aHR0cHM6Ly9kZXZlbG9wZXIuYW5kcm9pZC5jb20vc3R1ZGlvL2NvbW1hbmQtbGluZS9hZGI=">Android Debug Bridge (adb)<i class="fa fa-external-link-alt"></i></span><br><span class="exturl" data-url="aHR0cHM6Ly9qdWVqaW4uY24vcG9zdC82ODQ0OTAzOTE4MTEyMDc5ODg1">关于 adb 命令你所需要知道的<i class="fa fa-external-link-alt"></i></span></p>
-]]></content>
-      <categories>
-        <category>Android</category>
-        <category>Note</category>
-      </categories>
-      <tags>
-        <tag>Android</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Hexo Blog 02：更換 Hexo 主題，初探 NexT</title>
     <url>/Hexo/Blog/a3d910a8/</url>
     <content><![CDATA[<p>前一篇系列文章：<a href="/Hexo/Blog/dceed03/" title="Hexo Blog 01：使用 Hexo 迅速在 GitHub Pages 展開 Blog 旅程">使用 Hexo 迅速在 GitHub Pages 展開 Blog 旅程</a>  最後列了一些使用 Hexo Blog 要解決的問題，最重要的應該就是更換主題了，因為要擴充功能什麼的幾乎都能透過更改主題的設定實踐。</p>
@@ -474,6 +397,83 @@
       <tags>
         <tag>Hexo</tag>
         <tag>NexT</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Java Note 01：常忘 Java 語法</title>
+    <url>/Java/Note/76cc3fdb/</url>
+    <content><![CDATA[<p>為了麵包不得已開始刷題人生，但被 IDE 寵壞後，默寫時連迴圈都寫不出來了，趕快來複習一下。</p>
+<span id="more"></span>
+
+<h2 id="for-loop"><a href="#for-loop" class="headerlink" title="for loop"></a>for loop</h2><figure class="highlight java"><figcaption><span>基本</span></figcaption><table><tr><td class="code"><pre><span class="line"><span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">0</span>; i &lt; <span class="number">5</span>; i++) &#123;</span><br><span class="line">  System.out.println(i);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight java"><figcaption><span>迭代</span></figcaption><table><tr><td class="code"><pre><span class="line"><span class="keyword">for</span> (<span class="type">int</span> i : array) &#123;</span><br><span class="line">  System.out.println(i);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="String"><a href="#String" class="headerlink" title="String"></a>String</h2><p><span class="exturl" data-url="aHR0cHM6Ly93d3cucnVub29iLmNvbS9qYXZhL2phdmEtc3RyaW5nLmh0bWw=">Java String 类<i class="fa fa-external-link-alt"></i></span></p>
+<h3 id="返回字串長度"><a href="#返回字串長度" class="headerlink" title="返回字串長度"></a>返回字串長度</h3><p>int length();</p>
+<h3 id="判斷字串值是否相同"><a href="#判斷字串值是否相同" class="headerlink" title="判斷字串值是否相同"></a>判斷字串值是否相同</h3><p>boolean equals(String value);</p>
+<h3 id="返回指定索引的-char"><a href="#返回指定索引的-char" class="headerlink" title="返回指定索引的 char"></a>返回指定索引的 char</h3><p>char charAt(int index);</p>
+<h3 id="返回字串轉換成的-char"><a href="#返回字串轉換成的-char" class="headerlink" title="返回字串轉換成的 char[]"></a>返回字串轉換成的 char[]</h3><p>char[] toCharArray();</p>
+<h3 id="返回子字串（指定頭尾）"><a href="#返回子字串（指定頭尾）" class="headerlink" title="返回子字串（指定頭尾）"></a>返回子字串（指定頭尾）</h3><p>String substring(int beginIndex, int endIndex);<br>注意：包含頭，不包含尾。</p>
+<h3 id="返回子字串（指定頭）"><a href="#返回子字串（指定頭）" class="headerlink" title="返回子字串（指定頭）"></a>返回子字串（指定頭）</h3><p>String substring(int beginIndex);</p>
+<h3 id="判斷是否包含指定字符序列"><a href="#判斷是否包含指定字符序列" class="headerlink" title="判斷是否包含指定字符序列"></a>判斷是否包含指定字符序列</h3><p>boolean contains(CharSequence chars);</p>
+<h2 id="Character"><a href="#Character" class="headerlink" title="Character"></a>Character</h2><h3 id="確定是否為字母或數字"><a href="#確定是否為字母或數字" class="headerlink" title="確定是否為字母或數字"></a>確定是否為字母或數字</h3><p>Character.isLetterOrDigit(char)</p>
+<h2 id="Array"><a href="#Array" class="headerlink" title="Array"></a>Array</h2><h3 id="建立新-Array-方法"><a href="#建立新-Array-方法" class="headerlink" title="建立新 Array 方法"></a>建立新 Array 方法</h3><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="type">int</span>[] intArray = <span class="keyword">new</span> <span class="title class_">int</span>[<span class="number">3</span>]; <span class="comment">// 長度為三，空的 Array</span></span><br><span class="line"><span class="type">int</span>[] intArray2 = &#123;<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>&#125;; <span class="comment">// 自定義內容的 Array，算是 intArray3 方法的語法糖</span></span><br><span class="line"><span class="type">int</span>[] intArray3 = <span class="keyword">new</span> <span class="title class_">int</span>[]&#123;<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>&#125;; <span class="comment">// 與 intArray2 一樣，不過在前面沒有表達式的型別宣告時只能這樣用，不然會出 illegal start of expression 錯</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="ArrayList"><a href="#ArrayList" class="headerlink" title="ArrayList"></a>ArrayList</h2><p><span class="exturl" data-url="aHR0cHM6Ly93d3cucnVub29iLmNvbS9qYXZhL2phdmEtYXJyYXlsaXN0Lmh0bWw=">Java ArrayList<i class="fa fa-external-link-alt"></i></span></p>
+<h2 id="Arrays"><a href="#Arrays" class="headerlink" title="Arrays"></a>Arrays</h2><p>Arrays 是處理各式 Array 的工具類。</p>
+<h3 id="排序傳入的-array"><a href="#排序傳入的-array" class="headerlink" title="排序傳入的 array"></a>排序傳入的 array</h3><p>Arrays.sort(array);</p>
+<h3 id="比較兩-arrays-值是否相同"><a href="#比較兩-arrays-值是否相同" class="headerlink" title="比較兩 arrays 值是否相同"></a>比較兩 arrays 值是否相同</h3><p>Arrays.equals(array1, array2);</p>
+<h3 id="生成裝有-values-的-List"><a href="#生成裝有-values-的-List" class="headerlink" title="生成裝有 values 的 List"></a>生成裝有 values 的 List</h3><p>Arrays.asList(value1, value2, …);<br>返回的 List 不適合拿來操作，通常是用來快速建立指定元素的 ArrayList 或 HashSet 之類的類別。</p>
+<h2 id="Collections"><a href="#Collections" class="headerlink" title="Collections"></a>Collections</h2><h3 id="排序"><a href="#排序" class="headerlink" title="排序"></a>排序</h3><p>Collections.sort(list);<br>Arrays 的 sort 不能排序 ArrayList，所以要用這個。</p>
+<p>Collections.reverseOrder()<br>在建構 PriorityQueue 之類的 class 時可以用此指定反向順序。</p>
+<h2 id="HashMap"><a href="#HashMap" class="headerlink" title="HashMap"></a>HashMap</h2><p><span class="exturl" data-url="aHR0cHM6Ly93d3cucnVub29iLmNvbS9qYXZhL2phdmEtaGFzaG1hcC5odG1s">Java HashMap<i class="fa fa-external-link-alt"></i></span></p>
+<p>需要注意基本類別要換成封裝類別。</p>
+<h3 id="獲取指定-key-對應的-value"><a href="#獲取指定-key-對應的-value" class="headerlink" title="獲取指定 key 對應的 value"></a>獲取指定 key 對應的 value</h3><p>hashmap.get(key);</p>
+<h3 id="獲取指定-key-對應的-value，若找不到-key-就返回-default"><a href="#獲取指定-key-對應的-value，若找不到-key-就返回-default" class="headerlink" title="獲取指定 key 對應的 value，若找不到 key 就返回 default"></a>獲取指定 key 對應的 value，若找不到 key 就返回 default</h3><p>hashmap.getOrDefault(key, default);</p>
+<h3 id="添加鍵值對"><a href="#添加鍵值對" class="headerlink" title="添加鍵值對"></a>添加鍵值對</h3><p>hashmap.put(key, value);</p>
+<h3 id="檢查是否存在指定-key-對應的映射關係"><a href="#檢查是否存在指定-key-對應的映射關係" class="headerlink" title="檢查是否存在指定 key 對應的映射關係"></a>檢查是否存在指定 key 對應的映射關係</h3><p>hashmap.containsKey(key);</p>
+<h3 id="檢查是否存在指定-value-對應的映射關係"><a href="#檢查是否存在指定-value-對應的映射關係" class="headerlink" title="檢查是否存在指定 value 對應的映射關係"></a>檢查是否存在指定 value 對應的映射關係</h3><p>hashmap.containsValue(value);</p>
+<h3 id="刪除-key-對應的鍵值對"><a href="#刪除-key-對應的鍵值對" class="headerlink" title="刪除 key 對應的鍵值對"></a>刪除 key 對應的鍵值對</h3><p>hashmap.remove(key);</p>
+<h3 id="返回-hashmap-中所有-key-組成的-set"><a href="#返回-hashmap-中所有-key-組成的-set" class="headerlink" title="返回 hashmap 中所有 key 組成的 set"></a>返回 hashmap 中所有 key 組成的 set</h3><p>hashmap.keySet();</p>
+<h3 id="返回-hashmap-中所有-value-組成的-set"><a href="#返回-hashmap-中所有-value-組成的-set" class="headerlink" title="返回 hashmap 中所有 value 組成的 set"></a>返回 hashmap 中所有 value 組成的 set</h3><p>hashmap.values();</p>
+<h3 id="返回-hashmap-中所有-映射關係-的-set"><a href="#返回-hashmap-中所有-映射關係-的-set" class="headerlink" title="返回 hashmap 中所有 映射關係 的 set"></a>返回 hashmap 中所有 映射關係 的 set</h3><p>hashmap.entrySet();<br>換容器時會使用到，每個鍵值對的類型為 <code>Map.Entry</code><br>Map.Entry 取得鍵：getKey()<br>Map.Entry 取得值：getValue()</p>
+<h2 id="HashSet"><a href="#HashSet" class="headerlink" title="HashSet"></a>HashSet</h2><p><span class="exturl" data-url="aHR0cHM6Ly93d3cucnVub29iLmNvbS9qYXZhL2phdmEtaGFzaHNldC5odG1s">Java HashSet<i class="fa fa-external-link-alt"></i></span></p>
+<p>需要注意基本類別要換成封裝類別。</p>
+<h3 id="添加元素"><a href="#添加元素" class="headerlink" title="添加元素"></a>添加元素</h3><p>hashset.add(value);</p>
+<h3 id="判斷元素是否存在"><a href="#判斷元素是否存在" class="headerlink" title="判斷元素是否存在"></a>判斷元素是否存在</h3><p>hashset.contains(value);</p>
+<h3 id="刪除元素"><a href="#刪除元素" class="headerlink" title="刪除元素"></a>刪除元素</h3><p>hashset.remove(value);</p>
+<h3 id="獲取-hashset-大小"><a href="#獲取-hashset-大小" class="headerlink" title="獲取 hashset 大小"></a>獲取 hashset 大小</h3><p>hashset.size();</p>
+<h3 id="交集技巧"><a href="#交集技巧" class="headerlink" title="交集技巧"></a>交集技巧</h3><p>hashset1.retainAll(hashset2);<br>返回扣掉兩 sets 未交集元素後的 hashset1。</p>
+<h3 id="差集技巧"><a href="#差集技巧" class="headerlink" title="差集技巧"></a>差集技巧</h3><p>hashset1.removeAll(hashset2);<br>返回扣掉兩 sets 交集元素後的 hashset1。</p>
+<h3 id="聯集技巧"><a href="#聯集技巧" class="headerlink" title="聯集技巧"></a>聯集技巧</h3><p>hashset1.addAll(hashset2);<br>返回加上兩 sets 未交集元素後的 hashset1。</p>
+<h2 id="PriorityQueue"><a href="#PriorityQueue" class="headerlink" title="PriorityQueue"></a>PriorityQueue</h2><p><span class="exturl" data-url="aHR0cHM6Ly93d3cuY2Fpbmlhb2pjLmNvbS9qYXZhL2phdmEtcHJpb3JpdHlxdWV1ZS5odG1s">Java PriorityQueue<i class="fa fa-external-link-alt"></i></span></p>
+<p>先進先出，預設先出來的是最小的 (Ascending Order)</p>
+<h3 id="建構方式"><a href="#建構方式" class="headerlink" title="建構方式"></a>建構方式</h3><p>可以帶入自定義的 Comparator，如：</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">PriorityQueue&lt;Map.Entry&lt;Integer, Integer&gt;&gt; pq = <span class="keyword">new</span> <span class="title class_">PriorityQueue</span>&lt;&gt;(</span><br><span class="line">  (a, b) -&gt; a.getValue() - b.getValue()</span><br><span class="line">);</span><br></pre></td></tr></table></figure>
+
+<h3 id="新增元素"><a href="#新增元素" class="headerlink" title="新增元素"></a>新增元素</h3><p>add()</p>
+<h3 id="訪問開頭元素"><a href="#訪問開頭元素" class="headerlink" title="訪問開頭元素"></a>訪問開頭元素</h3><p>peek()</p>
+<h3 id="返回並刪除隊列開頭"><a href="#返回並刪除隊列開頭" class="headerlink" title="返回並刪除隊列開頭"></a>返回並刪除隊列開頭</h3><p>poll()</p>
+<h2 id="Stream"><a href="#Stream" class="headerlink" title="Stream"></a>Stream</h2><p><span class="exturl" data-url="aHR0cHM6Ly93d3cucnVub29iLmNvbS9qYXZhL2phdmE4LXN0cmVhbXMuaHRtbA==">Java 8 Stream<i class="fa fa-external-link-alt"></i></span></p>
+<h2 id="Math"><a href="#Math" class="headerlink" title="Math"></a>Math</h2><h3 id="比大小"><a href="#比大小" class="headerlink" title="比大小"></a>比大小</h3><p>Math.min(value1, value2);<br>Math.max(value1, value2);</p>
+<h3 id="絕對值"><a href="#絕對值" class="headerlink" title="絕對值"></a>絕對值</h3><p>Math.abs(value);</p>
+<h2 id="printf"><a href="#printf" class="headerlink" title="printf"></a>printf</h2><p><span class="exturl" data-url="aHR0cHM6Ly93d3cucnVub29iLmNvbS93M2Nub3RlL2phdmEtcHJpbnRmLWZvcm1hdGUtZGVtby5odG1s">Java 格式化输出 printf 用法<i class="fa fa-external-link-alt"></i></span></p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">System.out.printf();</span><br></pre></td></tr></table></figure>
+
+<h2 id="基礎型別的預設值"><a href="#基礎型別的預設值" class="headerlink" title="基礎型別的預設值"></a>基礎型別的預設值</h2><h3 id="int"><a href="#int" class="headerlink" title="int"></a>int</h3><p>0</p>
+<h2 id="三元運算子"><a href="#三元運算子" class="headerlink" title="三元運算子"></a>三元運算子</h2><figure class="highlight java"><table><tr><td class="code"><pre><span class="line">判斷式 ？ 若判斷為真執行區塊 ： 若判斷為假執行區塊</span><br></pre></td></tr></table></figure>
+
+<h2 id="結語"><a href="#結語" class="headerlink" title="結語"></a>結語</h2><p>隨著科技進步，記憶體容量大到唸不出單位了，我的腦容量卻是連有沒有 1 byte 都不清楚。</p>
+<h2 id="參考資料"><a href="#參考資料" class="headerlink" title="參考資料"></a>參考資料</h2><p><span class="exturl" data-url="aHR0cHM6Ly9wZGFpLnRlY2gv">Java 全栈知识体系<i class="fa fa-external-link-alt"></i></span></p>
+<p><span class="exturl" data-url="aHR0cHM6Ly9yaWNrYnNyLm1lZGl1bS5jb20vJUU5JTk2JTkyJUU4JTgxJThBLWFycmF5cy1hc2xpc3QtJUU3JTlBJTg0JUU1JTlEJTkxLTgzODlkM2YxZTU0NA==">閒聊「Arrays.asList()」的坑<i class="fa fa-external-link-alt"></i></span></p>
+]]></content>
+      <categories>
+        <category>Java</category>
+        <category>Note</category>
+      </categories>
+      <tags>
+        <tag>Java</tag>
       </tags>
   </entry>
   <entry>
@@ -1129,32 +1129,6 @@
       </tags>
   </entry>
   <entry>
-    <title>Hexo Note 02：常用 Hexo 標籤外掛（Tag Plugins）</title>
-    <url>/Hexo/Note/c4b9fa9c/</url>
-    <content><![CDATA[<p>單純記錄我常用到的 Hexo 標籤外掛，並無其他延伸用法，真要查用法 <span class="exturl" data-url="aHR0cHM6Ly9oZXhvLmlvL3poLXR3L2RvY3MvdGFnLXBsdWdpbnM=">官方文件<i class="fa fa-external-link-alt"></i></span> 永遠是最好的選擇。</p>
-<span id="more"></span>
-
-<h2 id="文章連結"><a href="#文章連結" class="headerlink" title="文章連結"></a>文章連結</h2><figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">&#123;% post<span class="emphasis">_link source/_</span>posts內文章路徑不含副檔名 連結顯示文字 %&#125;</span><br></pre></td></tr></table></figure>
-
-<h2 id="Tabs"><a href="#Tabs" class="headerlink" title="Tabs"></a>Tabs</h2><p>這就不是 Hexo 原生用法了，不過主題通常都會擴增此功能，像 <span class="exturl" data-url="aHR0cHM6Ly90aGVtZS1uZXh0LmpzLm9yZy9kb2NzL3RhZy1wbHVnaW5zL3RhYnM=">NexT<i class="fa fa-external-link-alt"></i></span>。</p>
-<p>他在主題中的設定預設就是啟用了：</p>
-<figure class="highlight yaml"><figcaption><span>_config.next.yml</span></figcaption><table><tr><td class="code"><pre><span class="line"><span class="attr">tabs:</span></span><br><span class="line">  <span class="comment"># Make the nav bar of tabs with long content stick to the top.</span></span><br><span class="line">  <span class="attr">sticky:</span> <span class="literal">false</span></span><br><span class="line">  <span class="attr">transition:</span></span><br><span class="line">    <span class="attr">tabs:</span> <span class="literal">false</span></span><br><span class="line">    <span class="attr">labels:</span> <span class="literal">true</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-<p>語法：</p>
-<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">&#123;% tabs First unique name %&#125;</span><br><span class="line">&lt;!-- tab --&gt;</span><br><span class="line"><span class="strong">**This is Tab 1.**</span></span><br><span class="line">&lt;!-- endtab --&gt;</span><br><span class="line"></span><br><span class="line">&lt;!-- tab --&gt;</span><br><span class="line"><span class="strong">**This is Tab 2.**</span></span><br><span class="line">&lt;!-- endtab --&gt;</span><br><span class="line"></span><br><span class="line">&lt;!-- tab --&gt;</span><br><span class="line"><span class="strong">**This is Tab 3.**</span></span><br><span class="line">&lt;!-- endtab --&gt;</span><br><span class="line">&#123;% endtabs %&#125;</span><br></pre></td></tr></table></figure>
-
-<p>效果：</p>
-<div class="tabs" id="first-unique-name"><ul class="nav-tabs"><li class="tab active"><a href="#first-unique-name-1">First unique name 1</a></li><li class="tab"><a href="#first-unique-name-2">First unique name 2</a></li><li class="tab"><a href="#first-unique-name-3">First unique name 3</a></li></ul><div class="tab-content"><div class="tab-pane active" id="first-unique-name-1"><p><strong>This is Tab 1.</strong></p></div><div class="tab-pane" id="first-unique-name-2"><p><strong>This is Tab 2.</strong></p></div><div class="tab-pane" id="first-unique-name-3"><p><strong>This is Tab 3.</strong></p></div></div></div>
-]]></content>
-      <categories>
-        <category>Hexo</category>
-        <category>Note</category>
-      </categories>
-      <tags>
-        <tag>Hexo</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Hexo Debug 04：Hexo 避免機密資訊上傳 GitHub</title>
     <url>/Hexo/Debug/ba57c00/</url>
     <content><![CDATA[<p>先前在 <a href="/Hexo/Blog/a4c4ed5f/" title="Hexo Blog 03：繼續探索 NexT">繼續探索 NexT</a> 我將存有 Firestore apiKey 的 <code>_config.next.yml</code> 檔案推到 GitHub 儲存庫中，結果沒過多久就收到陌生的警告 Email，提醒我有機密洩漏，霎那間令我知曉網路上的爬蟲有多兇猛，還好這次來的是正義的爬蟲 😰</p>
@@ -1187,6 +1161,48 @@
       <tags>
         <tag>Hexo</tag>
         <tag>GitHub</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Mac Note：Mac 常用技巧</title>
+    <url>/Mac/Note/91c8942c/</url>
+    <content><![CDATA[<p>列出我日常使用 mac 時遇到的一些障礙。</p>
+<span id="more"></span>
+
+<h2 id="Mac-鍵盤快速鍵"><a href="#Mac-鍵盤快速鍵" class="headerlink" title="Mac 鍵盤快速鍵"></a>Mac 鍵盤快速鍵</h2><p><span class="exturl" data-url="aHR0cHM6Ly9zdXBwb3J0LmFwcGxlLmNvbS96aC10dy9IVDIwMTIzNg==">Mac 鍵盤快速鍵<i class="fa fa-external-link-alt"></i></span><br><span class="exturl" data-url="aHR0cHM6Ly9hcHAueWlwZWUuY2MvODk0NzgvJUUzJTgwJTkwbWFjLW9zLSVFNiU5NSU5OSVFNSVBRCVCOCVFMyU4MCU5MTMzLSVFNSU4MCU4Qi1tYWMtJUU5JThEJUI1JUU3JTlCJUE0JUU4JUE2JTgxJUU1JUFEJUI4JUU2JTlDJTgzJUU3JTlBJTg0JUU1JUJGJUFCJUU5JTgwJTlGJUU5JThEJUI1JUVGJUJDJTgxJUVGJUJDJTg4JUU2JTlCJUI0JUU2JTk2JUIwJUVGJUJDJTg5Lw==">【Mac OS 教學】33 個 Mac 鍵盤要學會的快速鍵！（更新）<i class="fa fa-external-link-alt"></i></span><br>直接進設定看最準</p>
+<h3 id="切換輸入法"><a href="#切換輸入法" class="headerlink" title="切換輸入法"></a>切換輸入法</h3><p>ctrl + 空白鍵<br>caps</p>
+<h3 id="重做"><a href="#重做" class="headerlink" title="重做"></a>重做</h3><p>command + shift + Z<br>不太確定什麼情況可以觸發</p>
+<h3 id="Mission-Control"><a href="#Mission-Control" class="headerlink" title="Mission Control"></a>Mission Control</h3><p>ctrl + 上鍵</p>
+<h3 id="顯示桌面"><a href="#顯示桌面" class="headerlink" title="顯示桌面"></a>顯示桌面</h3><p>fn + F11<br>觸控板大拇指與三隻手指外展</p>
+<p>再做一次可以回到原本的視窗<br>視窗全螢幕下無效</p>
+<h3 id="切換桌面"><a href="#切換桌面" class="headerlink" title="切換桌面"></a>切換桌面</h3><p>ctrl + 右鍵<br>ctrl + 左鍵</p>
+<h3 id="切換開啟的應用程式"><a href="#切換開啟的應用程式" class="headerlink" title="切換開啟的應用程式"></a>切換開啟的應用程式</h3><p>command + tab<br>command + shift + tab</p>
+<h3 id="調整顯示大小"><a href="#調整顯示大小" class="headerlink" title="調整顯示大小"></a>調整顯示大小</h3><p>放大：command + &#x3D;<br>縮小：command + -<br>預設：command + 0</p>
+<h3 id="截圖"><a href="#截圖" class="headerlink" title="截圖"></a>截圖</h3><p>擷取全螢幕畫面並儲存：command + shift + 3<br>自行選取截圖範圍並儲存：command + shift + 4<br>擷取特定視窗並儲存：command + shift + 4 + 空白鍵<br>截圖與錄影選項：command + shift + 5</p>
+<h3 id="瀏覽器"><a href="#瀏覽器" class="headerlink" title="瀏覽器"></a>瀏覽器</h3><p>重新整理：command + R<br>捲到最上方：command + 上鍵<br>捲到最下方：command + 下鍵<br>開新視窗：command + N<br>開新分頁：command + T<br>重新開啟一個關閉的分頁：command + shift + T<br>關閉分頁：command + W</p>
+<h3 id="關閉當前程式"><a href="#關閉當前程式" class="headerlink" title="關閉當前程式"></a>關閉當前程式</h3><p>command + Q</p>
+<h2 id="顯示隱藏檔案"><a href="#顯示隱藏檔案" class="headerlink" title="顯示隱藏檔案"></a>顯示隱藏檔案</h2><p><span class="exturl" data-url="aHR0cHM6Ly93d3cuZHJidWhvLmNvbS96aC10dy9ob3ctdG8vc2hvdy1oaWRkZW4tZmlsZXMtbWFj">【2023】如何在Mac 顯示隱藏檔案和資料夾 - BuhoCleaner<i class="fa fa-external-link-alt"></i></span></p>
+<h3 id="Finder-中使用快捷鍵開啟或關閉"><a href="#Finder-中使用快捷鍵開啟或關閉" class="headerlink" title="Finder 中使用快捷鍵開啟或關閉"></a>Finder 中使用快捷鍵開啟或關閉</h3><p>Command + Shift + .</p>
+<h3 id="使用-終端機-永久開啟或關閉"><a href="#使用-終端機-永久開啟或關閉" class="headerlink" title="使用 終端機 永久開啟或關閉"></a>使用 <code>終端機</code> 永久開啟或關閉</h3><p>開啟</p>
+<figure class="highlight sh"><figcaption><span>command line tool</span></figcaption><table><tr><td class="code"><pre><span class="line">defaults write com.apple.finder AppleShowAllFiles TRUE</span><br><span class="line">killall Finder</span><br></pre></td></tr></table></figure>
+
+<p>要關閉就把上面指令 TRUE 換成 FALSE。</p>
+<h2 id="更改檔案預設開啟程式"><a href="#更改檔案預設開啟程式" class="headerlink" title="更改檔案預設開啟程式"></a>更改檔案預設開啟程式</h2><p>滑鼠右鍵 &gt; 取得資訊 &gt; 打開檔案的應用程式 &gt; 全部更改．．．</p>
+<h2 id="重新整理-launchpad"><a href="#重新整理-launchpad" class="headerlink" title="重新整理 launchpad"></a>重新整理 launchpad</h2><p>常常發生 launchpad 的圖標錯誤，這時只能使用此指令重整，會失去所有排序與分類設定。</p>
+<figure class="highlight sh"><figcaption><span>command line tool</span></figcaption><table><tr><td class="code"><pre><span class="line">defaults write com.apple.dock ResetLaunchPad -bool <span class="literal">true</span>; killall Dock</span><br></pre></td></tr></table></figure>
+
+<h2 id="Raycast"><a href="#Raycast" class="headerlink" title="Raycast"></a>Raycast</h2><p><span class="exturl" data-url="aHR0cHM6Ly93d3cucmF5Y2FzdC5jb20v">Raycast<i class="fa fa-external-link-alt"></i></span><br><span class="exturl" data-url="aHR0cHM6Ly9tYW51YWwucmF5Y2FzdC5jb20v">Raycast Manual<i class="fa fa-external-link-alt"></i></span></p>
+<p>Mac 輔助工具，可以取代 Spotlight。<br>我目前只用到視窗置左或置右跟剪貼板歷史的功能。</p>
+<h2 id="Fig"><a href="#Fig" class="headerlink" title="Fig"></a>Fig</h2><p><span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL3dpdGhmaWcvZmln">Fig<i class="fa fa-external-link-alt"></i></span></p>
+<p>主要是用他的 command line 提詞功能。</p>
+<h2 id="Chrome-Toggle-Show-Toolbar-in-Full-Screen"><a href="#Chrome-Toggle-Show-Toolbar-in-Full-Screen" class="headerlink" title="Chrome Toggle Show Toolbar in Full Screen"></a>Chrome Toggle Show Toolbar in Full Screen</h2><p>上方選單：View -&gt; Always Show Toolbar in Full Screen<br>快捷鍵：shift command F</p>
+]]></content>
+      <categories>
+        <category>Mac</category>
+        <category>Note</category>
+      </categories>
+      <tags>
+        <tag>Mac</tag>
       </tags>
   </entry>
   <entry>
@@ -1288,110 +1304,29 @@
       </tags>
   </entry>
   <entry>
-    <title>Mac Note：Mac 常用技巧</title>
-    <url>/Mac/Note/91c8942c/</url>
-    <content><![CDATA[<p>列出我日常使用 mac 時遇到的一些障礙。</p>
+    <title>Hexo Note 02：常用 Hexo 標籤外掛（Tag Plugins）</title>
+    <url>/Hexo/Note/c4b9fa9c/</url>
+    <content><![CDATA[<p>單純記錄我常用到的 Hexo 標籤外掛，並無其他延伸用法，真要查用法 <span class="exturl" data-url="aHR0cHM6Ly9oZXhvLmlvL3poLXR3L2RvY3MvdGFnLXBsdWdpbnM=">官方文件<i class="fa fa-external-link-alt"></i></span> 永遠是最好的選擇。</p>
 <span id="more"></span>
 
-<h2 id="Mac-鍵盤快速鍵"><a href="#Mac-鍵盤快速鍵" class="headerlink" title="Mac 鍵盤快速鍵"></a>Mac 鍵盤快速鍵</h2><p><span class="exturl" data-url="aHR0cHM6Ly9zdXBwb3J0LmFwcGxlLmNvbS96aC10dy9IVDIwMTIzNg==">Mac 鍵盤快速鍵<i class="fa fa-external-link-alt"></i></span><br><span class="exturl" data-url="aHR0cHM6Ly9hcHAueWlwZWUuY2MvODk0NzgvJUUzJTgwJTkwbWFjLW9zLSVFNiU5NSU5OSVFNSVBRCVCOCVFMyU4MCU5MTMzLSVFNSU4MCU4Qi1tYWMtJUU5JThEJUI1JUU3JTlCJUE0JUU4JUE2JTgxJUU1JUFEJUI4JUU2JTlDJTgzJUU3JTlBJTg0JUU1JUJGJUFCJUU5JTgwJTlGJUU5JThEJUI1JUVGJUJDJTgxJUVGJUJDJTg4JUU2JTlCJUI0JUU2JTk2JUIwJUVGJUJDJTg5Lw==">【Mac OS 教學】33 個 Mac 鍵盤要學會的快速鍵！（更新）<i class="fa fa-external-link-alt"></i></span><br>直接進設定看最準</p>
-<h3 id="切換輸入法"><a href="#切換輸入法" class="headerlink" title="切換輸入法"></a>切換輸入法</h3><p>ctrl + 空白鍵<br>caps</p>
-<h3 id="重做"><a href="#重做" class="headerlink" title="重做"></a>重做</h3><p>command + shift + Z<br>不太確定什麼情況可以觸發</p>
-<h3 id="Mission-Control"><a href="#Mission-Control" class="headerlink" title="Mission Control"></a>Mission Control</h3><p>ctrl + 上鍵</p>
-<h3 id="顯示桌面"><a href="#顯示桌面" class="headerlink" title="顯示桌面"></a>顯示桌面</h3><p>fn + F11<br>觸控板大拇指與三隻手指外展</p>
-<p>再做一次可以回到原本的視窗<br>視窗全螢幕下無效</p>
-<h3 id="切換桌面"><a href="#切換桌面" class="headerlink" title="切換桌面"></a>切換桌面</h3><p>ctrl + 右鍵<br>ctrl + 左鍵</p>
-<h3 id="切換開啟的應用程式"><a href="#切換開啟的應用程式" class="headerlink" title="切換開啟的應用程式"></a>切換開啟的應用程式</h3><p>command + tab<br>command + shift + tab</p>
-<h3 id="調整顯示大小"><a href="#調整顯示大小" class="headerlink" title="調整顯示大小"></a>調整顯示大小</h3><p>放大：command + &#x3D;<br>縮小：command + -<br>預設：command + 0</p>
-<h3 id="截圖"><a href="#截圖" class="headerlink" title="截圖"></a>截圖</h3><p>擷取全螢幕畫面並儲存：command + shift + 3<br>自行選取截圖範圍並儲存：command + shift + 4<br>擷取特定視窗並儲存：command + shift + 4 + 空白鍵<br>截圖與錄影選項：command + shift + 5</p>
-<h3 id="瀏覽器"><a href="#瀏覽器" class="headerlink" title="瀏覽器"></a>瀏覽器</h3><p>重新整理：command + R<br>捲到最上方：command + 上鍵<br>捲到最下方：command + 下鍵<br>開新視窗：command + N<br>開新分頁：command + T<br>重新開啟一個關閉的分頁：command + shift + T<br>關閉分頁：command + W</p>
-<h3 id="關閉當前程式"><a href="#關閉當前程式" class="headerlink" title="關閉當前程式"></a>關閉當前程式</h3><p>command + Q</p>
-<h2 id="顯示隱藏檔案"><a href="#顯示隱藏檔案" class="headerlink" title="顯示隱藏檔案"></a>顯示隱藏檔案</h2><p><span class="exturl" data-url="aHR0cHM6Ly93d3cuZHJidWhvLmNvbS96aC10dy9ob3ctdG8vc2hvdy1oaWRkZW4tZmlsZXMtbWFj">【2023】如何在Mac 顯示隱藏檔案和資料夾 - BuhoCleaner<i class="fa fa-external-link-alt"></i></span></p>
-<h3 id="Finder-中使用快捷鍵開啟或關閉"><a href="#Finder-中使用快捷鍵開啟或關閉" class="headerlink" title="Finder 中使用快捷鍵開啟或關閉"></a>Finder 中使用快捷鍵開啟或關閉</h3><p>Command + Shift + .</p>
-<h3 id="使用-終端機-永久開啟或關閉"><a href="#使用-終端機-永久開啟或關閉" class="headerlink" title="使用 終端機 永久開啟或關閉"></a>使用 <code>終端機</code> 永久開啟或關閉</h3><p>開啟</p>
-<figure class="highlight sh"><figcaption><span>command line tool</span></figcaption><table><tr><td class="code"><pre><span class="line">defaults write com.apple.finder AppleShowAllFiles TRUE</span><br><span class="line">killall Finder</span><br></pre></td></tr></table></figure>
+<h2 id="文章連結"><a href="#文章連結" class="headerlink" title="文章連結"></a>文章連結</h2><figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">&#123;% post<span class="emphasis">_link source/_</span>posts內文章路徑不含副檔名 連結顯示文字 %&#125;</span><br></pre></td></tr></table></figure>
 
-<p>要關閉就把上面指令 TRUE 換成 FALSE。</p>
-<h2 id="更改檔案預設開啟程式"><a href="#更改檔案預設開啟程式" class="headerlink" title="更改檔案預設開啟程式"></a>更改檔案預設開啟程式</h2><p>滑鼠右鍵 &gt; 取得資訊 &gt; 打開檔案的應用程式 &gt; 全部更改．．．</p>
-<h2 id="重新整理-launchpad"><a href="#重新整理-launchpad" class="headerlink" title="重新整理 launchpad"></a>重新整理 launchpad</h2><p>常常發生 launchpad 的圖標錯誤，這時只能使用此指令重整，會失去所有排序與分類設定。</p>
-<figure class="highlight sh"><figcaption><span>command line tool</span></figcaption><table><tr><td class="code"><pre><span class="line">defaults write com.apple.dock ResetLaunchPad -bool <span class="literal">true</span>; killall Dock</span><br></pre></td></tr></table></figure>
+<h2 id="Tabs"><a href="#Tabs" class="headerlink" title="Tabs"></a>Tabs</h2><p>這就不是 Hexo 原生用法了，不過主題通常都會擴增此功能，像 <span class="exturl" data-url="aHR0cHM6Ly90aGVtZS1uZXh0LmpzLm9yZy9kb2NzL3RhZy1wbHVnaW5zL3RhYnM=">NexT<i class="fa fa-external-link-alt"></i></span>。</p>
+<p>他在主題中的設定預設就是啟用了：</p>
+<figure class="highlight yaml"><figcaption><span>_config.next.yml</span></figcaption><table><tr><td class="code"><pre><span class="line"><span class="attr">tabs:</span></span><br><span class="line">  <span class="comment"># Make the nav bar of tabs with long content stick to the top.</span></span><br><span class="line">  <span class="attr">sticky:</span> <span class="literal">false</span></span><br><span class="line">  <span class="attr">transition:</span></span><br><span class="line">    <span class="attr">tabs:</span> <span class="literal">false</span></span><br><span class="line">    <span class="attr">labels:</span> <span class="literal">true</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
 
-<h2 id="Raycast"><a href="#Raycast" class="headerlink" title="Raycast"></a>Raycast</h2><p><span class="exturl" data-url="aHR0cHM6Ly93d3cucmF5Y2FzdC5jb20v">Raycast<i class="fa fa-external-link-alt"></i></span><br><span class="exturl" data-url="aHR0cHM6Ly9tYW51YWwucmF5Y2FzdC5jb20v">Raycast Manual<i class="fa fa-external-link-alt"></i></span></p>
-<p>Mac 輔助工具，可以取代 Spotlight。<br>我目前只用到視窗置左或置右跟剪貼板歷史的功能。</p>
-<h2 id="Fig"><a href="#Fig" class="headerlink" title="Fig"></a>Fig</h2><p><span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL3dpdGhmaWcvZmln">Fig<i class="fa fa-external-link-alt"></i></span></p>
-<p>主要是用他的 command line 提詞功能。</p>
-<h2 id="Chrome-Toggle-Show-Toolbar-in-Full-Screen"><a href="#Chrome-Toggle-Show-Toolbar-in-Full-Screen" class="headerlink" title="Chrome Toggle Show Toolbar in Full Screen"></a>Chrome Toggle Show Toolbar in Full Screen</h2><p>上方選單：View -&gt; Always Show Toolbar in Full Screen<br>快捷鍵：shift command F</p>
+<p>語法：</p>
+<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">&#123;% tabs First unique name %&#125;</span><br><span class="line">&lt;!-- tab --&gt;</span><br><span class="line"><span class="strong">**This is Tab 1.**</span></span><br><span class="line">&lt;!-- endtab --&gt;</span><br><span class="line"></span><br><span class="line">&lt;!-- tab --&gt;</span><br><span class="line"><span class="strong">**This is Tab 2.**</span></span><br><span class="line">&lt;!-- endtab --&gt;</span><br><span class="line"></span><br><span class="line">&lt;!-- tab --&gt;</span><br><span class="line"><span class="strong">**This is Tab 3.**</span></span><br><span class="line">&lt;!-- endtab --&gt;</span><br><span class="line">&#123;% endtabs %&#125;</span><br></pre></td></tr></table></figure>
+
+<p>效果：</p>
+<div class="tabs" id="first-unique-name"><ul class="nav-tabs"><li class="tab active"><a href="#first-unique-name-1">First unique name 1</a></li><li class="tab"><a href="#first-unique-name-2">First unique name 2</a></li><li class="tab"><a href="#first-unique-name-3">First unique name 3</a></li></ul><div class="tab-content"><div class="tab-pane active" id="first-unique-name-1"><p><strong>This is Tab 1.</strong></p></div><div class="tab-pane" id="first-unique-name-2"><p><strong>This is Tab 2.</strong></p></div><div class="tab-pane" id="first-unique-name-3"><p><strong>This is Tab 3.</strong></p></div></div></div>
 ]]></content>
       <categories>
-        <category>Mac</category>
+        <category>Hexo</category>
         <category>Note</category>
       </categories>
       <tags>
-        <tag>Mac</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Tool Jira 01：Jira 建立 儀表板 (Dashboard)，碼農最舒適設定</title>
-    <url>/Tool/Jira/4ed23e02/</url>
-    <content><![CDATA[<p>身為碼農基本只管解 issue，Jira 這種專案管理工具的功能實在過於複雜，在此分享我在 Jira 中唯一使用的功能 – 儀表板 (Dashboard)。</p>
-<p>想要一目了然的查看某團隊或某專案的工作量之類資訊時，建立自定義的 儀表板 (Dashboard) 是滿推薦的方式。</p>
-<span id="more"></span>
-
-
-
-<h2 id="成品"><a href="#成品" class="headerlink" title="成品"></a>成品</h2><p>我習慣設成一個專案一張 <code>二維篩選統計資料</code> 表，X軸為 <code>優先順序</code>，y軸為 <code>受託人</code>，數字為 issue 數目。<br><img data-src="https://github.com/WCW0310/blogPicture/blob/master/Tool/Tool-Jira-01-create-dashboard/JiraSample.png?raw=true"></p>
-<p>這樣能清楚知道誰身上 loading 較重，哪些人較有餘力協助別人之類的 (不過通常也不能這樣判斷啦 XD)。</p>
-<h2 id="建立篩選條件-Filter-："><a href="#建立篩選條件-Filter-：" class="headerlink" title="建立篩選條件 (Filter)："></a>建立篩選條件 (Filter)：</h2><p>建立 儀表板 之前需要先建立數個 篩選條件 (Filter) 供 儀表板 使用。</p>
-<h3 id="選擇上方-篩選-Filter-tab"><a href="#選擇上方-篩選-Filter-tab" class="headerlink" title="選擇上方 篩選 (Filter) tab"></a>選擇上方 <code>篩選</code> (Filter) tab</h3><p><img data-src="https://github.com/WCW0310/blogPicture/blob/master/Tool/Tool-Jira-01-create-dashboard/filter.png?raw=true"></p>
-<h3 id="選擇-檢視所有篩選條件-View-all-filters"><a href="#選擇-檢視所有篩選條件-View-all-filters" class="headerlink" title="選擇 檢視所有篩選條件 (View all filters)"></a>選擇 <code>檢視所有篩選條件</code> (View all filters)</h3><p><img data-src="https://github.com/WCW0310/blogPicture/blob/master/Tool/Tool-Jira-01-create-dashboard/viewAllFilters.png?raw=true"></p>
-<h3 id="點選右上-建立篩選條件-Create-filter"><a href="#點選右上-建立篩選條件-Create-filter" class="headerlink" title="點選右上 建立篩選條件 (Create filter)"></a>點選右上 <code>建立篩選條件</code> (Create filter)</h3><p><img data-src="https://github.com/WCW0310/blogPicture/blob/master/Tool/Tool-Jira-01-create-dashboard/createFilter.png?raw=true"></p>
-<h3 id="自己視需求設定篩選條件"><a href="#自己視需求設定篩選條件" class="headerlink" title="自己視需求設定篩選條件"></a>自己視需求設定篩選條件</h3><p><img data-src="https://github.com/WCW0310/blogPicture/blob/master/Tool/Tool-Jira-01-create-dashboard/searchFilter.png?raw=true"></p>
-<p>我自己有設定的是 <code>專案</code> 跟 <code>狀態</code>。<br>專案：為了讓篩選有意義，一個篩選設定一個專案就滿剛好的。<br>狀態：只設定對於開發有意義的狀態，如：<code>開放</code>、<code>進行中</code>、<code>已解決</code>。</p>
-<p>設定好後點擊上方的 <code>另存新檔</code>。</p>
-<h3 id="設定-篩選條件名稱-後點擊-提交"><a href="#設定-篩選條件名稱-後點擊-提交" class="headerlink" title="設定 篩選條件名稱 後點擊 提交"></a>設定 <code>篩選條件名稱</code> 後點擊 <code>提交</code></h3><p><img data-src="https://github.com/WCW0310/blogPicture/blob/master/Tool/Tool-Jira-01-create-dashboard/setFilterName.png?raw=true"></p>
-<p>直接設成專案名稱即可。</p>
-<p>這樣就建立好一個新的篩選條件，可以再選擇上方 <code>篩選</code> (Filter) tab 找到它。</p>
-<h2 id="儀表板-Dashboard-自訂成呈現所有人題目數量的表格："><a href="#儀表板-Dashboard-自訂成呈現所有人題目數量的表格：" class="headerlink" title="儀表板 (Dashboard) 自訂成呈現所有人題目數量的表格："></a>儀表板 (Dashboard) 自訂成呈現所有人題目數量的表格：</h2><h3 id="選擇上方-儀表板-Dashboard-tab"><a href="#選擇上方-儀表板-Dashboard-tab" class="headerlink" title="選擇上方 儀表板 (Dashboard) tab"></a>選擇上方 <code>儀表板</code> (Dashboard) tab</h3><h3 id="選擇-建立儀表板-Create-new-dashboard"><a href="#選擇-建立儀表板-Create-new-dashboard" class="headerlink" title="選擇 建立儀表板 (Create new dashboard)"></a>選擇 <code>建立儀表板</code> (Create new dashboard)</h3><h3 id="填入名稱後點擊-儲存"><a href="#填入名稱後點擊-儲存" class="headerlink" title="填入名稱後點擊 儲存"></a>填入名稱後點擊 <code>儲存</code></h3><p><img data-src="https://github.com/WCW0310/blogPicture/blob/master/Tool/Tool-Jira-01-create-dashboard/createDashboard.png?raw=true"></p>
-<p>可以依你的分類標準命名，或是命名成 <code>我的 Dashboard</code> 之類的。</p>
-<h3 id="就會看到空的儀表板"><a href="#就會看到空的儀表板" class="headerlink" title="就會看到空的儀表板"></a>就會看到空的儀表板</h3><p><img data-src="https://github.com/WCW0310/blogPicture/blob/master/Tool/Tool-Jira-01-create-dashboard/blankDashboard.png?raw=true"></p>
-<p>可以看到右方有非常多種小工具，不過身為不管事的碼農不用浪費太多精力在這裡。</p>
-<p>右方找到 <code>二維篩選統計資料</code> 點擊 <code>新增</code> 就會看到儀表板出現 <code>二維篩選統計資料</code> 的設定欄。</p>
-<h3 id="設定-二維篩選統計資料-Two-Dimensional-Filter-Statistics-表"><a href="#設定-二維篩選統計資料-Two-Dimensional-Filter-Statistics-表" class="headerlink" title="設定 二維篩選統計資料 (Two Dimensional Filter Statistics) 表"></a>設定 <code>二維篩選統計資料</code> (Two Dimensional Filter Statistics) 表</h3><p><img data-src="https://github.com/WCW0310/blogPicture/blob/master/Tool/Tool-Jira-01-create-dashboard/settingData.png?raw=true"></p>
-<p>在 <code>已儲存的篩選條件</code> (Saved Filter) 中找到先前設定的 篩選條件。</p>
-<p><code>X 軸</code> 設成 <code>優先順序</code> (Priority)。</p>
-<p><code>Y 軸</code> 設成 <code>受託人</code>。</p>
-<p><code>結果數目</code> (Number of Results) 設成 50。</p>
-<p>最後點擊 <code>儲存</code> 即完成表格設定。</p>
-<h3 id="點擊右上角的-完成-結束-儀表板-設定"><a href="#點擊右上角的-完成-結束-儀表板-設定" class="headerlink" title="點擊右上角的 完成 結束 儀表板 設定"></a>點擊右上角的 <code>完成</code> 結束 儀表板 設定</h3><p><img data-src="https://github.com/WCW0310/blogPicture/blob/master/Tool/Tool-Jira-01-create-dashboard/tableSample.png?raw=true"></p>
-<h3 id="大功告成"><a href="#大功告成" class="headerlink" title="大功告成"></a>大功告成</h3><p>多設定幾個專案的表格就會跟一開始的圖片一樣有多張表格了。</p>
-<h2 id="結語"><a href="#結語" class="headerlink" title="結語"></a>結語</h2><p>上述設定都是我自己的偏好，完全可以依各自喜好做其他設定，不要被工具奴化就好~</p>
-<p>Jira 可以自定義的東西太多了，除非公司有特殊需求，或你本身就要負責專案管理，不然真心覺得越少碰它越好，其他時間能簡易的察看任務就好。</p>
-]]></content>
-      <categories>
-        <category>Tool</category>
-        <category>Jira</category>
-      </categories>
-      <tags>
-        <tag>Jira</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Tool：Proxyman</title>
-    <url>/Tool/ec1de664/</url>
-    <content><![CDATA[<p>強大的 HTTP 調試工具。</p>
-<span id="more"></span>
-
-<p><span class="exturl" data-url="aHR0cHM6Ly9wcm94eW1hbi5pby8=">Proxyman<i class="fa fa-external-link-alt"></i></span></p>
-<h2 id="Certificate"><a href="#Certificate" class="headerlink" title="Certificate"></a>Certificate</h2><p>因為需要獲取加密的 api 封包，所以需要對各裝置進行認證設置<br>Certificate 選項位於最上方<br>iOS 模擬器沒遇到什麼障礙<br>Android 模擬器需要使用 google api，因此我目前用不出來，因為專案會把沒有 play store 視為 root，進而阻止繼續使用<br>Android 實機需要定期下載 CA 憑證，並進入裝置設定進行安裝，通常在：設定&gt;密碼與安全&gt;系統安全&gt;加密和憑證&gt;信任的憑證|安裝憑證<br>Android 實機與 Praxyman 連線時需要更改網路 proxy，但須注意沒連接時要將 網路 proxy 關掉，否則 run app 時無法與 metro 連線</p>
-<h2 id="作用限制"><a href="#作用限制" class="headerlink" title="作用限制"></a>作用限制</h2><p>android 只能操作 debug 版的 app，因為遵循官方建議：<code>Make sure you remove these configs from your Production build.</code>。<br>ios 應該都能操作。</p>
-<p>記住這些差異才不會在奇怪的地方卡住浪費時間。</p>
-<h2 id="Map-Local"><a href="#Map-Local" class="headerlink" title="Map Local"></a>Map Local</h2><p>可以攔截 api 儲存回傳內容成 json 檔，並調整成想要的內容後來測試 api 在不同回傳下的結果<br>Map Local 選項位於最上方的 Tools 中，開啟後會額外顯示在視窗右下角<br>原本可以同時儲存很多組設置，更新後只能同時儲存兩組設置，妥妥的養套殺😭<br>mock 網址時必須以 <code>/</code> 結尾，如：<code>https://abcdefghijk/</code>，不然會 mock 失敗，不是很懂為何結尾不能沒有 <code>/</code>。<br>網址好像也都必須是小寫字母🧐。</p>
-<h3 id="Local-json-File-撰寫方式"><a href="#Local-json-File-撰寫方式" class="headerlink" title="Local json File 撰寫方式"></a>Local json File 撰寫方式</h3><p><span class="exturl" data-url="aHR0cHM6Ly9kb2NzLnByb3h5bWFuLmlvL2FkdmFuY2VkLWZlYXR1cmVzL21hcC1sb2NhbA==">Map Local (File)<i class="fa fa-external-link-alt"></i></span><br>網路通信過於複雜，Proxyman 提供了一些網路或伺服器狀態的設置方法<br>文件大致包含 Status code, Response Headers, Response Body<br>只寫 Response Body 會視為 200 OK，這樣如果要測試錯誤狀況時，在程式碼中不會進到 catch 的地方，可能會導致誤判<br>常用 Status code:<br>404 Not Found</p>
-]]></content>
-      <categories>
-        <category>Tool</category>
-      </categories>
-      <tags>
-        <tag>Proxyman</tag>
+        <tag>Hexo</tag>
       </tags>
   </entry>
   <entry>
@@ -1414,47 +1349,32 @@
       </tags>
   </entry>
   <entry>
-    <title>Project：TTS MESSAGE MOD</title>
-    <url>/Project/158b204b/</url>
-    <content><![CDATA[<p>TTS 風聲桌遊 MOD 腳本實作。</p>
+    <title>React Native Debug：無法連上 Firebase Analytics DebugView</title>
+    <url>/React-Native/Debug/e908ab10/</url>
+    <content><![CDATA[<p>小細節可能誤大局，偷走我一整週的蠢事。</p>
 <span id="more"></span>
 
-<h2 id="development-notes"><a href="#development-notes" class="headerlink" title="development notes"></a>development notes</h2><h3 id="腳本生成客製化物件"><a href="#腳本生成客製化物件" class="headerlink" title="腳本生成客製化物件"></a>腳本生成客製化物件</h3><p><span class="exturl" data-url="aHR0cHM6Ly9hcGkudGFibGV0b3BzaW11bGF0b3IuY29tL2Jhc2UvI3NwYXdub2JqZWN0">spawnObject(…)<i class="fa fa-external-link-alt"></i></span><br><span class="exturl" data-url="aHR0cHM6Ly9hcGkudGFibGV0b3BzaW11bGF0b3IuY29tL29iamVjdC8jc2V0Y3VzdG9tb2JqZWN0">setCustomObject(…)<i class="fa fa-external-link-alt"></i></span><br>上面兩個方法要接著用，但是很不爽，因為 <code>spawnObject(...)</code> 中有個 <code>callback_function</code> 參數，理論上要能使用所有該物件的設定方法，但 <code>setCustomObject(...)</code> 就是一定要用 <code>spawnObject(...)</code> 的回傳值來設定。<br><span class="exturl" data-url="aHR0cHM6Ly9hcGkudGFibGV0b3BzaW11bGF0b3IuY29tL2N1c3RvbS1nYW1lLW9iamVjdHMv">Custom<i class="fa fa-external-link-alt"></i></span>：客製化物件的 type 參數必須是此文檔中列出的類型之一。<br>研究之後發現 <span class="exturl" data-url="aHR0cHM6Ly9hcGkudGFibGV0b3BzaW11bGF0b3IuY29tL2Jhc2UvI3NwYXdub2JqZWN0anNvbg==">spawnObjectJSON(…)<i class="fa fa-external-link-alt"></i></span> 比較符合我們目前的使用情境，只需將現有 json 填進參數中就能造出一樣的物件，連 GUID 都能直接指定。</p>
-<h3 id="TTS-內建回合機制控制"><a href="#TTS-內建回合機制控制" class="headerlink" title="TTS 內建回合機制控制"></a>TTS 內建回合機制控制</h3><p><span class="exturl" data-url="aHR0cHM6Ly9hcGkudGFibGV0b3BzaW11bGF0b3IuY29tL3R1cm5zLw==">Turns<i class="fa fa-external-link-alt"></i></span><br><span class="exturl" data-url="aHR0cHM6Ly9hcGkudGFibGV0b3BzaW11bGF0b3IuY29tL2V2ZW50cy8jb25wbGF5ZXJ0dXJu">onPlayerTurn(…)<i class="fa fa-external-link-alt"></i></span><br>研究目的：回合結束手排上限檢查與提示<br>障礙：TTS 開出的 Turns api 並無法做出禁止回合結束的行為，只能在換人時做一些判定<br>決策：逐步捨棄 TTS 內建回合機制<br>規劃：先自己做一個回合結束鈕接入 TTS 的結束回合功能</p>
-<h2 id="UI"><a href="#UI" class="headerlink" title="UI"></a>UI</h2><p><span class="exturl" data-url="aHR0cHM6Ly9hcGkudGFibGV0b3BzaW11bGF0b3IuY29tL29iamVjdC8jdWktZnVuY3Rpb25z">UI Functions<i class="fa fa-external-link-alt"></i></span>：操作使 UI 附加到物件上</p>
-<p><span class="exturl" data-url="aHR0cHM6Ly9hcGkudGFibGV0b3BzaW11bGF0b3IuY29tL3VpL2ludHJvVUkv">UI API<i class="fa fa-external-link-alt"></i></span>：使用 xml 導入客製化 UI</p>
-<p><span class="exturl" data-url="aHR0cHM6Ly9hcGkudGFibGV0b3BzaW11bGF0b3IuY29tL3VpLw==">UI<i class="fa fa-external-link-alt"></i></span>：run time 操控 UI 屬性</p>
-<p>Global UI：螢幕上的 UI</p>
-<figure class="highlight lua"><table><tr><td class="code"><pre><span class="line">UI.getAttributes(id)</span><br></pre></td></tr></table></figure>
-
-<p>Object UI：物件上的 UI</p>
-<figure class="highlight lua"><table><tr><td class="code"><pre><span class="line">object.UI.getAttributes(id)</span><br></pre></td></tr></table></figure>
+<p>Firebase 專案中將 development 與 production App 分別設置不同的套件名稱：development app 套件名稱結尾會加上 <code>.debug</code>。<br>理論上這種配置很常見，不過我要使用 Firebase console 的 Analytics DebugView 時，卻遲遲無法連上。<br>直接說答案，因為我們將 development app 的 Analytics 數據流給刪除了。</p>
+<p>如何從 Firebase console 中查看此設定？</p>
+<blockquote>
+<p>點擊 <code>專案總覽</code> 右邊的齒輪<br>選擇 <code>專案設定</code><br>選擇 <code>整合</code><br>點擊 <code>Google Analytics</code> 的 <code>管理</code> (這步可能需要更高的權限)<br>點擊 <code>已連結的 Google Analytics (分析) 帳戶</code><br>選擇 <code>數據流</code> 就可以看到目前有跟 Google Analytics 連結的 App，其套件名稱會寫在 App 名下方<br>點擊 <code>&gt;</code> 可以看到 <code>應用數據流詳情</code>，其實跟在 Firebase 設定 App 的地方差不多<br>點擊右上角 <code>...</code> 可以看到 <code>刪除數據流</code>，我們 development App 的數據流應該就是在此刪除的</p>
+</blockquote>
+<p>總之在 Google Analytics 刪除 App 的數據流，就會使 Firebase console 的 Analytics DebugView 無法跟該 App 連結。</p>
+<ul>
+<li>在 <code>google-services.json</code> 檔案中依然有包含該 App 的套件名稱</li>
+<li>firebase.analytics log 中也依舊會包含傳送 event 資料的 log</li>
+</ul>
+<p>會發生這種奇妙現象是因為我們本來要將 development app 轉移到另一個 Firebase 專案，但不知道什麼原因只做一半．．．</p>
+<p>轉移後會需要換新的 <code>google-services.json</code> 記住更換後要記得清除 gradle 資料，不然會繼續使用舊的，也不會有提示。</p>
 ]]></content>
       <categories>
-        <category>Project</category>
+        <category>React Native</category>
+        <category>Debug</category>
       </categories>
       <tags>
-        <tag>Lua</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Tool：Visual Studio Code</title>
-    <url>/Tool/41e4a259/</url>
-    <content><![CDATA[<p>工程師的好夥伴，懂他越多，效率越高。</p>
-<span id="more"></span>
-
-<h2 id="常用快捷鍵"><a href="#常用快捷鍵" class="headerlink" title="常用快捷鍵"></a>常用快捷鍵</h2><p>Code &gt; 喜好設定 &gt; 鍵盤快速鍵 [command + K command + S]</p>
-<p>一些快捷鍵在非英文輸入法會失效。</p>
-<p>search file: command P (mac)<br>go forward &#x2F; go back: ctrl shift - &#x2F; ctrl -<br>editor.fold &#x2F; editor.unfold: alt cmd [ &#x2F; alt cmd ]<br>editor.foldAll &#x2F; editor.unfoldAll: cmd+k cmd+0 &#x2F; cmd+k cmd+j</p>
-<h2 id="auto-format"><a href="#auto-format" class="headerlink" title="auto format"></a>auto format</h2><p>option shift F (mac) &#x2F; ctrl shift F (windows)<br>有些檔案類型的 formatter 需要進 command shift p 手動指定</p>
-<h2 id="切換語言"><a href="#切換語言" class="headerlink" title="切換語言"></a>切換語言</h2><p>command + shift + p<br>輸入 language<br>選取 Configure Display Language<br>選取要切換的語系</p>
-<h2 id="參考資料"><a href="#參考資料" class="headerlink" title="參考資料"></a>參考資料</h2><p><span class="exturl" data-url="aHR0cHM6Ly9jb2Rpbmdpc2xvdmUuY29tL2lzc3VlLWZvcm1hdC1jb2RlLXZzY29kZS1zaG9ydGN1dC8=">Unable to format code in VSCode on MacOS using shortcut (solved)<i class="fa fa-external-link-alt"></i></span></p>
-]]></content>
-      <categories>
-        <category>Tool</category>
-      </categories>
-      <tags>
-        <tag>Visual Studio Code</tag>
+        <tag>Firebase</tag>
+        <tag>React Native</tag>
+        <tag>Google Analytics</tag>
       </tags>
   </entry>
   <entry>
@@ -1634,8 +1554,8 @@
         <category>Note</category>
       </categories>
       <tags>
-        <tag>Lua</tag>
         <tag>Tabletop Simulator</tag>
+        <tag>Lua</tag>
       </tags>
   </entry>
   <entry>
@@ -1711,35 +1631,117 @@
         <category>Note</category>
       </categories>
       <tags>
-        <tag>Lua</tag>
         <tag>Tabletop Simulator</tag>
+        <tag>Lua</tag>
       </tags>
   </entry>
   <entry>
-    <title>Life Share：Home Assistant</title>
-    <url>/Life/Share/a4e0acfc/</url>
-    <content><![CDATA[<p>提升生活小確幸。</p>
+    <title>Project：TTS MESSAGE MOD</title>
+    <url>/Project/158b204b/</url>
+    <content><![CDATA[<p>TTS 風聲桌遊 MOD 腳本實作。</p>
 <span id="more"></span>
 
-<h2 id="安裝-Home-Assistant"><a href="#安裝-Home-Assistant" class="headerlink" title="安裝 Home Assistant"></a>安裝 Home Assistant</h2><h3 id="用樹莓派時"><a href="#用樹莓派時" class="headerlink" title="用樹莓派時"></a>用樹莓派時</h3><p><span class="exturl" data-url="aHR0cHM6Ly93d3cuaG9tZS1hc3Npc3RhbnQuaW8vaW5zdGFsbGF0aW9uL2xpbnV4I2luc3RhbGwtaG9tZS1hc3Npc3RhbnQtY29udGFpbmVy">Install Home Assistant Container<i class="fa fa-external-link-alt"></i></span><br>用指令啟動</p>
-<p><span class="exturl" data-url="aHR0cHM6Ly93d3cuaG9tZS1hc3Npc3RhbnQuaW8vaW5zdGFsbGF0aW9uL2xpbnV4I2RvY2tlci1jb21wb3Nl">DOCKER COMPOSE<i class="fa fa-external-link-alt"></i></span><br>設定 compose.yml<br>用指令啟動 sudo docker compose up -d homeassistant<br>注意: compose.yml 中設定 volumes 的路徑時，<code>~</code> 可能不會正常運作，需使用相對路徑 (.&#x2F;) 或絕對路徑 (&#x2F;)</p>
-<p>上傳後進入 ~&#x2F;homeassistant&#x2F; 透過 docker compose 來啟動 Home Assistant</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">sudo docker compose up -d homeassistant</span><br></pre></td></tr></table></figure>
+<h2 id="development-notes"><a href="#development-notes" class="headerlink" title="development notes"></a>development notes</h2><h3 id="腳本生成客製化物件"><a href="#腳本生成客製化物件" class="headerlink" title="腳本生成客製化物件"></a>腳本生成客製化物件</h3><p><span class="exturl" data-url="aHR0cHM6Ly9hcGkudGFibGV0b3BzaW11bGF0b3IuY29tL2Jhc2UvI3NwYXdub2JqZWN0">spawnObject(…)<i class="fa fa-external-link-alt"></i></span><br><span class="exturl" data-url="aHR0cHM6Ly9hcGkudGFibGV0b3BzaW11bGF0b3IuY29tL29iamVjdC8jc2V0Y3VzdG9tb2JqZWN0">setCustomObject(…)<i class="fa fa-external-link-alt"></i></span><br>上面兩個方法要接著用，但是很不爽，因為 <code>spawnObject(...)</code> 中有個 <code>callback_function</code> 參數，理論上要能使用所有該物件的設定方法，但 <code>setCustomObject(...)</code> 就是一定要用 <code>spawnObject(...)</code> 的回傳值來設定。<br><span class="exturl" data-url="aHR0cHM6Ly9hcGkudGFibGV0b3BzaW11bGF0b3IuY29tL2N1c3RvbS1nYW1lLW9iamVjdHMv">Custom<i class="fa fa-external-link-alt"></i></span>：客製化物件的 type 參數必須是此文檔中列出的類型之一。<br>研究之後發現 <span class="exturl" data-url="aHR0cHM6Ly9hcGkudGFibGV0b3BzaW11bGF0b3IuY29tL2Jhc2UvI3NwYXdub2JqZWN0anNvbg==">spawnObjectJSON(…)<i class="fa fa-external-link-alt"></i></span> 比較符合我們目前的使用情境，只需將現有 json 填進參數中就能造出一樣的物件，連 GUID 都能直接指定。</p>
+<h3 id="TTS-內建回合機制控制"><a href="#TTS-內建回合機制控制" class="headerlink" title="TTS 內建回合機制控制"></a>TTS 內建回合機制控制</h3><p><span class="exturl" data-url="aHR0cHM6Ly9hcGkudGFibGV0b3BzaW11bGF0b3IuY29tL3R1cm5zLw==">Turns<i class="fa fa-external-link-alt"></i></span><br><span class="exturl" data-url="aHR0cHM6Ly9hcGkudGFibGV0b3BzaW11bGF0b3IuY29tL2V2ZW50cy8jb25wbGF5ZXJ0dXJu">onPlayerTurn(…)<i class="fa fa-external-link-alt"></i></span><br>研究目的：回合結束手排上限檢查與提示<br>障礙：TTS 開出的 Turns api 並無法做出禁止回合結束的行為，只能在換人時做一些判定<br>決策：逐步捨棄 TTS 內建回合機制<br>規劃：先自己做一個回合結束鈕接入 TTS 的結束回合功能</p>
+<h2 id="UI"><a href="#UI" class="headerlink" title="UI"></a>UI</h2><p><span class="exturl" data-url="aHR0cHM6Ly9hcGkudGFibGV0b3BzaW11bGF0b3IuY29tL29iamVjdC8jdWktZnVuY3Rpb25z">UI Functions<i class="fa fa-external-link-alt"></i></span>：操作使 UI 附加到物件上</p>
+<p><span class="exturl" data-url="aHR0cHM6Ly9hcGkudGFibGV0b3BzaW11bGF0b3IuY29tL3VpL2ludHJvVUkv">UI API<i class="fa fa-external-link-alt"></i></span>：使用 xml 導入客製化 UI</p>
+<p><span class="exturl" data-url="aHR0cHM6Ly9hcGkudGFibGV0b3BzaW11bGF0b3IuY29tL3VpLw==">UI<i class="fa fa-external-link-alt"></i></span>：run time 操控 UI 屬性</p>
+<p>Global UI：螢幕上的 UI</p>
+<figure class="highlight lua"><table><tr><td class="code"><pre><span class="line">UI.getAttributes(id)</span><br></pre></td></tr></table></figure>
 
-<p>若先前的 homeassistant 容器還在需要先刪除</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">sudo docker remove homeassistant</span><br></pre></td></tr></table></figure>
-
-<h3 id="用-Mac"><a href="#用-Mac" class="headerlink" title="用 Mac"></a>用 Mac</h3><p>結論: 在 Mac 上只能用 Virtual Box，但目前也不能用 Arm64 的 Mac 跑</p>
-<h2 id="使用瀏覽器連線到-Home-Assistant-並進行初始設定"><a href="#使用瀏覽器連線到-Home-Assistant-並進行初始設定" class="headerlink" title="使用瀏覽器連線到 Home Assistant 並進行初始設定"></a>使用瀏覽器連線到 Home Assistant 並進行初始設定</h2><p><span class="exturl" data-url="aHR0cHM6Ly93d3cuaG9tZS1hc3Npc3RhbnQuaW8vZ2V0dGluZy1zdGFydGVkL29uYm9hcmRpbmcv">Onboarding Home Assistant<i class="fa fa-external-link-alt"></i></span><br><code>http://&#123;host&#125;:8123</code></p>
-<h2 id="Home-Assistant-Community-Store-HACS"><a href="#Home-Assistant-Community-Store-HACS" class="headerlink" title="Home Assistant Community Store (HACS)"></a>Home Assistant Community Store (HACS)</h2><p><span class="exturl" data-url="aHR0cHM6Ly9oYWNzLnh5ei8=">HACS<i class="fa fa-external-link-alt"></i></span><br>好像很厲害，但我還沒實際使用到他的功能</p>
+<p>Object UI：物件上的 UI</p>
+<figure class="highlight lua"><table><tr><td class="code"><pre><span class="line">object.UI.getAttributes(id)</span><br></pre></td></tr></table></figure>
 ]]></content>
       <categories>
-        <category>Life</category>
-        <category>Share</category>
+        <category>Project</category>
       </categories>
       <tags>
-        <tag>Smart Home</tag>
-        <tag>Home Assistant</tag>
+        <tag>Lua</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Tool Jira 01：Jira 建立 儀表板 (Dashboard)，碼農最舒適設定</title>
+    <url>/Tool/Jira/4ed23e02/</url>
+    <content><![CDATA[<p>身為碼農基本只管解 issue，Jira 這種專案管理工具的功能實在過於複雜，在此分享我在 Jira 中唯一使用的功能 – 儀表板 (Dashboard)。</p>
+<p>想要一目了然的查看某團隊或某專案的工作量之類資訊時，建立自定義的 儀表板 (Dashboard) 是滿推薦的方式。</p>
+<span id="more"></span>
+
+
+
+<h2 id="成品"><a href="#成品" class="headerlink" title="成品"></a>成品</h2><p>我習慣設成一個專案一張 <code>二維篩選統計資料</code> 表，X軸為 <code>優先順序</code>，y軸為 <code>受託人</code>，數字為 issue 數目。<br><img data-src="https://github.com/WCW0310/blogPicture/blob/master/Tool/Tool-Jira-01-create-dashboard/JiraSample.png?raw=true"></p>
+<p>這樣能清楚知道誰身上 loading 較重，哪些人較有餘力協助別人之類的 (不過通常也不能這樣判斷啦 XD)。</p>
+<h2 id="建立篩選條件-Filter-："><a href="#建立篩選條件-Filter-：" class="headerlink" title="建立篩選條件 (Filter)："></a>建立篩選條件 (Filter)：</h2><p>建立 儀表板 之前需要先建立數個 篩選條件 (Filter) 供 儀表板 使用。</p>
+<h3 id="選擇上方-篩選-Filter-tab"><a href="#選擇上方-篩選-Filter-tab" class="headerlink" title="選擇上方 篩選 (Filter) tab"></a>選擇上方 <code>篩選</code> (Filter) tab</h3><p><img data-src="https://github.com/WCW0310/blogPicture/blob/master/Tool/Tool-Jira-01-create-dashboard/filter.png?raw=true"></p>
+<h3 id="選擇-檢視所有篩選條件-View-all-filters"><a href="#選擇-檢視所有篩選條件-View-all-filters" class="headerlink" title="選擇 檢視所有篩選條件 (View all filters)"></a>選擇 <code>檢視所有篩選條件</code> (View all filters)</h3><p><img data-src="https://github.com/WCW0310/blogPicture/blob/master/Tool/Tool-Jira-01-create-dashboard/viewAllFilters.png?raw=true"></p>
+<h3 id="點選右上-建立篩選條件-Create-filter"><a href="#點選右上-建立篩選條件-Create-filter" class="headerlink" title="點選右上 建立篩選條件 (Create filter)"></a>點選右上 <code>建立篩選條件</code> (Create filter)</h3><p><img data-src="https://github.com/WCW0310/blogPicture/blob/master/Tool/Tool-Jira-01-create-dashboard/createFilter.png?raw=true"></p>
+<h3 id="自己視需求設定篩選條件"><a href="#自己視需求設定篩選條件" class="headerlink" title="自己視需求設定篩選條件"></a>自己視需求設定篩選條件</h3><p><img data-src="https://github.com/WCW0310/blogPicture/blob/master/Tool/Tool-Jira-01-create-dashboard/searchFilter.png?raw=true"></p>
+<p>我自己有設定的是 <code>專案</code> 跟 <code>狀態</code>。<br>專案：為了讓篩選有意義，一個篩選設定一個專案就滿剛好的。<br>狀態：只設定對於開發有意義的狀態，如：<code>開放</code>、<code>進行中</code>、<code>已解決</code>。</p>
+<p>設定好後點擊上方的 <code>另存新檔</code>。</p>
+<h3 id="設定-篩選條件名稱-後點擊-提交"><a href="#設定-篩選條件名稱-後點擊-提交" class="headerlink" title="設定 篩選條件名稱 後點擊 提交"></a>設定 <code>篩選條件名稱</code> 後點擊 <code>提交</code></h3><p><img data-src="https://github.com/WCW0310/blogPicture/blob/master/Tool/Tool-Jira-01-create-dashboard/setFilterName.png?raw=true"></p>
+<p>直接設成專案名稱即可。</p>
+<p>這樣就建立好一個新的篩選條件，可以再選擇上方 <code>篩選</code> (Filter) tab 找到它。</p>
+<h2 id="儀表板-Dashboard-自訂成呈現所有人題目數量的表格："><a href="#儀表板-Dashboard-自訂成呈現所有人題目數量的表格：" class="headerlink" title="儀表板 (Dashboard) 自訂成呈現所有人題目數量的表格："></a>儀表板 (Dashboard) 自訂成呈現所有人題目數量的表格：</h2><h3 id="選擇上方-儀表板-Dashboard-tab"><a href="#選擇上方-儀表板-Dashboard-tab" class="headerlink" title="選擇上方 儀表板 (Dashboard) tab"></a>選擇上方 <code>儀表板</code> (Dashboard) tab</h3><h3 id="選擇-建立儀表板-Create-new-dashboard"><a href="#選擇-建立儀表板-Create-new-dashboard" class="headerlink" title="選擇 建立儀表板 (Create new dashboard)"></a>選擇 <code>建立儀表板</code> (Create new dashboard)</h3><h3 id="填入名稱後點擊-儲存"><a href="#填入名稱後點擊-儲存" class="headerlink" title="填入名稱後點擊 儲存"></a>填入名稱後點擊 <code>儲存</code></h3><p><img data-src="https://github.com/WCW0310/blogPicture/blob/master/Tool/Tool-Jira-01-create-dashboard/createDashboard.png?raw=true"></p>
+<p>可以依你的分類標準命名，或是命名成 <code>我的 Dashboard</code> 之類的。</p>
+<h3 id="就會看到空的儀表板"><a href="#就會看到空的儀表板" class="headerlink" title="就會看到空的儀表板"></a>就會看到空的儀表板</h3><p><img data-src="https://github.com/WCW0310/blogPicture/blob/master/Tool/Tool-Jira-01-create-dashboard/blankDashboard.png?raw=true"></p>
+<p>可以看到右方有非常多種小工具，不過身為不管事的碼農不用浪費太多精力在這裡。</p>
+<p>右方找到 <code>二維篩選統計資料</code> 點擊 <code>新增</code> 就會看到儀表板出現 <code>二維篩選統計資料</code> 的設定欄。</p>
+<h3 id="設定-二維篩選統計資料-Two-Dimensional-Filter-Statistics-表"><a href="#設定-二維篩選統計資料-Two-Dimensional-Filter-Statistics-表" class="headerlink" title="設定 二維篩選統計資料 (Two Dimensional Filter Statistics) 表"></a>設定 <code>二維篩選統計資料</code> (Two Dimensional Filter Statistics) 表</h3><p><img data-src="https://github.com/WCW0310/blogPicture/blob/master/Tool/Tool-Jira-01-create-dashboard/settingData.png?raw=true"></p>
+<p>在 <code>已儲存的篩選條件</code> (Saved Filter) 中找到先前設定的 篩選條件。</p>
+<p><code>X 軸</code> 設成 <code>優先順序</code> (Priority)。</p>
+<p><code>Y 軸</code> 設成 <code>受託人</code>。</p>
+<p><code>結果數目</code> (Number of Results) 設成 50。</p>
+<p>最後點擊 <code>儲存</code> 即完成表格設定。</p>
+<h3 id="點擊右上角的-完成-結束-儀表板-設定"><a href="#點擊右上角的-完成-結束-儀表板-設定" class="headerlink" title="點擊右上角的 完成 結束 儀表板 設定"></a>點擊右上角的 <code>完成</code> 結束 儀表板 設定</h3><p><img data-src="https://github.com/WCW0310/blogPicture/blob/master/Tool/Tool-Jira-01-create-dashboard/tableSample.png?raw=true"></p>
+<h3 id="大功告成"><a href="#大功告成" class="headerlink" title="大功告成"></a>大功告成</h3><p>多設定幾個專案的表格就會跟一開始的圖片一樣有多張表格了。</p>
+<h2 id="結語"><a href="#結語" class="headerlink" title="結語"></a>結語</h2><p>上述設定都是我自己的偏好，完全可以依各自喜好做其他設定，不要被工具奴化就好~</p>
+<p>Jira 可以自定義的東西太多了，除非公司有特殊需求，或你本身就要負責專案管理，不然真心覺得越少碰它越好，其他時間能簡易的察看任務就好。</p>
+]]></content>
+      <categories>
+        <category>Tool</category>
+        <category>Jira</category>
+      </categories>
+      <tags>
+        <tag>Jira</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Tool：Proxyman</title>
+    <url>/Tool/ec1de664/</url>
+    <content><![CDATA[<p>強大的 HTTP 調試工具。</p>
+<span id="more"></span>
+
+<p><span class="exturl" data-url="aHR0cHM6Ly9wcm94eW1hbi5pby8=">Proxyman<i class="fa fa-external-link-alt"></i></span></p>
+<h2 id="Certificate"><a href="#Certificate" class="headerlink" title="Certificate"></a>Certificate</h2><p>因為需要獲取加密的 api 封包，所以需要對各裝置進行認證設置<br>Certificate 選項位於最上方<br>iOS 模擬器沒遇到什麼障礙<br>Android 模擬器需要使用 google api，因此我目前用不出來，因為專案會把沒有 play store 視為 root，進而阻止繼續使用<br>Android 實機需要定期下載 CA 憑證，並進入裝置設定進行安裝，通常在：設定&gt;密碼與安全&gt;系統安全&gt;加密和憑證&gt;信任的憑證|安裝憑證<br>Android 實機與 Praxyman 連線時需要更改網路 proxy，但須注意沒連接時要將 網路 proxy 關掉，否則 run app 時無法與 metro 連線</p>
+<h2 id="作用限制"><a href="#作用限制" class="headerlink" title="作用限制"></a>作用限制</h2><p>android 只能操作 debug 版的 app，因為遵循官方建議：<code>Make sure you remove these configs from your Production build.</code>。<br>ios 應該都能操作。</p>
+<p>記住這些差異才不會在奇怪的地方卡住浪費時間。</p>
+<h2 id="Map-Local"><a href="#Map-Local" class="headerlink" title="Map Local"></a>Map Local</h2><p>可以攔截 api 儲存回傳內容成 json 檔，並調整成想要的內容後來測試 api 在不同回傳下的結果<br>Map Local 選項位於最上方的 Tools 中，開啟後會額外顯示在視窗右下角<br>原本可以同時儲存很多組設置，更新後只能同時儲存兩組設置，妥妥的養套殺😭<br>mock 網址時必須以 <code>/</code> 結尾，如：<code>https://abcdefghijk/</code>，不然會 mock 失敗，不是很懂為何結尾不能沒有 <code>/</code>。<br>網址好像也都必須是小寫字母🧐。</p>
+<h3 id="Local-json-File-撰寫方式"><a href="#Local-json-File-撰寫方式" class="headerlink" title="Local json File 撰寫方式"></a>Local json File 撰寫方式</h3><p><span class="exturl" data-url="aHR0cHM6Ly9kb2NzLnByb3h5bWFuLmlvL2FkdmFuY2VkLWZlYXR1cmVzL21hcC1sb2NhbA==">Map Local (File)<i class="fa fa-external-link-alt"></i></span><br>網路通信過於複雜，Proxyman 提供了一些網路或伺服器狀態的設置方法<br>文件大致包含 Status code, Response Headers, Response Body<br>只寫 Response Body 會視為 200 OK，這樣如果要測試錯誤狀況時，在程式碼中不會進到 catch 的地方，可能會導致誤判<br>常用 Status code:<br>404 Not Found</p>
+]]></content>
+      <categories>
+        <category>Tool</category>
+      </categories>
+      <tags>
+        <tag>Proxyman</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Tool：Visual Studio Code</title>
+    <url>/Tool/41e4a259/</url>
+    <content><![CDATA[<p>工程師的好夥伴，懂他越多，效率越高。</p>
+<span id="more"></span>
+
+<h2 id="常用快捷鍵"><a href="#常用快捷鍵" class="headerlink" title="常用快捷鍵"></a>常用快捷鍵</h2><p>Code &gt; 喜好設定 &gt; 鍵盤快速鍵 [command + K command + S]</p>
+<p>一些快捷鍵在非英文輸入法會失效。</p>
+<p>search file: command P (mac)<br>go forward &#x2F; go back: ctrl shift - &#x2F; ctrl -<br>editor.fold &#x2F; editor.unfold: alt cmd [ &#x2F; alt cmd ]<br>editor.foldAll &#x2F; editor.unfoldAll: cmd+k cmd+0 &#x2F; cmd+k cmd+j</p>
+<h2 id="auto-format"><a href="#auto-format" class="headerlink" title="auto format"></a>auto format</h2><p>option shift F (mac) &#x2F; ctrl shift F (windows)<br>有些檔案類型的 formatter 需要進 command shift p 手動指定</p>
+<h2 id="切換語言"><a href="#切換語言" class="headerlink" title="切換語言"></a>切換語言</h2><p>command + shift + p<br>輸入 language<br>選取 Configure Display Language<br>選取要切換的語系</p>
+<h2 id="參考資料"><a href="#參考資料" class="headerlink" title="參考資料"></a>參考資料</h2><p><span class="exturl" data-url="aHR0cHM6Ly9jb2Rpbmdpc2xvdmUuY29tL2lzc3VlLWZvcm1hdC1jb2RlLXZzY29kZS1zaG9ydGN1dC8=">Unable to format code in VSCode on MacOS using shortcut (solved)<i class="fa fa-external-link-alt"></i></span></p>
+]]></content>
+      <categories>
+        <category>Tool</category>
+      </categories>
+      <tags>
+        <tag>Visual Studio Code</tag>
       </tags>
   </entry>
   <entry>
@@ -1789,32 +1791,30 @@
       </tags>
   </entry>
   <entry>
-    <title>React Native Debug：無法連上 Firebase Analytics DebugView</title>
-    <url>/React-Native/Debug/e908ab10/</url>
-    <content><![CDATA[<p>小細節可能誤大局，偷走我一整週的蠢事。</p>
+    <title>Life Share：Home Assistant</title>
+    <url>/Life/Share/a4e0acfc/</url>
+    <content><![CDATA[<p>提升生活小確幸。</p>
 <span id="more"></span>
 
-<p>Firebase 專案中將 development 與 production App 分別設置不同的套件名稱：development app 套件名稱結尾會加上 <code>.debug</code>。<br>理論上這種配置很常見，不過我要使用 Firebase console 的 Analytics DebugView 時，卻遲遲無法連上。<br>直接說答案，因為我們將 development app 的 Analytics 數據流給刪除了。</p>
-<p>如何從 Firebase console 中查看此設定？</p>
-<blockquote>
-<p>點擊 <code>專案總覽</code> 右邊的齒輪<br>選擇 <code>專案設定</code><br>選擇 <code>整合</code><br>點擊 <code>Google Analytics</code> 的 <code>管理</code> (這步可能需要更高的權限)<br>點擊 <code>已連結的 Google Analytics (分析) 帳戶</code><br>選擇 <code>數據流</code> 就可以看到目前有跟 Google Analytics 連結的 App，其套件名稱會寫在 App 名下方<br>點擊 <code>&gt;</code> 可以看到 <code>應用數據流詳情</code>，其實跟在 Firebase 設定 App 的地方差不多<br>點擊右上角 <code>...</code> 可以看到 <code>刪除數據流</code>，我們 development App 的數據流應該就是在此刪除的</p>
-</blockquote>
-<p>總之在 Google Analytics 刪除 App 的數據流，就會使 Firebase console 的 Analytics DebugView 無法跟該 App 連結。</p>
-<ul>
-<li>在 <code>google-services.json</code> 檔案中依然有包含該 App 的套件名稱</li>
-<li>firebase.analytics log 中也依舊會包含傳送 event 資料的 log</li>
-</ul>
-<p>會發生這種奇妙現象是因為我們本來要將 development app 轉移到另一個 Firebase 專案，但不知道什麼原因只做一半．．．</p>
-<p>轉移後會需要換新的 <code>google-services.json</code> 記住更換後要記得清除 gradle 資料，不然會繼續使用舊的，也不會有提示。</p>
+<h2 id="安裝-Home-Assistant"><a href="#安裝-Home-Assistant" class="headerlink" title="安裝 Home Assistant"></a>安裝 Home Assistant</h2><h3 id="用樹莓派時"><a href="#用樹莓派時" class="headerlink" title="用樹莓派時"></a>用樹莓派時</h3><p><span class="exturl" data-url="aHR0cHM6Ly93d3cuaG9tZS1hc3Npc3RhbnQuaW8vaW5zdGFsbGF0aW9uL2xpbnV4I2luc3RhbGwtaG9tZS1hc3Npc3RhbnQtY29udGFpbmVy">Install Home Assistant Container<i class="fa fa-external-link-alt"></i></span><br>用指令啟動</p>
+<p><span class="exturl" data-url="aHR0cHM6Ly93d3cuaG9tZS1hc3Npc3RhbnQuaW8vaW5zdGFsbGF0aW9uL2xpbnV4I2RvY2tlci1jb21wb3Nl">DOCKER COMPOSE<i class="fa fa-external-link-alt"></i></span><br>設定 compose.yml<br>用指令啟動 sudo docker compose up -d homeassistant<br>注意: compose.yml 中設定 volumes 的路徑時，<code>~</code> 可能不會正常運作，需使用相對路徑 (.&#x2F;) 或絕對路徑 (&#x2F;)</p>
+<p>上傳後進入 ~&#x2F;homeassistant&#x2F; 透過 docker compose 來啟動 Home Assistant</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">sudo docker compose up -d homeassistant</span><br></pre></td></tr></table></figure>
+
+<p>若先前的 homeassistant 容器還在需要先刪除</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">sudo docker remove homeassistant</span><br></pre></td></tr></table></figure>
+
+<h3 id="用-Mac"><a href="#用-Mac" class="headerlink" title="用 Mac"></a>用 Mac</h3><p>結論: 在 Mac 上只能用 Virtual Box，但目前也不能用 Arm64 的 Mac 跑</p>
+<h2 id="使用瀏覽器連線到-Home-Assistant-並進行初始設定"><a href="#使用瀏覽器連線到-Home-Assistant-並進行初始設定" class="headerlink" title="使用瀏覽器連線到 Home Assistant 並進行初始設定"></a>使用瀏覽器連線到 Home Assistant 並進行初始設定</h2><p><span class="exturl" data-url="aHR0cHM6Ly93d3cuaG9tZS1hc3Npc3RhbnQuaW8vZ2V0dGluZy1zdGFydGVkL29uYm9hcmRpbmcv">Onboarding Home Assistant<i class="fa fa-external-link-alt"></i></span><br><code>http://&#123;host&#125;:8123</code></p>
+<h2 id="Home-Assistant-Community-Store-HACS"><a href="#Home-Assistant-Community-Store-HACS" class="headerlink" title="Home Assistant Community Store (HACS)"></a>Home Assistant Community Store (HACS)</h2><p><span class="exturl" data-url="aHR0cHM6Ly9oYWNzLnh5ei8=">HACS<i class="fa fa-external-link-alt"></i></span><br>好像很厲害，但我還沒實際使用到他的功能</p>
 ]]></content>
       <categories>
-        <category>React Native</category>
-        <category>Debug</category>
+        <category>Life</category>
+        <category>Share</category>
       </categories>
       <tags>
-        <tag>Firebase</tag>
-        <tag>React Native</tag>
-        <tag>Google Analytics</tag>
+        <tag>Smart Home</tag>
+        <tag>Home Assistant</tag>
       </tags>
   </entry>
 </search>
