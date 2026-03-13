@@ -37,14 +37,51 @@
       </tags>
   </entry>
   <entry>
-    <title>Android Note：DecorView</title>
-    <url>/Android/Note/fdd5466a/</url>
-    <content><![CDATA[<p>獲取當前 Activity 的根視圖。</p>
+    <title>Android Debug：SQLite 不支援 variance 語法</title>
+    <url>/Android/Debug/9776d6f4/</url>
+    <content><![CDATA[<p>從 MySQL 將 SQL 程式碼遷移至 Android 的 SQLite，發現 SQLite 不支援 variance function。</p>
 <span id="more"></span>
 
-<figure class="highlight kotlin"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 獲取 DecorView，他是整個窗口的最頂層視圖</span></span><br><span class="line"><span class="keyword">val</span> decorView = window.decorView</span><br><span class="line"></span><br><span class="line"><span class="comment">// 獲取內容視圖的根視圖</span></span><br><span class="line"><span class="keyword">val</span> rootView = decorView.findViewById&lt;ViewGroup&gt;(android.R.id.content)</span><br></pre></td></tr></table></figure>
+<h2 id="遭遇問題"><a href="#遭遇問題" class="headerlink" title="遭遇問題"></a>遭遇問題</h2><p>android.database.sqlite.SQLiteException: no such function: variance (code 1 SQLITE_ERROR): , while compiling: SELECT variance</p>
+<h2 id="解決方法"><a href="#解決方法" class="headerlink" title="解決方法"></a>解決方法</h2><p>將 SELECT variance(var) FROM table</p>
+<p>改成 SELECT SUM((var-(SELECT AVG(var) FROM table))*(var-(SELECT AVG(var) FROM table)))&#x2F;(COUNT(var)-1) AS Variance FROM table</p>
+<h2 id="結語"><a href="#結語" class="headerlink" title="結語"></a>結語</h2><p>其實就是將 variance 的算式展開。</p>
+<h2 id="參考資料"><a href="#參考資料" class="headerlink" title="參考資料"></a>參考資料</h2><p><span class="exturl" data-url="aHR0cHM6Ly9zdGFja292ZXJmbG93LmNvbS9xdWVzdGlvbnMvMjU4OTU4NzQvY2FsY3VsYXRlLXZhcmlhbmNlLWluLXNxbGl0ZQ==">Calculate variance in sqlite<i class="fa fa-external-link-alt"></i></span></p>
+]]></content>
+      <categories>
+        <category>Android</category>
+        <category>Debug</category>
+      </categories>
+      <tags>
+        <tag>Android</tag>
+        <tag>SQLite</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Android Note：Activity Manager (am) intent arguments</title>
+    <url>/Android/Note/85ba8edf/</url>
+    <content><![CDATA[<p>有鑑於 Android 中 <span class="exturl" data-url="aHR0cHM6Ly9kZXZlbG9wZXIuYW5kcm9pZC5jb20vZ3VpZGUvY29tcG9uZW50cy9pbnRlbnRzLWZpbHRlcnM=">Intents and Intent Filters<i class="fa fa-external-link-alt"></i></span> 本身的複雜度，其指令參數也是那樣誇張沒錯。不過人腦記一些最基礎必要的東西就好了，太複雜的就交給查表。</p>
+<span id="more"></span>
 
-<p>其中 <code>android.R.id.content</code> 這個 id 對跨平台框架的 android 原生操作有奇效，像是添加 android 原生畫面之類的</p>
+<p>Intemt 大致由以下這幾類東西組成：</p>
+<ul>
+<li>Component name</li>
+<li>Action</li>
+<li>Data</li>
+<li>Category</li>
+<li>Extras</li>
+<li>Flags</li>
+</ul>
+<p>不過大多都不是必須組件，直接以例子來說明，下面是以 Activity Manager 發出一個 broadcast 的指令：</p>
+<figure class="highlight sh"><figcaption><span>command line tool</span></figcaption><table><tr><td class="code"><pre><span class="line">$ am broadcast -a action_string --es es_key es_value --ei ei_key ei_value</span><br></pre></td></tr></table></figure>
+
+<p>其中 <code>am broadcast</code> 是要求 Activity Manager 發出 broadcast 的宣告<br>後面的 <code>-a action_string --es es_key es_value --ei ei_key ei_value</code> 整串都是 intent arguments，而這其中又能分為三組：</p>
+<ul>
+<li><code>-a action_string</code>：<code>-a</code> 表示加入 Action，後方 <code>action_string</code> 即是要使用的 Action 字串。</li>
+<li><code>--es es_key es_value</code>：<code>--es</code> 表示加入 Extra String 的鍵值對，後方 <code>es_key es_value</code> 即為該鍵值對。</li>
+<li><code>--ei ei_key ei_value</code>：<code>--ei</code> 表示加入 Extra Integer 的鍵值對，後方 <code>ei_key ei_value</code> 即為該鍵值對。</li>
+</ul>
+<h2 id="參考資料"><a href="#參考資料" class="headerlink" title="參考資料"></a>參考資料</h2><p><span class="exturl" data-url="aHR0cHM6Ly9kZXZlbG9wZXIuYW5kcm9pZC5jb20vc3R1ZGlvL2NvbW1hbmQtbGluZS9hZGIjSW50ZW50U3BlYw==">Specification for intent arguments<i class="fa fa-external-link-alt"></i></span></p>
 ]]></content>
       <categories>
         <category>Android</category>
@@ -188,61 +225,6 @@
       </categories>
       <tags>
         <tag>Android</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Android Note：Activity Manager (am) intent arguments</title>
-    <url>/Android/Note/85ba8edf/</url>
-    <content><![CDATA[<p>有鑑於 Android 中 <span class="exturl" data-url="aHR0cHM6Ly9kZXZlbG9wZXIuYW5kcm9pZC5jb20vZ3VpZGUvY29tcG9uZW50cy9pbnRlbnRzLWZpbHRlcnM=">Intents and Intent Filters<i class="fa fa-external-link-alt"></i></span> 本身的複雜度，其指令參數也是那樣誇張沒錯。不過人腦記一些最基礎必要的東西就好了，太複雜的就交給查表。</p>
-<span id="more"></span>
-
-<p>Intemt 大致由以下這幾類東西組成：</p>
-<ul>
-<li>Component name</li>
-<li>Action</li>
-<li>Data</li>
-<li>Category</li>
-<li>Extras</li>
-<li>Flags</li>
-</ul>
-<p>不過大多都不是必須組件，直接以例子來說明，下面是以 Activity Manager 發出一個 broadcast 的指令：</p>
-<figure class="highlight sh"><figcaption><span>command line tool</span></figcaption><table><tr><td class="code"><pre><span class="line">$ am broadcast -a action_string --es es_key es_value --ei ei_key ei_value</span><br></pre></td></tr></table></figure>
-
-<p>其中 <code>am broadcast</code> 是要求 Activity Manager 發出 broadcast 的宣告<br>後面的 <code>-a action_string --es es_key es_value --ei ei_key ei_value</code> 整串都是 intent arguments，而這其中又能分為三組：</p>
-<ul>
-<li><code>-a action_string</code>：<code>-a</code> 表示加入 Action，後方 <code>action_string</code> 即是要使用的 Action 字串。</li>
-<li><code>--es es_key es_value</code>：<code>--es</code> 表示加入 Extra String 的鍵值對，後方 <code>es_key es_value</code> 即為該鍵值對。</li>
-<li><code>--ei ei_key ei_value</code>：<code>--ei</code> 表示加入 Extra Integer 的鍵值對，後方 <code>ei_key ei_value</code> 即為該鍵值對。</li>
-</ul>
-<h2 id="參考資料"><a href="#參考資料" class="headerlink" title="參考資料"></a>參考資料</h2><p><span class="exturl" data-url="aHR0cHM6Ly9kZXZlbG9wZXIuYW5kcm9pZC5jb20vc3R1ZGlvL2NvbW1hbmQtbGluZS9hZGIjSW50ZW50U3BlYw==">Specification for intent arguments<i class="fa fa-external-link-alt"></i></span></p>
-]]></content>
-      <categories>
-        <category>Android</category>
-        <category>Note</category>
-      </categories>
-      <tags>
-        <tag>Android</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Android Debug：SQLite 不支援 variance 語法</title>
-    <url>/Android/Debug/9776d6f4/</url>
-    <content><![CDATA[<p>從 MySQL 將 SQL 程式碼遷移至 Android 的 SQLite，發現 SQLite 不支援 variance function。</p>
-<span id="more"></span>
-
-<h2 id="遭遇問題"><a href="#遭遇問題" class="headerlink" title="遭遇問題"></a>遭遇問題</h2><p>android.database.sqlite.SQLiteException: no such function: variance (code 1 SQLITE_ERROR): , while compiling: SELECT variance</p>
-<h2 id="解決方法"><a href="#解決方法" class="headerlink" title="解決方法"></a>解決方法</h2><p>將 SELECT variance(var) FROM table</p>
-<p>改成 SELECT SUM((var-(SELECT AVG(var) FROM table))*(var-(SELECT AVG(var) FROM table)))&#x2F;(COUNT(var)-1) AS Variance FROM table</p>
-<h2 id="結語"><a href="#結語" class="headerlink" title="結語"></a>結語</h2><p>其實就是將 variance 的算式展開。</p>
-<h2 id="參考資料"><a href="#參考資料" class="headerlink" title="參考資料"></a>參考資料</h2><p><span class="exturl" data-url="aHR0cHM6Ly9zdGFja292ZXJmbG93LmNvbS9xdWVzdGlvbnMvMjU4OTU4NzQvY2FsY3VsYXRlLXZhcmlhbmNlLWluLXNxbGl0ZQ==">Calculate variance in sqlite<i class="fa fa-external-link-alt"></i></span></p>
-]]></content>
-      <categories>
-        <category>Android</category>
-        <category>Debug</category>
-      </categories>
-      <tags>
-        <tag>Android</tag>
-        <tag>SQLite</tag>
       </tags>
   </entry>
   <entry>
@@ -400,80 +382,21 @@
       </tags>
   </entry>
   <entry>
-    <title>Java Note 01：常忘 Java 語法</title>
-    <url>/Java/Note/76cc3fdb/</url>
-    <content><![CDATA[<p>為了麵包不得已開始刷題人生，但被 IDE 寵壞後，默寫時連迴圈都寫不出來了，趕快來複習一下。</p>
+    <title>Android Note：DecorView</title>
+    <url>/Android/Note/fdd5466a/</url>
+    <content><![CDATA[<p>獲取當前 Activity 的根視圖。</p>
 <span id="more"></span>
 
-<h2 id="for-loop"><a href="#for-loop" class="headerlink" title="for loop"></a>for loop</h2><figure class="highlight java"><figcaption><span>基本</span></figcaption><table><tr><td class="code"><pre><span class="line"><span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">0</span>; i &lt; <span class="number">5</span>; i++) &#123;</span><br><span class="line">  System.out.println(i);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight kotlin"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 獲取 DecorView，他是整個窗口的最頂層視圖</span></span><br><span class="line"><span class="keyword">val</span> decorView = window.decorView</span><br><span class="line"></span><br><span class="line"><span class="comment">// 獲取內容視圖的根視圖</span></span><br><span class="line"><span class="keyword">val</span> rootView = decorView.findViewById&lt;ViewGroup&gt;(android.R.id.content)</span><br></pre></td></tr></table></figure>
 
-<figure class="highlight java"><figcaption><span>迭代</span></figcaption><table><tr><td class="code"><pre><span class="line"><span class="keyword">for</span> (<span class="type">int</span> i : array) &#123;</span><br><span class="line">  System.out.println(i);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h2 id="String"><a href="#String" class="headerlink" title="String"></a>String</h2><p><span class="exturl" data-url="aHR0cHM6Ly93d3cucnVub29iLmNvbS9qYXZhL2phdmEtc3RyaW5nLmh0bWw=">Java String 类<i class="fa fa-external-link-alt"></i></span></p>
-<h3 id="返回字串長度"><a href="#返回字串長度" class="headerlink" title="返回字串長度"></a>返回字串長度</h3><p>int length();</p>
-<h3 id="判斷字串值是否相同"><a href="#判斷字串值是否相同" class="headerlink" title="判斷字串值是否相同"></a>判斷字串值是否相同</h3><p>boolean equals(String value);</p>
-<h3 id="返回指定索引的-char"><a href="#返回指定索引的-char" class="headerlink" title="返回指定索引的 char"></a>返回指定索引的 char</h3><p>char charAt(int index);</p>
-<h3 id="返回字串轉換成的-char"><a href="#返回字串轉換成的-char" class="headerlink" title="返回字串轉換成的 char[]"></a>返回字串轉換成的 char[]</h3><p>char[] toCharArray();</p>
-<h3 id="返回子字串（指定頭尾）"><a href="#返回子字串（指定頭尾）" class="headerlink" title="返回子字串（指定頭尾）"></a>返回子字串（指定頭尾）</h3><p>String substring(int beginIndex, int endIndex);<br>注意：包含頭，不包含尾。</p>
-<h3 id="返回子字串（指定頭）"><a href="#返回子字串（指定頭）" class="headerlink" title="返回子字串（指定頭）"></a>返回子字串（指定頭）</h3><p>String substring(int beginIndex);</p>
-<h3 id="判斷是否包含指定字符序列"><a href="#判斷是否包含指定字符序列" class="headerlink" title="判斷是否包含指定字符序列"></a>判斷是否包含指定字符序列</h3><p>boolean contains(CharSequence chars);</p>
-<h2 id="Character"><a href="#Character" class="headerlink" title="Character"></a>Character</h2><h3 id="確定是否為字母或數字"><a href="#確定是否為字母或數字" class="headerlink" title="確定是否為字母或數字"></a>確定是否為字母或數字</h3><p>Character.isLetterOrDigit(char)</p>
-<h2 id="Array"><a href="#Array" class="headerlink" title="Array"></a>Array</h2><h3 id="建立新-Array-方法"><a href="#建立新-Array-方法" class="headerlink" title="建立新 Array 方法"></a>建立新 Array 方法</h3><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="type">int</span>[] intArray = <span class="keyword">new</span> <span class="title class_">int</span>[<span class="number">3</span>]; <span class="comment">// 長度為三，空的 Array</span></span><br><span class="line"><span class="type">int</span>[] intArray2 = &#123;<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>&#125;; <span class="comment">// 自定義內容的 Array，算是 intArray3 方法的語法糖</span></span><br><span class="line"><span class="type">int</span>[] intArray3 = <span class="keyword">new</span> <span class="title class_">int</span>[]&#123;<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>&#125;; <span class="comment">// 與 intArray2 一樣，不過在前面沒有表達式的型別宣告時只能這樣用，不然會出 illegal start of expression 錯</span></span><br></pre></td></tr></table></figure>
-
-<h2 id="ArrayList"><a href="#ArrayList" class="headerlink" title="ArrayList"></a>ArrayList</h2><p><span class="exturl" data-url="aHR0cHM6Ly93d3cucnVub29iLmNvbS9qYXZhL2phdmEtYXJyYXlsaXN0Lmh0bWw=">Java ArrayList<i class="fa fa-external-link-alt"></i></span></p>
-<h2 id="Arrays"><a href="#Arrays" class="headerlink" title="Arrays"></a>Arrays</h2><p>Arrays 是處理各式 Array 的工具類。</p>
-<h3 id="排序傳入的-array"><a href="#排序傳入的-array" class="headerlink" title="排序傳入的 array"></a>排序傳入的 array</h3><p>Arrays.sort(array);</p>
-<h3 id="比較兩-arrays-值是否相同"><a href="#比較兩-arrays-值是否相同" class="headerlink" title="比較兩 arrays 值是否相同"></a>比較兩 arrays 值是否相同</h3><p>Arrays.equals(array1, array2);</p>
-<h3 id="生成裝有-values-的-List"><a href="#生成裝有-values-的-List" class="headerlink" title="生成裝有 values 的 List"></a>生成裝有 values 的 List</h3><p>Arrays.asList(value1, value2, …);<br>返回的 List 不適合拿來操作，通常是用來快速建立指定元素的 ArrayList 或 HashSet 之類的類別。</p>
-<h2 id="Collections"><a href="#Collections" class="headerlink" title="Collections"></a>Collections</h2><h3 id="排序"><a href="#排序" class="headerlink" title="排序"></a>排序</h3><p>Collections.sort(list);<br>Arrays 的 sort 不能排序 ArrayList，所以要用這個。</p>
-<p>Collections.reverseOrder()<br>在建構 PriorityQueue 之類的 class 時可以用此指定反向順序。</p>
-<h2 id="HashMap"><a href="#HashMap" class="headerlink" title="HashMap"></a>HashMap</h2><p><span class="exturl" data-url="aHR0cHM6Ly93d3cucnVub29iLmNvbS9qYXZhL2phdmEtaGFzaG1hcC5odG1s">Java HashMap<i class="fa fa-external-link-alt"></i></span></p>
-<p>需要注意基本類別要換成封裝類別。</p>
-<h3 id="獲取指定-key-對應的-value"><a href="#獲取指定-key-對應的-value" class="headerlink" title="獲取指定 key 對應的 value"></a>獲取指定 key 對應的 value</h3><p>hashmap.get(key);</p>
-<h3 id="獲取指定-key-對應的-value，若找不到-key-就返回-default"><a href="#獲取指定-key-對應的-value，若找不到-key-就返回-default" class="headerlink" title="獲取指定 key 對應的 value，若找不到 key 就返回 default"></a>獲取指定 key 對應的 value，若找不到 key 就返回 default</h3><p>hashmap.getOrDefault(key, default);</p>
-<h3 id="添加鍵值對"><a href="#添加鍵值對" class="headerlink" title="添加鍵值對"></a>添加鍵值對</h3><p>hashmap.put(key, value);</p>
-<h3 id="檢查是否存在指定-key-對應的映射關係"><a href="#檢查是否存在指定-key-對應的映射關係" class="headerlink" title="檢查是否存在指定 key 對應的映射關係"></a>檢查是否存在指定 key 對應的映射關係</h3><p>hashmap.containsKey(key);</p>
-<h3 id="檢查是否存在指定-value-對應的映射關係"><a href="#檢查是否存在指定-value-對應的映射關係" class="headerlink" title="檢查是否存在指定 value 對應的映射關係"></a>檢查是否存在指定 value 對應的映射關係</h3><p>hashmap.containsValue(value);</p>
-<h3 id="刪除-key-對應的鍵值對"><a href="#刪除-key-對應的鍵值對" class="headerlink" title="刪除 key 對應的鍵值對"></a>刪除 key 對應的鍵值對</h3><p>hashmap.remove(key);</p>
-<h3 id="返回-hashmap-中所有-key-組成的-set"><a href="#返回-hashmap-中所有-key-組成的-set" class="headerlink" title="返回 hashmap 中所有 key 組成的 set"></a>返回 hashmap 中所有 key 組成的 set</h3><p>hashmap.keySet();</p>
-<h3 id="返回-hashmap-中所有-value-組成的-set"><a href="#返回-hashmap-中所有-value-組成的-set" class="headerlink" title="返回 hashmap 中所有 value 組成的 set"></a>返回 hashmap 中所有 value 組成的 set</h3><p>hashmap.values();</p>
-<h3 id="返回-hashmap-中所有-映射關係-的-set"><a href="#返回-hashmap-中所有-映射關係-的-set" class="headerlink" title="返回 hashmap 中所有 映射關係 的 set"></a>返回 hashmap 中所有 映射關係 的 set</h3><p>hashmap.entrySet();<br>換容器時會使用到，每個鍵值對的類型為 <code>Map.Entry</code><br>Map.Entry 取得鍵：getKey()<br>Map.Entry 取得值：getValue()</p>
-<h2 id="HashSet"><a href="#HashSet" class="headerlink" title="HashSet"></a>HashSet</h2><p><span class="exturl" data-url="aHR0cHM6Ly93d3cucnVub29iLmNvbS9qYXZhL2phdmEtaGFzaHNldC5odG1s">Java HashSet<i class="fa fa-external-link-alt"></i></span></p>
-<p>需要注意基本類別要換成封裝類別。</p>
-<h3 id="添加元素"><a href="#添加元素" class="headerlink" title="添加元素"></a>添加元素</h3><p>hashset.add(value);</p>
-<h3 id="判斷元素是否存在"><a href="#判斷元素是否存在" class="headerlink" title="判斷元素是否存在"></a>判斷元素是否存在</h3><p>hashset.contains(value);</p>
-<h3 id="刪除元素"><a href="#刪除元素" class="headerlink" title="刪除元素"></a>刪除元素</h3><p>hashset.remove(value);</p>
-<h3 id="獲取-hashset-大小"><a href="#獲取-hashset-大小" class="headerlink" title="獲取 hashset 大小"></a>獲取 hashset 大小</h3><p>hashset.size();</p>
-<h3 id="交集技巧"><a href="#交集技巧" class="headerlink" title="交集技巧"></a>交集技巧</h3><p>hashset1.retainAll(hashset2);<br>返回扣掉兩 sets 未交集元素後的 hashset1。</p>
-<h3 id="差集技巧"><a href="#差集技巧" class="headerlink" title="差集技巧"></a>差集技巧</h3><p>hashset1.removeAll(hashset2);<br>返回扣掉兩 sets 交集元素後的 hashset1。</p>
-<h3 id="聯集技巧"><a href="#聯集技巧" class="headerlink" title="聯集技巧"></a>聯集技巧</h3><p>hashset1.addAll(hashset2);<br>返回加上兩 sets 未交集元素後的 hashset1。</p>
-<h2 id="PriorityQueue"><a href="#PriorityQueue" class="headerlink" title="PriorityQueue"></a>PriorityQueue</h2><p><span class="exturl" data-url="aHR0cHM6Ly93d3cuY2Fpbmlhb2pjLmNvbS9qYXZhL2phdmEtcHJpb3JpdHlxdWV1ZS5odG1s">Java PriorityQueue<i class="fa fa-external-link-alt"></i></span></p>
-<p>先進先出，預設先出來的是最小的 (Ascending Order)</p>
-<h3 id="建構方式"><a href="#建構方式" class="headerlink" title="建構方式"></a>建構方式</h3><p>可以帶入自定義的 Comparator，如：</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">PriorityQueue&lt;Map.Entry&lt;Integer, Integer&gt;&gt; pq = <span class="keyword">new</span> <span class="title class_">PriorityQueue</span>&lt;&gt;(</span><br><span class="line">  (a, b) -&gt; a.getValue() - b.getValue()</span><br><span class="line">);</span><br></pre></td></tr></table></figure>
-
-<h3 id="新增元素"><a href="#新增元素" class="headerlink" title="新增元素"></a>新增元素</h3><p>add()</p>
-<h3 id="訪問開頭元素"><a href="#訪問開頭元素" class="headerlink" title="訪問開頭元素"></a>訪問開頭元素</h3><p>peek()</p>
-<h3 id="返回並刪除隊列開頭"><a href="#返回並刪除隊列開頭" class="headerlink" title="返回並刪除隊列開頭"></a>返回並刪除隊列開頭</h3><p>poll()</p>
-<h2 id="Stream"><a href="#Stream" class="headerlink" title="Stream"></a>Stream</h2><p><span class="exturl" data-url="aHR0cHM6Ly93d3cucnVub29iLmNvbS9qYXZhL2phdmE4LXN0cmVhbXMuaHRtbA==">Java 8 Stream<i class="fa fa-external-link-alt"></i></span></p>
-<h2 id="Math"><a href="#Math" class="headerlink" title="Math"></a>Math</h2><h3 id="比大小"><a href="#比大小" class="headerlink" title="比大小"></a>比大小</h3><p>Math.min(value1, value2);<br>Math.max(value1, value2);</p>
-<h3 id="絕對值"><a href="#絕對值" class="headerlink" title="絕對值"></a>絕對值</h3><p>Math.abs(value);</p>
-<h2 id="printf"><a href="#printf" class="headerlink" title="printf"></a>printf</h2><p><span class="exturl" data-url="aHR0cHM6Ly93d3cucnVub29iLmNvbS93M2Nub3RlL2phdmEtcHJpbnRmLWZvcm1hdGUtZGVtby5odG1s">Java 格式化输出 printf 用法<i class="fa fa-external-link-alt"></i></span></p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">System.out.printf();</span><br></pre></td></tr></table></figure>
-
-<h2 id="基礎型別的預設值"><a href="#基礎型別的預設值" class="headerlink" title="基礎型別的預設值"></a>基礎型別的預設值</h2><h3 id="int"><a href="#int" class="headerlink" title="int"></a>int</h3><p>0</p>
-<h2 id="三元運算子"><a href="#三元運算子" class="headerlink" title="三元運算子"></a>三元運算子</h2><figure class="highlight java"><table><tr><td class="code"><pre><span class="line">判斷式 ？ 若判斷為真執行區塊 ： 若判斷為假執行區塊</span><br></pre></td></tr></table></figure>
-
-<h2 id="結語"><a href="#結語" class="headerlink" title="結語"></a>結語</h2><p>隨著科技進步，記憶體容量大到唸不出單位了，我的腦容量卻是連有沒有 1 byte 都不清楚。</p>
-<h2 id="參考資料"><a href="#參考資料" class="headerlink" title="參考資料"></a>參考資料</h2><p><span class="exturl" data-url="aHR0cHM6Ly9wZGFpLnRlY2gv">Java 全栈知识体系<i class="fa fa-external-link-alt"></i></span></p>
-<p><span class="exturl" data-url="aHR0cHM6Ly9yaWNrYnNyLm1lZGl1bS5jb20vJUU5JTk2JTkyJUU4JTgxJThBLWFycmF5cy1hc2xpc3QtJUU3JTlBJTg0JUU1JTlEJTkxLTgzODlkM2YxZTU0NA==">閒聊「Arrays.asList()」的坑<i class="fa fa-external-link-alt"></i></span></p>
+<p>其中 <code>android.R.id.content</code> 這個 id 對跨平台框架的 android 原生操作有奇效，像是添加 android 原生畫面之類的</p>
 ]]></content>
       <categories>
-        <category>Java</category>
+        <category>Android</category>
         <category>Note</category>
       </categories>
       <tags>
-        <tag>Java</tag>
+        <tag>Android</tag>
       </tags>
   </entry>
   <entry>
@@ -887,6 +810,54 @@
       </tags>
   </entry>
   <entry>
+    <title>Hexo Blog 08：Disqus 網址遷移</title>
+    <url>/Hexo/Blog/6ceec86a/</url>
+    <content><![CDATA[<p>先前一直對網址進行調整，結果之前的 Disqus 留言都不見了，因為都綁定在舊網址上，現在確定網址後就能對留言進行搬家了。</p>
+<p>(如果你還沒給 Blog 加上留言板，請參考 <a href="/Hexo/Blog/bf635840/" title="Hexo Blog 04：NexT 主題加入留言與聊天室機制">NexT 主題加入留言與聊天室機制</a>)</p>
+<span id="more"></span>
+
+
+
+<h2 id="前往-Disqus-官網"><a href="#前往-Disqus-官網" class="headerlink" title="前往 Disqus 官網"></a>前往 Disqus 官網</h2><p><span class="exturl" data-url="aHR0cHM6Ly9kaXNxdXMuY29tLw==">Disqus 官網<i class="fa fa-external-link-alt"></i></span></p>
+<h2 id="Log-In"><a href="#Log-In" class="headerlink" title="Log In"></a>Log In</h2><p><code>Log In</code> 登入 Disqus 帳號。</p>
+<p><img data-src="https://github.com/WCW0310/blogPicture/blob/master/Hexo/Hexo-Blog-08-Disqus-URL-migration/login.png?raw=true"></p>
+<h2 id="Admin"><a href="#Admin" class="headerlink" title="Admin"></a>Admin</h2><p>點擊進入 <code>Admin</code> 功能。</p>
+<p><img data-src="https://github.com/WCW0310/blogPicture/blob/master/Hexo/Hexo-Blog-08-Disqus-URL-migration/admin.png?raw=true"></p>
+<h2 id="Moderation-TOOLS-Migration-Tools"><a href="#Moderation-TOOLS-Migration-Tools" class="headerlink" title="Moderation &gt; TOOLS&#x2F;Migration Tools"></a>Moderation &gt; TOOLS&#x2F;Migration Tools</h2><p>點擊 上方 Tab 的 Moderation，畫面更新後點擊左方 side bar 的 Migration Tools。</p>
+<p>Moderation &gt; TOOLS&#x2F;Migration Tools<br><img data-src="https://github.com/WCW0310/blogPicture/blob/master/Hexo/Hexo-Blog-08-Disqus-URL-migration/moderation.png?raw=true"></p>
+<h2 id="Please-choose-a-site"><a href="#Please-choose-a-site" class="headerlink" title="Please choose a site"></a>Please choose a site</h2><p>上一步中可能會出現 Please choose a site 的 popup，選擇你要管理留言的網站即可。</p>
+<p>Please choose a site<br><img data-src="https://github.com/WCW0310/blogPicture/blob/master/Hexo/Hexo-Blog-08-Disqus-URL-migration/chooseSite.png?raw=true"></p>
+<h2 id="Upload-a-URL-map-Start-URL-mapper"><a href="#Upload-a-URL-map-Start-URL-mapper" class="headerlink" title="Upload a URL map&#x2F;Start URL mapper"></a>Upload a URL map&#x2F;Start URL mapper</h2><p>有三種網址搬遷方式，因為我要搬遷的網址不多，所以使用 URL map。</p>
+<p>Upload a URL map&#x2F;Start URL mapper<br><img data-src="https://github.com/WCW0310/blogPicture/blob/master/Hexo/Hexo-Blog-08-Disqus-URL-migration/startURLmapper.png?raw=true"></p>
+<h2 id="上傳-CSV-檔"><a href="#上傳-CSV-檔" class="headerlink" title="上傳 CSV 檔"></a>上傳 CSV 檔</h2><p>這裡要上傳對應新舊網址的 Map，Disqus 要求使用 CSV 檔。</p>
+<ol>
+<li><p>建立副檔名為 csv 的檔案，如：url.csv</p>
+</li>
+<li><p>編輯檔案內容，格式為一行一組新舊網址配對，舊網址擺前面，中間用一逗號與一空白隔開：</p>
+</li>
+</ol>
+<figure class="highlight plaintext"><figcaption><span>url.csv</span></figcaption><table><tr><td class="code"><pre><span class="line">舊網址, 新網址</span><br><span class="line">http://example.com/old-path/old/posta.html, http://example.com/new-path/new/posta.html</span><br><span class="line">http://example.com/old-path/old/postb.html, http://example.com/new-path/new/postb.html</span><br></pre></td></tr></table></figure>
+
+<ol start="3">
+<li>創建好對應的 map 後，點擊 <code>選擇檔案</code>，選擇剛剛建立的 csv 檔上傳，確認後點擊 Next Step</li>
+</ol>
+<p>上傳 CSV 檔<br><img data-src="https://github.com/WCW0310/blogPicture/blob/master/Hexo/Hexo-Blog-08-Disqus-URL-migration/nextStep.png?raw=true"></p>
+<h2 id="Submit-Migration"><a href="#Submit-Migration" class="headerlink" title="Submit Migration"></a>Submit Migration</h2><p>Disqus 會列出所有要遷移的網址組合，確認後點擊 <code>Submit Migration</code>。</p>
+<p>Submit Migration<br><img data-src="https://github.com/WCW0310/blogPicture/blob/master/Hexo/Hexo-Blog-08-Disqus-URL-migration/submit.png?raw=true"></p>
+<h2 id="Migration-confirmed"><a href="#Migration-confirmed" class="headerlink" title="Migration confirmed"></a>Migration confirmed</h2><p>網址遷移完成，確認畫面說可能要等 24 小時，不過我完成後馬上去 Blog 看，就看到留言出現了，可能跟搬遷網址數量有關。</p>
+<p>Migration confirmed<br><img data-src="https://github.com/WCW0310/blogPicture/blob/master/Hexo/Hexo-Blog-08-Disqus-URL-migration/confirm.png?raw=true"></p>
+<h2 id="參考資料"><a href="#參考資料" class="headerlink" title="參考資料"></a>參考資料</h2><p><span class="exturl" data-url="aHR0cHM6Ly9wcmluc3NzLmdpdGh1Yi5pby9kaXNxdXMtbWlncmF0aW9uLXRvb2xzLXVybC1tYXBwZXIv">使用 URL Mapper 迁移整理 Disqus 评论<i class="fa fa-external-link-alt"></i></span></p>
+]]></content>
+      <categories>
+        <category>Hexo</category>
+        <category>Blog</category>
+      </categories>
+      <tags>
+        <tag>Hexo</tag>
+        <tag>Disqus</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Hexo Debug 01：Hexo 文章 title 含特殊或功能字元引發錯誤</title>
     <url>/Hexo/Debug/9eeddd48/</url>
     <content><![CDATA[<p>想要在文章標題開頭用些分類性標記，第一時間想到的是用 <code>[]</code> 包裹關鍵字，沒想到陸續發生了以下兩種錯誤，還好都還算是能繞開，不影響其他使用體驗。</p>
@@ -952,54 +923,6 @@
       </categories>
       <tags>
         <tag>Hexo</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Hexo Blog 08：Disqus 網址遷移</title>
-    <url>/Hexo/Blog/6ceec86a/</url>
-    <content><![CDATA[<p>先前一直對網址進行調整，結果之前的 Disqus 留言都不見了，因為都綁定在舊網址上，現在確定網址後就能對留言進行搬家了。</p>
-<p>(如果你還沒給 Blog 加上留言板，請參考 <a href="/Hexo/Blog/bf635840/" title="Hexo Blog 04：NexT 主題加入留言與聊天室機制">NexT 主題加入留言與聊天室機制</a>)</p>
-<span id="more"></span>
-
-
-
-<h2 id="前往-Disqus-官網"><a href="#前往-Disqus-官網" class="headerlink" title="前往 Disqus 官網"></a>前往 Disqus 官網</h2><p><span class="exturl" data-url="aHR0cHM6Ly9kaXNxdXMuY29tLw==">Disqus 官網<i class="fa fa-external-link-alt"></i></span></p>
-<h2 id="Log-In"><a href="#Log-In" class="headerlink" title="Log In"></a>Log In</h2><p><code>Log In</code> 登入 Disqus 帳號。</p>
-<p><img data-src="https://github.com/WCW0310/blogPicture/blob/master/Hexo/Hexo-Blog-08-Disqus-URL-migration/login.png?raw=true"></p>
-<h2 id="Admin"><a href="#Admin" class="headerlink" title="Admin"></a>Admin</h2><p>點擊進入 <code>Admin</code> 功能。</p>
-<p><img data-src="https://github.com/WCW0310/blogPicture/blob/master/Hexo/Hexo-Blog-08-Disqus-URL-migration/admin.png?raw=true"></p>
-<h2 id="Moderation-TOOLS-Migration-Tools"><a href="#Moderation-TOOLS-Migration-Tools" class="headerlink" title="Moderation &gt; TOOLS&#x2F;Migration Tools"></a>Moderation &gt; TOOLS&#x2F;Migration Tools</h2><p>點擊 上方 Tab 的 Moderation，畫面更新後點擊左方 side bar 的 Migration Tools。</p>
-<p>Moderation &gt; TOOLS&#x2F;Migration Tools<br><img data-src="https://github.com/WCW0310/blogPicture/blob/master/Hexo/Hexo-Blog-08-Disqus-URL-migration/moderation.png?raw=true"></p>
-<h2 id="Please-choose-a-site"><a href="#Please-choose-a-site" class="headerlink" title="Please choose a site"></a>Please choose a site</h2><p>上一步中可能會出現 Please choose a site 的 popup，選擇你要管理留言的網站即可。</p>
-<p>Please choose a site<br><img data-src="https://github.com/WCW0310/blogPicture/blob/master/Hexo/Hexo-Blog-08-Disqus-URL-migration/chooseSite.png?raw=true"></p>
-<h2 id="Upload-a-URL-map-Start-URL-mapper"><a href="#Upload-a-URL-map-Start-URL-mapper" class="headerlink" title="Upload a URL map&#x2F;Start URL mapper"></a>Upload a URL map&#x2F;Start URL mapper</h2><p>有三種網址搬遷方式，因為我要搬遷的網址不多，所以使用 URL map。</p>
-<p>Upload a URL map&#x2F;Start URL mapper<br><img data-src="https://github.com/WCW0310/blogPicture/blob/master/Hexo/Hexo-Blog-08-Disqus-URL-migration/startURLmapper.png?raw=true"></p>
-<h2 id="上傳-CSV-檔"><a href="#上傳-CSV-檔" class="headerlink" title="上傳 CSV 檔"></a>上傳 CSV 檔</h2><p>這裡要上傳對應新舊網址的 Map，Disqus 要求使用 CSV 檔。</p>
-<ol>
-<li><p>建立副檔名為 csv 的檔案，如：url.csv</p>
-</li>
-<li><p>編輯檔案內容，格式為一行一組新舊網址配對，舊網址擺前面，中間用一逗號與一空白隔開：</p>
-</li>
-</ol>
-<figure class="highlight plaintext"><figcaption><span>url.csv</span></figcaption><table><tr><td class="code"><pre><span class="line">舊網址, 新網址</span><br><span class="line">http://example.com/old-path/old/posta.html, http://example.com/new-path/new/posta.html</span><br><span class="line">http://example.com/old-path/old/postb.html, http://example.com/new-path/new/postb.html</span><br></pre></td></tr></table></figure>
-
-<ol start="3">
-<li>創建好對應的 map 後，點擊 <code>選擇檔案</code>，選擇剛剛建立的 csv 檔上傳，確認後點擊 Next Step</li>
-</ol>
-<p>上傳 CSV 檔<br><img data-src="https://github.com/WCW0310/blogPicture/blob/master/Hexo/Hexo-Blog-08-Disqus-URL-migration/nextStep.png?raw=true"></p>
-<h2 id="Submit-Migration"><a href="#Submit-Migration" class="headerlink" title="Submit Migration"></a>Submit Migration</h2><p>Disqus 會列出所有要遷移的網址組合，確認後點擊 <code>Submit Migration</code>。</p>
-<p>Submit Migration<br><img data-src="https://github.com/WCW0310/blogPicture/blob/master/Hexo/Hexo-Blog-08-Disqus-URL-migration/submit.png?raw=true"></p>
-<h2 id="Migration-confirmed"><a href="#Migration-confirmed" class="headerlink" title="Migration confirmed"></a>Migration confirmed</h2><p>網址遷移完成，確認畫面說可能要等 24 小時，不過我完成後馬上去 Blog 看，就看到留言出現了，可能跟搬遷網址數量有關。</p>
-<p>Migration confirmed<br><img data-src="https://github.com/WCW0310/blogPicture/blob/master/Hexo/Hexo-Blog-08-Disqus-URL-migration/confirm.png?raw=true"></p>
-<h2 id="參考資料"><a href="#參考資料" class="headerlink" title="參考資料"></a>參考資料</h2><p><span class="exturl" data-url="aHR0cHM6Ly9wcmluc3NzLmdpdGh1Yi5pby9kaXNxdXMtbWlncmF0aW9uLXRvb2xzLXVybC1tYXBwZXIv">使用 URL Mapper 迁移整理 Disqus 评论<i class="fa fa-external-link-alt"></i></span></p>
-]]></content>
-      <categories>
-        <category>Hexo</category>
-        <category>Blog</category>
-      </categories>
-      <tags>
-        <tag>Hexo</tag>
-        <tag>Disqus</tag>
       </tags>
   </entry>
   <entry>
@@ -1076,6 +999,41 @@
       </tags>
   </entry>
   <entry>
+    <title>Hexo Debug 04：Hexo 避免機密資訊上傳 GitHub</title>
+    <url>/Hexo/Debug/ba57c00/</url>
+    <content><![CDATA[<p>先前在 <a href="/Hexo/Blog/a4c4ed5f/" title="Hexo Blog 03：繼續探索 NexT">繼續探索 NexT</a> 我將存有 Firestore apiKey 的 <code>_config.next.yml</code> 檔案推到 GitHub 儲存庫中，結果沒過多久就收到陌生的警告 Email，提醒我有機密洩漏，霎那間令我知曉網路上的爬蟲有多兇猛，還好這次來的是正義的爬蟲 😰</p>
+<p>既然知道可怕了，就趕快來解除危機吧！</p>
+<span id="more"></span>
+
+
+
+<p>收到的警告信 (正義的爬蟲叫做 GitGuardian)：<br><img data-src="https://github.com/WCW0310/blogPicture/blob/master/Hexo/Hexo-Debug-04-Hexo-avoid-confidential-leak-on-GitHub/GitGuardian.png?raw=true"></p>
+<h2 id="罪魁禍首"><a href="#罪魁禍首" class="headerlink" title="罪魁禍首"></a>罪魁禍首</h2><p>當初照 <span class="exturl" data-url="aHR0cHM6Ly9oZXhvLmlvL3poLXR3L2RvY3MvZ2l0aHViLXBhZ2Vz">Hexo 文檔<i class="fa fa-external-link-alt"></i></span> 的方式部署 Blog 至 GitHub Pages，並沒有提醒要注意機密資訊，而 GitHub Pages 強迫儲存庫的能見度 (visibility) 設為 Public，導致只要有包含機密資訊就一定會洩漏。</p>
+<h2 id="期望"><a href="#期望" class="headerlink" title="期望"></a>期望</h2><p>程式碼中的機密資訊依然可以使用 GitHub 保存，但又不要輕易外流。</p>
+<h2 id="想法"><a href="#想法" class="headerlink" title="想法"></a>想法</h2><ul>
+<li><p>在 <code>.gitignore</code> 中加入 <code>_config.next.yml</code>：<br>這樣雖然可以避免洩漏資訊，但需要額外管理檔案，有違懶人的宗旨，只好否決。</p>
+</li>
+<li><p>讓 GitHub Pages 變為 Private：<br>這樣會直接讓 Blog 無法部屬，但可以嘗試換一種方式實現。</p>
+</li>
+</ul>
+<h2 id="解決方法"><a href="#解決方法" class="headerlink" title="解決方法"></a>解決方法</h2><p>就是很單純的在 GitHub 多開一個 Private 的儲存庫專門拿來放 Blog 專案。</p>
+<p>GitHub Pages 儲存庫就讓它專門放 Hexo 生成的靜態網頁檔案，用兩個儲存庫來各司其職。</p>
+<p>這兩件工作照 <span class="exturl" data-url="aHR0cHM6Ly9oZXhvLmlvL3poLXR3L2RvY3MvZ2l0aHViLXBhZ2Vz">Hexo 文檔<i class="fa fa-external-link-alt"></i></span> 的做法是分成兩個 Branch 來達成，main 用來存放 Blog 專案，gh-pages 用來存放靜態網頁檔案。</p>
+<p>雖然使用了兩個儲存庫，但消耗的精力其實是相同的，因為部屬 Blog 網站時我們都是用 <code>hexo deploy</code> 指令呼叫套件完成工作，套件會自動幫我們把靜態網頁檔案推至 GitHub Pages 儲存庫，我們只需要創建儲存庫跟設定好部署資訊即可。</p>
+<p>多開的 Private 儲存庫就會變成我們平常更新文章與 Hexo 設定的工作儲存庫。</p>
+<p>我把實作方法更新至 <a href="/Hexo/Blog/dceed03/" title="Hexo Blog 01：使用 Hexo 迅速在 GitHub Pages 展開 Blog 旅程">使用 Hexo 迅速在 GitHub Pages 展開 Blog 旅程</a> 跟著步驟實作就好，讓大家少走彎路。</p>
+<h2 id="結語"><a href="#結語" class="headerlink" title="結語"></a>結語</h2><p>雖然說將敏感內容藏進 Private 的儲存庫，但很多敏感資訊其實在開啟 Blog 網站後按 F12 就能直接找到 😂</p>
+]]></content>
+      <categories>
+        <category>Hexo</category>
+        <category>Debug</category>
+      </categories>
+      <tags>
+        <tag>Hexo</tag>
+        <tag>GitHub</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Hexo Note 01：常用 Hexo 指令</title>
     <url>/Hexo/Note/e88d5645/</url>
     <content><![CDATA[<p>單純記錄我真的有用到的 Hexo 指令，並無其他延伸用法，真要查指令 <span class="exturl" data-url="aHR0cHM6Ly9oZXhvLmlvL3poLXR3L2RvY3Mv">官方文件<i class="fa fa-external-link-alt"></i></span> 永遠是最好的選擇，不過還是整理了些使用上遇到的問題。</p>
@@ -1129,80 +1087,29 @@
       </tags>
   </entry>
   <entry>
-    <title>Hexo Debug 04：Hexo 避免機密資訊上傳 GitHub</title>
-    <url>/Hexo/Debug/ba57c00/</url>
-    <content><![CDATA[<p>先前在 <a href="/Hexo/Blog/a4c4ed5f/" title="Hexo Blog 03：繼續探索 NexT">繼續探索 NexT</a> 我將存有 Firestore apiKey 的 <code>_config.next.yml</code> 檔案推到 GitHub 儲存庫中，結果沒過多久就收到陌生的警告 Email，提醒我有機密洩漏，霎那間令我知曉網路上的爬蟲有多兇猛，還好這次來的是正義的爬蟲 😰</p>
-<p>既然知道可怕了，就趕快來解除危機吧！</p>
+    <title>Hexo Note 02：常用 Hexo 標籤外掛（Tag Plugins）</title>
+    <url>/Hexo/Note/c4b9fa9c/</url>
+    <content><![CDATA[<p>單純記錄我常用到的 Hexo 標籤外掛，並無其他延伸用法，真要查用法 <span class="exturl" data-url="aHR0cHM6Ly9oZXhvLmlvL3poLXR3L2RvY3MvdGFnLXBsdWdpbnM=">官方文件<i class="fa fa-external-link-alt"></i></span> 永遠是最好的選擇。</p>
 <span id="more"></span>
 
+<h2 id="文章連結"><a href="#文章連結" class="headerlink" title="文章連結"></a>文章連結</h2><figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">&#123;% post<span class="emphasis">_link source/_</span>posts內文章路徑不含副檔名 連結顯示文字 %&#125;</span><br></pre></td></tr></table></figure>
 
+<h2 id="Tabs"><a href="#Tabs" class="headerlink" title="Tabs"></a>Tabs</h2><p>這就不是 Hexo 原生用法了，不過主題通常都會擴增此功能，像 <span class="exturl" data-url="aHR0cHM6Ly90aGVtZS1uZXh0LmpzLm9yZy9kb2NzL3RhZy1wbHVnaW5zL3RhYnM=">NexT<i class="fa fa-external-link-alt"></i></span>。</p>
+<p>他在主題中的設定預設就是啟用了：</p>
+<figure class="highlight yaml"><figcaption><span>_config.next.yml</span></figcaption><table><tr><td class="code"><pre><span class="line"><span class="attr">tabs:</span></span><br><span class="line">  <span class="comment"># Make the nav bar of tabs with long content stick to the top.</span></span><br><span class="line">  <span class="attr">sticky:</span> <span class="literal">false</span></span><br><span class="line">  <span class="attr">transition:</span></span><br><span class="line">    <span class="attr">tabs:</span> <span class="literal">false</span></span><br><span class="line">    <span class="attr">labels:</span> <span class="literal">true</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
 
-<p>收到的警告信 (正義的爬蟲叫做 GitGuardian)：<br><img data-src="https://github.com/WCW0310/blogPicture/blob/master/Hexo/Hexo-Debug-04-Hexo-avoid-confidential-leak-on-GitHub/GitGuardian.png?raw=true"></p>
-<h2 id="罪魁禍首"><a href="#罪魁禍首" class="headerlink" title="罪魁禍首"></a>罪魁禍首</h2><p>當初照 <span class="exturl" data-url="aHR0cHM6Ly9oZXhvLmlvL3poLXR3L2RvY3MvZ2l0aHViLXBhZ2Vz">Hexo 文檔<i class="fa fa-external-link-alt"></i></span> 的方式部署 Blog 至 GitHub Pages，並沒有提醒要注意機密資訊，而 GitHub Pages 強迫儲存庫的能見度 (visibility) 設為 Public，導致只要有包含機密資訊就一定會洩漏。</p>
-<h2 id="期望"><a href="#期望" class="headerlink" title="期望"></a>期望</h2><p>程式碼中的機密資訊依然可以使用 GitHub 保存，但又不要輕易外流。</p>
-<h2 id="想法"><a href="#想法" class="headerlink" title="想法"></a>想法</h2><ul>
-<li><p>在 <code>.gitignore</code> 中加入 <code>_config.next.yml</code>：<br>這樣雖然可以避免洩漏資訊，但需要額外管理檔案，有違懶人的宗旨，只好否決。</p>
-</li>
-<li><p>讓 GitHub Pages 變為 Private：<br>這樣會直接讓 Blog 無法部屬，但可以嘗試換一種方式實現。</p>
-</li>
-</ul>
-<h2 id="解決方法"><a href="#解決方法" class="headerlink" title="解決方法"></a>解決方法</h2><p>就是很單純的在 GitHub 多開一個 Private 的儲存庫專門拿來放 Blog 專案。</p>
-<p>GitHub Pages 儲存庫就讓它專門放 Hexo 生成的靜態網頁檔案，用兩個儲存庫來各司其職。</p>
-<p>這兩件工作照 <span class="exturl" data-url="aHR0cHM6Ly9oZXhvLmlvL3poLXR3L2RvY3MvZ2l0aHViLXBhZ2Vz">Hexo 文檔<i class="fa fa-external-link-alt"></i></span> 的做法是分成兩個 Branch 來達成，main 用來存放 Blog 專案，gh-pages 用來存放靜態網頁檔案。</p>
-<p>雖然使用了兩個儲存庫，但消耗的精力其實是相同的，因為部屬 Blog 網站時我們都是用 <code>hexo deploy</code> 指令呼叫套件完成工作，套件會自動幫我們把靜態網頁檔案推至 GitHub Pages 儲存庫，我們只需要創建儲存庫跟設定好部署資訊即可。</p>
-<p>多開的 Private 儲存庫就會變成我們平常更新文章與 Hexo 設定的工作儲存庫。</p>
-<p>我把實作方法更新至 <a href="/Hexo/Blog/dceed03/" title="Hexo Blog 01：使用 Hexo 迅速在 GitHub Pages 展開 Blog 旅程">使用 Hexo 迅速在 GitHub Pages 展開 Blog 旅程</a> 跟著步驟實作就好，讓大家少走彎路。</p>
-<h2 id="結語"><a href="#結語" class="headerlink" title="結語"></a>結語</h2><p>雖然說將敏感內容藏進 Private 的儲存庫，但很多敏感資訊其實在開啟 Blog 網站後按 F12 就能直接找到 😂</p>
+<p>語法：</p>
+<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">&#123;% tabs First unique name %&#125;</span><br><span class="line">&lt;!-- tab --&gt;</span><br><span class="line"><span class="strong">**This is Tab 1.**</span></span><br><span class="line">&lt;!-- endtab --&gt;</span><br><span class="line"></span><br><span class="line">&lt;!-- tab --&gt;</span><br><span class="line"><span class="strong">**This is Tab 2.**</span></span><br><span class="line">&lt;!-- endtab --&gt;</span><br><span class="line"></span><br><span class="line">&lt;!-- tab --&gt;</span><br><span class="line"><span class="strong">**This is Tab 3.**</span></span><br><span class="line">&lt;!-- endtab --&gt;</span><br><span class="line">&#123;% endtabs %&#125;</span><br></pre></td></tr></table></figure>
+
+<p>效果：</p>
+<div class="tabs" id="first-unique-name"><ul class="nav-tabs"><li class="tab active"><a href="#first-unique-name-1">First unique name 1</a></li><li class="tab"><a href="#first-unique-name-2">First unique name 2</a></li><li class="tab"><a href="#first-unique-name-3">First unique name 3</a></li></ul><div class="tab-content"><div class="tab-pane active" id="first-unique-name-1"><p><strong>This is Tab 1.</strong></p></div><div class="tab-pane" id="first-unique-name-2"><p><strong>This is Tab 2.</strong></p></div><div class="tab-pane" id="first-unique-name-3"><p><strong>This is Tab 3.</strong></p></div></div></div>
 ]]></content>
       <categories>
         <category>Hexo</category>
-        <category>Debug</category>
-      </categories>
-      <tags>
-        <tag>Hexo</tag>
-        <tag>GitHub</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Mac Note：Mac 常用技巧</title>
-    <url>/Mac/Note/91c8942c/</url>
-    <content><![CDATA[<p>列出我日常使用 mac 時遇到的一些障礙。</p>
-<span id="more"></span>
-
-<h2 id="Mac-鍵盤快速鍵"><a href="#Mac-鍵盤快速鍵" class="headerlink" title="Mac 鍵盤快速鍵"></a>Mac 鍵盤快速鍵</h2><p><span class="exturl" data-url="aHR0cHM6Ly9zdXBwb3J0LmFwcGxlLmNvbS96aC10dy9IVDIwMTIzNg==">Mac 鍵盤快速鍵<i class="fa fa-external-link-alt"></i></span><br><span class="exturl" data-url="aHR0cHM6Ly9hcHAueWlwZWUuY2MvODk0NzgvJUUzJTgwJTkwbWFjLW9zLSVFNiU5NSU5OSVFNSVBRCVCOCVFMyU4MCU5MTMzLSVFNSU4MCU4Qi1tYWMtJUU5JThEJUI1JUU3JTlCJUE0JUU4JUE2JTgxJUU1JUFEJUI4JUU2JTlDJTgzJUU3JTlBJTg0JUU1JUJGJUFCJUU5JTgwJTlGJUU5JThEJUI1JUVGJUJDJTgxJUVGJUJDJTg4JUU2JTlCJUI0JUU2JTk2JUIwJUVGJUJDJTg5Lw==">【Mac OS 教學】33 個 Mac 鍵盤要學會的快速鍵！（更新）<i class="fa fa-external-link-alt"></i></span><br>直接進設定看最準</p>
-<h3 id="切換輸入法"><a href="#切換輸入法" class="headerlink" title="切換輸入法"></a>切換輸入法</h3><p>ctrl + 空白鍵<br>caps</p>
-<h3 id="重做"><a href="#重做" class="headerlink" title="重做"></a>重做</h3><p>command + shift + Z<br>不太確定什麼情況可以觸發</p>
-<h3 id="Mission-Control"><a href="#Mission-Control" class="headerlink" title="Mission Control"></a>Mission Control</h3><p>ctrl + 上鍵</p>
-<h3 id="顯示桌面"><a href="#顯示桌面" class="headerlink" title="顯示桌面"></a>顯示桌面</h3><p>fn + F11<br>觸控板大拇指與三隻手指外展</p>
-<p>再做一次可以回到原本的視窗<br>視窗全螢幕下無效</p>
-<h3 id="切換桌面"><a href="#切換桌面" class="headerlink" title="切換桌面"></a>切換桌面</h3><p>ctrl + 右鍵<br>ctrl + 左鍵</p>
-<h3 id="切換開啟的應用程式"><a href="#切換開啟的應用程式" class="headerlink" title="切換開啟的應用程式"></a>切換開啟的應用程式</h3><p>command + tab<br>command + shift + tab</p>
-<h3 id="調整顯示大小"><a href="#調整顯示大小" class="headerlink" title="調整顯示大小"></a>調整顯示大小</h3><p>放大：command + &#x3D;<br>縮小：command + -<br>預設：command + 0</p>
-<h3 id="截圖"><a href="#截圖" class="headerlink" title="截圖"></a>截圖</h3><p>擷取全螢幕畫面並儲存：command + shift + 3<br>自行選取截圖範圍並儲存：command + shift + 4<br>擷取特定視窗並儲存：command + shift + 4 + 空白鍵<br>截圖與錄影選項：command + shift + 5</p>
-<h3 id="瀏覽器"><a href="#瀏覽器" class="headerlink" title="瀏覽器"></a>瀏覽器</h3><p>重新整理：command + R<br>捲到最上方：command + 上鍵<br>捲到最下方：command + 下鍵<br>開新視窗：command + N<br>開新分頁：command + T<br>重新開啟一個關閉的分頁：command + shift + T<br>關閉分頁：command + W</p>
-<h3 id="關閉當前程式"><a href="#關閉當前程式" class="headerlink" title="關閉當前程式"></a>關閉當前程式</h3><p>command + Q</p>
-<h2 id="顯示隱藏檔案"><a href="#顯示隱藏檔案" class="headerlink" title="顯示隱藏檔案"></a>顯示隱藏檔案</h2><p><span class="exturl" data-url="aHR0cHM6Ly93d3cuZHJidWhvLmNvbS96aC10dy9ob3ctdG8vc2hvdy1oaWRkZW4tZmlsZXMtbWFj">【2023】如何在Mac 顯示隱藏檔案和資料夾 - BuhoCleaner<i class="fa fa-external-link-alt"></i></span></p>
-<h3 id="Finder-中使用快捷鍵開啟或關閉"><a href="#Finder-中使用快捷鍵開啟或關閉" class="headerlink" title="Finder 中使用快捷鍵開啟或關閉"></a>Finder 中使用快捷鍵開啟或關閉</h3><p>Command + Shift + .</p>
-<h3 id="使用-終端機-永久開啟或關閉"><a href="#使用-終端機-永久開啟或關閉" class="headerlink" title="使用 終端機 永久開啟或關閉"></a>使用 <code>終端機</code> 永久開啟或關閉</h3><p>開啟</p>
-<figure class="highlight sh"><figcaption><span>command line tool</span></figcaption><table><tr><td class="code"><pre><span class="line">defaults write com.apple.finder AppleShowAllFiles TRUE</span><br><span class="line">killall Finder</span><br></pre></td></tr></table></figure>
-
-<p>要關閉就把上面指令 TRUE 換成 FALSE。</p>
-<h2 id="更改檔案預設開啟程式"><a href="#更改檔案預設開啟程式" class="headerlink" title="更改檔案預設開啟程式"></a>更改檔案預設開啟程式</h2><p>滑鼠右鍵 &gt; 取得資訊 &gt; 打開檔案的應用程式 &gt; 全部更改．．．</p>
-<h2 id="重新整理-launchpad"><a href="#重新整理-launchpad" class="headerlink" title="重新整理 launchpad"></a>重新整理 launchpad</h2><p>常常發生 launchpad 的圖標錯誤，這時只能使用此指令重整，會失去所有排序與分類設定。</p>
-<figure class="highlight sh"><figcaption><span>command line tool</span></figcaption><table><tr><td class="code"><pre><span class="line">defaults write com.apple.dock ResetLaunchPad -bool <span class="literal">true</span>; killall Dock</span><br></pre></td></tr></table></figure>
-
-<h2 id="Raycast"><a href="#Raycast" class="headerlink" title="Raycast"></a>Raycast</h2><p><span class="exturl" data-url="aHR0cHM6Ly93d3cucmF5Y2FzdC5jb20v">Raycast<i class="fa fa-external-link-alt"></i></span><br><span class="exturl" data-url="aHR0cHM6Ly9tYW51YWwucmF5Y2FzdC5jb20v">Raycast Manual<i class="fa fa-external-link-alt"></i></span></p>
-<p>Mac 輔助工具，可以取代 Spotlight。<br>我目前只用到視窗置左或置右跟剪貼板歷史的功能。</p>
-<h2 id="Fig"><a href="#Fig" class="headerlink" title="Fig"></a>Fig</h2><p><span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL3dpdGhmaWcvZmln">Fig<i class="fa fa-external-link-alt"></i></span></p>
-<p>主要是用他的 command line 提詞功能。</p>
-<h2 id="Chrome-Toggle-Show-Toolbar-in-Full-Screen"><a href="#Chrome-Toggle-Show-Toolbar-in-Full-Screen" class="headerlink" title="Chrome Toggle Show Toolbar in Full Screen"></a>Chrome Toggle Show Toolbar in Full Screen</h2><p>上方選單：View -&gt; Always Show Toolbar in Full Screen<br>快捷鍵：shift command F</p>
-]]></content>
-      <categories>
-        <category>Mac</category>
         <category>Note</category>
       </categories>
       <tags>
-        <tag>Mac</tag>
+        <tag>Hexo</tag>
       </tags>
   </entry>
   <entry>
@@ -1235,6 +1142,83 @@
       <tags>
         <tag>Hexo</tag>
         <tag>NexT</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Java Note 01：常忘 Java 語法</title>
+    <url>/Java/Note/76cc3fdb/</url>
+    <content><![CDATA[<p>為了麵包不得已開始刷題人生，但被 IDE 寵壞後，默寫時連迴圈都寫不出來了，趕快來複習一下。</p>
+<span id="more"></span>
+
+<h2 id="for-loop"><a href="#for-loop" class="headerlink" title="for loop"></a>for loop</h2><figure class="highlight java"><figcaption><span>基本</span></figcaption><table><tr><td class="code"><pre><span class="line"><span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">0</span>; i &lt; <span class="number">5</span>; i++) &#123;</span><br><span class="line">  System.out.println(i);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight java"><figcaption><span>迭代</span></figcaption><table><tr><td class="code"><pre><span class="line"><span class="keyword">for</span> (<span class="type">int</span> i : array) &#123;</span><br><span class="line">  System.out.println(i);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="String"><a href="#String" class="headerlink" title="String"></a>String</h2><p><span class="exturl" data-url="aHR0cHM6Ly93d3cucnVub29iLmNvbS9qYXZhL2phdmEtc3RyaW5nLmh0bWw=">Java String 类<i class="fa fa-external-link-alt"></i></span></p>
+<h3 id="返回字串長度"><a href="#返回字串長度" class="headerlink" title="返回字串長度"></a>返回字串長度</h3><p>int length();</p>
+<h3 id="判斷字串值是否相同"><a href="#判斷字串值是否相同" class="headerlink" title="判斷字串值是否相同"></a>判斷字串值是否相同</h3><p>boolean equals(String value);</p>
+<h3 id="返回指定索引的-char"><a href="#返回指定索引的-char" class="headerlink" title="返回指定索引的 char"></a>返回指定索引的 char</h3><p>char charAt(int index);</p>
+<h3 id="返回字串轉換成的-char"><a href="#返回字串轉換成的-char" class="headerlink" title="返回字串轉換成的 char[]"></a>返回字串轉換成的 char[]</h3><p>char[] toCharArray();</p>
+<h3 id="返回子字串（指定頭尾）"><a href="#返回子字串（指定頭尾）" class="headerlink" title="返回子字串（指定頭尾）"></a>返回子字串（指定頭尾）</h3><p>String substring(int beginIndex, int endIndex);<br>注意：包含頭，不包含尾。</p>
+<h3 id="返回子字串（指定頭）"><a href="#返回子字串（指定頭）" class="headerlink" title="返回子字串（指定頭）"></a>返回子字串（指定頭）</h3><p>String substring(int beginIndex);</p>
+<h3 id="判斷是否包含指定字符序列"><a href="#判斷是否包含指定字符序列" class="headerlink" title="判斷是否包含指定字符序列"></a>判斷是否包含指定字符序列</h3><p>boolean contains(CharSequence chars);</p>
+<h2 id="Character"><a href="#Character" class="headerlink" title="Character"></a>Character</h2><h3 id="確定是否為字母或數字"><a href="#確定是否為字母或數字" class="headerlink" title="確定是否為字母或數字"></a>確定是否為字母或數字</h3><p>Character.isLetterOrDigit(char)</p>
+<h2 id="Array"><a href="#Array" class="headerlink" title="Array"></a>Array</h2><h3 id="建立新-Array-方法"><a href="#建立新-Array-方法" class="headerlink" title="建立新 Array 方法"></a>建立新 Array 方法</h3><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="type">int</span>[] intArray = <span class="keyword">new</span> <span class="title class_">int</span>[<span class="number">3</span>]; <span class="comment">// 長度為三，空的 Array</span></span><br><span class="line"><span class="type">int</span>[] intArray2 = &#123;<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>&#125;; <span class="comment">// 自定義內容的 Array，算是 intArray3 方法的語法糖</span></span><br><span class="line"><span class="type">int</span>[] intArray3 = <span class="keyword">new</span> <span class="title class_">int</span>[]&#123;<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>&#125;; <span class="comment">// 與 intArray2 一樣，不過在前面沒有表達式的型別宣告時只能這樣用，不然會出 illegal start of expression 錯</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="ArrayList"><a href="#ArrayList" class="headerlink" title="ArrayList"></a>ArrayList</h2><p><span class="exturl" data-url="aHR0cHM6Ly93d3cucnVub29iLmNvbS9qYXZhL2phdmEtYXJyYXlsaXN0Lmh0bWw=">Java ArrayList<i class="fa fa-external-link-alt"></i></span></p>
+<h2 id="Arrays"><a href="#Arrays" class="headerlink" title="Arrays"></a>Arrays</h2><p>Arrays 是處理各式 Array 的工具類。</p>
+<h3 id="排序傳入的-array"><a href="#排序傳入的-array" class="headerlink" title="排序傳入的 array"></a>排序傳入的 array</h3><p>Arrays.sort(array);</p>
+<h3 id="比較兩-arrays-值是否相同"><a href="#比較兩-arrays-值是否相同" class="headerlink" title="比較兩 arrays 值是否相同"></a>比較兩 arrays 值是否相同</h3><p>Arrays.equals(array1, array2);</p>
+<h3 id="生成裝有-values-的-List"><a href="#生成裝有-values-的-List" class="headerlink" title="生成裝有 values 的 List"></a>生成裝有 values 的 List</h3><p>Arrays.asList(value1, value2, …);<br>返回的 List 不適合拿來操作，通常是用來快速建立指定元素的 ArrayList 或 HashSet 之類的類別。</p>
+<h2 id="Collections"><a href="#Collections" class="headerlink" title="Collections"></a>Collections</h2><h3 id="排序"><a href="#排序" class="headerlink" title="排序"></a>排序</h3><p>Collections.sort(list);<br>Arrays 的 sort 不能排序 ArrayList，所以要用這個。</p>
+<p>Collections.reverseOrder()<br>在建構 PriorityQueue 之類的 class 時可以用此指定反向順序。</p>
+<h2 id="HashMap"><a href="#HashMap" class="headerlink" title="HashMap"></a>HashMap</h2><p><span class="exturl" data-url="aHR0cHM6Ly93d3cucnVub29iLmNvbS9qYXZhL2phdmEtaGFzaG1hcC5odG1s">Java HashMap<i class="fa fa-external-link-alt"></i></span></p>
+<p>需要注意基本類別要換成封裝類別。</p>
+<h3 id="獲取指定-key-對應的-value"><a href="#獲取指定-key-對應的-value" class="headerlink" title="獲取指定 key 對應的 value"></a>獲取指定 key 對應的 value</h3><p>hashmap.get(key);</p>
+<h3 id="獲取指定-key-對應的-value，若找不到-key-就返回-default"><a href="#獲取指定-key-對應的-value，若找不到-key-就返回-default" class="headerlink" title="獲取指定 key 對應的 value，若找不到 key 就返回 default"></a>獲取指定 key 對應的 value，若找不到 key 就返回 default</h3><p>hashmap.getOrDefault(key, default);</p>
+<h3 id="添加鍵值對"><a href="#添加鍵值對" class="headerlink" title="添加鍵值對"></a>添加鍵值對</h3><p>hashmap.put(key, value);</p>
+<h3 id="檢查是否存在指定-key-對應的映射關係"><a href="#檢查是否存在指定-key-對應的映射關係" class="headerlink" title="檢查是否存在指定 key 對應的映射關係"></a>檢查是否存在指定 key 對應的映射關係</h3><p>hashmap.containsKey(key);</p>
+<h3 id="檢查是否存在指定-value-對應的映射關係"><a href="#檢查是否存在指定-value-對應的映射關係" class="headerlink" title="檢查是否存在指定 value 對應的映射關係"></a>檢查是否存在指定 value 對應的映射關係</h3><p>hashmap.containsValue(value);</p>
+<h3 id="刪除-key-對應的鍵值對"><a href="#刪除-key-對應的鍵值對" class="headerlink" title="刪除 key 對應的鍵值對"></a>刪除 key 對應的鍵值對</h3><p>hashmap.remove(key);</p>
+<h3 id="返回-hashmap-中所有-key-組成的-set"><a href="#返回-hashmap-中所有-key-組成的-set" class="headerlink" title="返回 hashmap 中所有 key 組成的 set"></a>返回 hashmap 中所有 key 組成的 set</h3><p>hashmap.keySet();</p>
+<h3 id="返回-hashmap-中所有-value-組成的-set"><a href="#返回-hashmap-中所有-value-組成的-set" class="headerlink" title="返回 hashmap 中所有 value 組成的 set"></a>返回 hashmap 中所有 value 組成的 set</h3><p>hashmap.values();</p>
+<h3 id="返回-hashmap-中所有-映射關係-的-set"><a href="#返回-hashmap-中所有-映射關係-的-set" class="headerlink" title="返回 hashmap 中所有 映射關係 的 set"></a>返回 hashmap 中所有 映射關係 的 set</h3><p>hashmap.entrySet();<br>換容器時會使用到，每個鍵值對的類型為 <code>Map.Entry</code><br>Map.Entry 取得鍵：getKey()<br>Map.Entry 取得值：getValue()</p>
+<h2 id="HashSet"><a href="#HashSet" class="headerlink" title="HashSet"></a>HashSet</h2><p><span class="exturl" data-url="aHR0cHM6Ly93d3cucnVub29iLmNvbS9qYXZhL2phdmEtaGFzaHNldC5odG1s">Java HashSet<i class="fa fa-external-link-alt"></i></span></p>
+<p>需要注意基本類別要換成封裝類別。</p>
+<h3 id="添加元素"><a href="#添加元素" class="headerlink" title="添加元素"></a>添加元素</h3><p>hashset.add(value);</p>
+<h3 id="判斷元素是否存在"><a href="#判斷元素是否存在" class="headerlink" title="判斷元素是否存在"></a>判斷元素是否存在</h3><p>hashset.contains(value);</p>
+<h3 id="刪除元素"><a href="#刪除元素" class="headerlink" title="刪除元素"></a>刪除元素</h3><p>hashset.remove(value);</p>
+<h3 id="獲取-hashset-大小"><a href="#獲取-hashset-大小" class="headerlink" title="獲取 hashset 大小"></a>獲取 hashset 大小</h3><p>hashset.size();</p>
+<h3 id="交集技巧"><a href="#交集技巧" class="headerlink" title="交集技巧"></a>交集技巧</h3><p>hashset1.retainAll(hashset2);<br>返回扣掉兩 sets 未交集元素後的 hashset1。</p>
+<h3 id="差集技巧"><a href="#差集技巧" class="headerlink" title="差集技巧"></a>差集技巧</h3><p>hashset1.removeAll(hashset2);<br>返回扣掉兩 sets 交集元素後的 hashset1。</p>
+<h3 id="聯集技巧"><a href="#聯集技巧" class="headerlink" title="聯集技巧"></a>聯集技巧</h3><p>hashset1.addAll(hashset2);<br>返回加上兩 sets 未交集元素後的 hashset1。</p>
+<h2 id="PriorityQueue"><a href="#PriorityQueue" class="headerlink" title="PriorityQueue"></a>PriorityQueue</h2><p><span class="exturl" data-url="aHR0cHM6Ly93d3cuY2Fpbmlhb2pjLmNvbS9qYXZhL2phdmEtcHJpb3JpdHlxdWV1ZS5odG1s">Java PriorityQueue<i class="fa fa-external-link-alt"></i></span></p>
+<p>先進先出，預設先出來的是最小的 (Ascending Order)</p>
+<h3 id="建構方式"><a href="#建構方式" class="headerlink" title="建構方式"></a>建構方式</h3><p>可以帶入自定義的 Comparator，如：</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">PriorityQueue&lt;Map.Entry&lt;Integer, Integer&gt;&gt; pq = <span class="keyword">new</span> <span class="title class_">PriorityQueue</span>&lt;&gt;(</span><br><span class="line">  (a, b) -&gt; a.getValue() - b.getValue()</span><br><span class="line">);</span><br></pre></td></tr></table></figure>
+
+<h3 id="新增元素"><a href="#新增元素" class="headerlink" title="新增元素"></a>新增元素</h3><p>add()</p>
+<h3 id="訪問開頭元素"><a href="#訪問開頭元素" class="headerlink" title="訪問開頭元素"></a>訪問開頭元素</h3><p>peek()</p>
+<h3 id="返回並刪除隊列開頭"><a href="#返回並刪除隊列開頭" class="headerlink" title="返回並刪除隊列開頭"></a>返回並刪除隊列開頭</h3><p>poll()</p>
+<h2 id="Stream"><a href="#Stream" class="headerlink" title="Stream"></a>Stream</h2><p><span class="exturl" data-url="aHR0cHM6Ly93d3cucnVub29iLmNvbS9qYXZhL2phdmE4LXN0cmVhbXMuaHRtbA==">Java 8 Stream<i class="fa fa-external-link-alt"></i></span></p>
+<h2 id="Math"><a href="#Math" class="headerlink" title="Math"></a>Math</h2><h3 id="比大小"><a href="#比大小" class="headerlink" title="比大小"></a>比大小</h3><p>Math.min(value1, value2);<br>Math.max(value1, value2);</p>
+<h3 id="絕對值"><a href="#絕對值" class="headerlink" title="絕對值"></a>絕對值</h3><p>Math.abs(value);</p>
+<h2 id="printf"><a href="#printf" class="headerlink" title="printf"></a>printf</h2><p><span class="exturl" data-url="aHR0cHM6Ly93d3cucnVub29iLmNvbS93M2Nub3RlL2phdmEtcHJpbnRmLWZvcm1hdGUtZGVtby5odG1s">Java 格式化输出 printf 用法<i class="fa fa-external-link-alt"></i></span></p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">System.out.printf();</span><br></pre></td></tr></table></figure>
+
+<h2 id="基礎型別的預設值"><a href="#基礎型別的預設值" class="headerlink" title="基礎型別的預設值"></a>基礎型別的預設值</h2><h3 id="int"><a href="#int" class="headerlink" title="int"></a>int</h3><p>0</p>
+<h2 id="三元運算子"><a href="#三元運算子" class="headerlink" title="三元運算子"></a>三元運算子</h2><figure class="highlight java"><table><tr><td class="code"><pre><span class="line">判斷式 ？ 若判斷為真執行區塊 ： 若判斷為假執行區塊</span><br></pre></td></tr></table></figure>
+
+<h2 id="結語"><a href="#結語" class="headerlink" title="結語"></a>結語</h2><p>隨著科技進步，記憶體容量大到唸不出單位了，我的腦容量卻是連有沒有 1 byte 都不清楚。</p>
+<h2 id="參考資料"><a href="#參考資料" class="headerlink" title="參考資料"></a>參考資料</h2><p><span class="exturl" data-url="aHR0cHM6Ly9wZGFpLnRlY2gv">Java 全栈知识体系<i class="fa fa-external-link-alt"></i></span></p>
+<p><span class="exturl" data-url="aHR0cHM6Ly9yaWNrYnNyLm1lZGl1bS5jb20vJUU5JTk2JTkyJUU4JTgxJThBLWFycmF5cy1hc2xpc3QtJUU3JTlBJTg0JUU1JTlEJTkxLTgzODlkM2YxZTU0NA==">閒聊「Arrays.asList()」的坑<i class="fa fa-external-link-alt"></i></span></p>
+]]></content>
+      <categories>
+        <category>Java</category>
+        <category>Note</category>
+      </categories>
+      <tags>
+        <tag>Java</tag>
       </tags>
   </entry>
   <entry>
@@ -1304,29 +1288,69 @@
       </tags>
   </entry>
   <entry>
-    <title>Hexo Note 02：常用 Hexo 標籤外掛（Tag Plugins）</title>
-    <url>/Hexo/Note/c4b9fa9c/</url>
-    <content><![CDATA[<p>單純記錄我常用到的 Hexo 標籤外掛，並無其他延伸用法，真要查用法 <span class="exturl" data-url="aHR0cHM6Ly9oZXhvLmlvL3poLXR3L2RvY3MvdGFnLXBsdWdpbnM=">官方文件<i class="fa fa-external-link-alt"></i></span> 永遠是最好的選擇。</p>
+    <title>Mac Note：Mac 常用技巧</title>
+    <url>/Mac/Note/91c8942c/</url>
+    <content><![CDATA[<p>列出我日常使用 mac 時遇到的一些障礙。</p>
 <span id="more"></span>
 
-<h2 id="文章連結"><a href="#文章連結" class="headerlink" title="文章連結"></a>文章連結</h2><figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">&#123;% post<span class="emphasis">_link source/_</span>posts內文章路徑不含副檔名 連結顯示文字 %&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="Mac-鍵盤快速鍵"><a href="#Mac-鍵盤快速鍵" class="headerlink" title="Mac 鍵盤快速鍵"></a>Mac 鍵盤快速鍵</h2><p><span class="exturl" data-url="aHR0cHM6Ly9zdXBwb3J0LmFwcGxlLmNvbS96aC10dy9IVDIwMTIzNg==">Mac 鍵盤快速鍵<i class="fa fa-external-link-alt"></i></span><br><span class="exturl" data-url="aHR0cHM6Ly9hcHAueWlwZWUuY2MvODk0NzgvJUUzJTgwJTkwbWFjLW9zLSVFNiU5NSU5OSVFNSVBRCVCOCVFMyU4MCU5MTMzLSVFNSU4MCU4Qi1tYWMtJUU5JThEJUI1JUU3JTlCJUE0JUU4JUE2JTgxJUU1JUFEJUI4JUU2JTlDJTgzJUU3JTlBJTg0JUU1JUJGJUFCJUU5JTgwJTlGJUU5JThEJUI1JUVGJUJDJTgxJUVGJUJDJTg4JUU2JTlCJUI0JUU2JTk2JUIwJUVGJUJDJTg5Lw==">【Mac OS 教學】33 個 Mac 鍵盤要學會的快速鍵！（更新）<i class="fa fa-external-link-alt"></i></span><br>直接進設定看最準</p>
+<h3 id="切換輸入法"><a href="#切換輸入法" class="headerlink" title="切換輸入法"></a>切換輸入法</h3><p>ctrl + 空白鍵<br>caps</p>
+<h3 id="重做"><a href="#重做" class="headerlink" title="重做"></a>重做</h3><p>command + shift + Z<br>不太確定什麼情況可以觸發</p>
+<h3 id="Mission-Control"><a href="#Mission-Control" class="headerlink" title="Mission Control"></a>Mission Control</h3><p>ctrl + 上鍵</p>
+<h3 id="顯示桌面"><a href="#顯示桌面" class="headerlink" title="顯示桌面"></a>顯示桌面</h3><p>fn + F11<br>觸控板大拇指與三隻手指外展</p>
+<p>再做一次可以回到原本的視窗<br>視窗全螢幕下無效</p>
+<h3 id="切換桌面"><a href="#切換桌面" class="headerlink" title="切換桌面"></a>切換桌面</h3><p>ctrl + 右鍵<br>ctrl + 左鍵</p>
+<h3 id="切換開啟的應用程式"><a href="#切換開啟的應用程式" class="headerlink" title="切換開啟的應用程式"></a>切換開啟的應用程式</h3><p>command + tab<br>command + shift + tab</p>
+<h3 id="調整顯示大小"><a href="#調整顯示大小" class="headerlink" title="調整顯示大小"></a>調整顯示大小</h3><p>放大：command + &#x3D;<br>縮小：command + -<br>預設：command + 0</p>
+<h3 id="截圖"><a href="#截圖" class="headerlink" title="截圖"></a>截圖</h3><p>擷取全螢幕畫面並儲存：command + shift + 3<br>自行選取截圖範圍並儲存：command + shift + 4<br>擷取特定視窗並儲存：command + shift + 4 + 空白鍵<br>截圖與錄影選項：command + shift + 5</p>
+<h3 id="瀏覽器"><a href="#瀏覽器" class="headerlink" title="瀏覽器"></a>瀏覽器</h3><p>重新整理：command + R<br>捲到最上方：command + 上鍵<br>捲到最下方：command + 下鍵<br>開新視窗：command + N<br>開新分頁：command + T<br>重新開啟一個關閉的分頁：command + shift + T<br>關閉分頁：command + W</p>
+<h3 id="關閉當前程式"><a href="#關閉當前程式" class="headerlink" title="關閉當前程式"></a>關閉當前程式</h3><p>command + Q</p>
+<h2 id="顯示隱藏檔案"><a href="#顯示隱藏檔案" class="headerlink" title="顯示隱藏檔案"></a>顯示隱藏檔案</h2><p><span class="exturl" data-url="aHR0cHM6Ly93d3cuZHJidWhvLmNvbS96aC10dy9ob3ctdG8vc2hvdy1oaWRkZW4tZmlsZXMtbWFj">【2023】如何在Mac 顯示隱藏檔案和資料夾 - BuhoCleaner<i class="fa fa-external-link-alt"></i></span></p>
+<h3 id="Finder-中使用快捷鍵開啟或關閉"><a href="#Finder-中使用快捷鍵開啟或關閉" class="headerlink" title="Finder 中使用快捷鍵開啟或關閉"></a>Finder 中使用快捷鍵開啟或關閉</h3><p>Command + Shift + .</p>
+<h3 id="使用-終端機-永久開啟或關閉"><a href="#使用-終端機-永久開啟或關閉" class="headerlink" title="使用 終端機 永久開啟或關閉"></a>使用 <code>終端機</code> 永久開啟或關閉</h3><p>開啟</p>
+<figure class="highlight sh"><figcaption><span>command line tool</span></figcaption><table><tr><td class="code"><pre><span class="line">defaults write com.apple.finder AppleShowAllFiles TRUE</span><br><span class="line">killall Finder</span><br></pre></td></tr></table></figure>
 
-<h2 id="Tabs"><a href="#Tabs" class="headerlink" title="Tabs"></a>Tabs</h2><p>這就不是 Hexo 原生用法了，不過主題通常都會擴增此功能，像 <span class="exturl" data-url="aHR0cHM6Ly90aGVtZS1uZXh0LmpzLm9yZy9kb2NzL3RhZy1wbHVnaW5zL3RhYnM=">NexT<i class="fa fa-external-link-alt"></i></span>。</p>
-<p>他在主題中的設定預設就是啟用了：</p>
-<figure class="highlight yaml"><figcaption><span>_config.next.yml</span></figcaption><table><tr><td class="code"><pre><span class="line"><span class="attr">tabs:</span></span><br><span class="line">  <span class="comment"># Make the nav bar of tabs with long content stick to the top.</span></span><br><span class="line">  <span class="attr">sticky:</span> <span class="literal">false</span></span><br><span class="line">  <span class="attr">transition:</span></span><br><span class="line">    <span class="attr">tabs:</span> <span class="literal">false</span></span><br><span class="line">    <span class="attr">labels:</span> <span class="literal">true</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p>要關閉就把上面指令 TRUE 換成 FALSE。</p>
+<h2 id="更改檔案預設開啟程式"><a href="#更改檔案預設開啟程式" class="headerlink" title="更改檔案預設開啟程式"></a>更改檔案預設開啟程式</h2><p>滑鼠右鍵 &gt; 取得資訊 &gt; 打開檔案的應用程式 &gt; 全部更改．．．</p>
+<h2 id="重新整理-launchpad"><a href="#重新整理-launchpad" class="headerlink" title="重新整理 launchpad"></a>重新整理 launchpad</h2><p>常常發生 launchpad 的圖標錯誤，這時只能使用此指令重整，會失去所有排序與分類設定。</p>
+<figure class="highlight sh"><figcaption><span>command line tool</span></figcaption><table><tr><td class="code"><pre><span class="line">defaults write com.apple.dock ResetLaunchPad -bool <span class="literal">true</span>; killall Dock</span><br></pre></td></tr></table></figure>
 
-<p>語法：</p>
-<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">&#123;% tabs First unique name %&#125;</span><br><span class="line">&lt;!-- tab --&gt;</span><br><span class="line"><span class="strong">**This is Tab 1.**</span></span><br><span class="line">&lt;!-- endtab --&gt;</span><br><span class="line"></span><br><span class="line">&lt;!-- tab --&gt;</span><br><span class="line"><span class="strong">**This is Tab 2.**</span></span><br><span class="line">&lt;!-- endtab --&gt;</span><br><span class="line"></span><br><span class="line">&lt;!-- tab --&gt;</span><br><span class="line"><span class="strong">**This is Tab 3.**</span></span><br><span class="line">&lt;!-- endtab --&gt;</span><br><span class="line">&#123;% endtabs %&#125;</span><br></pre></td></tr></table></figure>
-
-<p>效果：</p>
-<div class="tabs" id="first-unique-name"><ul class="nav-tabs"><li class="tab active"><a href="#first-unique-name-1">First unique name 1</a></li><li class="tab"><a href="#first-unique-name-2">First unique name 2</a></li><li class="tab"><a href="#first-unique-name-3">First unique name 3</a></li></ul><div class="tab-content"><div class="tab-pane active" id="first-unique-name-1"><p><strong>This is Tab 1.</strong></p></div><div class="tab-pane" id="first-unique-name-2"><p><strong>This is Tab 2.</strong></p></div><div class="tab-pane" id="first-unique-name-3"><p><strong>This is Tab 3.</strong></p></div></div></div>
+<h2 id="Raycast"><a href="#Raycast" class="headerlink" title="Raycast"></a>Raycast</h2><p><span class="exturl" data-url="aHR0cHM6Ly93d3cucmF5Y2FzdC5jb20v">Raycast<i class="fa fa-external-link-alt"></i></span><br><span class="exturl" data-url="aHR0cHM6Ly9tYW51YWwucmF5Y2FzdC5jb20v">Raycast Manual<i class="fa fa-external-link-alt"></i></span></p>
+<p>Mac 輔助工具，可以取代 Spotlight。<br>我目前只用到視窗置左或置右跟剪貼板歷史的功能。</p>
+<h2 id="Fig"><a href="#Fig" class="headerlink" title="Fig"></a>Fig</h2><p><span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL3dpdGhmaWcvZmln">Fig<i class="fa fa-external-link-alt"></i></span></p>
+<p>主要是用他的 command line 提詞功能。</p>
+<h2 id="Chrome-Toggle-Show-Toolbar-in-Full-Screen"><a href="#Chrome-Toggle-Show-Toolbar-in-Full-Screen" class="headerlink" title="Chrome Toggle Show Toolbar in Full Screen"></a>Chrome Toggle Show Toolbar in Full Screen</h2><p>上方選單：View -&gt; Always Show Toolbar in Full Screen<br>快捷鍵：shift command F</p>
 ]]></content>
       <categories>
-        <category>Hexo</category>
+        <category>Mac</category>
         <category>Note</category>
       </categories>
       <tags>
-        <tag>Hexo</tag>
+        <tag>Mac</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Project：TTS MESSAGE MOD</title>
+    <url>/Project/158b204b/</url>
+    <content><![CDATA[<p>TTS 風聲桌遊 MOD 腳本實作。</p>
+<span id="more"></span>
+
+<h2 id="development-notes"><a href="#development-notes" class="headerlink" title="development notes"></a>development notes</h2><h3 id="腳本生成客製化物件"><a href="#腳本生成客製化物件" class="headerlink" title="腳本生成客製化物件"></a>腳本生成客製化物件</h3><p><span class="exturl" data-url="aHR0cHM6Ly9hcGkudGFibGV0b3BzaW11bGF0b3IuY29tL2Jhc2UvI3NwYXdub2JqZWN0">spawnObject(…)<i class="fa fa-external-link-alt"></i></span><br><span class="exturl" data-url="aHR0cHM6Ly9hcGkudGFibGV0b3BzaW11bGF0b3IuY29tL29iamVjdC8jc2V0Y3VzdG9tb2JqZWN0">setCustomObject(…)<i class="fa fa-external-link-alt"></i></span><br>上面兩個方法要接著用，但是很不爽，因為 <code>spawnObject(...)</code> 中有個 <code>callback_function</code> 參數，理論上要能使用所有該物件的設定方法，但 <code>setCustomObject(...)</code> 就是一定要用 <code>spawnObject(...)</code> 的回傳值來設定。<br><span class="exturl" data-url="aHR0cHM6Ly9hcGkudGFibGV0b3BzaW11bGF0b3IuY29tL2N1c3RvbS1nYW1lLW9iamVjdHMv">Custom<i class="fa fa-external-link-alt"></i></span>：客製化物件的 type 參數必須是此文檔中列出的類型之一。<br>研究之後發現 <span class="exturl" data-url="aHR0cHM6Ly9hcGkudGFibGV0b3BzaW11bGF0b3IuY29tL2Jhc2UvI3NwYXdub2JqZWN0anNvbg==">spawnObjectJSON(…)<i class="fa fa-external-link-alt"></i></span> 比較符合我們目前的使用情境，只需將現有 json 填進參數中就能造出一樣的物件，連 GUID 都能直接指定。</p>
+<h3 id="TTS-內建回合機制控制"><a href="#TTS-內建回合機制控制" class="headerlink" title="TTS 內建回合機制控制"></a>TTS 內建回合機制控制</h3><p><span class="exturl" data-url="aHR0cHM6Ly9hcGkudGFibGV0b3BzaW11bGF0b3IuY29tL3R1cm5zLw==">Turns<i class="fa fa-external-link-alt"></i></span><br><span class="exturl" data-url="aHR0cHM6Ly9hcGkudGFibGV0b3BzaW11bGF0b3IuY29tL2V2ZW50cy8jb25wbGF5ZXJ0dXJu">onPlayerTurn(…)<i class="fa fa-external-link-alt"></i></span><br>研究目的：回合結束手排上限檢查與提示<br>障礙：TTS 開出的 Turns api 並無法做出禁止回合結束的行為，只能在換人時做一些判定<br>決策：逐步捨棄 TTS 內建回合機制<br>規劃：先自己做一個回合結束鈕接入 TTS 的結束回合功能</p>
+<h2 id="UI"><a href="#UI" class="headerlink" title="UI"></a>UI</h2><p><span class="exturl" data-url="aHR0cHM6Ly9hcGkudGFibGV0b3BzaW11bGF0b3IuY29tL29iamVjdC8jdWktZnVuY3Rpb25z">UI Functions<i class="fa fa-external-link-alt"></i></span>：操作使 UI 附加到物件上</p>
+<p><span class="exturl" data-url="aHR0cHM6Ly9hcGkudGFibGV0b3BzaW11bGF0b3IuY29tL3VpL2ludHJvVUkv">UI API<i class="fa fa-external-link-alt"></i></span>：使用 xml 導入客製化 UI</p>
+<p><span class="exturl" data-url="aHR0cHM6Ly9hcGkudGFibGV0b3BzaW11bGF0b3IuY29tL3VpLw==">UI<i class="fa fa-external-link-alt"></i></span>：run time 操控 UI 屬性</p>
+<p>Global UI：螢幕上的 UI</p>
+<figure class="highlight lua"><table><tr><td class="code"><pre><span class="line">UI.getAttributes(id)</span><br></pre></td></tr></table></figure>
+
+<p>Object UI：物件上的 UI</p>
+<figure class="highlight lua"><table><tr><td class="code"><pre><span class="line">object.UI.getAttributes(id)</span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>Project</category>
+      </categories>
+      <tags>
+        <tag>Lua</tag>
       </tags>
   </entry>
   <entry>
@@ -1392,41 +1416,6 @@
 
 <p>若要讓自定義組建使用外部傳入的參數，需要定義並指定 props</p>
 <figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">type <span class="title class_">CatProps</span> = &#123;</span><br><span class="line">  <span class="attr">name</span>: string;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> <span class="title function_">Cat</span> = (<span class="params">props: CatProps</span>) =&gt; &#123;</span><br><span class="line">  <span class="keyword">return</span> (</span><br><span class="line">    <span class="language-xml"><span class="tag">&lt;<span class="name">View</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">      <span class="tag">&lt;<span class="name">Text</span>&gt;</span>Hello, I am &#123;props.name&#125;!<span class="tag">&lt;/<span class="name">Text</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">    <span class="tag">&lt;/<span class="name">View</span>&gt;</span></span></span><br><span class="line">  );</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> <span class="title function_">Cafe</span> = (<span class="params"></span>) =&gt; &#123;</span><br><span class="line">  <span class="keyword">return</span> (</span><br><span class="line">    <span class="language-xml"><span class="tag">&lt;<span class="name">View</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">      <span class="tag">&lt;<span class="name">Cat</span> <span class="attr">name</span>=<span class="string">&quot;Maru&quot;</span> /&gt;</span></span></span><br><span class="line"><span class="language-xml">      <span class="tag">&lt;<span class="name">Cat</span> <span class="attr">name</span>=<span class="string">&quot;Jellylorum&quot;</span> /&gt;</span></span></span><br><span class="line"><span class="language-xml">      <span class="tag">&lt;<span class="name">Cat</span> <span class="attr">name</span>=<span class="string">&quot;Spot&quot;</span> /&gt;</span></span></span><br><span class="line"><span class="language-xml">    <span class="tag">&lt;/<span class="name">View</span>&gt;</span></span></span><br><span class="line">  );</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> <span class="title class_">Cafe</span>;</span><br></pre></td></tr></table></figure>
-]]></content>
-      <categories>
-        <category>React Native</category>
-        <category>Note</category>
-      </categories>
-      <tags>
-        <tag>React Native</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>React Native Note：Design</title>
-    <url>/React-Native/Note/c9b124d1/</url>
-    <content><![CDATA[<p>刻畫面必備知識，沒弄懂的話連勞動的權力都沒有。</p>
-<span id="more"></span>
-
-<h2 id="Style"><a href="#Style" class="headerlink" title="Style"></a><span class="exturl" data-url="aHR0cHM6Ly9yZWFjdG5hdGl2ZS5kZXYvZG9jcy9zdHlsZQ==">Style<i class="fa fa-external-link-alt"></i></span></h2><ul>
-<li>只是組件的其中一個 props</li>
-</ul>
-<h2 id="Height-and-Width"><a href="#Height-and-Width" class="headerlink" title="Height and Width"></a><span class="exturl" data-url="aHR0cHM6Ly9yZWFjdG5hdGl2ZS5kZXYvZG9jcy9oZWlnaHQtYW5kLXdpZHRo">Height and Width<i class="fa fa-external-link-alt"></i></span></h2><h3 id="Fixed-Dimensions"><a href="#Fixed-Dimensions" class="headerlink" title="Fixed Dimensions"></a>Fixed Dimensions</h3><p>將 width 跟 height 用數值表示固定尺寸<br>單位都是 density-independent pixels</p>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> <span class="title function_">FixedDimensionsBasics</span> = (<span class="params"></span>) =&gt; &#123;</span><br><span class="line">  <span class="keyword">return</span> (</span><br><span class="line">    <span class="language-xml"><span class="tag">&lt;<span class="name">View</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">      <span class="tag">&lt;<span class="name">View</span></span></span></span><br><span class="line"><span class="tag"><span class="language-xml">        <span class="attr">style</span>=<span class="string">&#123;&#123;</span></span></span></span><br><span class="line"><span class="tag"><span class="language-xml">          <span class="attr">width:</span> <span class="attr">50</span>,</span></span></span><br><span class="line"><span class="tag"><span class="language-xml">          <span class="attr">height:</span> <span class="attr">50</span>,</span></span></span><br><span class="line"><span class="tag"><span class="language-xml">          <span class="attr">backgroundColor:</span> &#x27;<span class="attr">powderblue</span>&#x27;,</span></span></span><br><span class="line"><span class="tag"><span class="language-xml">        &#125;&#125;</span></span></span><br><span class="line"><span class="tag"><span class="language-xml">      /&gt;</span></span></span><br><span class="line"><span class="language-xml">      <span class="tag">&lt;<span class="name">View</span></span></span></span><br><span class="line"><span class="tag"><span class="language-xml">        <span class="attr">style</span>=<span class="string">&#123;&#123;</span></span></span></span><br><span class="line"><span class="tag"><span class="language-xml">          <span class="attr">width:</span> <span class="attr">100</span>,</span></span></span><br><span class="line"><span class="tag"><span class="language-xml">          <span class="attr">height:</span> <span class="attr">100</span>,</span></span></span><br><span class="line"><span class="tag"><span class="language-xml">          <span class="attr">backgroundColor:</span> &#x27;<span class="attr">skyblue</span>&#x27;,</span></span></span><br><span class="line"><span class="tag"><span class="language-xml">        &#125;&#125;</span></span></span><br><span class="line"><span class="tag"><span class="language-xml">      /&gt;</span></span></span><br><span class="line"><span class="language-xml">      <span class="tag">&lt;<span class="name">View</span></span></span></span><br><span class="line"><span class="tag"><span class="language-xml">        <span class="attr">style</span>=<span class="string">&#123;&#123;</span></span></span></span><br><span class="line"><span class="tag"><span class="language-xml">          <span class="attr">width:</span> <span class="attr">150</span>,</span></span></span><br><span class="line"><span class="tag"><span class="language-xml">          <span class="attr">height:</span> <span class="attr">150</span>,</span></span></span><br><span class="line"><span class="tag"><span class="language-xml">          <span class="attr">backgroundColor:</span> &#x27;<span class="attr">steelblue</span>&#x27;,</span></span></span><br><span class="line"><span class="tag"><span class="language-xml">        &#125;&#125;</span></span></span><br><span class="line"><span class="tag"><span class="language-xml">      /&gt;</span></span></span><br><span class="line"><span class="language-xml">    <span class="tag">&lt;/<span class="name">View</span>&gt;</span></span></span><br><span class="line">  );</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> <span class="title class_">FixedDimensionsBasics</span>;</span><br></pre></td></tr></table></figure>
-
-<h3 id="Flex-Dimensions"><a href="#Flex-Dimensions" class="headerlink" title="Flex Dimensions"></a>Flex Dimensions</h3><p><code>flex: 1</code> 表示填充所有可用空間<br>如果父容器沒有指定的 width 跟 height 或是 flex，那麼父容器的大小就會是 0，將導致子視圖無法顯示</p>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> <span class="title function_">FlexDimensionsBasics</span> = (<span class="params"></span>) =&gt; &#123;</span><br><span class="line">  <span class="keyword">return</span> (</span><br><span class="line">    <span class="comment">// Try removing the `flex: 1` on the parent View.</span></span><br><span class="line">    <span class="comment">// The parent will not have dimensions, so the children can&#x27;t expand.</span></span><br><span class="line">    <span class="comment">// What if you add `height: 300` instead of `flex: 1`?</span></span><br><span class="line">    <span class="language-xml"><span class="tag">&lt;<span class="name">View</span> <span class="attr">style</span>=<span class="string">&#123;&#123;flex:</span> <span class="attr">1</span>&#125;&#125;&gt;</span></span></span><br><span class="line"><span class="language-xml">      <span class="tag">&lt;<span class="name">View</span> <span class="attr">style</span>=<span class="string">&#123;&#123;flex:</span> <span class="attr">1</span>, <span class="attr">backgroundColor:</span> &#x27;<span class="attr">powderblue</span>&#x27;&#125;&#125; /&gt;</span></span></span><br><span class="line"><span class="language-xml">      <span class="tag">&lt;<span class="name">View</span> <span class="attr">style</span>=<span class="string">&#123;&#123;flex:</span> <span class="attr">2</span>, <span class="attr">backgroundColor:</span> &#x27;<span class="attr">skyblue</span>&#x27;&#125;&#125; /&gt;</span></span></span><br><span class="line"><span class="language-xml">      <span class="tag">&lt;<span class="name">View</span> <span class="attr">style</span>=<span class="string">&#123;&#123;flex:</span> <span class="attr">3</span>, <span class="attr">backgroundColor:</span> &#x27;<span class="attr">steelblue</span>&#x27;&#125;&#125; /&gt;</span></span></span><br><span class="line"><span class="language-xml">    <span class="tag">&lt;/<span class="name">View</span>&gt;</span></span></span><br><span class="line">  );</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> <span class="title class_">FlexDimensionsBasics</span>;</span><br></pre></td></tr></table></figure>
-
-<h3 id="Percentage-Dimensions"><a href="#Percentage-Dimensions" class="headerlink" title="Percentage Dimensions"></a>Percentage Dimensions</h3><p>能直接指定百分比</p>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> <span class="title function_">PercentageDimensionsBasics</span> = (<span class="params"></span>) =&gt; &#123;</span><br><span class="line">  <span class="comment">// Try removing the `height: &#x27;100%&#x27;` on the parent View.</span></span><br><span class="line">  <span class="comment">// The parent will not have dimensions, so the children can&#x27;t expand.</span></span><br><span class="line">  <span class="keyword">return</span> (</span><br><span class="line">    <span class="language-xml"><span class="tag">&lt;<span class="name">View</span> <span class="attr">style</span>=<span class="string">&#123;&#123;height:</span> &#x27;<span class="attr">100</span>%&#x27;&#125;&#125;&gt;</span></span></span><br><span class="line"><span class="language-xml">      <span class="tag">&lt;<span class="name">View</span></span></span></span><br><span class="line"><span class="tag"><span class="language-xml">        <span class="attr">style</span>=<span class="string">&#123;&#123;</span></span></span></span><br><span class="line"><span class="tag"><span class="language-xml">          <span class="attr">height:</span> &#x27;<span class="attr">15</span>%&#x27;,</span></span></span><br><span class="line"><span class="tag"><span class="language-xml">          <span class="attr">backgroundColor:</span> &#x27;<span class="attr">powderblue</span>&#x27;,</span></span></span><br><span class="line"><span class="tag"><span class="language-xml">        &#125;&#125;</span></span></span><br><span class="line"><span class="tag"><span class="language-xml">      /&gt;</span></span></span><br><span class="line"><span class="language-xml">      <span class="tag">&lt;<span class="name">View</span></span></span></span><br><span class="line"><span class="tag"><span class="language-xml">        <span class="attr">style</span>=<span class="string">&#123;&#123;</span></span></span></span><br><span class="line"><span class="tag"><span class="language-xml">          <span class="attr">width:</span> &#x27;<span class="attr">66</span>%&#x27;,</span></span></span><br><span class="line"><span class="tag"><span class="language-xml">          <span class="attr">height:</span> &#x27;<span class="attr">35</span>%&#x27;,</span></span></span><br><span class="line"><span class="tag"><span class="language-xml">          <span class="attr">backgroundColor:</span> &#x27;<span class="attr">skyblue</span>&#x27;,</span></span></span><br><span class="line"><span class="tag"><span class="language-xml">        &#125;&#125;</span></span></span><br><span class="line"><span class="tag"><span class="language-xml">      /&gt;</span></span></span><br><span class="line"><span class="language-xml">      <span class="tag">&lt;<span class="name">View</span></span></span></span><br><span class="line"><span class="tag"><span class="language-xml">        <span class="attr">style</span>=<span class="string">&#123;&#123;</span></span></span></span><br><span class="line"><span class="tag"><span class="language-xml">          <span class="attr">width:</span> &#x27;<span class="attr">33</span>%&#x27;,</span></span></span><br><span class="line"><span class="tag"><span class="language-xml">          <span class="attr">height:</span> &#x27;<span class="attr">50</span>%&#x27;,</span></span></span><br><span class="line"><span class="tag"><span class="language-xml">          <span class="attr">backgroundColor:</span> &#x27;<span class="attr">steelblue</span>&#x27;,</span></span></span><br><span class="line"><span class="tag"><span class="language-xml">        &#125;&#125;</span></span></span><br><span class="line"><span class="tag"><span class="language-xml">      /&gt;</span></span></span><br><span class="line"><span class="language-xml">    <span class="tag">&lt;/<span class="name">View</span>&gt;</span></span></span><br><span class="line">  );</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> <span class="title class_">PercentageDimensionsBasics</span>;</span><br></pre></td></tr></table></figure>
-
-<p>更常用的方式是獲取設備窗口尺寸，再乘上 0~1 的小數達到比例效果</p>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> windowWidth = <span class="title class_">Dimensions</span>.<span class="title function_">get</span>(<span class="string">&#x27;window&#x27;</span>).<span class="property">width</span></span><br><span class="line"><span class="keyword">const</span> windowHeight = <span class="title class_">Dimensions</span>.<span class="title function_">get</span>(<span class="string">&#x27;window&#x27;</span>).<span class="property">height</span></span><br></pre></td></tr></table></figure>
-
-<h2 id="Layout-with-Flexbox"><a href="#Layout-with-Flexbox" class="headerlink" title="Layout with Flexbox"></a><span class="exturl" data-url="aHR0cHM6Ly9yZWFjdG5hdGl2ZS5kZXYvZG9jcy9mbGV4Ym94">Layout with Flexbox<i class="fa fa-external-link-alt"></i></span></h2><h3 id="Flex-Direction"><a href="#Flex-Direction" class="headerlink" title="Flex Direction"></a>Flex Direction</h3><p>flexDirection: column | row | column-reverse | row-reverse<br>指定 children 排序方向為垂直或水平</p>
-<h3 id="Layout-Direction"><a href="#Layout-Direction" class="headerlink" title="Layout Direction"></a>Layout Direction</h3><p>direction: ltr | rtl<br>指定 layout 從左還右開始排</p>
-<h3 id="Justify-Content"><a href="#Justify-Content" class="headerlink" title="Justify Content"></a>Justify Content</h3><p>justifyContent: flex-start | flex-end | center | space-between | space-around | space-evenly<br>沿主軸方向處理 children</p>
-<h3 id="Align-Items"><a href="#Align-Items" class="headerlink" title="Align Items"></a>Align Items</h3><p>alignItems: stretch | flex-start | flex-end | center | baseline<br>沿非主軸方向處理 children</p>
-<h3 id="Align-Self"><a href="#Align-Self" class="headerlink" title="Align Self"></a>Align Self</h3><p>alignSelf: stretch | flex-start | flex-end | center | baseline<br>跟 alignItems 類似，不過是處理自己</p>
 ]]></content>
       <categories>
         <category>React Native</category>
@@ -1522,6 +1511,41 @@
       </tags>
   </entry>
   <entry>
+    <title>React Native Note：Design</title>
+    <url>/React-Native/Note/c9b124d1/</url>
+    <content><![CDATA[<p>刻畫面必備知識，沒弄懂的話連勞動的權力都沒有。</p>
+<span id="more"></span>
+
+<h2 id="Style"><a href="#Style" class="headerlink" title="Style"></a><span class="exturl" data-url="aHR0cHM6Ly9yZWFjdG5hdGl2ZS5kZXYvZG9jcy9zdHlsZQ==">Style<i class="fa fa-external-link-alt"></i></span></h2><ul>
+<li>只是組件的其中一個 props</li>
+</ul>
+<h2 id="Height-and-Width"><a href="#Height-and-Width" class="headerlink" title="Height and Width"></a><span class="exturl" data-url="aHR0cHM6Ly9yZWFjdG5hdGl2ZS5kZXYvZG9jcy9oZWlnaHQtYW5kLXdpZHRo">Height and Width<i class="fa fa-external-link-alt"></i></span></h2><h3 id="Fixed-Dimensions"><a href="#Fixed-Dimensions" class="headerlink" title="Fixed Dimensions"></a>Fixed Dimensions</h3><p>將 width 跟 height 用數值表示固定尺寸<br>單位都是 density-independent pixels</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> <span class="title function_">FixedDimensionsBasics</span> = (<span class="params"></span>) =&gt; &#123;</span><br><span class="line">  <span class="keyword">return</span> (</span><br><span class="line">    <span class="language-xml"><span class="tag">&lt;<span class="name">View</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">      <span class="tag">&lt;<span class="name">View</span></span></span></span><br><span class="line"><span class="tag"><span class="language-xml">        <span class="attr">style</span>=<span class="string">&#123;&#123;</span></span></span></span><br><span class="line"><span class="tag"><span class="language-xml">          <span class="attr">width:</span> <span class="attr">50</span>,</span></span></span><br><span class="line"><span class="tag"><span class="language-xml">          <span class="attr">height:</span> <span class="attr">50</span>,</span></span></span><br><span class="line"><span class="tag"><span class="language-xml">          <span class="attr">backgroundColor:</span> &#x27;<span class="attr">powderblue</span>&#x27;,</span></span></span><br><span class="line"><span class="tag"><span class="language-xml">        &#125;&#125;</span></span></span><br><span class="line"><span class="tag"><span class="language-xml">      /&gt;</span></span></span><br><span class="line"><span class="language-xml">      <span class="tag">&lt;<span class="name">View</span></span></span></span><br><span class="line"><span class="tag"><span class="language-xml">        <span class="attr">style</span>=<span class="string">&#123;&#123;</span></span></span></span><br><span class="line"><span class="tag"><span class="language-xml">          <span class="attr">width:</span> <span class="attr">100</span>,</span></span></span><br><span class="line"><span class="tag"><span class="language-xml">          <span class="attr">height:</span> <span class="attr">100</span>,</span></span></span><br><span class="line"><span class="tag"><span class="language-xml">          <span class="attr">backgroundColor:</span> &#x27;<span class="attr">skyblue</span>&#x27;,</span></span></span><br><span class="line"><span class="tag"><span class="language-xml">        &#125;&#125;</span></span></span><br><span class="line"><span class="tag"><span class="language-xml">      /&gt;</span></span></span><br><span class="line"><span class="language-xml">      <span class="tag">&lt;<span class="name">View</span></span></span></span><br><span class="line"><span class="tag"><span class="language-xml">        <span class="attr">style</span>=<span class="string">&#123;&#123;</span></span></span></span><br><span class="line"><span class="tag"><span class="language-xml">          <span class="attr">width:</span> <span class="attr">150</span>,</span></span></span><br><span class="line"><span class="tag"><span class="language-xml">          <span class="attr">height:</span> <span class="attr">150</span>,</span></span></span><br><span class="line"><span class="tag"><span class="language-xml">          <span class="attr">backgroundColor:</span> &#x27;<span class="attr">steelblue</span>&#x27;,</span></span></span><br><span class="line"><span class="tag"><span class="language-xml">        &#125;&#125;</span></span></span><br><span class="line"><span class="tag"><span class="language-xml">      /&gt;</span></span></span><br><span class="line"><span class="language-xml">    <span class="tag">&lt;/<span class="name">View</span>&gt;</span></span></span><br><span class="line">  );</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> <span class="title class_">FixedDimensionsBasics</span>;</span><br></pre></td></tr></table></figure>
+
+<h3 id="Flex-Dimensions"><a href="#Flex-Dimensions" class="headerlink" title="Flex Dimensions"></a>Flex Dimensions</h3><p><code>flex: 1</code> 表示填充所有可用空間<br>如果父容器沒有指定的 width 跟 height 或是 flex，那麼父容器的大小就會是 0，將導致子視圖無法顯示</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> <span class="title function_">FlexDimensionsBasics</span> = (<span class="params"></span>) =&gt; &#123;</span><br><span class="line">  <span class="keyword">return</span> (</span><br><span class="line">    <span class="comment">// Try removing the `flex: 1` on the parent View.</span></span><br><span class="line">    <span class="comment">// The parent will not have dimensions, so the children can&#x27;t expand.</span></span><br><span class="line">    <span class="comment">// What if you add `height: 300` instead of `flex: 1`?</span></span><br><span class="line">    <span class="language-xml"><span class="tag">&lt;<span class="name">View</span> <span class="attr">style</span>=<span class="string">&#123;&#123;flex:</span> <span class="attr">1</span>&#125;&#125;&gt;</span></span></span><br><span class="line"><span class="language-xml">      <span class="tag">&lt;<span class="name">View</span> <span class="attr">style</span>=<span class="string">&#123;&#123;flex:</span> <span class="attr">1</span>, <span class="attr">backgroundColor:</span> &#x27;<span class="attr">powderblue</span>&#x27;&#125;&#125; /&gt;</span></span></span><br><span class="line"><span class="language-xml">      <span class="tag">&lt;<span class="name">View</span> <span class="attr">style</span>=<span class="string">&#123;&#123;flex:</span> <span class="attr">2</span>, <span class="attr">backgroundColor:</span> &#x27;<span class="attr">skyblue</span>&#x27;&#125;&#125; /&gt;</span></span></span><br><span class="line"><span class="language-xml">      <span class="tag">&lt;<span class="name">View</span> <span class="attr">style</span>=<span class="string">&#123;&#123;flex:</span> <span class="attr">3</span>, <span class="attr">backgroundColor:</span> &#x27;<span class="attr">steelblue</span>&#x27;&#125;&#125; /&gt;</span></span></span><br><span class="line"><span class="language-xml">    <span class="tag">&lt;/<span class="name">View</span>&gt;</span></span></span><br><span class="line">  );</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> <span class="title class_">FlexDimensionsBasics</span>;</span><br></pre></td></tr></table></figure>
+
+<h3 id="Percentage-Dimensions"><a href="#Percentage-Dimensions" class="headerlink" title="Percentage Dimensions"></a>Percentage Dimensions</h3><p>能直接指定百分比</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> <span class="title function_">PercentageDimensionsBasics</span> = (<span class="params"></span>) =&gt; &#123;</span><br><span class="line">  <span class="comment">// Try removing the `height: &#x27;100%&#x27;` on the parent View.</span></span><br><span class="line">  <span class="comment">// The parent will not have dimensions, so the children can&#x27;t expand.</span></span><br><span class="line">  <span class="keyword">return</span> (</span><br><span class="line">    <span class="language-xml"><span class="tag">&lt;<span class="name">View</span> <span class="attr">style</span>=<span class="string">&#123;&#123;height:</span> &#x27;<span class="attr">100</span>%&#x27;&#125;&#125;&gt;</span></span></span><br><span class="line"><span class="language-xml">      <span class="tag">&lt;<span class="name">View</span></span></span></span><br><span class="line"><span class="tag"><span class="language-xml">        <span class="attr">style</span>=<span class="string">&#123;&#123;</span></span></span></span><br><span class="line"><span class="tag"><span class="language-xml">          <span class="attr">height:</span> &#x27;<span class="attr">15</span>%&#x27;,</span></span></span><br><span class="line"><span class="tag"><span class="language-xml">          <span class="attr">backgroundColor:</span> &#x27;<span class="attr">powderblue</span>&#x27;,</span></span></span><br><span class="line"><span class="tag"><span class="language-xml">        &#125;&#125;</span></span></span><br><span class="line"><span class="tag"><span class="language-xml">      /&gt;</span></span></span><br><span class="line"><span class="language-xml">      <span class="tag">&lt;<span class="name">View</span></span></span></span><br><span class="line"><span class="tag"><span class="language-xml">        <span class="attr">style</span>=<span class="string">&#123;&#123;</span></span></span></span><br><span class="line"><span class="tag"><span class="language-xml">          <span class="attr">width:</span> &#x27;<span class="attr">66</span>%&#x27;,</span></span></span><br><span class="line"><span class="tag"><span class="language-xml">          <span class="attr">height:</span> &#x27;<span class="attr">35</span>%&#x27;,</span></span></span><br><span class="line"><span class="tag"><span class="language-xml">          <span class="attr">backgroundColor:</span> &#x27;<span class="attr">skyblue</span>&#x27;,</span></span></span><br><span class="line"><span class="tag"><span class="language-xml">        &#125;&#125;</span></span></span><br><span class="line"><span class="tag"><span class="language-xml">      /&gt;</span></span></span><br><span class="line"><span class="language-xml">      <span class="tag">&lt;<span class="name">View</span></span></span></span><br><span class="line"><span class="tag"><span class="language-xml">        <span class="attr">style</span>=<span class="string">&#123;&#123;</span></span></span></span><br><span class="line"><span class="tag"><span class="language-xml">          <span class="attr">width:</span> &#x27;<span class="attr">33</span>%&#x27;,</span></span></span><br><span class="line"><span class="tag"><span class="language-xml">          <span class="attr">height:</span> &#x27;<span class="attr">50</span>%&#x27;,</span></span></span><br><span class="line"><span class="tag"><span class="language-xml">          <span class="attr">backgroundColor:</span> &#x27;<span class="attr">steelblue</span>&#x27;,</span></span></span><br><span class="line"><span class="tag"><span class="language-xml">        &#125;&#125;</span></span></span><br><span class="line"><span class="tag"><span class="language-xml">      /&gt;</span></span></span><br><span class="line"><span class="language-xml">    <span class="tag">&lt;/<span class="name">View</span>&gt;</span></span></span><br><span class="line">  );</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> <span class="title class_">PercentageDimensionsBasics</span>;</span><br></pre></td></tr></table></figure>
+
+<p>更常用的方式是獲取設備窗口尺寸，再乘上 0~1 的小數達到比例效果</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> windowWidth = <span class="title class_">Dimensions</span>.<span class="title function_">get</span>(<span class="string">&#x27;window&#x27;</span>).<span class="property">width</span></span><br><span class="line"><span class="keyword">const</span> windowHeight = <span class="title class_">Dimensions</span>.<span class="title function_">get</span>(<span class="string">&#x27;window&#x27;</span>).<span class="property">height</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="Layout-with-Flexbox"><a href="#Layout-with-Flexbox" class="headerlink" title="Layout with Flexbox"></a><span class="exturl" data-url="aHR0cHM6Ly9yZWFjdG5hdGl2ZS5kZXYvZG9jcy9mbGV4Ym94">Layout with Flexbox<i class="fa fa-external-link-alt"></i></span></h2><h3 id="Flex-Direction"><a href="#Flex-Direction" class="headerlink" title="Flex Direction"></a>Flex Direction</h3><p>flexDirection: column | row | column-reverse | row-reverse<br>指定 children 排序方向為垂直或水平</p>
+<h3 id="Layout-Direction"><a href="#Layout-Direction" class="headerlink" title="Layout Direction"></a>Layout Direction</h3><p>direction: ltr | rtl<br>指定 layout 從左還右開始排</p>
+<h3 id="Justify-Content"><a href="#Justify-Content" class="headerlink" title="Justify Content"></a>Justify Content</h3><p>justifyContent: flex-start | flex-end | center | space-between | space-around | space-evenly<br>沿主軸方向處理 children</p>
+<h3 id="Align-Items"><a href="#Align-Items" class="headerlink" title="Align Items"></a>Align Items</h3><p>alignItems: stretch | flex-start | flex-end | center | baseline<br>沿非主軸方向處理 children</p>
+<h3 id="Align-Self"><a href="#Align-Self" class="headerlink" title="Align Self"></a>Align Self</h3><p>alignSelf: stretch | flex-start | flex-end | center | baseline<br>跟 alignItems 類似，不過是處理自己</p>
+]]></content>
+      <categories>
+        <category>React Native</category>
+        <category>Note</category>
+      </categories>
+      <tags>
+        <tag>React Native</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Tabletop Simulator Note：Lua 腳本編寫</title>
     <url>/Tabletop-Simulator/Note/5fab3010/</url>
     <content><![CDATA[<p>Tabletop Simulator 是一款在 Steam 平台上的遊戲，主要是拿來玩線上桌遊，並且提供了 API 讓有志之士構建自己想玩的桌遊。</p>
@@ -1554,8 +1578,8 @@
         <category>Note</category>
       </categories>
       <tags>
-        <tag>Tabletop Simulator</tag>
         <tag>Lua</tag>
+        <tag>Tabletop Simulator</tag>
       </tags>
   </entry>
   <entry>
@@ -1631,32 +1655,8 @@
         <category>Note</category>
       </categories>
       <tags>
+        <tag>Lua</tag>
         <tag>Tabletop Simulator</tag>
-        <tag>Lua</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Project：TTS MESSAGE MOD</title>
-    <url>/Project/158b204b/</url>
-    <content><![CDATA[<p>TTS 風聲桌遊 MOD 腳本實作。</p>
-<span id="more"></span>
-
-<h2 id="development-notes"><a href="#development-notes" class="headerlink" title="development notes"></a>development notes</h2><h3 id="腳本生成客製化物件"><a href="#腳本生成客製化物件" class="headerlink" title="腳本生成客製化物件"></a>腳本生成客製化物件</h3><p><span class="exturl" data-url="aHR0cHM6Ly9hcGkudGFibGV0b3BzaW11bGF0b3IuY29tL2Jhc2UvI3NwYXdub2JqZWN0">spawnObject(…)<i class="fa fa-external-link-alt"></i></span><br><span class="exturl" data-url="aHR0cHM6Ly9hcGkudGFibGV0b3BzaW11bGF0b3IuY29tL29iamVjdC8jc2V0Y3VzdG9tb2JqZWN0">setCustomObject(…)<i class="fa fa-external-link-alt"></i></span><br>上面兩個方法要接著用，但是很不爽，因為 <code>spawnObject(...)</code> 中有個 <code>callback_function</code> 參數，理論上要能使用所有該物件的設定方法，但 <code>setCustomObject(...)</code> 就是一定要用 <code>spawnObject(...)</code> 的回傳值來設定。<br><span class="exturl" data-url="aHR0cHM6Ly9hcGkudGFibGV0b3BzaW11bGF0b3IuY29tL2N1c3RvbS1nYW1lLW9iamVjdHMv">Custom<i class="fa fa-external-link-alt"></i></span>：客製化物件的 type 參數必須是此文檔中列出的類型之一。<br>研究之後發現 <span class="exturl" data-url="aHR0cHM6Ly9hcGkudGFibGV0b3BzaW11bGF0b3IuY29tL2Jhc2UvI3NwYXdub2JqZWN0anNvbg==">spawnObjectJSON(…)<i class="fa fa-external-link-alt"></i></span> 比較符合我們目前的使用情境，只需將現有 json 填進參數中就能造出一樣的物件，連 GUID 都能直接指定。</p>
-<h3 id="TTS-內建回合機制控制"><a href="#TTS-內建回合機制控制" class="headerlink" title="TTS 內建回合機制控制"></a>TTS 內建回合機制控制</h3><p><span class="exturl" data-url="aHR0cHM6Ly9hcGkudGFibGV0b3BzaW11bGF0b3IuY29tL3R1cm5zLw==">Turns<i class="fa fa-external-link-alt"></i></span><br><span class="exturl" data-url="aHR0cHM6Ly9hcGkudGFibGV0b3BzaW11bGF0b3IuY29tL2V2ZW50cy8jb25wbGF5ZXJ0dXJu">onPlayerTurn(…)<i class="fa fa-external-link-alt"></i></span><br>研究目的：回合結束手排上限檢查與提示<br>障礙：TTS 開出的 Turns api 並無法做出禁止回合結束的行為，只能在換人時做一些判定<br>決策：逐步捨棄 TTS 內建回合機制<br>規劃：先自己做一個回合結束鈕接入 TTS 的結束回合功能</p>
-<h2 id="UI"><a href="#UI" class="headerlink" title="UI"></a>UI</h2><p><span class="exturl" data-url="aHR0cHM6Ly9hcGkudGFibGV0b3BzaW11bGF0b3IuY29tL29iamVjdC8jdWktZnVuY3Rpb25z">UI Functions<i class="fa fa-external-link-alt"></i></span>：操作使 UI 附加到物件上</p>
-<p><span class="exturl" data-url="aHR0cHM6Ly9hcGkudGFibGV0b3BzaW11bGF0b3IuY29tL3VpL2ludHJvVUkv">UI API<i class="fa fa-external-link-alt"></i></span>：使用 xml 導入客製化 UI</p>
-<p><span class="exturl" data-url="aHR0cHM6Ly9hcGkudGFibGV0b3BzaW11bGF0b3IuY29tL3VpLw==">UI<i class="fa fa-external-link-alt"></i></span>：run time 操控 UI 屬性</p>
-<p>Global UI：螢幕上的 UI</p>
-<figure class="highlight lua"><table><tr><td class="code"><pre><span class="line">UI.getAttributes(id)</span><br></pre></td></tr></table></figure>
-
-<p>Object UI：物件上的 UI</p>
-<figure class="highlight lua"><table><tr><td class="code"><pre><span class="line">object.UI.getAttributes(id)</span><br></pre></td></tr></table></figure>
-]]></content>
-      <categories>
-        <category>Project</category>
-      </categories>
-      <tags>
-        <tag>Lua</tag>
       </tags>
   </entry>
   <entry>
@@ -1764,33 +1764,6 @@
       </tags>
   </entry>
   <entry>
-    <title>Life Share：Smart Home</title>
-    <url>/Life/Share/2ac8f7fd/</url>
-    <content><![CDATA[<p>提升生活小確幸。</p>
-<span id="more"></span>
-
-<h2 id="採用系統"><a href="#採用系統" class="headerlink" title="採用系統"></a>採用系統</h2><p>Apple HomeKit<br>理由：因為換了蘋果手機</p>
-<h2 id="需求"><a href="#需求" class="headerlink" title="需求"></a>需求</h2><p>在床上可以輕鬆看 apple tv<br>睡前可以說：“Hey Siri 準備睡覺” 執行開啟夜燈與一些其他睡前設備<br>睡覺時可以說：“Hey Siri 晚安” 執行關閉夜燈與一些電器</p>
-<h2 id="已添購物"><a href="#已添購物" class="headerlink" title="已添購物"></a>已添購物</h2><p>RFB APPLE TV 4K (3RD GEN) WI-FI+ETH-TWN：NT$ 4,190<br>使用在 2K 的 27 吋電腦螢幕上，安裝過程中有發生看到蘋果標誌後就一直黑畫面，不過最後測試結果為 HDMI 線異常或規格不夠之類的，換一條好一點的 HDMI 線之後就正常了。</p>
-<p>HomePod mini-白色 (MY5H2TA&#x2F;A)：NT$ 2,799<br>作為整個房間的語音智能中樞，目前表現不錯。</p>
-<p>米家床頭燈 2 白色：NT$ 759<br>發生一次斷線過，持續觀察。<br>2023&#x2F;11&#x2F;21 因為網路開開關關又斷線一次，這次比較可怕，從 Apple Home 移除後重連都沒有用，最後是用 Mi Home 加入設備後再加入 Home 才重新連進 Apple HomeKit</p>
-<p>Patya x Meross 遠端遙控智能延長線：NT$ 1,890<br>需要載專門的 App 來進行初次配對，一定要選對相應的圖標，以防萬一也手動長按電源鍵來重置，不然可能會一直連不上。<br>除了初次配對遇到小障礙之外都挺好，就是晚上全黑的時候就算所有開關全斷電，也還是會有綠色電源燈亮著。</p>
-<p>Nanoleaf 智能燈泡3入-RAZER 雷蛇御用燈組：NT$ 1,890<br>有一顆燈泡拿到時電源接口處就有刮傷，但因為功能看起來正常就直接用了，整體使用很滿意。<br>唯一困擾是常常會想手動關電燈，需要習慣完全用嘴巴才行。</p>
-<p>2024&#x2F;02<br>Raspberry Pi 5：NT$ 4,788<br>使用 Raspberry Pi 5 建置 Home Assistant，使用 <span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL3FxYWF0dy9KY2lIaXRhY2hpSEE=">Jci-Hitachi Home Assistant Integration<i class="fa fa-external-link-alt"></i></span> 將日立除濕機整合進 Apple HomeKit。</p>
-<h2 id="待添購物"><a href="#待添購物" class="headerlink" title="待添購物"></a>待添購物</h2><p>智能紅外線遙控器：控制冷氣</p>
-<h2 id="配電組合"><a href="#配電組合" class="headerlink" title="配電組合"></a>配電組合</h2><p>長期通電：homepod mini、檯燈、mac mini<br>回家時要開：２螢幕、iphone 充電器、電燈、apple TV<br>準備睡覺時要開：夜燈；要關：電燈<br>晚安時要關的：２螢幕、iphone 充電器、夜燈<br>出門上班要關的：apple TV</p>
-<h2 id="更新日誌"><a href="#更新日誌" class="headerlink" title="更新日誌"></a>更新日誌</h2><p>2023&#x2F;12&#x2F;23<br>目前除了米家床頭燈 2 發生過幾次斷線外其他都用得很舒適，解放雙手真爽</p>
-<p>2024&#x2F;02&#x2F;08<br>建置 Home Assistant，將日立除濕機整合進 Apple HomeKit，整合後心情很好</p>
-]]></content>
-      <categories>
-        <category>Life</category>
-        <category>Share</category>
-      </categories>
-      <tags>
-        <tag>Smart Home</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Life Share：Home Assistant</title>
     <url>/Life/Share/a4e0acfc/</url>
     <content><![CDATA[<p>提升生活小確幸。</p>
@@ -1815,6 +1788,33 @@
       <tags>
         <tag>Smart Home</tag>
         <tag>Home Assistant</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Life Share：Smart Home</title>
+    <url>/Life/Share/2ac8f7fd/</url>
+    <content><![CDATA[<p>提升生活小確幸。</p>
+<span id="more"></span>
+
+<h2 id="採用系統"><a href="#採用系統" class="headerlink" title="採用系統"></a>採用系統</h2><p>Apple HomeKit<br>理由：因為換了蘋果手機</p>
+<h2 id="需求"><a href="#需求" class="headerlink" title="需求"></a>需求</h2><p>在床上可以輕鬆看 apple tv<br>睡前可以說：“Hey Siri 準備睡覺” 執行開啟夜燈與一些其他睡前設備<br>睡覺時可以說：“Hey Siri 晚安” 執行關閉夜燈與一些電器</p>
+<h2 id="已添購物"><a href="#已添購物" class="headerlink" title="已添購物"></a>已添購物</h2><p>RFB APPLE TV 4K (3RD GEN) WI-FI+ETH-TWN：NT$ 4,190<br>使用在 2K 的 27 吋電腦螢幕上，安裝過程中有發生看到蘋果標誌後就一直黑畫面，不過最後測試結果為 HDMI 線異常或規格不夠之類的，換一條好一點的 HDMI 線之後就正常了。</p>
+<p>HomePod mini-白色 (MY5H2TA&#x2F;A)：NT$ 2,799<br>作為整個房間的語音智能中樞，目前表現不錯。</p>
+<p>米家床頭燈 2 白色：NT$ 759<br>發生一次斷線過，持續觀察。<br>2023&#x2F;11&#x2F;21 因為網路開開關關又斷線一次，這次比較可怕，從 Apple Home 移除後重連都沒有用，最後是用 Mi Home 加入設備後再加入 Home 才重新連進 Apple HomeKit</p>
+<p>Patya x Meross 遠端遙控智能延長線：NT$ 1,890<br>需要載專門的 App 來進行初次配對，一定要選對相應的圖標，以防萬一也手動長按電源鍵來重置，不然可能會一直連不上。<br>除了初次配對遇到小障礙之外都挺好，就是晚上全黑的時候就算所有開關全斷電，也還是會有綠色電源燈亮著。</p>
+<p>Nanoleaf 智能燈泡3入-RAZER 雷蛇御用燈組：NT$ 1,890<br>有一顆燈泡拿到時電源接口處就有刮傷，但因為功能看起來正常就直接用了，整體使用很滿意。<br>唯一困擾是常常會想手動關電燈，需要習慣完全用嘴巴才行。</p>
+<p>2024&#x2F;02<br>Raspberry Pi 5：NT$ 4,788<br>使用 Raspberry Pi 5 建置 Home Assistant，使用 <span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL3FxYWF0dy9KY2lIaXRhY2hpSEE=">Jci-Hitachi Home Assistant Integration<i class="fa fa-external-link-alt"></i></span> 將日立除濕機整合進 Apple HomeKit。</p>
+<h2 id="待添購物"><a href="#待添購物" class="headerlink" title="待添購物"></a>待添購物</h2><p>智能紅外線遙控器：控制冷氣</p>
+<h2 id="配電組合"><a href="#配電組合" class="headerlink" title="配電組合"></a>配電組合</h2><p>長期通電：homepod mini、檯燈、mac mini<br>回家時要開：２螢幕、iphone 充電器、電燈、apple TV<br>準備睡覺時要開：夜燈；要關：電燈<br>晚安時要關的：２螢幕、iphone 充電器、夜燈<br>出門上班要關的：apple TV</p>
+<h2 id="更新日誌"><a href="#更新日誌" class="headerlink" title="更新日誌"></a>更新日誌</h2><p>2023&#x2F;12&#x2F;23<br>目前除了米家床頭燈 2 發生過幾次斷線外其他都用得很舒適，解放雙手真爽</p>
+<p>2024&#x2F;02&#x2F;08<br>建置 Home Assistant，將日立除濕機整合進 Apple HomeKit，整合後心情很好</p>
+]]></content>
+      <categories>
+        <category>Life</category>
+        <category>Share</category>
+      </categories>
+      <tags>
+        <tag>Smart Home</tag>
       </tags>
   </entry>
 </search>
