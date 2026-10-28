@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width">
 <meta name="theme-color" content="#222" media="(prefers-color-scheme: light)">
-<meta name="theme-color" content="#222" media="(prefers-color-scheme: dark)"><meta name="generator" content="Hexo 6.3.0">
+<meta name="theme-color" content="#222" media="(prefers-color-scheme: dark)"><meta name="generator" content="Hexo 8.1.2">
 
   <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
@@ -16,13 +16,13 @@
 
 
 
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha256-wiz7ZSCn/btzhjKDQBms9Hx4sSeUYsDrTLg7roPstac=" crossorigin="anonymous">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.1/css/all.min.css" integrity="sha256-4Lad8m4ZWW1Lgb9+sMVLYEfnIh7BjV1NQMEe79Pviks=" crossorigin="anonymous">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancyapps-ui/5.0.33/fancybox/fancybox.css" integrity="sha256-gkQVf8UKZgQ0HyuxL/VnacadJ+D2Kox2TCEBuNQg5+w=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancyapps-ui/6.1.14/fancybox/fancybox.css" integrity="sha256-mdaMxrItEW6hMIVJJNPKuX0B7KCSJQVEv3mVY4N2we4=" crossorigin="anonymous">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pace/1.2.4/themes/blue/pace-theme-minimal.css">
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/pace/1.2.4/pace.min.js" integrity="sha256-gqd7YTjg/BtfqWSwsJOvndl0Bxc8gFImLEkXQT8+qj0=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pace/1.2.4/pace.min.js" integrity="sha256-gqd7YTjg/BtfqWSwsJOvndl0Bxc8gFImLEkXQT8+qj0=" crossorigin="anonymous" defer></script>
 
-<script class="next-config" data-name="main" type="application/json">{"hostname":"wcw0310.github.io","root":"/","images":"/images","scheme":"Gemini","darkmode":true,"version":"8.19.2","exturl":true,"sidebar":{"position":"right","display":"post","padding":18,"offset":12},"copycode":{"enable":true,"style":"flat"},"fold":{"enable":true,"height":500},"bookmark":{"enable":false,"color":"#222","save":"manual"},"mediumzoom":false,"lazyload":true,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":true,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜尋...","empty":"我們無法找到任何有關 ${query} 的搜索結果","hits_time":"${hits} 找到 ${time} 個結果","hits":"找到 ${hits} 個結果"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
+<script class="next-config" data-name="main" type="application/json">{"hostname":"wcw0310.github.io","root":"/","images":"/images","scheme":"Gemini","darkmode":true,"version":"8.29.1","exturl":true,"sidebar":{"position":"right","width_expanded":320,"width_dual_column":240,"display":"post","padding":18,"offset":12},"hljswrap":true,"codeblock":{"theme":{"light":"default","dark":"stackoverflow-dark"},"prism":{"light":"prism","dark":"prism-dark"},"copy_button":{"enable":true,"style":"flat"},"fold":{"enable":true,"height":500},"language":false},"bookmark":{"enable":false,"color":"#222","save":"manual"},"mediumzoom":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":true,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"duration":200,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"i18n":{"placeholder":"搜尋...","empty":"我們無法找到任何有關 ${query} 的搜索結果","hits_time":"找到 ${hits} 個搜索結果（用時 ${time} 毫秒）","hits":"找到 ${hits} 個搜索結果"},"path":"/search.xml","localsearch":{"enable":true,"top_n_per_article":1,"unescape":false,"preload":false,"trigger":"auto"}}</script><script src="/js/config.js" defer></script>
 
     <meta name="description" content="前一篇系列文章：更換 Hexo 主題，初探 NexT 最後建出了最基本的 NexT 主題 Blog，看起來簡潔有力，但還是缺很多 Blog 的常見功能。本來以為要到處搜尋 Plugins 之類的，但 NexT 的官方文檔 已經列出了大量的選項與 Plugins，很多功能只要在 config 中啟用就好。 下面我會列出非常必須或啟用後覺得特別有感的功能，並提供我自己的設定給各位參考，此外非常建議大家">
 <meta property="og:type" content="article">
@@ -48,15 +48,14 @@
 <meta property="article:published_time" content="2022-12-01T13:04:19.000Z">
 <meta property="article:modified_time" content="2024-04-05T06:01:01.191Z">
 <meta property="article:author" content="WCW">
+<meta property="article:tag" content="Firebase">
 <meta property="article:tag" content="Hexo">
 <meta property="article:tag" content="NexT">
-<meta property="article:tag" content="Firebase">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://github.com/WCW0310/blogPicture/blob/master/Hexo/Hexo-Blog-03-Hexo-Theme-NexT-2/nextSettingSample.png?raw=true">
 
 
 <link rel="canonical" href="https://wcw0310.github.io/Hexo/Blog/a4c4ed5f/">
-
 
 
 <script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-TW","comments":true,"permalink":"https://wcw0310.github.io/Hexo/Blog/a4c4ed5f/","path":"Hexo/Blog/a4c4ed5f/","title":"Hexo Blog 03：繼續探索 NexT"}</script>
@@ -66,7 +65,7 @@
   
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-NGNFG3T6E5"></script>
   <script class="next-config" data-name="google_analytics" type="application/json">{"tracking_id":"G-NGNFG3T6E5","only_pageview":false,"measure_protocol_api_secret":null}</script>
-  <script src="/js/third-party/analytics/google-analytics.js"></script>
+  <script src="/js/third-party/analytics/google-analytics.js" defer></script>
 
 
 
@@ -74,6 +73,37 @@
 
 
 
+
+  
+  <script size="300" alpha="0.6" zIndex="-1" src="https://cdnjs.cloudflare.com/ajax/libs/ribbon.js/1.0.2/ribbon.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/next-theme-pjax/0.6.0/pjax.min.js" integrity="sha256-vxLn1tSKWD4dqbMRyv940UYw4sXgMtYcK6reefzZrao=" crossorigin="anonymous" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/fancyapps-ui/6.1.14/fancybox/fancybox.umd.js" integrity="sha256-QnJV4HT5r8i89ovZGRD86iynZqHerEbT2xt69vDM36I=" crossorigin="anonymous" defer></script>
+<script src="/js/utils.js" defer></script><script src="/js/motion.js" defer></script><script src="/js/sidebar.js" defer></script><script src="/js/next-boot.js" defer></script><script src="/js/pjax.js" defer></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-generator-searchdb/1.5.0/search.js" integrity="sha256-xFC6PJ82SL9b3WkGjFavNiA9gm5z6UBxWPiu4CYjptg=" crossorigin="anonymous" defer></script>
+<script src="/js/third-party/search/local-search.js" defer></script>
+
+
+  <script class="next-config" data-name="mermaid" type="application/json">{"enable":true,"theme":{"light":"default","dark":"dark"},"js":{"url":"https://cdnjs.cloudflare.com/ajax/libs/mermaid/11.10.1/mermaid.min.js","integrity":"sha256-BmQmdWDS8X2OTbrwELWK366LV6escyWhHHe0XCTU/Hk="}}</script>
+  <script src="/js/third-party/tags/mermaid.js" defer></script>
+
+
+  <script src="/js/third-party/fancybox.js" defer></script>
+
+  <script src="/js/third-party/pace.js" defer></script>
+
+
+  
+  <script data-pjax async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  <script class="next-config" data-name="firestore" type="application/json">{"collection":"articles","projectId":"wcw0310blog"}</script>
+  <script src="/js/third-party/statistics/firestore.js" defer></script>
+
+
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/quicklink/3.0.2/quicklink.umd.js" integrity="sha256-Qo2BTvlsBVXIr5fEHp8xlBpUmkbDINr5cQZeSfMTES8=" crossorigin="anonymous" defer></script>
+  <script class="next-config" data-name="quicklink" type="application/json">{"enable":true,"home":true,"archive":true,"delay":true,"timeout":3000,"priority":true,"url":"https://wcw0310.github.io/Hexo/Blog/a4c4ed5f/"}</script>
+  <script src="/js/third-party/quicklink.js" defer></script>
 
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5074749359677811"
      crossorigin="anonymous"></script><link rel="stylesheet" type="text/css" href="/css/injector/main.css" /><link rel="preload" as="style" href="/css/injector/light.css" /><link rel="preload" as="style" href="/css/injector/dark.css" />
@@ -88,12 +118,8 @@
   <main class="main">
     <div class="column">
       <header class="header" itemscope itemtype="http://schema.org/WPHeader"><div class="site-brand-container">
-  <div class="site-nav-toggle">
-    <div class="toggle" aria-label="切換導航欄" role="button">
-        <span class="toggle-line"></span>
-        <span class="toggle-line"></span>
-        <span class="toggle-line"></span>
-    </div>
+  <div class="site-nav-search popup-trigger" aria-label="搜尋" role="button">
+      <i class="fa fa-search fa-fw fa-lg"></i>
   </div>
 
   <div class="site-meta">
@@ -106,10 +132,8 @@
       <p class="site-subtitle" itemprop="description">WCW's blog</p>
   </div>
 
-  <div class="site-nav-right">
-    <div class="toggle popup-trigger" aria-label="搜尋" role="button">
-        <i class="fa fa-search fa-fw fa-lg"></i>
-    </div>
+  <div class="site-nav-toggle" aria-label="切換導航欄" role="button">
+      <i class="fa fa-ellipsis fa-fw fa-lg"></i>
   </div>
 </div>
 
@@ -126,28 +150,29 @@
 
 
 
-  <div class="search-pop-overlay">
-    <div class="popup search-popup"><div class="search-header">
-  <span class="search-icon">
-    <i class="fa fa-search"></i>
-  </span>
-  <div class="search-input-container">
-    <input autocomplete="off" autocapitalize="off" maxlength="80"
-           placeholder="搜尋..." spellcheck="false"
-           type="search" class="search-input">
-  </div>
-  <span class="popup-btn-close" role="button">
-    <i class="fa fa-times-circle"></i>
-  </span>
-</div>
-<div class="search-result-container no-result">
-  <div class="search-result-icon">
-    <i class="fa fa-spinner fa-pulse fa-5x"></i>
-  </div>
-</div>
-
+  
+  <template id="search-popup-template"><div class="search-pop-overlay">
+    <div class="popup search-popup">
+      <div class="search-header">
+        <span class="search-icon">
+          <i class="fa fa-search"></i>
+        </span>
+        <div class="search-input-container">
+          <input autocomplete="off" autocapitalize="off" maxlength="80"
+                placeholder="搜尋..." spellcheck="false"
+                type="search" class="search-input">
+        </div>
+        <span class="popup-btn-close" role="button">
+          <i class="fa fa-times-circle"></i>
+        </span>
+      </div>
+      <div class="search-result-container">
+        <div class="search-result-icon">
+          <i class="fa fa-spinner fa-pulse fa-5x"></i>
+        </div>
+      </div>
     </div>
-  </div>
+  </div></template>
 
 </header>
         
@@ -268,7 +293,7 @@
     <div class="sidebar-inner sidebar-blogroll">
       <div class="links-of-blogroll animated">
         <div class="links-of-blogroll-title"><i class="fa fa-globe fa-fw"></i>
-          Links
+          連結
         </div>
         <ul class="links-of-blogroll-list">
             <li class="links-of-blogroll-item">
@@ -395,7 +420,7 @@
     </span>
     <span class="post-meta-item" title="文章字數">
       <span class="post-meta-item-icon">
-        <i class="far fa-file-word"></i>
+        <i class="far fa-file-lines"></i>
       </span>
       <span class="post-meta-item-text">文章字數：</span>
       <span>2.7k</span>
@@ -419,7 +444,7 @@
 <p>下面我會列出非常必須或啟用後覺得特別有感的功能，並提供我自己的設定給各位參考，此外非常建議大家優先閱讀官方文檔自行嘗試。</p>
 <span id="more"></span>
 
-<h2 id="成品"><a href="#成品" class="headerlink" title="成品"></a>成品</h2><p>跟著我設定會變成這樣<br><img data-src="https://github.com/WCW0310/blogPicture/blob/master/Hexo/Hexo-Blog-03-Hexo-Theme-NexT-2/nextSettingSample.png?raw=true"></p>
+<h2 id="成品"><a href="#成品" class="headerlink" title="成品"></a>成品</h2><p>跟著我設定會變成這樣<br><img src="https://github.com/WCW0310/blogPicture/blob/master/Hexo/Hexo-Blog-03-Hexo-Theme-NexT-2/nextSettingSample.png?raw=true" loading="lazy"></p>
 <h2 id="環境"><a href="#環境" class="headerlink" title="環境"></a>環境</h2><p>Hexo: 6.3.0</p>
 <p>hexo-cli: 4.3.0</p>
 <p>NexT: 8.14.0</p>
@@ -433,7 +458,7 @@
 <p>有一些功能顯示的位置跟側邊欄位置相關，像是：返回最上按鈕、書籤。</p>
 <figure class="highlight yaml"><figcaption><span>_config.next.yml</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">sidebar:</span></span><br><span class="line">  <span class="comment"># Sidebar Position.</span></span><br><span class="line">  <span class="comment">#position: left</span></span><br><span class="line">  <span class="attr">position:</span> <span class="string">right</span></span><br></pre></td></tr></table></figure>
 
-<p>側邊欄 (sidebar)<br><img data-src="https://github.com/WCW0310/blogPicture/blob/master/Hexo/Hexo-Blog-03-Hexo-Theme-NexT-2/sidebar.png?raw=true"></p>
+<p>側邊欄 (sidebar)<br><img src="https://github.com/WCW0310/blogPicture/blob/master/Hexo/Hexo-Blog-03-Hexo-Theme-NexT-2/sidebar.png?raw=true" loading="lazy"></p>
 <h2 id="首頁文章折疊與閱讀全文按鈕"><a href="#首頁文章折疊與閱讀全文按鈕" class="headerlink" title="首頁文章折疊與閱讀全文按鈕"></a>首頁文章折疊與閱讀全文按鈕</h2><p>首頁預設是把每篇文章完整呈現出來，其實滿不符合一般人的期望，開啟此功能可以只顯示文章摘要，讓想看完整文章的讀者可以點擊 <code>閱讀全文</code> 按鈕進入該文章頁面閱讀。</p>
 <ol>
 <li><p>修改設定檔</p>
@@ -443,11 +468,11 @@
 <p>在文章的 Markdown 檔案中插入 <code>&lt;!-- more --&gt;</code> 標記，這樣標記之前的內容會顯示在首頁，標記之後的內容則會隱藏。</p>
 </li>
 </ol>
-<p>閱讀全文按鈕<br><img data-src="https://github.com/WCW0310/blogPicture/blob/master/Hexo/Hexo-Blog-03-Hexo-Theme-NexT-2/readMoreBTN.png?raw=true"></p>
+<p>閱讀全文按鈕<br><img src="https://github.com/WCW0310/blogPicture/blob/master/Hexo/Hexo-Blog-03-Hexo-Theme-NexT-2/readMoreBTN.png?raw=true" loading="lazy"></p>
 <h2 id="訪客人次-總閱讀次數"><a href="#訪客人次-總閱讀次數" class="headerlink" title="訪客人次&#x2F;總閱讀次數"></a>訪客人次&#x2F;總閱讀次數</h2><p>NexT 提供了 <span class="exturl" data-url="aHR0cDovL2licnVjZS5pbmZvLzIwMTUvMDQvMDQvYnVzdWFuemkv">不蒜子<i class="fa fa-external-link-alt"></i></span> 的網站記數功能，只要 <code>enable:</code> 設為 <code>true</code> 就能啟用。</p>
 <figure class="highlight yaml"><figcaption><span>_config.next.yml</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Show Views / Visitors of the website / page with busuanzi.</span></span><br><span class="line"><span class="comment"># For more information: http://ibruce.info/2015/04/04/busuanzi/</span></span><br><span class="line"><span class="attr">busuanzi_count:</span></span><br><span class="line">  <span class="attr">enable:</span> <span class="literal">true</span></span><br><span class="line">  <span class="attr">total_visitors:</span> <span class="literal">true</span> <span class="comment"># 網站總訪客人數，顯示在頁面底部</span></span><br><span class="line">  <span class="attr">total_visitors_icon:</span> <span class="string">fa</span> <span class="string">fa-user</span></span><br><span class="line">  <span class="attr">total_views:</span> <span class="literal">true</span> <span class="comment"># 網站總閱讀次數，網頁每次刷新都會加一 (快樂表)，顯示在頁面底部</span></span><br><span class="line">  <span class="attr">total_views_icon:</span> <span class="string">fa</span> <span class="string">fa-eye</span></span><br><span class="line">  <span class="attr">post_views:</span> <span class="literal">false</span> <span class="comment"># 文章總閱讀次數，網頁每次刷新都會加一 (快樂表)，顯示在文章標題下方。我個人是使用 firestore 實現非快樂表的此功能</span></span><br><span class="line">  <span class="attr">post_views_icon:</span> <span class="string">far</span> <span class="string">fa-eye</span></span><br></pre></td></tr></table></figure>
 
-<p>頁面底部的訪客人數與閱讀次數<br><img data-src="https://github.com/WCW0310/blogPicture/blob/master/Hexo/Hexo-Blog-03-Hexo-Theme-NexT-2/siteCount.png?raw=true"></p>
+<p>頁面底部的訪客人數與閱讀次數<br><img src="https://github.com/WCW0310/blogPicture/blob/master/Hexo/Hexo-Blog-03-Hexo-Theme-NexT-2/siteCount.png?raw=true" loading="lazy"></p>
 <h2 id="文章閱讀次數-Firestore"><a href="#文章閱讀次數-Firestore" class="headerlink" title="文章閱讀次數 (Firestore)"></a>文章閱讀次數 (Firestore)</h2><p>使用 firestore 功能實現的文章閱讀次數，但其實應該說是文章訪客人數，同個瀏覽器重複進入文章是不會增加記數的。</p>
 <p>需要去 <span class="exturl" data-url="aHR0cHM6Ly9jb25zb2xlLmZpcmViYXNlLmdvb2dsZS5jb20vdS8wLw==">Google Firebase<i class="fa fa-external-link-alt"></i></span> 建立新專案，並且取得 <code>apiKey</code> 與 <code>projectId</code>。</p>
 <p>按照 <span class="exturl" data-url="aHR0cHM6Ly90aGVtZS1uZXh0LmpzLm9yZy9kb2NzL3RoaXJkLXBhcnR5LXNlcnZpY2VzL3N0YXRpc3RpY3MtYW5kLWFuYWx5dGljcy5odG1sI0ZpcmViYXNl">NexT 文檔<i class="fa fa-external-link-alt"></i></span> 就可以完成。</p>
@@ -458,7 +483,7 @@
 <p>之後再調整主題設定就好：</p>
 <figure class="highlight yaml"><figcaption><span>_config.next.yml</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Another tool to show number of visitors to each article.</span></span><br><span class="line"><span class="comment"># Visit https://console.firebase.google.com/u/0/ to get apiKey and projectId.</span></span><br><span class="line"><span class="comment"># Visit https://firebase.google.com/docs/firestore/ to get more information about firestore.</span></span><br><span class="line"><span class="attr">firestore:</span></span><br><span class="line">  <span class="attr">enable:</span> <span class="literal">true</span></span><br><span class="line">  <span class="attr">collection:</span> <span class="string">articles</span> <span class="comment"># Required, a string collection name to access firestore database</span></span><br><span class="line">  <span class="attr">apiKey:</span> <span class="string">OOOOO</span> <span class="comment"># Required</span></span><br><span class="line">  <span class="attr">projectId:</span> <span class="string">OOOOO</span> <span class="comment"># Required</span></span><br></pre></td></tr></table></figure>
 
-<p>文章標題下方的眼睛是 firestore 計算的文章訪客人數<br><img data-src="https://github.com/WCW0310/blogPicture/blob/master/Hexo/Hexo-Blog-03-Hexo-Theme-NexT-2/firestoreCount.png?raw=true"></p>
+<p>文章標題下方的眼睛是 firestore 計算的文章訪客人數<br><img src="https://github.com/WCW0310/blogPicture/blob/master/Hexo/Hexo-Blog-03-Hexo-Theme-NexT-2/firestoreCount.png?raw=true" loading="lazy"></p>
 <p>這功能設置起來是真的滿麻煩，目前也不是很彈性，想快速有這種功能只要將前面  <span class="exturl" data-url="aHR0cDovL2licnVjZS5pbmZvLzIwMTUvMDQvMDQvYnVzdWFuemkv">不蒜子<i class="fa fa-external-link-alt"></i></span> 的網站記數功能 <code>post_views:</code> 設為 true 就好了。</p>
 <p>但使用 firestore 的方式可以將專案結合其他 Google 的統計功能。</p>
 <h2 id="程式碼區塊複製按紐"><a href="#程式碼區塊複製按紐" class="headerlink" title="程式碼區塊複製按紐"></a>程式碼區塊複製按紐</h2><p>預設程式碼區塊是沒有複製按鈕的，不過也只要 <code>enable:</code> 設為 <code>true</code> 就能啟用。</p>
@@ -470,7 +495,7 @@
 <p>可以選擇要不要放在側邊欄裡面，如果不要的話就會出現在側邊欄另一邊的下面。</p>
 <figure class="highlight yaml"><figcaption><span>_config.next.yml</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">back2top:</span></span><br><span class="line">  <span class="attr">enable:</span> <span class="literal">true</span></span><br><span class="line">  <span class="comment"># Back to top in sidebar.</span></span><br><span class="line">  <span class="attr">sidebar:</span> <span class="literal">false</span></span><br><span class="line">  <span class="comment"># Scroll percent label in b2t button.</span></span><br><span class="line">  <span class="attr">scrollpercent:</span> <span class="literal">true</span></span><br></pre></td></tr></table></figure>
 
-<p>顯示瀏覽百分比的返回最上按鈕<br><img data-src="https://github.com/WCW0310/blogPicture/blob/master/Hexo/Hexo-Blog-03-Hexo-Theme-NexT-2/b2tBTN.png?raw=true"></p>
+<p>顯示瀏覽百分比的返回最上按鈕<br><img src="https://github.com/WCW0310/blogPicture/blob/master/Hexo/Hexo-Blog-03-Hexo-Theme-NexT-2/b2tBTN.png?raw=true" loading="lazy"></p>
 <h2 id="頁面載入進度條"><a href="#頁面載入進度條" class="headerlink" title="頁面載入進度條"></a>頁面載入進度條</h2><p>顯示在瀏覽器上方，讓頁面載入時有個視覺回饋。</p>
 <figure class="highlight yaml"><figcaption><span>_config.next.yml</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Progress bar in the top during page loading.</span></span><br><span class="line"><span class="comment"># For more information: https://github.com/CodeByZach/pace</span></span><br><span class="line"><span class="attr">pace:</span></span><br><span class="line">  <span class="attr">enable:</span> <span class="literal">true</span></span><br><span class="line">  <span class="comment"># All available colors:</span></span><br><span class="line">  <span class="comment"># black | blue | green | orange | pink | purple | red | silver | white | yellow</span></span><br><span class="line">  <span class="attr">color:</span> <span class="string">blue</span></span><br><span class="line">  <span class="comment"># All available themes:</span></span><br><span class="line">  <span class="comment"># big-counter | bounce | barber-shop | center-atom | center-circle | center-radar | center-simple</span></span><br><span class="line">  <span class="comment"># corner-indicator | fill-left | flat-top | flash | loading-bar | mac-osx | material | minimal</span></span><br><span class="line">  <span class="attr">theme:</span> <span class="string">minimal</span></span><br></pre></td></tr></table></figure>
 
@@ -479,7 +504,7 @@
 <h2 id="閱讀進度條"><a href="#閱讀進度條" class="headerlink" title="閱讀進度條"></a>閱讀進度條</h2><p>顯示在瀏覽器上方 (同頁面載入進度條) 或下方，跟返回最上按鈕的百分比是一樣意思，就是多一種視覺回饋，預設是藍色。</p>
 <figure class="highlight yaml"><figcaption><span>_config.next.yml</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Reading progress bar</span></span><br><span class="line"><span class="attr">reading_progress:</span></span><br><span class="line">  <span class="attr">enable:</span> <span class="literal">true</span></span><br><span class="line">  <span class="comment"># Available values: left | right</span></span><br><span class="line">  <span class="attr">start_at:</span> <span class="string">left</span></span><br><span class="line">  <span class="comment"># Available values: top | bottom</span></span><br><span class="line">  <span class="attr">position:</span> <span class="string">top</span></span><br><span class="line">  <span class="attr">reversed:</span> <span class="literal">false</span></span><br><span class="line">  <span class="attr">color:</span> <span class="string">&quot;#37c6c0&quot;</span></span><br><span class="line">  <span class="attr">height:</span> <span class="string">3px</span></span><br></pre></td></tr></table></figure>
 
-<p>閱讀進度條設成 left 跟 top 後，跟頁面載入進度條其實是差不多的東西<br><img data-src="https://github.com/WCW0310/blogPicture/blob/master/Hexo/Hexo-Blog-03-Hexo-Theme-NexT-2/progressBar.png?raw=true"></p>
+<p>閱讀進度條設成 left 跟 top 後，跟頁面載入進度條其實是差不多的東西<br><img src="https://github.com/WCW0310/blogPicture/blob/master/Hexo/Hexo-Blog-03-Hexo-Theme-NexT-2/progressBar.png?raw=true" loading="lazy"></p>
 <h2 id="書籤"><a href="#書籤" class="headerlink" title="書籤"></a>書籤</h2><p>記住讀者的閱讀位置，這樣下次到訪時會從記錄的位置開始。</p>
 <p>啟用後側邊欄另一邊的上面會有個書籤的圖標，點擊後就會記錄了。</p>
 <p>也能設成自動記錄，但我個人覺得自動記錄很惱人，所以採用手動模式。</p>
@@ -500,29 +525,29 @@
 <li><p>調整主題設定</p>
 <figure class="highlight yaml"><figcaption><span>_config.next.yml</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Post meta display settings</span></span><br><span class="line"><span class="attr">post_meta:</span></span><br><span class="line">  <span class="attr">item_text:</span> <span class="literal">false</span> <span class="comment"># 文章標題下方的標示是否顯示說明文字</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Post wordcount display settings</span></span><br><span class="line"><span class="comment"># Dependencies: https://github.com/next-theme/hexo-word-counter</span></span><br><span class="line"><span class="attr">symbols_count_time:</span></span><br><span class="line">  <span class="attr">separated_meta:</span> <span class="literal">false</span> <span class="comment"># 文章標題下方的標示是否獨立一行顯示</span></span><br><span class="line">  <span class="attr">item_text_total:</span> <span class="literal">true</span> <span class="comment"># 頁面最下方的標示是否顯示說明文字</span></span><br></pre></td></tr></table></figure></li>
 </ol>
-<p>文章標題下方的文章字數統計與閱讀時間估計<br><img data-src="https://github.com/WCW0310/blogPicture/blob/master/Hexo/Hexo-Blog-03-Hexo-Theme-NexT-2/postWordCandReadT.png?raw=true"></p>
-<p>頁面最下方的全文章字數統計與全文章閱讀時間估計<br><img data-src="https://github.com/WCW0310/blogPicture/blob/master/Hexo/Hexo-Blog-03-Hexo-Theme-NexT-2/siteWordCandReadT.png?raw=true"></p>
+<p>文章標題下方的文章字數統計與閱讀時間估計<br><img src="https://github.com/WCW0310/blogPicture/blob/master/Hexo/Hexo-Blog-03-Hexo-Theme-NexT-2/postWordCandReadT.png?raw=true" loading="lazy"></p>
+<p>頁面最下方的全文章字數統計與全文章閱讀時間估計<br><img src="https://github.com/WCW0310/blogPicture/blob/master/Hexo/Hexo-Blog-03-Hexo-Theme-NexT-2/siteWordCandReadT.png?raw=true" loading="lazy"></p>
 <h2 id="關於-About-、標籤-Tags-與-分類-Categories-頁面"><a href="#關於-About-、標籤-Tags-與-分類-Categories-頁面" class="headerlink" title="關於 (About)、標籤 (Tags) 與 分類 (Categories) 頁面"></a>關於 (About)、標籤 (Tags) 與 分類 (Categories) 頁面</h2><p>NexT 預設沒有幫使用者建立這三個常用的頁面，不過建立步驟也很簡單，使用的是 <span class="exturl" data-url="aHR0cHM6Ly90aGVtZS1uZXh0LmpzLm9yZy9kb2NzL3RoZW1lLXNldHRpbmdzL2N1c3RvbS1wYWdlcy5odG1s">NexT Custom Pages<i class="fa fa-external-link-alt"></i></span> 機制：</p>
 <h3 id="使用建立新頁面指令："><a href="#使用建立新頁面指令：" class="headerlink" title="使用建立新頁面指令："></a>使用建立新頁面指令：</h3><figure class="highlight sh"><figcaption><span>command line tool</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new page custom-name</span><br></pre></td></tr></table></figure>
 
 <p>指令中的 <code>custom-name</code> 分別換成 <code>about</code>、<code>tags</code> 與 <code>categories</code> 就能創造出不同的三種頁面（此指令可以自訂任何頁面，不限於這三種）。</p>
 <p>該指令會在 Blog 專案根目錄中的 source 資料夾中建立 custom-name&#x2F;index.md 檔案。</p>
 <h3 id="修改-custom-name-index-md："><a href="#修改-custom-name-index-md：" class="headerlink" title="修改 custom-name&#x2F;index.md："></a>修改 custom-name&#x2F;index.md：</h3><ul>
-<li><p>關於（about）頁面的 front-matter 只需要自訂 title 即可，接著下面可以像一般 post 文章一樣寫入自定義內容。</p>
+<li>關於（about）頁面的 front-matter 只需要自訂 title 即可，接著下面可以像一般 post 文章一樣寫入自定義內容。</li>
+</ul>
 <figure class="highlight yaml"><figcaption><span>about/index.md</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">title:</span> <span class="string">關於</span></span><br><span class="line"><span class="meta">---</span></span><br><span class="line"><span class="meta"></span></span><br><span class="line"><span class="string">Hi</span> <span class="string">歡迎你來到這一頁，在這文字媒介式微的時代，你能看到我在這寫的廢話真的算緣分。</span></span><br></pre></td></tr></table></figure>
 <p>（除了 <code>type: tags</code> 與 <code>type: categories</code> 的 Custom Pages 都能當成一般文章編輯內容）</p>
-</li>
-<li><p>標籤（tags）頁面 與 分類（categories）頁面的 front-matter 還需要加上 type，並且下面不能加上自定義內容（加了也沒用）。</p>
+<ul>
+<li>標籤（tags）頁面 與 分類（categories）頁面的 front-matter 還需要加上 type，並且下面不能加上自定義內容（加了也沒用）。</li>
+</ul>
 <figure class="highlight yaml"><figcaption><span>tags/index.md</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">---</span></span><br><span class="line"><span class="attr">title:</span> <span class="string">標籤</span></span><br><span class="line"><span class="attr">type:</span> <span class="string">tags</span></span><br><span class="line"><span class="meta">---</span></span><br></pre></td></tr></table></figure>
 <figure class="highlight yaml"><figcaption><span>categories/index.md</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">---</span></span><br><span class="line"><span class="attr">title:</span> <span class="string">分類</span></span><br><span class="line"><span class="attr">type:</span> <span class="string">categories</span></span><br><span class="line"><span class="meta">---</span></span><br></pre></td></tr></table></figure>
 <p>（NexT 主題對這兩種 type 的 Custom Pages 做了特殊處置，即顯示所有 tags 或顯示所有 categories。）</p>
-</li>
-</ul>
 <h3 id="修改主題設定檔："><a href="#修改主題設定檔：" class="headerlink" title="修改主題設定檔："></a>修改主題設定檔：</h3><p>將本來被註解的 about、tags 與 categories 開啟。</p>
 <figure class="highlight yaml"><figcaption><span>_config.next.yml</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Usage: `Key: /link/ || icon`</span></span><br><span class="line"><span class="comment"># Key is the name of menu item. If the translation for this item is available, the translated text will be loaded, otherwise the Key name will be used. Key is case-sensitive.</span></span><br><span class="line"><span class="comment"># Value before `||` delimiter is the target link, value after `||` delimiter is the name of Font Awesome icon.</span></span><br><span class="line"><span class="comment"># External url should start with http:// or https://</span></span><br><span class="line"><span class="attr">menu:</span></span><br><span class="line">  <span class="attr">home:</span> <span class="string">/</span> <span class="string">||</span> <span class="string">fa</span> <span class="string">fa-home</span></span><br><span class="line">  <span class="attr">about:</span> <span class="string">/about/</span> <span class="string">||</span> <span class="string">fa</span> <span class="string">fa-user</span></span><br><span class="line">  <span class="attr">tags:</span> <span class="string">/tags/</span> <span class="string">||</span> <span class="string">fa</span> <span class="string">fa-tags</span></span><br><span class="line">  <span class="attr">categories:</span> <span class="string">/categories/</span> <span class="string">||</span> <span class="string">fa</span> <span class="string">fa-th</span></span><br><span class="line">  <span class="attr">archives:</span> <span class="string">/archives/</span> <span class="string">||</span> <span class="string">fa</span> <span class="string">fa-archive</span></span><br><span class="line">  <span class="comment">#schedule: /schedule/ || fa fa-calendar</span></span><br><span class="line">  <span class="comment">#sitemap: /sitemap.xml || fa fa-sitemap</span></span><br><span class="line">  <span class="comment">#commonweal: /404/ || fa fa-heartbeat</span></span><br></pre></td></tr></table></figure>
 
 <p>完成上述操作後，重新部署 Blog 就能看到側邊欄的 menu 會出現 關於、標籤 與 分類 按鈕，點擊後可以進入各獨立頁面。</p>
-<div class="group-picture"><div class="group-picture-row"><div class="group-picture-column"><img data-src="https://github.com/WCW0310/blogPicture/blob/master/Hexo/Hexo-Blog-03-Hexo-Theme-NexT-2/about.png?raw=true" alt="關於頁面 (About)"></div><div class="group-picture-column"><img data-src="https://github.com/WCW0310/blogPicture/blob/master/Hexo/Hexo-Blog-03-Hexo-Theme-NexT-2/tags.png?raw=true" alt="標籤頁面 (Tags)"></div><div class="group-picture-column"><img data-src="https://github.com/WCW0310/blogPicture/blob/master/Hexo/Hexo-Blog-03-Hexo-Theme-NexT-2/categories.png?raw=true" alt="分類頁面 (Categories)"></div></div></div>
+<div class="group-picture"><div class="group-picture-row"><div class="group-picture-column"><img src="https://github.com/WCW0310/blogPicture/blob/master/Hexo/Hexo-Blog-03-Hexo-Theme-NexT-2/about.png?raw=true" alt="關於頁面 (About)" loading="lazy"></div><div class="group-picture-column"><img src="https://github.com/WCW0310/blogPicture/blob/master/Hexo/Hexo-Blog-03-Hexo-Theme-NexT-2/tags.png?raw=true" alt="標籤頁面 (Tags)" loading="lazy"></div><div class="group-picture-column"><img src="https://github.com/WCW0310/blogPicture/blob/master/Hexo/Hexo-Blog-03-Hexo-Theme-NexT-2/categories.png?raw=true" alt="分類頁面 (Categories)" loading="lazy"></div></div></div>
 
 
 
@@ -538,7 +563,7 @@
 <li><p>調整主題設定</p>
 <figure class="highlight yaml"><figcaption><span>_config.next.yml</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Local Search</span></span><br><span class="line"><span class="comment"># Dependencies: https://github.com/next-theme/hexo-generator-searchdb</span></span><br><span class="line"><span class="attr">local_search:</span></span><br><span class="line">  <span class="attr">enable:</span> <span class="literal">true</span></span><br><span class="line">  <span class="comment"># If auto, trigger search by changing input.</span></span><br><span class="line">  <span class="comment"># If manual, trigger search by pressing enter key or search button.</span></span><br><span class="line">  <span class="attr">trigger:</span> <span class="string">auto</span></span><br><span class="line">  <span class="comment"># Show top n results per article, show all results by setting to -1</span></span><br><span class="line">  <span class="attr">top_n_per_article:</span> <span class="number">1</span></span><br><span class="line">  <span class="comment"># Unescape html strings to the readable one.</span></span><br><span class="line">  <span class="attr">unescape:</span> <span class="literal">false</span></span><br><span class="line">  <span class="comment"># Preload the search data when the page loads.</span></span><br><span class="line">  <span class="attr">preload:</span> <span class="literal">false</span></span><br></pre></td></tr></table></figure></li>
 </ol>
-<p>站內搜尋範例<br><img data-src="https://github.com/WCW0310/blogPicture/blob/master/Hexo/Hexo-Blog-03-Hexo-Theme-NexT-2/search.png?raw=true"></p>
+<p>站內搜尋範例<br><img src="https://github.com/WCW0310/blogPicture/blob/master/Hexo/Hexo-Blog-03-Hexo-Theme-NexT-2/search.png?raw=true" loading="lazy"></p>
 <h2 id="相關文章"><a href="#相關文章" class="headerlink" title="相關文章"></a>相關文章</h2><p>在每篇文章的側邊欄列出關聯的文章 (NexT 8.14.0 之前是在每篇文章最後，並且有很多問題)，這功能我是覺得滿推薦啟用的。</p>
 <p>照 <span class="exturl" data-url="aHR0cHM6Ly90aGVtZS1uZXh0LmpzLm9yZy9kb2NzL3RoZW1lLXNldHRpbmdzL3Bvc3RzLmh0bWwjUmVsYXRlZC1Qb3B1bGFyLVBvc3Rz">NexT 文檔<i class="fa fa-external-link-alt"></i></span> 操作才會成功，若是直接照 <span class="exturl" data-url="aHR0cHM6Ly90aGVtZS1uZXh0LmpzLm9yZy9kb2NzL3RoZW1lLXNldHRpbmdzL3Bvc3RzLmh0bWwjUmVsYXRlZC1Qb3B1bGFyLVBvc3Rz">插件 README<i class="fa fa-external-link-alt"></i></span> 設定會失敗，因為 NexT 已經進行實現了，我們只需要安裝跟啟用就好。</p>
 <ol>
@@ -551,7 +576,7 @@
 </ol>
 <figure class="highlight yaml"><figcaption><span>_config.next.yml</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Related popular posts</span></span><br><span class="line"><span class="comment"># Dependencies: https://github.com/sergeyzwezdin/hexo-related-posts</span></span><br><span class="line"><span class="attr">related_posts:</span></span><br><span class="line">  <span class="attr">enable:</span> <span class="literal">true</span></span><br><span class="line">  <span class="attr">title:</span> <span class="comment"># Custom header, leave empty to use the default one</span></span><br><span class="line">  <span class="attr">display_in_home:</span> <span class="literal">false</span></span><br></pre></td></tr></table></figure>
 
-<p>相關文章範例<br><img data-src="https://github.com/WCW0310/blogPicture/blob/master/Hexo/Hexo-Blog-03-Hexo-Theme-NexT-2/relatedPosts.png?raw=true"></p>
+<p>相關文章範例<br><img src="https://github.com/WCW0310/blogPicture/blob/master/Hexo/Hexo-Blog-03-Hexo-Theme-NexT-2/relatedPosts.png?raw=true" loading="lazy"></p>
 <h2 id="結語"><a href="#結語" class="headerlink" title="結語"></a>結語</h2><p>啟用以上功能後，Blog 頁面整個豐富了起來，但目前還是只能供讀者閱讀而已，下次再加上能讓讀者與作者交流的功能。</p>
 <p>下一篇系列文章：<a href="/Hexo/Blog/bf635840/" title="Hexo Blog 04：NexT 主題加入留言與聊天室機制">NexT 主題加入留言與聊天室機制</a></p>
 <h2 id="參考資料"><a href="#參考資料" class="headerlink" title="參考資料"></a>參考資料</h2><p><span class="exturl" data-url="aHR0cHM6Ly93ZWlyZW54dWUuZ2l0aHViLmlvLzIwMjEvMDYvMTEvaGV4b19uZXh0X2ZpcmVzdG9yZV92aXNpdG9ycy8=">Hexo × NexT × Firestore 顯示瀏覽人次<i class="fa fa-external-link-alt"></i></span></p>
@@ -568,7 +593,7 @@
 <div class="post-copyright">
 <ul>
   <li class="post-copyright-author">
-      <strong>作者： </strong>WCW
+      <strong>本文作者： </strong>WCW
   </li>
   <li class="post-copyright-link">
       <strong>文章連結：</strong>
@@ -662,47 +687,16 @@
   </footer>
 
   
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
   <div class="reading-progress-bar"></div>
 
 <noscript>
   <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
 </noscript>
-
-
-  
-  <script size="300" alpha="0.6" zIndex="-1" src="https://cdnjs.cloudflare.com/ajax/libs/ribbon.js/1.0.2/ribbon.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/next-theme-pjax/0.6.0/pjax.min.js" integrity="sha256-vxLn1tSKWD4dqbMRyv940UYw4sXgMtYcK6reefzZrao=" crossorigin="anonymous"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/fancyapps-ui/5.0.33/fancybox/fancybox.umd.js" integrity="sha256-+2+qOqR8CKoHh/AsVR9k2qaDBKWjYNC2nozhYmv5j9k=" crossorigin="anonymous"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/lozad.js/1.16.0/lozad.min.js" integrity="sha256-mOFREFhqmHeQbXpK2lp4nA3qooVgACfh88fpJftLBbc=" crossorigin="anonymous"></script>
-<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/next-boot.js"></script><script src="/js/pjax.js"></script>
-
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-generator-searchdb/1.4.1/search.js" integrity="sha256-1kfA5uHPf65M5cphT2dvymhkuyHPQp5A53EGZOnOLmc=" crossorigin="anonymous"></script>
-<script src="/js/third-party/search/local-search.js"></script>
-
-
-  <script class="next-config" data-name="mermaid" type="application/json">{"enable":true,"theme":{"light":"default","dark":"dark"},"js":{"url":"https://cdnjs.cloudflare.com/ajax/libs/mermaid/10.7.0/mermaid.min.js","integrity":"sha256-TtLOdUA8mstPoO6sGvHIGx2ceXrrX4KgIItO06XOn8A="}}</script>
-  <script src="/js/third-party/tags/mermaid.js"></script>
-
-
-  <script src="/js/third-party/fancybox.js"></script>
-
-  <script src="/js/third-party/pace.js"></script>
-
-
-  
-  <script data-pjax async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
-
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/firebase/10.7.2/firebase-app-compat.js" integrity="sha256-xdQCzG9qpUPD/bs/ZEI5cFbxep9Zp6F1VJm3d9ynNcw=" crossorigin="anonymous"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/firebase/10.7.2/firebase-firestore-compat.js" integrity="sha256-T7LqKXz+9Heox++4MR5RWllW/F1mamRl5xZjMdejtoE=" crossorigin="anonymous"></script>
-  <script class="next-config" data-name="firestore" type="application/json">{"enable":true,"collection":"articles","apiKey":"AIzaSyCSb2r8IVy2gr79FMEa1SwyUO6FhPjEj2c","projectId":"wcw0310blog"}</script>
-  <script src="/js/third-party/statistics/firestore.js"></script>
-
-
-
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/quicklink/2.3.0/quicklink.umd.js" integrity="sha256-yvJQOINiH9fWemHn0vCA5lsHWJaHs6/ZmO+1Ft04SvM=" crossorigin="anonymous"></script>
-  <script class="next-config" data-name="quicklink" type="application/json">{"enable":true,"home":true,"archive":true,"delay":true,"timeout":3000,"priority":true,"url":"https://wcw0310.github.io/Hexo/Blog/a4c4ed5f/"}</script>
-  <script src="/js/third-party/quicklink.js"></script>
 <div class="moon-menu">
   <div class="moon-menu-items">
     

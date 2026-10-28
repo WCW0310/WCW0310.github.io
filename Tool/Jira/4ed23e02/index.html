@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width">
 <meta name="theme-color" content="#222" media="(prefers-color-scheme: light)">
-<meta name="theme-color" content="#222" media="(prefers-color-scheme: dark)"><meta name="generator" content="Hexo 6.3.0">
+<meta name="theme-color" content="#222" media="(prefers-color-scheme: dark)"><meta name="generator" content="Hexo 8.1.2">
 
   <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
@@ -16,13 +16,13 @@
 
 
 
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha256-wiz7ZSCn/btzhjKDQBms9Hx4sSeUYsDrTLg7roPstac=" crossorigin="anonymous">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.1/css/all.min.css" integrity="sha256-4Lad8m4ZWW1Lgb9+sMVLYEfnIh7BjV1NQMEe79Pviks=" crossorigin="anonymous">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancyapps-ui/5.0.33/fancybox/fancybox.css" integrity="sha256-gkQVf8UKZgQ0HyuxL/VnacadJ+D2Kox2TCEBuNQg5+w=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancyapps-ui/6.1.14/fancybox/fancybox.css" integrity="sha256-mdaMxrItEW6hMIVJJNPKuX0B7KCSJQVEv3mVY4N2we4=" crossorigin="anonymous">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pace/1.2.4/themes/blue/pace-theme-minimal.css">
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/pace/1.2.4/pace.min.js" integrity="sha256-gqd7YTjg/BtfqWSwsJOvndl0Bxc8gFImLEkXQT8+qj0=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pace/1.2.4/pace.min.js" integrity="sha256-gqd7YTjg/BtfqWSwsJOvndl0Bxc8gFImLEkXQT8+qj0=" crossorigin="anonymous" defer></script>
 
-<script class="next-config" data-name="main" type="application/json">{"hostname":"wcw0310.github.io","root":"/","images":"/images","scheme":"Gemini","darkmode":true,"version":"8.19.2","exturl":true,"sidebar":{"position":"right","display":"post","padding":18,"offset":12},"copycode":{"enable":true,"style":"flat"},"fold":{"enable":true,"height":500},"bookmark":{"enable":false,"color":"#222","save":"manual"},"mediumzoom":false,"lazyload":true,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":true,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜尋...","empty":"我們無法找到任何有關 ${query} 的搜索結果","hits_time":"${hits} 找到 ${time} 個結果","hits":"找到 ${hits} 個結果"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
+<script class="next-config" data-name="main" type="application/json">{"hostname":"wcw0310.github.io","root":"/","images":"/images","scheme":"Gemini","darkmode":true,"version":"8.29.1","exturl":true,"sidebar":{"position":"right","width_expanded":320,"width_dual_column":240,"display":"post","padding":18,"offset":12},"hljswrap":true,"codeblock":{"theme":{"light":"default","dark":"stackoverflow-dark"},"prism":{"light":"prism","dark":"prism-dark"},"copy_button":{"enable":true,"style":"flat"},"fold":{"enable":true,"height":500},"language":false},"bookmark":{"enable":false,"color":"#222","save":"manual"},"mediumzoom":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":true,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"duration":200,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"i18n":{"placeholder":"搜尋...","empty":"我們無法找到任何有關 ${query} 的搜索結果","hits_time":"找到 ${hits} 個搜索結果（用時 ${time} 毫秒）","hits":"找到 ${hits} 個搜索結果"},"path":"/search.xml","localsearch":{"enable":true,"top_n_per_article":1,"unescape":false,"preload":false,"trigger":"auto"}}</script><script src="/js/config.js" defer></script>
 
     <meta name="description" content="身為碼農基本只管解 issue，Jira 這種專案管理工具的功能實在過於複雜，在此分享我在 Jira 中唯一使用的功能 – 儀表板 (Dashboard)。 想要一目了然的查看某團隊或某專案的工作量之類資訊時，建立自定義的 儀表板 (Dashboard) 是滿推薦的方式。">
 <meta property="og:type" content="article">
@@ -52,7 +52,6 @@
 <link rel="canonical" href="https://wcw0310.github.io/Tool/Jira/4ed23e02/">
 
 
-
 <script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-TW","comments":true,"permalink":"https://wcw0310.github.io/Tool/Jira/4ed23e02/","path":"Tool/Jira/4ed23e02/","title":"Tool Jira 01：Jira 建立 儀表板 (Dashboard)，碼農最舒適設定"}</script>
 
 <script class="next-config" data-name="calendar" type="application/json">""</script>
@@ -60,7 +59,7 @@
   
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-NGNFG3T6E5"></script>
   <script class="next-config" data-name="google_analytics" type="application/json">{"tracking_id":"G-NGNFG3T6E5","only_pageview":false,"measure_protocol_api_secret":null}</script>
-  <script src="/js/third-party/analytics/google-analytics.js"></script>
+  <script src="/js/third-party/analytics/google-analytics.js" defer></script>
 
 
 
@@ -68,6 +67,37 @@
 
 
 
+
+  
+  <script size="300" alpha="0.6" zIndex="-1" src="https://cdnjs.cloudflare.com/ajax/libs/ribbon.js/1.0.2/ribbon.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/next-theme-pjax/0.6.0/pjax.min.js" integrity="sha256-vxLn1tSKWD4dqbMRyv940UYw4sXgMtYcK6reefzZrao=" crossorigin="anonymous" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/fancyapps-ui/6.1.14/fancybox/fancybox.umd.js" integrity="sha256-QnJV4HT5r8i89ovZGRD86iynZqHerEbT2xt69vDM36I=" crossorigin="anonymous" defer></script>
+<script src="/js/utils.js" defer></script><script src="/js/motion.js" defer></script><script src="/js/sidebar.js" defer></script><script src="/js/next-boot.js" defer></script><script src="/js/pjax.js" defer></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-generator-searchdb/1.5.0/search.js" integrity="sha256-xFC6PJ82SL9b3WkGjFavNiA9gm5z6UBxWPiu4CYjptg=" crossorigin="anonymous" defer></script>
+<script src="/js/third-party/search/local-search.js" defer></script>
+
+
+  <script class="next-config" data-name="mermaid" type="application/json">{"enable":true,"theme":{"light":"default","dark":"dark"},"js":{"url":"https://cdnjs.cloudflare.com/ajax/libs/mermaid/11.10.1/mermaid.min.js","integrity":"sha256-BmQmdWDS8X2OTbrwELWK366LV6escyWhHHe0XCTU/Hk="}}</script>
+  <script src="/js/third-party/tags/mermaid.js" defer></script>
+
+
+  <script src="/js/third-party/fancybox.js" defer></script>
+
+  <script src="/js/third-party/pace.js" defer></script>
+
+
+  
+  <script data-pjax async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  <script class="next-config" data-name="firestore" type="application/json">{"collection":"articles","projectId":"wcw0310blog"}</script>
+  <script src="/js/third-party/statistics/firestore.js" defer></script>
+
+
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/quicklink/3.0.2/quicklink.umd.js" integrity="sha256-Qo2BTvlsBVXIr5fEHp8xlBpUmkbDINr5cQZeSfMTES8=" crossorigin="anonymous" defer></script>
+  <script class="next-config" data-name="quicklink" type="application/json">{"enable":true,"home":true,"archive":true,"delay":true,"timeout":3000,"priority":true,"url":"https://wcw0310.github.io/Tool/Jira/4ed23e02/"}</script>
+  <script src="/js/third-party/quicklink.js" defer></script>
 
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5074749359677811"
      crossorigin="anonymous"></script><link rel="stylesheet" type="text/css" href="/css/injector/main.css" /><link rel="preload" as="style" href="/css/injector/light.css" /><link rel="preload" as="style" href="/css/injector/dark.css" />
@@ -82,12 +112,8 @@
   <main class="main">
     <div class="column">
       <header class="header" itemscope itemtype="http://schema.org/WPHeader"><div class="site-brand-container">
-  <div class="site-nav-toggle">
-    <div class="toggle" aria-label="切換導航欄" role="button">
-        <span class="toggle-line"></span>
-        <span class="toggle-line"></span>
-        <span class="toggle-line"></span>
-    </div>
+  <div class="site-nav-search popup-trigger" aria-label="搜尋" role="button">
+      <i class="fa fa-search fa-fw fa-lg"></i>
   </div>
 
   <div class="site-meta">
@@ -100,10 +126,8 @@
       <p class="site-subtitle" itemprop="description">WCW's blog</p>
   </div>
 
-  <div class="site-nav-right">
-    <div class="toggle popup-trigger" aria-label="搜尋" role="button">
-        <i class="fa fa-search fa-fw fa-lg"></i>
-    </div>
+  <div class="site-nav-toggle" aria-label="切換導航欄" role="button">
+      <i class="fa fa-ellipsis fa-fw fa-lg"></i>
   </div>
 </div>
 
@@ -120,28 +144,29 @@
 
 
 
-  <div class="search-pop-overlay">
-    <div class="popup search-popup"><div class="search-header">
-  <span class="search-icon">
-    <i class="fa fa-search"></i>
-  </span>
-  <div class="search-input-container">
-    <input autocomplete="off" autocapitalize="off" maxlength="80"
-           placeholder="搜尋..." spellcheck="false"
-           type="search" class="search-input">
-  </div>
-  <span class="popup-btn-close" role="button">
-    <i class="fa fa-times-circle"></i>
-  </span>
-</div>
-<div class="search-result-container no-result">
-  <div class="search-result-icon">
-    <i class="fa fa-spinner fa-pulse fa-5x"></i>
-  </div>
-</div>
-
+  
+  <template id="search-popup-template"><div class="search-pop-overlay">
+    <div class="popup search-popup">
+      <div class="search-header">
+        <span class="search-icon">
+          <i class="fa fa-search"></i>
+        </span>
+        <div class="search-input-container">
+          <input autocomplete="off" autocapitalize="off" maxlength="80"
+                placeholder="搜尋..." spellcheck="false"
+                type="search" class="search-input">
+        </div>
+        <span class="popup-btn-close" role="button">
+          <i class="fa fa-times-circle"></i>
+        </span>
+      </div>
+      <div class="search-result-container">
+        <div class="search-result-icon">
+          <i class="fa fa-spinner fa-pulse fa-5x"></i>
+        </div>
+      </div>
     </div>
-  </div>
+  </div></template>
 
 </header>
         
@@ -262,7 +287,7 @@
     <div class="sidebar-inner sidebar-blogroll">
       <div class="links-of-blogroll animated">
         <div class="links-of-blogroll-title"><i class="fa fa-globe fa-fw"></i>
-          Links
+          連結
         </div>
         <ul class="links-of-blogroll-list">
             <li class="links-of-blogroll-item">
@@ -368,7 +393,7 @@
     </span>
     <span class="post-meta-item" title="文章字數">
       <span class="post-meta-item-icon">
-        <i class="far fa-file-word"></i>
+        <i class="far fa-file-lines"></i>
       </span>
       <span class="post-meta-item-text">文章字數：</span>
       <span>742</span>
@@ -394,30 +419,30 @@
 
 
 
-<h2 id="成品"><a href="#成品" class="headerlink" title="成品"></a>成品</h2><p>我習慣設成一個專案一張 <code>二維篩選統計資料</code> 表，X軸為 <code>優先順序</code>，y軸為 <code>受託人</code>，數字為 issue 數目。<br><img data-src="https://github.com/WCW0310/blogPicture/blob/master/Tool/Tool-Jira-01-create-dashboard/JiraSample.png?raw=true"></p>
+<h2 id="成品"><a href="#成品" class="headerlink" title="成品"></a>成品</h2><p>我習慣設成一個專案一張 <code>二維篩選統計資料</code> 表，X軸為 <code>優先順序</code>，y軸為 <code>受託人</code>，數字為 issue 數目。<br><img src="https://github.com/WCW0310/blogPicture/blob/master/Tool/Tool-Jira-01-create-dashboard/JiraSample.png?raw=true" loading="lazy"></p>
 <p>這樣能清楚知道誰身上 loading 較重，哪些人較有餘力協助別人之類的 (不過通常也不能這樣判斷啦 XD)。</p>
 <h2 id="建立篩選條件-Filter-："><a href="#建立篩選條件-Filter-：" class="headerlink" title="建立篩選條件 (Filter)："></a>建立篩選條件 (Filter)：</h2><p>建立 儀表板 之前需要先建立數個 篩選條件 (Filter) 供 儀表板 使用。</p>
-<h3 id="選擇上方-篩選-Filter-tab"><a href="#選擇上方-篩選-Filter-tab" class="headerlink" title="選擇上方 篩選 (Filter) tab"></a>選擇上方 <code>篩選</code> (Filter) tab</h3><p><img data-src="https://github.com/WCW0310/blogPicture/blob/master/Tool/Tool-Jira-01-create-dashboard/filter.png?raw=true"></p>
-<h3 id="選擇-檢視所有篩選條件-View-all-filters"><a href="#選擇-檢視所有篩選條件-View-all-filters" class="headerlink" title="選擇 檢視所有篩選條件 (View all filters)"></a>選擇 <code>檢視所有篩選條件</code> (View all filters)</h3><p><img data-src="https://github.com/WCW0310/blogPicture/blob/master/Tool/Tool-Jira-01-create-dashboard/viewAllFilters.png?raw=true"></p>
-<h3 id="點選右上-建立篩選條件-Create-filter"><a href="#點選右上-建立篩選條件-Create-filter" class="headerlink" title="點選右上 建立篩選條件 (Create filter)"></a>點選右上 <code>建立篩選條件</code> (Create filter)</h3><p><img data-src="https://github.com/WCW0310/blogPicture/blob/master/Tool/Tool-Jira-01-create-dashboard/createFilter.png?raw=true"></p>
-<h3 id="自己視需求設定篩選條件"><a href="#自己視需求設定篩選條件" class="headerlink" title="自己視需求設定篩選條件"></a>自己視需求設定篩選條件</h3><p><img data-src="https://github.com/WCW0310/blogPicture/blob/master/Tool/Tool-Jira-01-create-dashboard/searchFilter.png?raw=true"></p>
+<h3 id="選擇上方-篩選-Filter-tab"><a href="#選擇上方-篩選-Filter-tab" class="headerlink" title="選擇上方 篩選 (Filter) tab"></a>選擇上方 <code>篩選</code> (Filter) tab</h3><p><img src="https://github.com/WCW0310/blogPicture/blob/master/Tool/Tool-Jira-01-create-dashboard/filter.png?raw=true" loading="lazy"></p>
+<h3 id="選擇-檢視所有篩選條件-View-all-filters"><a href="#選擇-檢視所有篩選條件-View-all-filters" class="headerlink" title="選擇 檢視所有篩選條件 (View all filters)"></a>選擇 <code>檢視所有篩選條件</code> (View all filters)</h3><p><img src="https://github.com/WCW0310/blogPicture/blob/master/Tool/Tool-Jira-01-create-dashboard/viewAllFilters.png?raw=true" loading="lazy"></p>
+<h3 id="點選右上-建立篩選條件-Create-filter"><a href="#點選右上-建立篩選條件-Create-filter" class="headerlink" title="點選右上 建立篩選條件 (Create filter)"></a>點選右上 <code>建立篩選條件</code> (Create filter)</h3><p><img src="https://github.com/WCW0310/blogPicture/blob/master/Tool/Tool-Jira-01-create-dashboard/createFilter.png?raw=true" loading="lazy"></p>
+<h3 id="自己視需求設定篩選條件"><a href="#自己視需求設定篩選條件" class="headerlink" title="自己視需求設定篩選條件"></a>自己視需求設定篩選條件</h3><p><img src="https://github.com/WCW0310/blogPicture/blob/master/Tool/Tool-Jira-01-create-dashboard/searchFilter.png?raw=true" loading="lazy"></p>
 <p>我自己有設定的是 <code>專案</code> 跟 <code>狀態</code>。<br>專案：為了讓篩選有意義，一個篩選設定一個專案就滿剛好的。<br>狀態：只設定對於開發有意義的狀態，如：<code>開放</code>、<code>進行中</code>、<code>已解決</code>。</p>
 <p>設定好後點擊上方的 <code>另存新檔</code>。</p>
-<h3 id="設定-篩選條件名稱-後點擊-提交"><a href="#設定-篩選條件名稱-後點擊-提交" class="headerlink" title="設定 篩選條件名稱 後點擊 提交"></a>設定 <code>篩選條件名稱</code> 後點擊 <code>提交</code></h3><p><img data-src="https://github.com/WCW0310/blogPicture/blob/master/Tool/Tool-Jira-01-create-dashboard/setFilterName.png?raw=true"></p>
+<h3 id="設定-篩選條件名稱-後點擊-提交"><a href="#設定-篩選條件名稱-後點擊-提交" class="headerlink" title="設定 篩選條件名稱 後點擊 提交"></a>設定 <code>篩選條件名稱</code> 後點擊 <code>提交</code></h3><p><img src="https://github.com/WCW0310/blogPicture/blob/master/Tool/Tool-Jira-01-create-dashboard/setFilterName.png?raw=true" loading="lazy"></p>
 <p>直接設成專案名稱即可。</p>
 <p>這樣就建立好一個新的篩選條件，可以再選擇上方 <code>篩選</code> (Filter) tab 找到它。</p>
-<h2 id="儀表板-Dashboard-自訂成呈現所有人題目數量的表格："><a href="#儀表板-Dashboard-自訂成呈現所有人題目數量的表格：" class="headerlink" title="儀表板 (Dashboard) 自訂成呈現所有人題目數量的表格："></a>儀表板 (Dashboard) 自訂成呈現所有人題目數量的表格：</h2><h3 id="選擇上方-儀表板-Dashboard-tab"><a href="#選擇上方-儀表板-Dashboard-tab" class="headerlink" title="選擇上方 儀表板 (Dashboard) tab"></a>選擇上方 <code>儀表板</code> (Dashboard) tab</h3><h3 id="選擇-建立儀表板-Create-new-dashboard"><a href="#選擇-建立儀表板-Create-new-dashboard" class="headerlink" title="選擇 建立儀表板 (Create new dashboard)"></a>選擇 <code>建立儀表板</code> (Create new dashboard)</h3><h3 id="填入名稱後點擊-儲存"><a href="#填入名稱後點擊-儲存" class="headerlink" title="填入名稱後點擊 儲存"></a>填入名稱後點擊 <code>儲存</code></h3><p><img data-src="https://github.com/WCW0310/blogPicture/blob/master/Tool/Tool-Jira-01-create-dashboard/createDashboard.png?raw=true"></p>
+<h2 id="儀表板-Dashboard-自訂成呈現所有人題目數量的表格："><a href="#儀表板-Dashboard-自訂成呈現所有人題目數量的表格：" class="headerlink" title="儀表板 (Dashboard) 自訂成呈現所有人題目數量的表格："></a>儀表板 (Dashboard) 自訂成呈現所有人題目數量的表格：</h2><h3 id="選擇上方-儀表板-Dashboard-tab"><a href="#選擇上方-儀表板-Dashboard-tab" class="headerlink" title="選擇上方 儀表板 (Dashboard) tab"></a>選擇上方 <code>儀表板</code> (Dashboard) tab</h3><h3 id="選擇-建立儀表板-Create-new-dashboard"><a href="#選擇-建立儀表板-Create-new-dashboard" class="headerlink" title="選擇 建立儀表板 (Create new dashboard)"></a>選擇 <code>建立儀表板</code> (Create new dashboard)</h3><h3 id="填入名稱後點擊-儲存"><a href="#填入名稱後點擊-儲存" class="headerlink" title="填入名稱後點擊 儲存"></a>填入名稱後點擊 <code>儲存</code></h3><p><img src="https://github.com/WCW0310/blogPicture/blob/master/Tool/Tool-Jira-01-create-dashboard/createDashboard.png?raw=true" loading="lazy"></p>
 <p>可以依你的分類標準命名，或是命名成 <code>我的 Dashboard</code> 之類的。</p>
-<h3 id="就會看到空的儀表板"><a href="#就會看到空的儀表板" class="headerlink" title="就會看到空的儀表板"></a>就會看到空的儀表板</h3><p><img data-src="https://github.com/WCW0310/blogPicture/blob/master/Tool/Tool-Jira-01-create-dashboard/blankDashboard.png?raw=true"></p>
+<h3 id="就會看到空的儀表板"><a href="#就會看到空的儀表板" class="headerlink" title="就會看到空的儀表板"></a>就會看到空的儀表板</h3><p><img src="https://github.com/WCW0310/blogPicture/blob/master/Tool/Tool-Jira-01-create-dashboard/blankDashboard.png?raw=true" loading="lazy"></p>
 <p>可以看到右方有非常多種小工具，不過身為不管事的碼農不用浪費太多精力在這裡。</p>
 <p>右方找到 <code>二維篩選統計資料</code> 點擊 <code>新增</code> 就會看到儀表板出現 <code>二維篩選統計資料</code> 的設定欄。</p>
-<h3 id="設定-二維篩選統計資料-Two-Dimensional-Filter-Statistics-表"><a href="#設定-二維篩選統計資料-Two-Dimensional-Filter-Statistics-表" class="headerlink" title="設定 二維篩選統計資料 (Two Dimensional Filter Statistics) 表"></a>設定 <code>二維篩選統計資料</code> (Two Dimensional Filter Statistics) 表</h3><p><img data-src="https://github.com/WCW0310/blogPicture/blob/master/Tool/Tool-Jira-01-create-dashboard/settingData.png?raw=true"></p>
+<h3 id="設定-二維篩選統計資料-Two-Dimensional-Filter-Statistics-表"><a href="#設定-二維篩選統計資料-Two-Dimensional-Filter-Statistics-表" class="headerlink" title="設定 二維篩選統計資料 (Two Dimensional Filter Statistics) 表"></a>設定 <code>二維篩選統計資料</code> (Two Dimensional Filter Statistics) 表</h3><p><img src="https://github.com/WCW0310/blogPicture/blob/master/Tool/Tool-Jira-01-create-dashboard/settingData.png?raw=true" loading="lazy"></p>
 <p>在 <code>已儲存的篩選條件</code> (Saved Filter) 中找到先前設定的 篩選條件。</p>
 <p><code>X 軸</code> 設成 <code>優先順序</code> (Priority)。</p>
 <p><code>Y 軸</code> 設成 <code>受託人</code>。</p>
 <p><code>結果數目</code> (Number of Results) 設成 50。</p>
 <p>最後點擊 <code>儲存</code> 即完成表格設定。</p>
-<h3 id="點擊右上角的-完成-結束-儀表板-設定"><a href="#點擊右上角的-完成-結束-儀表板-設定" class="headerlink" title="點擊右上角的 完成 結束 儀表板 設定"></a>點擊右上角的 <code>完成</code> 結束 儀表板 設定</h3><p><img data-src="https://github.com/WCW0310/blogPicture/blob/master/Tool/Tool-Jira-01-create-dashboard/tableSample.png?raw=true"></p>
+<h3 id="點擊右上角的-完成-結束-儀表板-設定"><a href="#點擊右上角的-完成-結束-儀表板-設定" class="headerlink" title="點擊右上角的 完成 結束 儀表板 設定"></a>點擊右上角的 <code>完成</code> 結束 儀表板 設定</h3><p><img src="https://github.com/WCW0310/blogPicture/blob/master/Tool/Tool-Jira-01-create-dashboard/tableSample.png?raw=true" loading="lazy"></p>
 <h3 id="大功告成"><a href="#大功告成" class="headerlink" title="大功告成"></a>大功告成</h3><p>多設定幾個專案的表格就會跟一開始的圖片一樣有多張表格了。</p>
 <h2 id="結語"><a href="#結語" class="headerlink" title="結語"></a>結語</h2><p>上述設定都是我自己的偏好，完全可以依各自喜好做其他設定，不要被工具奴化就好~</p>
 <p>Jira 可以自定義的東西太多了，除非公司有特殊需求，或你本身就要負責專案管理，不然真心覺得越少碰它越好，其他時間能簡易的察看任務就好。</p>
@@ -434,7 +459,7 @@
 <div class="post-copyright">
 <ul>
   <li class="post-copyright-author">
-      <strong>作者： </strong>WCW
+      <strong>本文作者： </strong>WCW
   </li>
   <li class="post-copyright-link">
       <strong>文章連結：</strong>
@@ -526,47 +551,16 @@
   </footer>
 
   
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
   <div class="reading-progress-bar"></div>
 
 <noscript>
   <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
 </noscript>
-
-
-  
-  <script size="300" alpha="0.6" zIndex="-1" src="https://cdnjs.cloudflare.com/ajax/libs/ribbon.js/1.0.2/ribbon.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/next-theme-pjax/0.6.0/pjax.min.js" integrity="sha256-vxLn1tSKWD4dqbMRyv940UYw4sXgMtYcK6reefzZrao=" crossorigin="anonymous"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/fancyapps-ui/5.0.33/fancybox/fancybox.umd.js" integrity="sha256-+2+qOqR8CKoHh/AsVR9k2qaDBKWjYNC2nozhYmv5j9k=" crossorigin="anonymous"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/lozad.js/1.16.0/lozad.min.js" integrity="sha256-mOFREFhqmHeQbXpK2lp4nA3qooVgACfh88fpJftLBbc=" crossorigin="anonymous"></script>
-<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/next-boot.js"></script><script src="/js/pjax.js"></script>
-
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-generator-searchdb/1.4.1/search.js" integrity="sha256-1kfA5uHPf65M5cphT2dvymhkuyHPQp5A53EGZOnOLmc=" crossorigin="anonymous"></script>
-<script src="/js/third-party/search/local-search.js"></script>
-
-
-  <script class="next-config" data-name="mermaid" type="application/json">{"enable":true,"theme":{"light":"default","dark":"dark"},"js":{"url":"https://cdnjs.cloudflare.com/ajax/libs/mermaid/10.7.0/mermaid.min.js","integrity":"sha256-TtLOdUA8mstPoO6sGvHIGx2ceXrrX4KgIItO06XOn8A="}}</script>
-  <script src="/js/third-party/tags/mermaid.js"></script>
-
-
-  <script src="/js/third-party/fancybox.js"></script>
-
-  <script src="/js/third-party/pace.js"></script>
-
-
-  
-  <script data-pjax async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
-
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/firebase/10.7.2/firebase-app-compat.js" integrity="sha256-xdQCzG9qpUPD/bs/ZEI5cFbxep9Zp6F1VJm3d9ynNcw=" crossorigin="anonymous"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/firebase/10.7.2/firebase-firestore-compat.js" integrity="sha256-T7LqKXz+9Heox++4MR5RWllW/F1mamRl5xZjMdejtoE=" crossorigin="anonymous"></script>
-  <script class="next-config" data-name="firestore" type="application/json">{"enable":true,"collection":"articles","apiKey":"AIzaSyCSb2r8IVy2gr79FMEa1SwyUO6FhPjEj2c","projectId":"wcw0310blog"}</script>
-  <script src="/js/third-party/statistics/firestore.js"></script>
-
-
-
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/quicklink/2.3.0/quicklink.umd.js" integrity="sha256-yvJQOINiH9fWemHn0vCA5lsHWJaHs6/ZmO+1Ft04SvM=" crossorigin="anonymous"></script>
-  <script class="next-config" data-name="quicklink" type="application/json">{"enable":true,"home":true,"archive":true,"delay":true,"timeout":3000,"priority":true,"url":"https://wcw0310.github.io/Tool/Jira/4ed23e02/"}</script>
-  <script src="/js/third-party/quicklink.js"></script>
 <div class="moon-menu">
   <div class="moon-menu-items">
     
